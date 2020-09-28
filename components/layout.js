@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
 
-import "../styles/styles.scss"
-
 export default function Layout({
   children,
   title = 'Ukelele-Gitaarles',
