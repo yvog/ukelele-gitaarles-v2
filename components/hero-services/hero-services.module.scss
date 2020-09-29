@@ -1,8 +1,21 @@
 @import '../styles/variables';
 
 .hero_services {
-    max-width: 100%;
-    height: 370px;
-    border-radius: 20px;
-    background-color: $ukeGitBlue;
+    width: 100%;
+    padding: 36px 36px 46px 36px;
+    margin-top: 144px;
+    position: relative;
+
+    &:after {
+        content: ''; 
+        width: 100%; 
+        height: 100%;
+        background-color: $ukeGitBlue;
+        border-radius: 18px;
+        opacity: 0.95; 
+        position: absolute;
+        top: 0; 
+        left: 0;
+        z-index: -1;
+    }
 }

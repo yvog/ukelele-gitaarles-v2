@@ -1,9 +1,14 @@
+import classNames from 'classnames';
+import styles from './button.module.scss';
+
 export function Button({
-    children
+    children,
+    filled = false,
+    href
 }) {
     return (
-        <button>
+        <a href={href} className={classNames(styles.button, {filled: filled})} >
             {children}
-        </button>
+        </a>
     )
 };

@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app'
 
-import 'normalize.css/normalize.css'
+// import 'normalize.css/normalize.css'
 import '../styles/bootstrap.min.css'
 import '../styles/styles.scss'
 

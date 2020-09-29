@@ -5,9 +5,7 @@ export function HeaderNavigation() {
   return (
     <header className={styles.header}>
     
-      <img src="https://placehold.it/280x100" width="280" height="100" />
-
-      <img src="https://placehold.it/1920x1080" width="1920" height="1080" className={styles.background_image} />
+      <img src="https://placehold.it/280x100" alt="logo" width="280" height="100" />
       
       <nav className={styles.nav}>
         <Link href="/">
