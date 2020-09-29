@@ -1,0 +1,28 @@
+@import "../styles/variables";
+
+.explore_signup {
+    background: url("/images/explore_background.jpg");
+    background-size: cover;
+
+    .explore_signup_inner {
+        padding: 44px;
+        max-width: 60%;
+        margin: 0 auto;
+        background: $ukeGitBlue;
+        text-align: center;
+        
+        h4 {
+            color: #fff;
+        }
+    
+        p {
+            color: #fff;
+            margin-top: 18px;
+            margin-bottom: 96px;
+        }
+
+        button {
+            
+        }
+    }
+}

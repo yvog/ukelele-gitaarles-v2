@@ -1,0 +1,30 @@
+.about_me_summary {
+    width: 100%;
+    padding: 0;
+    max-width: 1368px;
+    margin: 160px auto 160px auto;
+
+    h2 {
+        font-size: 28pt;
+        padding: 0;
+    }
+
+    .about_me_summary_image {
+        margin-top: 44px;
+    }
+
+    .about_me_summary_content {
+        margin-top: 44px;
+        padding: 0;
+
+        p {
+            padding: 0;
+            margin: 0;
+            margin-bottom: 36px;
+        }
+
+        button {
+            margin-top: 50px;
+        }
+    }
+}

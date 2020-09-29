@@ -1,11 +1,15 @@
+import classNames from 'classnames';
+import {HeroServicesItem} from '..';
 import styles from './hero-services.module.scss';
 
-export function HeroServices({
-    children
-}) {
+export function HeroServices() {
     return (
-        <div className={styles.hero_services}>
-            {children}
-        </div>
+        <section className={classNames(styles.hero_services, 'container')}>
+            <div className="row">
+                <HeroServicesItem />
+                <HeroServicesItem />
+                <HeroServicesItem />
+            </div>
+        </section>
     )
 };
