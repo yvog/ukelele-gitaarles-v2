@@ -4,11 +4,11 @@
 
 ### Versions
 ```
-node: 				12.18.3 LTS
-Next.js             9.5.3
-React				16.13.1
-TypeScript 			^4.0.3
-Sass                ^1.26.11
+Node            12.18.3 LTS  
+Next.js         9.5.3  
+React           16.13.1  
+TypeScript      ^4.0.3  
+Sass            ^1.26.11  
 ```
 
 # Credits
