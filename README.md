@@ -13,5 +13,5 @@ Sass                ^1.26.11
 
 # Credits
 
-Designed by [Vera Geldhof](https://github.com/VGeldhof), Visit [portfolio](https://verageldhof.nl)  
+Designed by [Vera Geldhof](https://github.com/VGeldhof), visit [portfolio](https://verageldhof.nl)  
 Developed by [Yvo Geldhof](https://github.com/VGeldhof)
