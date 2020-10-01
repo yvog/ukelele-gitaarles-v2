@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import styles from './header-navigation.module.scss';
 
-export function HeaderNavigation() {
+export const HeaderNavigationComponent: React.FC = () => {
   return (
     <header className={styles.header}>
-    
-      <img src="https://placehold.it/280x100" alt="logo" width="280" height="100" />
-      
+
+      <img src="/images/logo/ugl_logo_white.svg" alt="UGL logo white" width="280" height="100" />
+
       <nav className={styles.nav}>
         <Link href="/">
           <a>Home</a>
@@ -35,4 +35,6 @@ export function HeaderNavigation() {
       </nav>
     </header>
   )
-}
+};
+
+export const HeaderNavigation = HeaderNavigationComponent;

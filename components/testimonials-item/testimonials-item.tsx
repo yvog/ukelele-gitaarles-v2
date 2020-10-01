@@ -1,9 +1,23 @@
 import styles from './testimonials-item.module.scss';
 
-export function TestimonialsItem() {
-    return (
-        <div className={styles.testimonials_item}>
+type TestimonialsItemProps = {
+    name: string;
+    age: number;
+    content: string;
+};
 
-        </div>
+export const TestimonialsItemComponent: React.FC<TestimonialsItemProps> = ({
+    name,
+    age,
+    content
+}) => {
+    return (
+        <article className={styles.testimonials_item}>
+            <h3>{name}</h3>
+            <span>{age} jaar</span>
+            <p>{content}</p>
+        </article>
     )
 };
+
+export const TestimonialsItem = TestimonialsItemComponent;

@@ -1,9 +1,13 @@
+@import '../styles/variables';
+
 .usp {
-    padding: 0;
+    margin: 160px auto 128px auto;
     width: 100%;
+    max-width: $mainInnerContainerMaxWidth;
+    padding: 0;
 
     h4 {
-        margin: 80px 0 80px 0 !important;
-        padding: 0;
+        margin-bottom: 128px;
+        font-size: 34pt;
     }
 }
