@@ -1,29 +1,81 @@
 @import "../styles/variables";
 
 .testimonials {
-    article {
-        margin-top: 46px;
-        background: #fff;
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-        border-radius: 16px;
-        padding: 24px;
-        
-        h2 {
+    background: url("/images/background/testimonials_background.png") top no-repeat;
+    background-size: cover;
+    height: 900px;
+    padding: 264px 20px 20px 20px;
+
+    .testimonials_inner {
+        margin: 0 auto;
+        max-width: $mainInnerContainerMaxWidth;
+        position: relative;
+
+        *:focus {
+            outline: none;
+        }
+
+        /* 
+            hacky way to override the carousel's 
+            arrows' style which only appear during runtime 
+        */
+        button {
+            position: absolute !important;
+            right: 0;
+            bottom: 0;
+            background: none;
+            border: none;
+            outline: none;
+            color: #fff;
+            box-shadow: none !important;
+            font-size: 16pt;
+            font-size: 26pt;
+            border: 1px solid transparent;
+
+            &:hover {
+                background: none !important;
+                box-shadow: none;
+                border: 1px solid #fff;
+            }
+
+            &:nth-child(1) {
+                right: 80px;
+                bottom: -16px;
+                background: none !important;
+            }
+
+            &:nth-child(3) {
+                bottom: -16px;
+                background: none !important;
+            }
+        }
+
+        h4 {
             color: #fff;
         }
 
-        span {
-            color: $ukeGitBlue;
-            margin-top: 4px;
-            display: block;
+        article {
+            margin-top: 46px;
+            background: #fff;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+
+            span {
+                color: $ukeGitBlue;
+                margin-top: 4px;
+                display: block;
+                font-family: $titleFont;
+                font-size: 11pt;
+            }
+
+            p {
+                margin-top: 24px;
+            }
         }
 
-        p {
-            margin-top: 24px;
+        a {
+            margin-top: 56px;
         }
-    }
-
-    .button {
-        margin-top: 56px;
     }
 }

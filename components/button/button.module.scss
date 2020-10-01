@@ -1,17 +1,16 @@
 @import "../../styles/variables";
 
 .button {
+    display: inline-block;
     border-radius: 50px;
     color: #fff;
     border: 2px solid #fff;
     min-width: 224px;
-    max-width: 250px;
-    padding: 8px;
+    padding: 10px;
     transition: color 0.16s ease, background 0.16s ease;
     letter-spacing: 2px;
-    font-size: 11pt;
+    font-size: 14pt;
     text-decoration: none;
-    display: block;
     text-align: center;
 
     &:link,
@@ -26,9 +25,14 @@
         text-decoration: none;
     }
 
-    &.filled {
-        padding: 100px;
-        background-color: black;
-        border: 2px solid black;
+    &.button_filled {
+        background: $ukeGitBlue;
+        border: 2px solid $ukeGitBlue;
+
+        &:hover {
+            background: #fff;
+            color: $ukeGitBlue;
+            text-decoration: none;
+        }
     }
 }
