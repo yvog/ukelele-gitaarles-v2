@@ -1,0 +1,38 @@
+@import "./variables";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $titleFont;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-size: 52pt;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 14pt;
+    font-weight: normal;
+}
+
+h4 {
+    font-size: 34pt;
+    font-weight: normal;
+}
+
+p {
+    font-family: $paragraphFont;
+    letter-spacing: 1px;
+    font-size: 12pt;
+}
+
+button {
+    letter-spacing: 1px;
+}

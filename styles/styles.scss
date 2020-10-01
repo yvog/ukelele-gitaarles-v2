@@ -1,5 +1,30 @@
-$font-size: 42px;
+@import url("https://fonts.googleapis.com/css2?family=Salsa&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
-.example {
-  font-size: $font-size;
+@import "./variables";
+@import "./fonts";
+
+.main-container {
+  margin: 0 auto;
+  max-width: $mainContainerMaxWidth;
+  padding: 20px 100px 0 100px;
+}
+
+.hidden {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+
+  &:link,
+  &:visited,
+  &:active {
+    color: #fff;
+  }
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
 }

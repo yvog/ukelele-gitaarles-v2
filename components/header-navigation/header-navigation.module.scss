@@ -1,0 +1,49 @@
+@import "./styles/variables";
+
+.header {
+    margin-bottom: 175px;
+}
+
+.nav {
+    float: right;
+    padding-top: 56px;
+
+    a {
+        margin-left: 40px;
+        font-size: 11pt;
+        font-family: $paragraphFont;
+        position: relative;
+        display: inline-block;
+
+        &:after {
+            content: "";
+            opacity: 0;
+            height: 1px;
+            width: 100%;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            background: #fff;
+            transition: opacity 0.2s ease;
+        }
+
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+        }
+
+        &.black {
+            &:link,
+            &:visited,
+            &:active {
+                color: #000;
+            }
+
+            &:hover {
+                color: #000;
+                text-decoration: underline;
+            }
+        }
+    }
+}

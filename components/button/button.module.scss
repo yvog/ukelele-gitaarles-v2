@@ -1,0 +1,38 @@
+@import "../../styles/variables";
+
+.button {
+    display: inline-block;
+    border-radius: 50px;
+    color: #fff;
+    border: 2px solid #fff;
+    min-width: 224px;
+    padding: 10px;
+    transition: color 0.16s ease, background 0.16s ease;
+    letter-spacing: 2px;
+    font-size: 14pt;
+    text-decoration: none;
+    text-align: center;
+
+    &:link,
+    &:visited,
+    &:active {
+        color: #fff;
+    }
+
+    &:hover {
+        background: #fff;
+        color: $ukeGitBlue;
+        text-decoration: none;
+    }
+
+    &.button_filled {
+        background: $ukeGitBlue;
+        border: 2px solid $ukeGitBlue;
+
+        &:hover {
+            background: #fff;
+            color: $ukeGitBlue;
+            text-decoration: none;
+        }
+    }
+}
