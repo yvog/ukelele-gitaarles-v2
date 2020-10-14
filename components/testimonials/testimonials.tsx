@@ -52,8 +52,8 @@ export const TestimonialsComponent: React.FC = () => {
                     pagination={false}
                     disableArrowsOnEnd={false}
                 >
-                    {testimonials.map((item) => {
-                        return <TestimonialsItem name={item.name} age={item.age} content={item.content} />;
+                    {testimonials.map((item, i) => {
+                        return <TestimonialsItem key={i} name={item.name} age={item.age} content={item.content} />;
                     })}
                 </Carousel>
 
