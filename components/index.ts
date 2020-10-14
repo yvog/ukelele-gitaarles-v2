@@ -1,5 +1,7 @@
-export { Experience } from './experience/experience';
-export { UspBar } from './usp-bar/usp-bar';
+export { ServicesItem } from './services-item/services-item';
+export {Services} from './services/services';
+export {Experience} from './experience/experience';
+export {UspBar} from './usp-bar/usp-bar';
 export {AboutMe} from './about-me/about-me';
 export {AboutMeSummary} from './about-me-summary/about-me-summary';
 export {Button} from './button/button';
