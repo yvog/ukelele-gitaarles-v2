@@ -47,7 +47,7 @@ export const TestimonialsComponent: React.FC = () => {
 
                 <Carousel
                     itemsToShow={3}
-                    itemPadding={[16, 16, 16, 16]}
+                    itemPadding={[16, 16, 16, 0]}
                     transitionMs={250}
                     pagination={false}
                     disableArrowsOnEnd={false}
