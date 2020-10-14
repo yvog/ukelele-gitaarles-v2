@@ -1,14 +1,28 @@
-import Link from 'next/link'
-import styles from './header-navigation.module.scss';
 import classNames from 'classnames';
+import Link from 'next/link';
+import styles from './header-navigation.module.scss';
 
-export const HeaderNavigationComponent: React.FC = () => {
+type HeaderNavigationComponentProps = {
+  variant?: 'white' | 'black';
+};
+
+export const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
+  variant = 'white'
+}) => {
+
+  const isBlack = (variant === 'black');
+
   return (
-    <header className={styles.header}>
+    <header className={classNames(styles.header, {[styles.black]: isBlack})}>
 
-      <img src="/images/logo/ugl_logo_white.svg" alt="UGL logo white" width="280" height="100" />
+      <img src={`/images/logo/ugl_logo_${variant}.svg`} alt="UGL logo white" width="280" height="100" />
 
-      <nav className={classNames(styles.nav, styles.line_hover_nav)}>
+      <nav className={
+        classNames(
+          styles.nav,
+          {[styles.line_hover_nav_black]: isBlack},
+          {[styles.line_hover_nav]: !isBlack}
+        )}>
         <Link href="/">
           <a>Home</a>
         </Link>
