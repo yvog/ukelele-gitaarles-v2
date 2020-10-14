@@ -1,3 +1,6 @@
+export { Experience } from './experience/experience';
+export { UspBar } from './usp-bar/usp-bar';
+export {AboutMe} from './about-me/about-me';
 export {AboutMeSummary} from './about-me-summary/about-me-summary';
 export {Button} from './button/button';
 export {ExploreSignup} from './explore-signup/explore-signup';
@@ -12,4 +15,3 @@ export {TestimonialsItem} from './testimonials-item/testimonials-item';
 export {Testimonials} from './testimonials/testimonials';
 export {UspItem} from './usp-item/usp-item';
 export {Usp} from './usp/usp';
-

@@ -18,7 +18,7 @@ export const MainHeroComponent: React.FC = () => {
     return (
         <>
             <div ref={myRef} className={styles.main_hero}>
-                <HeaderNavigation variant='white' />
+                <HeaderNavigation/>
 
                 <section>
                     <article id={styles.hero_info}>
