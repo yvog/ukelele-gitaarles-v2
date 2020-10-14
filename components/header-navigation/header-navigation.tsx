@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styles from './header-navigation.module.scss';
+import classNames from 'classnames';
 
 export const HeaderNavigationComponent: React.FC = () => {
   return (
@@ -7,7 +8,7 @@ export const HeaderNavigationComponent: React.FC = () => {
 
       <img src="/images/logo/ugl_logo_white.svg" alt="UGL logo white" width="280" height="100" />
 
-      <nav className={styles.nav}>
+      <nav className={classNames(styles.nav, styles.line_hover_nav)}>
         <Link href="/">
           <a>Home</a>
         </Link>

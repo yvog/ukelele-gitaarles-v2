@@ -6,7 +6,7 @@
     color: #fff;
     border: 2px solid #fff;
     min-width: 224px;
-    padding: 10px;
+    padding: 10px 18px 10px 18px;
     transition: color 0.16s ease, background 0.16s ease;
     letter-spacing: 2px;
     font-size: 14pt;
@@ -17,6 +17,7 @@
     &:visited,
     &:active {
         color: #fff;
+        text-decoration: none;
     }
 
     &:hover {
