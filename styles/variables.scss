@@ -8,4 +8,7 @@ $paragraphFont: 'Open Sans', sans-serif;
 
 /* layout */
 $mainContainerMaxWidth: 1440px;
-$mainInnerContainerMaxWidth: 1024px; 
+$mainInnerContainerMaxWidth: 1024px;
+
+/* shadows */
+$defaultBoxShadow: 4px 4px 10px rgba(0, 0, 0, 0.3);

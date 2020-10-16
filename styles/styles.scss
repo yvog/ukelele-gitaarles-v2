@@ -1,8 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Salsa&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
 
 @import "./variables";
 @import "./fonts";
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
 .main-container {
   margin: 0 auto;
@@ -20,6 +26,7 @@ a {
   &:link,
   &:visited,
   &:active {
+    text-decoration: none;
     color: #fff;
   }
 

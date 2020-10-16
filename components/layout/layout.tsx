@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import {Footer} from '..';
+import { Footer } from '..';
+import styles from './layout.module.scss';
 
 type LayoutProps = {
   title?: string;
@@ -22,7 +23,7 @@ export const LayoutComponent: React.FC<LayoutProps> = ({
       </Head>
 
       { /* for SEO purposes */}
-      <h1 className="hidden">Welkom - Ukelele-Gitaarles</h1>
+      <h1 className="hidden">{title} - Ukelele-Gitaarles</h1>
 
       {children}
 

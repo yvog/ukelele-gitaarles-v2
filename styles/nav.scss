@@ -1,0 +1,47 @@
+nav {
+  &.line_hover_nav {
+    a {
+      position: relative;
+
+      &:after {
+        content: "";
+        opacity: 0;
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        background: #fff;
+        transition: opacity 0.2s ease;
+      }
+
+      &:hover {
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.line_hover_nav_black {
+    a {
+      &:after {
+        content: "";
+        opacity: 0;
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        background: #000;
+        transition: opacity 0.2s ease;
+      }
+
+      &:hover {
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

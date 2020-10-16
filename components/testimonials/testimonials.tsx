@@ -47,13 +47,13 @@ export const TestimonialsComponent: React.FC = () => {
 
                 <Carousel
                     itemsToShow={3}
-                    itemPadding={[16, 16, 16, 16]}
+                    itemPadding={[16, 16, 16, 0]}
                     transitionMs={250}
                     pagination={false}
                     disableArrowsOnEnd={false}
                 >
-                    {testimonials.map((item) => {
-                        return <TestimonialsItem name={item.name} age={item.age} content={item.content} />;
+                    {testimonials.map((item, i) => {
+                        return <TestimonialsItem key={i} name={item.name} age={item.age} content={item.content} />;
                     })}
                 </Carousel>
 
