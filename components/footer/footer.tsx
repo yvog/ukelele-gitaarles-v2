@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import Link from 'next/link';
-import {Button} from '../button/button';
+import { Button } from '../button/button';
 import styles from './footer.module.scss';
 
 export const FooterComponent: React.FC = () => {

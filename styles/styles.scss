@@ -4,6 +4,12 @@
 @import "./variables";
 @import "./fonts";
 
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 .main-container {
   margin: 0 auto;
   max-width: $mainContainerMaxWidth;

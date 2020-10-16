@@ -4,11 +4,11 @@
 .footer {
     color: #fff;
     width: 100%;
-    position: relative;
     padding: 40px;
     font-family: $paragraphFont;
     font-size: 11pt;
     margin-top: 160px;
+    position: relative;
 
     &:after {
         content: "";
