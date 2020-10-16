@@ -13,15 +13,19 @@ export const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps>
   const isBlack = (variant === 'black');
 
   return (
-    <header className={classNames(styles.header, {[styles.black]: isBlack})}>
+    <header className={classNames(styles.header, { [styles.black]: isBlack })}>
 
-      <img src={`/images/logo/ugl_logo_${variant}.svg`} alt="UGL logo white" width="280" height="100" />
+      <Link href="/">
+        <a>
+          <img src={`/images/logo/ugl_logo_${variant}.svg`} alt="UGL logo white" width="280" height="100" />
+        </a>
+      </Link>
 
       <nav className={
         classNames(
           styles.nav,
-          {[styles.line_hover_nav_black]: isBlack},
-          {[styles.line_hover_nav]: !isBlack}
+          { [styles.line_hover_nav_black]: isBlack },
+          { [styles.line_hover_nav]: !isBlack }
         )}>
         <Link href="/">
           <a>Home</a>

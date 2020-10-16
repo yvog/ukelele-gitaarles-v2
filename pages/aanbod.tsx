@@ -1,6 +1,6 @@
 import {HeaderNavigation, Layout, Services} from '../components';
 
-export default function AboutMePage() {
+export default function ServicesPage() {
     return (
         <Layout title="Aanbod">
 

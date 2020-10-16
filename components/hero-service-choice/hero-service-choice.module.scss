@@ -1,0 +1,26 @@
+@import "../styles/variables";
+@import "../styles/hero";
+
+.hero_service_choice {
+    section {
+        margin: 0;
+        padding: 0;
+
+        article {
+            padding: 0;
+            color: #fff;
+
+            img {
+                float: right;
+            }
+
+            &:nth-child(2) {
+                text-align: right;
+
+                img {
+                    float: left;
+                }
+            }
+        }
+    }
+}

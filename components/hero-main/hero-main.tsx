@@ -1,8 +1,9 @@
-import {useEffect, useRef} from 'react';
-import {Button, HeaderNavigation, HeroServices} from '..';
-import styles from './main-hero.module.scss';
+import classNames from 'classnames';
+import { useEffect, useRef } from 'react';
+import { Button, HeaderNavigation, HeroServices } from '..';
+import styles from './hero-main.module.scss';
 
-export const MainHeroComponent: React.FC = () => {
+export const HeroMainComponent: React.FC = () => {
 
     const myRef = useRef(null);
 
@@ -17,8 +18,8 @@ export const MainHeroComponent: React.FC = () => {
 
     return (
         <>
-            <div ref={myRef} className={styles.main_hero}>
-                <HeaderNavigation/>
+            <div ref={myRef} className={classNames(styles.hero_main,  styles.hero)}>
+                <HeaderNavigation />
 
                 <section>
                     <article id={styles.hero_info}>
@@ -34,4 +35,4 @@ export const MainHeroComponent: React.FC = () => {
     );
 };
 
-export const MainHero = MainHeroComponent;
+export const HeroMain = HeroMainComponent;
