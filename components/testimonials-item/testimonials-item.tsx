@@ -6,7 +6,7 @@ type TestimonialsItemProps = {
     content: string;
 };
 
-export const TestimonialsItemComponent: React.FC<TestimonialsItemProps> = ({
+const TestimonialsItemComponent: React.FC<TestimonialsItemProps> = ({
     name,
     age,
     content

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from '../button/button';
 import styles from './footer.module.scss';
 
-export const FooterComponent: React.FC = () => {
+const FooterComponent: React.FC = () => {
     return (
         <footer className={classNames(styles.footer, 'container')}>
             <div className="main-container row">

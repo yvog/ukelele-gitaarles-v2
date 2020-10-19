@@ -1,3 +1,4 @@
+export { CostsCalculator } from './costs-calculator/costs-calculator';
 export { HeroServiceChoiceArticle } from './hero-service-choice-article/hero-service-choice-article';
 export { HeroWrapper } from './hero-wrapper/hero-wrapper';
 export { AboutMeSummary } from './about-me-summary/about-me-summary';

@@ -2,7 +2,7 @@
 import Carousel from 'react-elastic-carousel';
 import styles from './gallery.module.scss';
 
-export const GalleryComponent: React.FC = () => {
+const GalleryComponent: React.FC = () => {
 
     const images: string[] = [
         "/images/gallery/gallery.jpg",

@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import {Button} from '..';
 import styles from './about-me-summary.module.scss';
 
-export const AboutMeSummaryComponent: React.FC = () => {
+const AboutMeSummaryComponent: React.FC = () => {
     return (
         <section className={classNames(styles.about_me_summary, 'container')}>
             <h4>Bert Geldhof</h4>

@@ -6,7 +6,7 @@ type HeaderNavigationComponentProps = {
   variant?: 'white' | 'black';
 };
 
-export const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
+const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
   variant = 'white'
 }) => {
 

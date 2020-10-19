@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import {UspBar} from '..';
 import styles from './about-me.module.scss';
 
-export const AboutMeComponent: React.FC = () => {
+const AboutMeComponent: React.FC = () => {
     return (
         <section className={classNames(styles.about_me, 'main-container')}>
             <h2>Bert Geldhof</h2>
