@@ -1,24 +1,12 @@
 import classNames from 'classnames';
-import { useEffect, useRef } from 'react';
-import { Button, HeaderNavigation, HeroServices } from '..';
+import {useEffect, useRef} from 'react';
+import {Button, HeaderNavigation, HeroServices, HeroWrapper} from '..';
 import styles from './hero-main.module.scss';
 
 export const HeroMainComponent: React.FC = () => {
-
-    const myRef = useRef(null);
-
-    useEffect(() => {
-        window.addEventListener('resize', onResize);
-        onResize();
-    }, []);
-
-    const onResize = () => {
-        myRef.current.style.height = window.innerHeight + 'px';
-    }
-
     return (
         <>
-            <div ref={myRef} className={classNames(styles.hero_main,  styles.hero)}>
+            <HeroWrapper classes={[styles.hero_main]}>
                 <HeaderNavigation />
 
                 <section>
@@ -28,7 +16,7 @@ export const HeroMainComponent: React.FC = () => {
                         <Button href="/aanmelden">Aanmelden</Button>
                     </article>
                 </section>
-            </div>
+            </HeroWrapper>
 
             <HeroServices />
         </>

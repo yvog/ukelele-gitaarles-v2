@@ -1,3 +1,5 @@
+export { HeroServiceChoiceArticle } from './hero-service-choice-article/hero-service-choice-article';
+export { HeroWrapper } from './hero-wrapper/hero-wrapper';
 export { AboutMeSummary } from './about-me-summary/about-me-summary';
 export { AboutMe } from './about-me/about-me';
 export { Button } from './button/button';
