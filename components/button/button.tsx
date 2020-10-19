@@ -5,14 +5,16 @@ type ButtonComponentProps = {
     filled?: boolean;
     children?: React.ReactNode;
     href: string;
+    onClickHandler: (e: any) => void;
 };
-export const ButtonComponent: React.FC<ButtonComponentProps> = ({
+const ButtonComponent: React.FC<ButtonComponentProps> = ({
     children,
     filled = false,
-    href
+    href,
+    onClickHandler
 }) => {
     return (
-        <a href={href} className={classNames(styles.button, {[styles.button_filled]: filled})}>
+        <a onClick={onClickHandler} href={href} className={classNames(styles.button, {[styles.button_filled]: filled})}>
             {children}
         </a>
     );

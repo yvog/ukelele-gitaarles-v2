@@ -3,7 +3,7 @@ import {useEffect, useRef} from 'react';
 import {Button, HeaderNavigation, HeroServices, HeroWrapper} from '..';
 import styles from './hero-main.module.scss';
 
-export const HeroMainComponent: React.FC = () => {
+const HeroMainComponent: React.FC = () => {
     return (
         <>
             <HeroWrapper classes={[styles.hero_main]}>

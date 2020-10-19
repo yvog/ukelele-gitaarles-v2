@@ -6,7 +6,7 @@ type UspItemProps = {
     children?: React.ReactNode;
 };
 
-export const UspItemComponent: React.FC<UspItemProps> = ({
+const UspItemComponent: React.FC<UspItemProps> = ({
     icon,
     children
 }) => {

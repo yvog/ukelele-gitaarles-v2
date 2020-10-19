@@ -10,7 +10,7 @@ type TestimonialData = {
     content: string;
 };
 
-export const TestimonialsComponent: React.FC = () => {
+const TestimonialsComponent: React.FC = () => {
 
     const testimonials: TestimonialData[] = [
         {

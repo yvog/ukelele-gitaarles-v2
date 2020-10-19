@@ -1,7 +1,7 @@
 
 import {ServicesItem} from '..';
 
-export const ServicesComponent: React.FC = () => {
+const ServicesComponent: React.FC = () => {
     return (
         <>
             <h2>Maak muziek</h2>

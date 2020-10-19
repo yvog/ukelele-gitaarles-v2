@@ -1,6 +1,6 @@
 import {UspItem} from '..';
 
-export const UspBarComponent: React.FC = () => {
+const UspBarComponent: React.FC = () => {
     return (
         <div className="row">
             <UspItem icon="/images/icon/icon_metronome.svg">

@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import {HeroServicesItem} from '..';
 import styles from './hero-services.module.scss';
 
-export const HeroServicesComponent: React.FC = () => {
+const HeroServicesComponent: React.FC = () => {
     return (
         <section className={classNames(styles.hero_services, 'container')}>
             <div className="row">
