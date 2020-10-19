@@ -4,8 +4,8 @@
 @import "./variables";
 @import "./fonts";
 
-
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
@@ -34,4 +34,8 @@ a {
     color: #fff;
     text-decoration: none;
   }
+}
+
+.row-eq-height {
+  display: flex;
 }
