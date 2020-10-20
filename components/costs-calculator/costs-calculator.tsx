@@ -22,14 +22,14 @@ const CostsCalculatorComponent: React.FC = () => {
     const [persons, setPersons] = useState<string>('1');
 
     const [error, setError] = useState<string>('');
-    const [price, setPrice] = useState<string>('');
+    const [price, setPrice] = useState<number>(0);
     const [loading, setLoading] = useState<boolean>(false);
 
     const onCalculationStarted = (e: any) => {
         e.preventDefault();
 
         setError('');
-        setPrice('');
+        setPrice(0);
 
         if (postalCode.trim() === "") {
             showError('Vul je postcode in', true);
@@ -161,7 +161,7 @@ const CostsCalculatorComponent: React.FC = () => {
 
     const onCalculateAgain = (e: any) => {
         e.preventDefault();
-        setPrice('');
+        setPrice(0);
         setError('');
     };
 

@@ -7,5 +7,6 @@ module.exports = {
   },
   env: {
     API_BASE_URL: env.API_BASE_URL
-  }
+  },
+  distDir: 'build'
 }
