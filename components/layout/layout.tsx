@@ -7,7 +7,7 @@ type LayoutProps = {
   children?: React.ReactNode;
 };
 
-export const LayoutComponent: React.FC<LayoutProps> = ({
+const LayoutComponent: React.FC<LayoutProps> = ({
   children,
   title = 'Ukelele-Gitaarles',
 }) => {

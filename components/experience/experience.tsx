@@ -2,7 +2,7 @@
 import classNames from 'classnames';
 import styles from './experience.module.scss';
 
-export const ExperienceComponent: React.FC = () => {
+const ExperienceComponent: React.FC = () => {
     return (
         <div className="main-container">
             <div className={classNames('row', styles.experience)}>

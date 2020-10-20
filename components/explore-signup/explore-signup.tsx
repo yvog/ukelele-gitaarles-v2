@@ -1,7 +1,7 @@
 import {Button} from '..';
 import styles from './explore-signup.module.scss';
 
-export const ExploreSignupComponent: React.FC = () => {
+const ExploreSignupComponent: React.FC = () => {
     return (
         <section className={styles.explore_signup}>
             <div className={styles.explore_signup_inner}>

@@ -10,7 +10,7 @@ type ServicesItemComponentProps = {
     url: string;
 };
 
-export const ServicesItemComponent: React.FC<ServicesItemComponentProps> = ({
+const ServicesItemComponent: React.FC<ServicesItemComponentProps> = ({
     src,
     firstTitle,
     secondTitle,
