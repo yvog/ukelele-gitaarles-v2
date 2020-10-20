@@ -9,19 +9,21 @@
     max-width: 396px;
     font-family: $paragraphFont;
     margin-top: 80px;
+    position: relative;
 
     label {
         display: block;
-        margin-top: 24px;
+        margin-top: 40px;
         margin-bottom: 8px;
     }
 
     a {
-        margin-top: 48px;
+        margin-top: 72px;
         width: 100%;
     }
 
-    select, input {
+    select,
+    input {
         text-align: center;
         width: 100%;
         padding: 16px;
@@ -32,5 +34,37 @@
         &:focus {
             outline: none;
         }
+    }
+
+    .spinner {
+        position: absolute;
+        top: 86px;
+        left: 0;
+        right: 0;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto;
+        user-select: none;
+    }
+
+    .price {
+        text-align: center;
+        font-size: 18pt;
+        font-family: $titleFont;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .errors {
+        color: #ff4f4f;
+        margin: 16px auto;
+        padding: 8px;
+        font-family: $paragraphFont;
+        border-radius: 10px;
+        width: 80%;
+        text-align: center;
+        background: #fff;
+        z-index: 1;
+        font-size: 12pt;
     }
 }
