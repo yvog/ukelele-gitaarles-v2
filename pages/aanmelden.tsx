@@ -1,4 +1,4 @@
-import Form from "@rjsf/core";
+import Form, {FormProps} from "@rjsf/core";
 import {HeaderNavigation, Layout} from '../components';
 
 export default function SignUpPage() {
@@ -106,7 +106,7 @@ export default function SignUpPage() {
 
                 <article /*className={styles.signup_form_container}*/>
                     <Form
-                        schema={schema}
+                        schema={schema as any}
                         liveValidate={true}
                         uiSchema={uiSchema}
                         onChange={(e) => console.log("changed")}

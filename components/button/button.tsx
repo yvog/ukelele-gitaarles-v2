@@ -6,7 +6,7 @@ type ButtonComponentProps = {
     children?: React.ReactNode;
     href: string;
     disabled?: boolean;
-    onClickHandler: (e: any) => void;
+    onClickHandler?: (e: any) => void;
 };
 const ButtonComponent: React.FC<ButtonComponentProps> = ({
     children,
