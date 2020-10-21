@@ -53,6 +53,7 @@ function process()
         if ($requestAction == CALC_DISTANCE) {
             return json_encode(calculate_distance());
         }
+
     } else {
 
         return json_encode(array(

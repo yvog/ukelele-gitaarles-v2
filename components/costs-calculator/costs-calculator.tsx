@@ -15,7 +15,7 @@ const CostsCalculatorComponent: React.FC = () => {
     const VALID_POSTALCODE_REGEX = /(^\d{4})(\w{2}|[ ]\w{2})$/;
     const MAX_KM_RANGE = 40;
     const LOADING_DELAY = 1250;
-    const BASE_URL = process.env.API_BASE_URL;
+    const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
     const [postalCode, setPostalCode] = useState<string>('');
     const [lessonTime, setLessonTime] = useState<string>('30');

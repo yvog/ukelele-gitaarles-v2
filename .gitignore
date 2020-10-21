@@ -29,7 +29,7 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 env.php
-env.json
+.env
 
 # vscode
 /.vs/
