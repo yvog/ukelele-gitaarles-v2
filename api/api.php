@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(0);
+
 include('./env.php');
 
 header('Content-Type: application/json');
@@ -7,7 +9,6 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET');
 header('Access-Control-Allow-Headers: DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range');
 header('Access-Control-Max-Age: 1728000');
-header('Content-Length: 0');
 
 // ENVIRONMENT VARIABLES
 define('GEOCODING_API_KEY', $_ENV['GEOCODING_API_KEY']);
@@ -51,7 +52,7 @@ function process()
         }
 
         if ($requestAction == CALC_DISTANCE) {
-            return json_encode(calculate_distance());
+            return calculate_distance();
         }
 
     } else {
@@ -59,7 +60,10 @@ function process()
         return json_encode(array(
             'error' => 'invalid'
         ));
+
     }
 }
 
-echo process();
+$output = process();
+
+echo $output;

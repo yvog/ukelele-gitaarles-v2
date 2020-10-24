@@ -22,7 +22,7 @@ const CostsCalculatorComponent: React.FC = () => {
     const [persons, setPersons] = useState<string>('1');
 
     const [error, setError] = useState<string>('');
-    const [price, setPrice] = useState<number>(0);
+    const [price, setPrice] = useState<number>(null);
     const [loading, setLoading] = useState<boolean>(false);
 
     const onCalculationStarted = (e: any) => {
@@ -54,6 +54,8 @@ const CostsCalculatorComponent: React.FC = () => {
         fetchUrl(`${BASE_URL}?action=distance&latlng=${location.lat},${location.lng}`,
             (response: any) => {
                 let json = JSON.parse(response);
+
+                console.log(response);
 
                 if (
                     !json ||
