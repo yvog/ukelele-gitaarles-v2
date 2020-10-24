@@ -8,15 +8,3 @@ install:
 script:
   - npm run build
   - npm run export
-env:
-  global:
-    - secure: aX56DSXp78qjDGlKpVbS8F8mvZ+yzzl8WoE9K7d7PlFUEd/e1314bp5++d+PZ86iSAzCkLV15pkxShrD0NmKBRZP334sEWV9O8NNh6ps3kXXFC0PLy+07P82ZcapfL+fxGYNuHmRCH/sNMJt2SWaLTrGPDUySkbtIaBC2q0bMKx/p7ykEV+G6v++3NAbUN6suT7EfYvTciIAo/N7JQMfrqwsPJwpcBFwugr8FMVjveYTvbP0VlSqDxNsqF9MawAEDVneAf/Oo4ZsRwVSqbrBTywqX43Ze0+ygtF2t27IA6vAK7Q+LfYuJjzyE2NRylynNvof1syGVNRpRF/esxZxsY9FJ0dc1EJtI1RL2Is49F4BkX1/QEvXREusOjE3a8wE8n13OzgQ8LClKEleMkOCEkWtSB7DYXIWFBCtdlpsEkRItvcDYQZSC4RHsIPSzWCXONNCktUU2JNHa4/P2Fj9ux0saUTtDGKkplcwG0sGZvw3nGGCXzznFdxtH829+29JoU2aX7nrhacQtJ5uCEpKTwU5n2ANJeeqTZ3fw7+GFSvwcC8QQ2QU2Z/+tws7BV/1ra02lhY99zFI8oy3GBdO4gSPWLfDH52tSEnUHaSO7Je+RJMUpKfRscA0ALfnUhqpHGv+SlNk/2UgexMOxK3dTXv8dKb82gQIXYL7wZj9FIs=
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  keep_history: true
-  local_dir: out
-  on:
-    branch: master
-    
