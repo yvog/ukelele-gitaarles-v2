@@ -1,7 +1,7 @@
 # Ukelele-Gitaarles v2.0
 [![Build Status](https://travis-ci.org/yvog/ukelele-gitaarles-v2.svg?branch=master)](https://travis-ci.org/yvog/ukelele-gitaarles-v2)
 
-[Ukelele-Gitaarles](https://ukelele-gitaarles.nl) new company website.
+New company website for Ukelele-Gitaarles ([preview](https://ukelele-gitaarles-v2.vercel.app/)).
 
 ### Versions
 ```
