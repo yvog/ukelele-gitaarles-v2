@@ -52,11 +52,8 @@ const CostsCalculatorComponent: React.FC = () => {
 
     const calculateDistance = (location: LocationData): void => {
         fetchUrl(`${BASE_URL}?action=distance&latlng=${location.lat},${location.lng}`,
-            (response: any) => {
-                let json = JSON.parse(response);
-
-                console.log(response);
-
+            (json: any) => {
+                
                 if (
                     !json ||
                     json.status !== 'OK' ||
