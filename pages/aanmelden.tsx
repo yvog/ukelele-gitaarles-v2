@@ -4,9 +4,8 @@ import {HeaderNavigation, Layout} from '../components';
 export default function SignUpPage() {
 
     const schema = {
-        title: "Todo",
         type: "object",
-        required: ["title"],
+        required: [],
         properties: {
             lessonType: {
                 type: "string",
@@ -89,6 +88,21 @@ export default function SignUpPage() {
         }
     };
 
+    const onSubmit = (formData) => {
+        fetch('/api/signup', {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        }).then((res) => {
+            // res.status === 200 ? this.setState({submitted: true}) : ''
+
+            console.log(res)
+        })
+    };
+
     return (
         <Layout title="Aanmelden">
 
@@ -109,8 +123,9 @@ export default function SignUpPage() {
                         schema={schema as any}
                         liveValidate={true}
                         uiSchema={uiSchema}
+                        showErrorList={false}
                         onChange={(e) => console.log("changed")}
-                        onSubmit={() => console.log("submitted")}
+                        onSubmit={onSubmit}
                         onError={() => console.log("errors")} />
                 </article>
             </section>

@@ -26,3 +26,22 @@
         }
     }
 }
+
+@media (max-width: $tablet) {
+    .hero_main {
+        #hero_info {
+            p {
+                font-size: 12pt;
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .hero_main {
+        #hero_info {
+            max-width: 100%;
+        }
+    }
+}
+

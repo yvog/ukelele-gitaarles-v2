@@ -48,3 +48,15 @@
         }
     }
 }
+
+@media (max-width: $tablet) {
+    .button {
+        font-size: 11pt;
+    }
+}
+
+@media (max-width: $mobile) {
+    .button {
+        min-width: 180px;
+    }
+}
