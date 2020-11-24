@@ -16,6 +16,7 @@ const HeroMainComponent: React.FC = () => {
                         <Button href="/aanmelden">Aanmelden</Button>
                     </article>
                 </section>
+                
             </HeroWrapper>
 
             <HeroServices />

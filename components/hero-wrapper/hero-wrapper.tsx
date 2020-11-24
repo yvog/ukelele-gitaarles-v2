@@ -14,9 +14,9 @@ export const HeroWrapperComponent: React.FC<HeroWrapperComponentProps> = ({
     blue = false
 }) => {
 
-    const MIN_HEIGHT = 960;
+    const containerRef = useRef(null);
 
-    const myRef = useRef(null);
+    const MIN_HEIGHT = 800;
 
     useEffect(() => {
         window.addEventListener('resize', onResize);
@@ -24,11 +24,11 @@ export const HeroWrapperComponent: React.FC<HeroWrapperComponentProps> = ({
     }, []);
 
     const onResize = () => {
-        myRef.current.style.height = Math.max(window.innerHeight, MIN_HEIGHT) + 'px';
+        containerRef.current && (containerRef.current.style.height = `${Math.max(window.innerHeight, MIN_HEIGHT)}px`);
     }
 
     return (
-        <div ref={myRef} className={classNames([styles.hero, ...classes, {[styles.blue]: blue}])}>
+        <div ref={containerRef} className={classNames([styles.hero, ...classes, {[styles.blue]: blue}])}>
             {children}
         </div>
     );

@@ -3,8 +3,8 @@ $ukeGitBlue: #1193f5;
 $mainBgColor: #fff;
 
 /* fonts */
-$titleFont: 'Salsa', cursive;
-$paragraphFont: 'Open Sans', sans-serif;
+$titleFont: "Salsa", cursive;
+$paragraphFont: "Open Sans", sans-serif;
 
 /* layout */
 $mainContainerMaxWidth: 1440px;
@@ -12,3 +12,8 @@ $mainInnerContainerMaxWidth: 1024px;
 
 /* shadows */
 $defaultBoxShadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+
+/* breakpoints */
+$smallDesktop: 1160px;
+$tablet: 980px;
+$mobile: 760px;
