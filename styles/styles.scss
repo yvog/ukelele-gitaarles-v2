@@ -30,6 +30,44 @@ a {
   }
 }
 
+.signup-form {
+  #root {
+    div {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(6),
+      &:nth-child(11),
+      &:nth-child(12) {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
+.maintenance-form {
+  #root {
+    div {
+      &:nth-child(1),
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6) {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
+.contact-form {
+  #root {
+    div {
+      &:nth-child(5),
+      &:nth-child(6) {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
 .row-eq-height {
   display: flex;
 }

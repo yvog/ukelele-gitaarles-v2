@@ -1,5 +1,5 @@
-import Form, {FormProps} from "@rjsf/core";
-import {HeaderNavigation, Layout} from '../components';
+import React from 'react';
+import {CustomForm, HeaderNavigation, Layout} from '../components';
 
 export default function SignUpPage() {
 
@@ -118,15 +118,14 @@ export default function SignUpPage() {
                     </p>
                 </article>
 
-                <article /*className={styles.signup_form_container}*/>
-                    <Form
-                        schema={schema as any}
-                        liveValidate={true}
+                <article>
+                    <CustomForm
+                        schema={schema}
                         uiSchema={uiSchema}
-                        showErrorList={false}
-                        onChange={(e) => console.log("changed")}
-                        onSubmit={onSubmit}
-                        onError={() => console.log("errors")} />
+                        action='/api/signup'
+                        method='POST'
+                        className='signup-form'
+                    />
                 </article>
             </section>
 
