@@ -1,7 +1,7 @@
 import {HeaderNavigation, Layout, Services} from '../components';
 
 export default function ServicesPage() {
-    return ( 
+    return (
         <Layout title="Aanbod">
 
             <div className="main-container">

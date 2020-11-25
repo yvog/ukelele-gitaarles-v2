@@ -1,0 +1,76 @@
+@import "../styles/variables";
+
+.custom_form {
+    max-width: 550px;
+
+    fieldset {
+        border: none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 32px;
+        margin: 0;
+        padding: 0;
+    }
+
+    label {
+        display: block;
+        margin: 24px 16px 4px 16px;
+    }
+
+    input,
+    textarea {
+        background: #fff;
+        border-radius: 50px;
+        padding: 8px 16px;
+        border: 1px solid #ddd;
+        transition: border 0.15s ease, background 0.15s ease;
+
+        &:not([type="radio"]):not([type="checkbox"]) {
+            width: 100%;
+        }
+
+        &:focus {
+            outline: none;
+            border: 1px solid $ukeGitBlue;
+        }
+
+        &:hover {
+            &:not(:focus) {
+                border: 1px solid #555;
+            }
+        }
+    }
+
+    textarea {
+        height: 200px;
+        border-radius: 25px;
+    }
+
+    :global {
+        .field-radio-group {
+            div {
+                display: inline-block;
+                margin-right: 16px;
+            }
+        }
+
+        .checkbox,
+        .radio {
+            margin-right: 0 !important;
+
+            label {
+                margin: 0;
+            }
+            span {
+                margin-left: 0;
+                padding: 16px;
+            }
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            min-width: 0;
+        }
+    }
+}
