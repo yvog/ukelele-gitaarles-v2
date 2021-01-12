@@ -30,6 +30,7 @@
         h4 {
             color: #fff;
             font-size: 34pt;
+            word-wrap: break-word;
         }
 
         p {
@@ -42,6 +43,37 @@
 
         a {
             margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .explore_signup {
+        .explore_signup_inner {
+            padding: 96px 72px;
+            max-width: 75%;
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .explore_signup {
+        &:after {
+            top: 24px;
+        }
+        
+        .explore_signup_inner {
+            padding: 24px 36px;
+         
+            h4 {
+                font-size: 16pt;
+            }
+
+            p {
+                margin-top: 20px;
+                margin-bottom: 40px;
+                font-size: 12pt;
+            }
         }
     }
 }

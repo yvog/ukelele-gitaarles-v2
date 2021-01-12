@@ -1,7 +1,16 @@
+@import "../styles/variables";
+
 .usp_item {
     margin: 24px 0 112px 0;
 
     img {
         margin-bottom: 14px;
+    }
+}
+
+@media (max-width: $tablet) {
+    .usp_item {
+        text-align: center;
+        margin: 0 0 64px 0;
     }
 }
