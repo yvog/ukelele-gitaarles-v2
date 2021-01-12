@@ -63,11 +63,6 @@ export default function RequestMaintenancePage() {
                     <p>
                         Vul onderstaand formulier in om reparatie of onderhoud voor je snaarinstrument aan te vragen.
                     </p>
-
-                    TODO: in 3 stappen uitleggen hoe het werkt
-                    1) vul formulier in
-                    2) terugkoppeling Bert voor offerte / maken fysieke afspraak via mail
-                    3) ...
                 </article>
 
                 <article>
