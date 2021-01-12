@@ -7,10 +7,9 @@
     padding: 14px;
     border: none;
     position: fixed;
-    left: 0;
+    right: 32px;
     margin: 0 auto;
     bottom: 36px;
-    right: 0;
     z-index: 9999;
     box-shadow: $lightBoxShadow;
     transition: background 0.2s ease;
@@ -20,8 +19,15 @@
         background: #ededed;
     }
 
-    &:active {
-        background: #ededed;
+    &:active, &:focus {
+        background: #fff;
+    }
+
+    img {
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+        padding-top: 2px;
     }
 }
 
@@ -31,6 +37,6 @@
 
 @media (max-width: $mobile) {
     .menu_button {
-        display: block;
+        display: flex;
     }
 }

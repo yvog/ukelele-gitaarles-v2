@@ -1,4 +1,4 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import Carousel from 'react-elastic-carousel';
 import {TestimonialsItem} from '..';
 import {Button} from '../button/button';
@@ -35,9 +35,24 @@ const TestimonialsComponent: React.FC = () => {
         },
     ];
 
+    const [itemsToShow, setItemsToShow] = useState<number>(3)
+
     useEffect(() => {
-        // 
-    }, []);
+
+        function updateItemsToShow() {
+            if (window.innerWidth <= 760) {
+                setItemsToShow(1)
+            } else {
+                setItemsToShow(3)
+            }
+        }
+
+        updateItemsToShow();
+
+        window.addEventListener('resize', updateItemsToShow)
+
+        return () => window.removeEventListener('resize', updateItemsToShow)
+    }, [itemsToShow]);
 
     return (
         <section className={styles.testimonials}>
@@ -46,9 +61,9 @@ const TestimonialsComponent: React.FC = () => {
                 <h4>Anderen zijn je voorgegaan</h4>
 
                 <Carousel
-                    itemsToShow={3}
+                    itemsToShow={itemsToShow}
                     itemPadding={[16, 16, 16, 0]}
-                    transitionMs={250}
+                    transitionMs={200}
                     pagination={false}
                     disableArrowsOnEnd={false}
                 >

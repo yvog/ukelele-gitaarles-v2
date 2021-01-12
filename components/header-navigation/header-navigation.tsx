@@ -14,7 +14,7 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
   const isBlack = (variant === 'black');
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
-  const onMenuOpen = useCallback(() => {
+  const onMenuOpen = () => {
     if (!menuOpen) {
       setMenuOpen(true)
       document.body.style.overflow = 'hidden'
@@ -22,7 +22,7 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
       setMenuOpen(false)
       document.body.style.overflow = ''
     }
-  }, [menuOpen])
+  }
 
   const menuButtonLabel = menuOpen ? 'Close' : 'Menu'
 
@@ -72,7 +72,7 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
         </div>
       </nav>
 
-      <MenuButton label={menuButtonLabel} onMenuOpen={onMenuOpen} />
+      <MenuButton icon={`/images/icon/icon_${menuOpen ? 'close' : 'menu'}.svg`} label={menuButtonLabel} onMenuOpen={onMenuOpen} />
 
     </header>
   )

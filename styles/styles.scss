@@ -76,6 +76,7 @@ a {
   margin: 0 auto;
   padding: 20px 100px 0 100px;
   max-width: $mainContainerMaxWidth;
+  overflow: hidden;
 }
 
 @media (max-width: $smallDesktop) {

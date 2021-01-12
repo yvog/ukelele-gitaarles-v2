@@ -3,15 +3,17 @@ import styles from './menu-button.module.scss';
 type MenuButtonComponentProps = {
     onMenuOpen: () => void;
     label: string;
+    icon: string;
 };
 
 const MenuButtonComponent: React.FC<MenuButtonComponentProps> = ({
     onMenuOpen,
-    label
+    label,
+    icon
 }) => {
     return (
         <button onClick={onMenuOpen} className={styles.menu_button}>
-            <img src="/images/icons/menu.svg" width="40" height="40" alt="menu" /> {label}
+            <img src={icon} width="18" height="18" alt="menu" /> {label}
         </button>
     );
 };
