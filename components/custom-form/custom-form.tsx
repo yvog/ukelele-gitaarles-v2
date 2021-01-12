@@ -1,6 +1,7 @@
 import Form from '@rjsf/core';
 import classNames from 'classnames';
 import React from 'react';
+import {Button} from '..';
 import styles from './custom-form.module.scss';
 
 type CustomFormProps = {

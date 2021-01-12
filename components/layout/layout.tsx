@@ -1,6 +1,7 @@
 import Head from 'next/head';
-import { Footer } from '..';
+import {Footer} from '..';
 import styles from './layout.module.scss';
+import {MenuButton} from '../menu-button/menu-button';
 
 type LayoutProps = {
   title?: string;
@@ -11,6 +12,7 @@ const LayoutComponent: React.FC<LayoutProps> = ({
   children,
   title = 'Ukelele-Gitaarles',
 }) => {
+
   return (
     <>
       <Head>
