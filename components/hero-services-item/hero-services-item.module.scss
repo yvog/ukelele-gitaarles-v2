@@ -1,3 +1,5 @@
+@import "../styles/variables";
+
 .hero_services_item {
     padding: 0 16px 0 16px;
     color: #fff;
@@ -9,6 +11,20 @@
 
     img {
         margin-bottom: 18px;
-        fill: #fff;
+        filter: invert(100%);
+    }
+}
+
+@media (max-width: $tablet) {
+    .hero_services_item {
+        p {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .hero_services_item {
+        padding: 0;
     }
 }

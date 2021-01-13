@@ -1,3 +1,4 @@
+import { CustomForm } from './custom-form/custom-form';
 export { CostsCalculator } from './costs-calculator/costs-calculator';
 export { HeroServiceChoiceArticle } from './hero-service-choice-article/hero-service-choice-article';
 export { HeroWrapper } from './hero-wrapper/hero-wrapper';
@@ -21,3 +22,4 @@ export { Testimonials } from './testimonials/testimonials';
 export { UspBar } from './usp-bar/usp-bar';
 export { UspItem } from './usp-item/usp-item';
 export { Usp } from './usp/usp';
+export {CustomForm} from './custom-form/custom-form'

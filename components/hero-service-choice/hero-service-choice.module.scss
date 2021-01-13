@@ -13,7 +13,6 @@
             color: #fff;
             padding-top: 100px;
             transition: transform 0.15s ease, opacity 0.15s ease;
-            
 
             h2 {
                 margin-bottom: 48px;
@@ -92,6 +91,53 @@
                             transform: translate(0, 0) !important;
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .hero_service_choice {
+        section {
+            display: block;
+
+            article {
+                padding-top: 0;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 72px;
+
+                &:nth-child(2) {
+                    text-align: center;
+
+                    p {
+                        text-align: center;
+                        float: unset;
+                    }
+                }
+
+                h2 {
+                    text-align: center;
+                    margin-bottom: 16px;
+                }
+
+                p {
+                    text-align: center;
+                    margin: 24px auto 24px auto;
+                }
+
+                .button_wrap {
+                    float: unset;
+                    margin: 0 auto;
+
+                    a {
+                        margin-top: 0;
+                    }
+                }
+
+                .crop {
+                    display: none;
                 }
             }
         }

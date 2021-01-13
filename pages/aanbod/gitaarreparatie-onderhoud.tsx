@@ -11,7 +11,7 @@ export default function GuitarRepairsOrMaintenance() {
                         <HeroServiceChoiceArticle
                             title="Reparatie"
                             buttonSubject="reparatie aanvragen"
-                            buttonUrl="/aanmelden"
+                            buttonUrl="/aanvragen"
                             imgSrc="/images/misc/repair.png"
                             imgSize={[580, 'auto']}
                             cropWidth={112}
@@ -22,7 +22,7 @@ export default function GuitarRepairsOrMaintenance() {
                         <HeroServiceChoiceArticle
                             title="Onderhoud"
                             buttonSubject="onderhoud aanvragen"
-                            buttonUrl="/aanmelden"
+                            buttonUrl="/aanvragen"
                             imgSrc="/images/misc/maintenance.png"
                             imgSize={[580, 'auto']}
                             cropWidth={120}

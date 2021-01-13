@@ -61,3 +61,62 @@
         }
     }
 }
+
+@media (max-width: $tablet) {
+    .footer {
+        & > div {
+            display: flex;
+            padding: 0;
+            justify-content: space-between;
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .footer {
+        padding-bottom: 60px;
+        padding: 24px;
+
+        h3 {
+            font-size: 18pt;
+        }
+
+        & > div {
+            display: block;
+
+            .footer_nav {
+                text-align: center;
+                margin-bottom: 36px;
+
+                nav {
+                    a {
+                        margin: 0 auto;
+                        padding: 12px;
+                        text-align: center;
+                        width: 100px;
+                    }
+                }
+            }
+
+            .footer_contact {
+                text-align: center;
+                margin-bottom: 36px;
+
+                a {
+                    display: block;
+                    max-width: 75%;
+                    margin: 16px auto 16px auto;
+                }
+            }
+
+            .footer_companydetails {
+                text-align: center;
+                margin-bottom: 36px;
+
+                span {
+                    margin-top: 16px;
+                }
+            }
+        }
+    }
+}

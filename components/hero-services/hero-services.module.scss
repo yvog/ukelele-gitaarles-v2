@@ -4,7 +4,7 @@
     width: 100%;
     padding: 24px 36px 46px 36px;
     position: relative;
-    margin-top: -244px;
+    margin-top: -180px;
 
     &:after {
         content: "";
@@ -25,5 +25,22 @@
 
     p {
         font-size: 11pt;
+    }
+}
+
+
+@media (max-width: $smallDesktop) {
+    .hero_services {
+        margin-top: -72px;
+    }
+}
+
+@media (max-width: $tablet) {
+    .hero_services {
+        padding: 24px 30px 16px 30px;
+
+        h3 {
+            font-size: 18pt;
+        }
     }
 }

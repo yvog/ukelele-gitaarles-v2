@@ -1,12 +1,11 @@
-import Form, {FormProps} from "@rjsf/core";
-import {HeaderNavigation, Layout} from '../components';
+import React from 'react';
+import {CustomForm, HeaderNavigation, Layout} from '../components';
 
 export default function SignUpPage() {
 
     const schema = {
-        title: "Todo",
         type: "object",
-        required: ["title"],
+        required: [],
         properties: {
             lessonType: {
                 type: "string",
@@ -89,6 +88,21 @@ export default function SignUpPage() {
         }
     };
 
+    const onSubmit = (formData) => {
+        fetch('/api/signup', {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        }).then((res) => {
+            // res.status === 200 ? this.setState({submitted: true}) : ''
+
+            console.log(res)
+        })
+    };
+
     return (
         <Layout title="Aanmelden">
 
@@ -104,14 +118,14 @@ export default function SignUpPage() {
                     </p>
                 </article>
 
-                <article /*className={styles.signup_form_container}*/>
-                    <Form
-                        schema={schema as any}
-                        liveValidate={true}
+                <article>
+                    <CustomForm
+                        schema={schema}
                         uiSchema={uiSchema}
-                        onChange={(e) => console.log("changed")}
-                        onSubmit={() => console.log("submitted")}
-                        onError={() => console.log("errors")} />
+                        action='/api/signup'
+                        method='POST'
+                        className='signup-form'
+                    />
                 </article>
             </section>
 

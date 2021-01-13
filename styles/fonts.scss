@@ -10,6 +10,7 @@ h6 {
     letter-spacing: 1px;
     margin: 0;
     padding: 0;
+    word-break: break-word;
 }
 
 h2 {
@@ -35,4 +36,26 @@ p {
 
 button {
     letter-spacing: 1px;
+}
+
+@media (max-width: $tablet) {
+    h1 {
+        //
+    }
+
+    h2 {
+        font-size: 36pt;
+    }
+
+    h3 {
+        font-size: 13pt;
+    }
+
+    h4 {
+        font-size: 24pt;
+    }
+
+    p {
+        font-size: 10pt;
+    }
 }

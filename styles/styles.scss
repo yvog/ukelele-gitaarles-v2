@@ -10,12 +10,6 @@ body {
   margin: 0;
 }
 
-.main-container {
-  margin: 0 auto;
-  max-width: $mainContainerMaxWidth;
-  padding: 20px 100px 0 100px;
-}
-
 .hidden {
   display: none;
 }
@@ -36,6 +30,101 @@ a {
   }
 }
 
+.signup-form {
+  #root {
+    div {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(6),
+      &:nth-child(11),
+      &:nth-child(12) {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
+.maintenance-form {
+  #root {
+    div {
+      &:nth-child(1),
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6) {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
+.contact-form {
+  #root {
+    div {
+      &:nth-child(5),
+      &:nth-child(6) {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+
+  .repair-title {
+    font-size: 20pt;
+  }
+  
+  .signup-form {
+    #root {
+      div {
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(6),
+        &:nth-child(11),
+        &:nth-child(12) {
+          grid-column: unset;
+        }
+      }
+    }
+  }
+
+  .maintenance-form {
+    #root {
+      div {
+        &:nth-child(1),
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6) {
+          grid-column: unset;
+        }
+      }
+    }
+  }
+
+  .contact-form {
+    #root {
+      div {
+        &:nth-child(5),
+        &:nth-child(6) {
+          grid-column: unset;
+        }
+      }
+    }
+  }
+}
+
 .row-eq-height {
   display: flex;
+}
+
+.main-container {
+  margin: 0 auto;
+  padding: 20px 100px 0 100px;
+  max-width: $mainContainerMaxWidth;
+}
+
+@media (max-width: $smallDesktop) {
+  .main-container {
+    padding: 20px 40px 0 40px;
+  }
 }
