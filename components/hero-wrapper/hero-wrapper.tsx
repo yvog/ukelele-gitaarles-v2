@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import {useEffect, useRef} from 'react';
+import {useCallback, useEffect, useRef} from 'react';
 import styles from './hero-wrapper.module.scss';
 
 type HeroWrapperComponentProps = {
@@ -15,9 +15,7 @@ export const HeroWrapperComponent: React.FC<HeroWrapperComponentProps> = ({
     blue = false,
     forceMinHeight = null
 }) => {
-
     const containerRef = useRef(null);
-
     const MIN_HEIGHT = forceMinHeight ?? 800;
 
     useEffect(() => {
@@ -25,9 +23,9 @@ export const HeroWrapperComponent: React.FC<HeroWrapperComponentProps> = ({
         onResize();
     }, []);
 
-    const onResize = () => {
+    const onResize = useCallback(() => {
         containerRef.current && (containerRef.current.style.height = `${Math.max(window.innerHeight, MIN_HEIGHT)}px`);
-    }
+    }, [containerRef])
 
     return (
         <div ref={containerRef} className={classNames([styles.hero, ...classes, {[styles.blue]: blue}])}>
