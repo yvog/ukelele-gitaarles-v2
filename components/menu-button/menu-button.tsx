@@ -1,21 +1,21 @@
-import styles from './menu-button.module.scss';
+import styles from "./menu-button.module.scss";
 
 type MenuButtonComponentProps = {
-    onMenuOpen: () => void;
-    label: string;
-    icon: string;
+  onMenuOpen: () => void;
+  label: string;
+  icon: string;
 };
 
 const MenuButtonComponent: React.FC<MenuButtonComponentProps> = ({
-    onMenuOpen,
-    label,
-    icon
+  onMenuOpen,
+  label,
+  icon,
 }) => {
-    return (
-        <button onClick={onMenuOpen} className={styles.menu_button}>
-            <img src={icon} width="18" height="18" alt="menu" /> {label}
-        </button>
-    );
+  return (
+    <button onClick={onMenuOpen} className={styles.menu_button}>
+      {/* <img src={icon} width="18" height="18" alt="menu" /> {label} */}
+    </button>
+  );
 };
 
 export const MenuButton = MenuButtonComponent;

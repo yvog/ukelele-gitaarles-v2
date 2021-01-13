@@ -1,48 +1,44 @@
-import classNames from 'classnames';
-import Link from 'next/link';
-import React, {useCallback, useState} from 'react';
-import styles from './header-navigation.module.scss';
-import {MenuButton} from '../menu-button/menu-button';
+import classNames from "classnames";
+import Link from "next/link";
+import React, { useCallback, useState } from "react";
+import styles from "./header-navigation.module.scss";
+import { MenuButton } from "../menu-button/menu-button";
 
 type HeaderNavigationComponentProps = {
-  variant?: 'white' | 'black';
+  variant?: "white" | "black";
 };
 
 const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
-  variant = 'white'
+  variant = "white",
 }) => {
-  const isBlack = (variant === 'black');
+  const isBlack = variant === "black";
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   const onMenuOpen = useCallback(() => {
     if (!menuOpen) {
-      setMenuOpen(true)
+      setMenuOpen(true);
     } else {
-      setMenuOpen(false)
+      setMenuOpen(false);
     }
-  }, [setMenuOpen])
+  }, [setMenuOpen]);
 
-  const menuButtonLabel = menuOpen ? 'Close' : 'Menu'
+  const menuButtonLabel = menuOpen ? "Close" : "Menu";
 
   return (
-    <header className={classNames(styles.header, {[styles.black]: isBlack})}>
-
+    <header className={classNames(styles.header, { [styles.black]: isBlack })}>
       <Link href="/">
         <a>
-          <img className={styles.logo} src={`/images/logo/ugl_logo_${variant}.svg`} alt="UGL logo white" width="280" height="100" />
+          {/* <img className={styles.logo} src={`/images/logo/ugl_logo_${variant}.svg`} alt="UGL logo white" width="280" height="100" /> */}
         </a>
       </Link>
 
-      <nav className={
-        classNames(
-          styles.nav,
-          {
-            [styles.line_hover_nav_black]: isBlack,
-            [styles.line_hover_nav]: !isBlack,
-            [styles.show]: menuOpen
-          }
-        )}>
-
+      <nav
+        className={classNames(styles.nav, {
+          [styles.line_hover_nav_black]: isBlack,
+          [styles.line_hover_nav]: !isBlack,
+          [styles.show]: menuOpen,
+        })}
+      >
         <div className={styles.nav_inner}>
           <Link href="/">
             <a>Home</a>
@@ -74,10 +70,13 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
         </div>
       </nav>
 
-      <MenuButton icon={`/images/icon/icon_${menuOpen ? 'close' : 'menu'}.svg`} label={menuButtonLabel} onMenuOpen={onMenuOpen} />
-
+      <MenuButton
+        icon={`/images/icon/icon_${menuOpen ? "close" : "menu"}.svg`}
+        label={menuButtonLabel}
+        onMenuOpen={onMenuOpen}
+      />
     </header>
-  ) 
+  );
 };
 
 export const HeaderNavigation = HeaderNavigationComponent;
