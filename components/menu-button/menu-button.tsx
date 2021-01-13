@@ -1,7 +1,7 @@
 import styles from './menu-button.module.scss';
 
 type MenuButtonComponentProps = {
-    onMenuOpen: () => void;
+    onMenuOpen: void;
     label: string;
     icon: string;
 };
