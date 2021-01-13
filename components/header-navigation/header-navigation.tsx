@@ -17,10 +17,8 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
   const onMenuOpen = () => {
     if (!menuOpen) {
       setMenuOpen(true)
-      document.body.style.overflow = 'hidden'
     } else {
       setMenuOpen(false)
-      document.body.style.overflow = ''
     }
   }
 
@@ -60,6 +58,10 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
 
           <Link href="/leskosten">
             <a>Leskosten</a>
+          </Link>
+
+          <Link href="/aanvragen">
+            <a>Reparatie / onderhoud</a>
           </Link>
 
           <Link href="/aanmelden">

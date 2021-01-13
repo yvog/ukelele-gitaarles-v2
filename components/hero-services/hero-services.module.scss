@@ -29,6 +29,12 @@
 }
 
 
+@media (max-width: $smallDesktop) {
+    .hero_services {
+        margin-top: -72px;
+    }
+}
+
 @media (max-width: $tablet) {
     .hero_services {
         padding: 24px 30px 16px 30px;

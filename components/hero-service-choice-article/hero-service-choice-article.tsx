@@ -1,5 +1,7 @@
+import classNames from 'classnames';
 import {Button} from '..';
 import parentStyles from '../hero-service-choice/hero-service-choice.module.scss';
+import styles from '../hero-service-choice-article.module.scss';
 
 type HeroServiceChoiceArticleComponentProps = {
     children: React.ReactNode;
@@ -23,7 +25,7 @@ const HeroServiceChoiceArticleComponent: React.FC<HeroServiceChoiceArticleCompon
     reversed = false
 }) => {
     return (
-        <article className="col-lg-6">
+        <article className={classNames('col-lg-6')}>
 
             <div className={parentStyles.crop} style={{width: cropWidth + 'px'}}>
                 <img src={imgSrc} height={imgSize[0]} width={imgSize[1]} alt={imgSrc} style={{

@@ -27,6 +27,16 @@
     }
 }
 
+@media (max-width: $smallDesktop) {
+    .hero_main {
+        #hero_info {
+            max-width: 600px;
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+}
+
 @media (max-width: $tablet) {
     .hero_main {
         #hero_info {

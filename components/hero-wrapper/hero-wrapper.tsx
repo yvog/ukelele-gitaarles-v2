@@ -6,17 +6,19 @@ type HeroWrapperComponentProps = {
     classes: string[];
     blue?: boolean;
     children: React.ReactNode;
+    forceMinHeight?: number;
 };
 
 export const HeroWrapperComponent: React.FC<HeroWrapperComponentProps> = ({
     classes,
     children,
-    blue = false
+    blue = false,
+    forceMinHeight = null
 }) => {
 
     const containerRef = useRef(null);
 
-    const MIN_HEIGHT = 800;
+    const MIN_HEIGHT = forceMinHeight ?? 800;
 
     useEffect(() => {
         window.addEventListener('resize', onResize);
