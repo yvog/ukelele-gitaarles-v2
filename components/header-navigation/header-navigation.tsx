@@ -35,7 +35,7 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
         className={classNames(styles.nav, {
           [styles.line_hover_nav_black]: isBlack,
           [styles.line_hover_nav]: !isBlack,
-          [styles.show]: menuOpen,
+          //[styles.show]: menuOpen,
         })}
       >
         <div className={styles.nav_inner}>
