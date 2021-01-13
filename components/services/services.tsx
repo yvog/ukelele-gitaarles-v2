@@ -1,13 +1,15 @@
 
+import classNames from 'classnames';
 import {ServicesItem} from '..';
+import styles from './services.module.scss';
 
 const ServicesComponent: React.FC = () => {
     return (
-        <>
+        <div className={styles.services}>
             <h2>Maak muziek</h2>
             <p>Jong of oud, gitaar of piano. Geniet van het muziek maken. Waar kan ik je mee helpen?</p>
 
-            <div className="row">
+            <div className={classNames('row', styles.services_row)}>
 
                 <ServicesItem
                     src="/images/background/aanbod_ukeleleles_gitaarles.jpg"
@@ -31,7 +33,7 @@ const ServicesComponent: React.FC = () => {
                 />
 
             </div>
-        </>
+        </div>
     )
 };
 

@@ -9,14 +9,12 @@ const HeroServiceChoiceComponent: React.FC<HeroServiceChoiceComponentProps> = ({
     children
 }) => {
     return (
-        <>
-            <HeroWrapper classes={[styles.hero_service_choice]} blue={true}>
-                <HeaderNavigation />
-                
-                {children}
+        <HeroWrapper forceMinHeight={900} classes={[styles.hero_service_choice]} blue={true}>
+            <HeaderNavigation />
 
-            </HeroWrapper>
-        </>
+            {children}
+
+        </HeroWrapper>
     );
 };
 

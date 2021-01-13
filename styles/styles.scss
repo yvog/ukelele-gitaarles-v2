@@ -68,6 +68,51 @@ a {
   }
 }
 
+@media (max-width: $mobile) {
+
+  .repair-title {
+    font-size: 20pt;
+  }
+  
+  .signup-form {
+    #root {
+      div {
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(6),
+        &:nth-child(11),
+        &:nth-child(12) {
+          grid-column: unset;
+        }
+      }
+    }
+  }
+
+  .maintenance-form {
+    #root {
+      div {
+        &:nth-child(1),
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6) {
+          grid-column: unset;
+        }
+      }
+    }
+  }
+
+  .contact-form {
+    #root {
+      div {
+        &:nth-child(5),
+        &:nth-child(6) {
+          grid-column: unset;
+        }
+      }
+    }
+  }
+}
+
 .row-eq-height {
   display: flex;
 }
@@ -76,7 +121,6 @@ a {
   margin: 0 auto;
   padding: 20px 100px 0 100px;
   max-width: $mainContainerMaxWidth;
-  overflow: hidden;
 }
 
 @media (max-width: $smallDesktop) {

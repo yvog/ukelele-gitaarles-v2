@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import Link from 'next/link';
-import { Button } from '../button/button';
+import {Button} from '../button/button';
 import styles from './footer.module.scss';
 
 const FooterComponent: React.FC = () => {
@@ -20,6 +20,10 @@ const FooterComponent: React.FC = () => {
 
                         <Link href="/leskosten">
                             <a>Leskosten</a>
+                        </Link>
+
+                        <Link href="/aanvragen">
+                            <a>Reparatie / onderhoud</a>
                         </Link>
 
                         <Link href="/aanmelden">

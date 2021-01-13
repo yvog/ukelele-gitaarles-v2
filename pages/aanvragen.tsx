@@ -59,7 +59,7 @@ export default function RequestMaintenancePage() {
 
             <section className="main-container">
                 <article>
-                    <h2>Reparatie/onderhoud aanvragen</h2>
+                    <h2 className='repair-title'>Reparatie/onderhoud aanvragen</h2>
                     <p>
                         Vul onderstaand formulier in om reparatie of onderhoud voor je snaarinstrument aan te vragen.
                     </p>

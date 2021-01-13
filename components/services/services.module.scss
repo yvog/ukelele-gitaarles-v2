@@ -1,0 +1,24 @@
+@import "../../styles/variables";
+
+.services {
+    .services_row {
+        //
+    }
+}
+
+@media (max-width: $smallDesktop) {
+    .services {
+        .services_row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .services {
+        .services_row {
+            justify-content: center;
+        }
+    }
+}
