@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import Link from 'next/link';
-import React, {useMemo, useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import styles from './header-navigation.module.scss';
 import {MenuButton} from '../menu-button/menu-button';
 
@@ -14,7 +14,7 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
   const isBlack = (variant === 'black');
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
-  const onMenuOpen = useMemo(() => {
+  const onMenuOpen = useCallback(() => {
     if (!menuOpen) {
       setMenuOpen(true)
     } else {
@@ -77,7 +77,7 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
       <MenuButton icon={`/images/icon/icon_${menuOpen ? 'close' : 'menu'}.svg`} label={menuButtonLabel} onMenuOpen={onMenuOpen} />
 
     </header>
-  )
+  ) 
 };
 
 export const HeaderNavigation = HeaderNavigationComponent;
