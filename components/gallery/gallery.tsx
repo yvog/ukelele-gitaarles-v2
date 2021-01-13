@@ -1,4 +1,4 @@
-import Carousel from "react-elastic-carousel";
+//import Carousel from "react-elastic-carousel";
 import styles from "./gallery.module.scss";
 
 const GalleryComponent: React.FC = () => {
