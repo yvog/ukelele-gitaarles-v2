@@ -1,8 +1,7 @@
 import classNames from "classnames";
 import Link from "next/link";
-import React, { useCallback, useState } from "react";
+import React from "react";
 import styles from "./header-navigation.module.scss";
-import { MenuButton } from "../menu-button/menu-button";
 
 type HeaderNavigationComponentProps = {
   variant?: "white" | "black";
@@ -12,17 +11,17 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
   variant = "white",
 }) => {
   const isBlack = variant === "black";
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  // const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
-  const onMenuOpen = useCallback(() => {
-    if (!menuOpen) {
-      setMenuOpen(true);
-    } else {
-      setMenuOpen(false);
-    }
-  }, [setMenuOpen]);
+  // const onMenuOpen = useCallback(() => {
+  //   if (!menuOpen) {
+  //     setMenuOpen(true);
+  //   } else {
+  //     setMenuOpen(false);
+  //   }
+  // }, [setMenuOpen]);
 
-  const menuButtonLabel = menuOpen ? "Close" : "Menu";
+  // const menuButtonLabel = menuOpen ? "Close" : "Menu";
 
   return (
     <header className={classNames(styles.header, { [styles.black]: isBlack })}>
@@ -70,11 +69,11 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
         </div>
       </nav>
 
-      <MenuButton
+      {/* <MenuButton
         icon={`/images/icon/icon_${menuOpen ? "close" : "menu"}.svg`}
         label={menuButtonLabel}
         onMenuOpen={onMenuOpen}
-      />
+      /> */}
     </header>
   );
 };
