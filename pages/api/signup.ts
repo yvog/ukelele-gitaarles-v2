@@ -1,36 +1,36 @@
-const nodemailer = require('nodemailer')
-const sgTransport = require('nodemailer-sendgrid-transport')
-
-const transporter = nodemailer.createTransport(sgTransport({
-  auth: {
-    api_key: process.env.SENDGRID_API_KEY
-  }
-}))
-
-const send = () => {
-  const from = `${'ukelele-gitaarles.nl'} <${process.env.FROM_EMAIL}>`;
-  const message = {
-    from,
-    to: process.env.ADMIN_EMAIL,
-    subject: `Nieuwe aanmelding via ukelele-gitaarles.nl`,
-    text: '',
-    replyTo: from
-  }
-
-  return new Promise((resolve, reject) => {
-    transporter.sendMail(message, (error, info) =>
-      error ? reject(error) : resolve(info)
-    )
-  })
-}
-
+import {sendMail} from '../../server/mailer';
 
 export default function handler(req, res) {
 
   res.setHeader('Content-Type', 'application/json')
 
+  const formData = req.body.formData
+
   if (req.method === 'POST') {
-    send();
+
+    sendMail('Nieuwe aanmelding via ukelele-gitaarles.nl', `
+      Beste meneer Geldhof,
+
+      Hoera! Je hebt een nieuwe aanmelding ontvangen via ukelele-gitaarles.nl.
+
+      Instrument: ${formData.lessonType ?? ''}
+      Eerder muziekles gehad: ${formData.experience ? 'Ja' : 'Nee'}
+      Volledige naam: ${formData.forName ?? ''} ${formData.surName ?? ''}
+      Geboortedatum: ${formData.dateOfBirth ?? ''}
+      Adres: ${formData.address ?? ''}
+      Postcode: ${formData.postalCode ?? ''}
+      Plaats: ${formData.city ?? ''}
+      E-mailadres: ${formData.email ?? ''}
+      Telefoonnummer: ${formData.telephone ?? ''}
+      AVG toestemming: ${formData.gdprConsent ? 'Ja' : 'Nee'}
+      Opmerkingen: 
+      
+      ${formData.comments ?? ''}
+
+      Met vriendelijke groet,
+
+      ukelele-gitaarles.nl
+    `)
     res.statusCode = 200
   } else {
     res.statusCode = 403

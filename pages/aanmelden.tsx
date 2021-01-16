@@ -3,9 +3,19 @@ import {CustomForm, HeaderNavigation, Layout} from '../components';
 
 export default function SignUpPage() {
 
+    const today = new Date()
+
     const schema = {
         type: "object",
-        required: [],
+        required: [
+            "lessonType",
+            "forName",
+            "surName",
+            "dateOfBirth",
+            "postalCode",
+            "email",
+            "gdprConsent"
+        ],
         properties: {
             lessonType: {
                 type: "string",
@@ -28,7 +38,7 @@ export default function SignUpPage() {
             },
             forName: {
                 type: "string",
-                title: "Voornaam"
+                title: "Voornaam",
             },
             surName: {
                 type: "string",
@@ -44,7 +54,8 @@ export default function SignUpPage() {
             },
             postalCode: {
                 type: "string",
-                title: "Postcode"
+                title: "Postcode",
+                format: 'postalcode-nl'
             },
             city: {
                 type: "string",
@@ -59,7 +70,7 @@ export default function SignUpPage() {
                 type: "string",
                 title: "Telefoonnummer",
                 format: "tel",
-                minLength: 9
+                minLength: 7
             },
             comments: {
                 type: "string",
@@ -67,8 +78,9 @@ export default function SignUpPage() {
             },
             gdprConsent: {
                 type: "boolean",
-                title: "Ik heb de privacyverklaring gelezen en ga hiermee akkoord.",
-                default: false
+                title: "Ik heb de privacyverklaring gelezen en ga hiermee akkoord",
+                default: false,
+                const: true
             },
         }
     };
@@ -81,10 +93,13 @@ export default function SignUpPage() {
             "ui:widget": "radio"
         },
         dateOfBirth: {
-            "ui:widget": "date"
+            "ui:widget": "date",
         },
         comments: {
             "ui:widget": "textarea"
+        },
+        postalCode: {
+            "ui:placeholder": "2021 AB"
         }
     };
 

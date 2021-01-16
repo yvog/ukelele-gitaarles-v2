@@ -5,7 +5,7 @@ export default function RequestMaintenancePage() {
 
     const schema = {
         type: "object",
-        required: [],
+        required: ["forName", "email", "gdprConsent", "comments"],
         properties: {
             forName: {
                 type: "string",
@@ -20,18 +20,15 @@ export default function RequestMaintenancePage() {
                 format: "email",
                 title: "E-mailadres"
             },
-            subject: {
-                type: "string",
-                title: "Onderwerp"
-            },
             comments: {
                 type: "string",
-                title: "Opmerkingen"
+                title: "Bericht:"
             },
             gdprConsent: {
                 type: "boolean",
                 title: "Ik heb de privacyverklaring gelezen en ga hiermee akkoord.",
-                default: false
+                default: false,
+                const: true
             },
         }
     };
