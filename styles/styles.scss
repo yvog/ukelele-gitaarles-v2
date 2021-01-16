@@ -60,8 +60,9 @@ a {
 .contact-form {
   #root {
     div {
-      &:nth-child(5),
-      &:nth-child(6) {
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(5) {
         grid-column: span 2;
       }
     }
@@ -104,8 +105,9 @@ a {
   .contact-form {
     #root {
       div {
-        &:nth-child(5),
-        &:nth-child(6) {
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5) {
           grid-column: unset;
         }
       }
