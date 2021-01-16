@@ -1,4 +1,4 @@
-import {sendMail} from '../../server/mailer';
+import { sendMail } from '../../server/mailer';
 
 export default function handler(req, res) {
 
