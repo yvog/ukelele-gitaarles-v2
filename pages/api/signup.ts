@@ -1,6 +1,6 @@
-import {sendMail} from '../../server/mailer';
+import { sendMail } from '../../server/mailer';
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
 
   res.setHeader('Content-Type', 'application/json')
 
@@ -8,7 +8,7 @@ export default function handler(req, res) {
 
   if (req.method === 'POST') {
 
-    sendMail('Nieuwe aanmelding via ukelele-gitaarles.nl', `
+    await sendMail('Nieuwe aanmelding via ukelele-gitaarles.nl', `
       Beste meneer Geldhof,
 
       Hoera! Je hebt een nieuwe aanmelding ontvangen via ukelele-gitaarles.nl.

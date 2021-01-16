@@ -10,10 +10,9 @@
     "export": "next export"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.4.2",
     "classnames": "^2.2.6",
     "next": "9.5.3",
-    "nodemailer": "^6.4.16",
-    "nodemailer-sendgrid-transport": "^0.2.0",
     "normalize.css": "^8.0.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",

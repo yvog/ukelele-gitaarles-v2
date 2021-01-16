@@ -1,14 +1,14 @@
-import {sendMail} from '../../server/mailer';
+import { sendMail } from '../../server/mailer';
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
 
   res.setHeader('Content-Type', 'application/json')
 
   const formData = req.body.formData
 
   if (req.method === 'POST') {
-    
-    sendMail('Aanvraag reparatie/onderhoud via ukelele-gitaarles.nl', `
+
+    await sendMail('Aanvraag reparatie/onderhoud via ukelele-gitaarles.nl', `
       Beste meneer Geldhof,
 
       Oh jee, iemand heeft zijn/haar instrument gesloopt en vraagt jouw hulp het te repareren/onderhouden via ukelele-gitaarles.nl.
