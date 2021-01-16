@@ -54,9 +54,7 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
       },
       body: JSON.stringify(formData),
     }).then((res) => {
-      console.log(res);
-
-      if (res && res.status === 200 && res.statusText === "OK") {
+      if (res?.status === 200) {
         setSuccess(true);
       }
     });
