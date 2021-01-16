@@ -3,7 +3,7 @@ const sgTransport = require('nodemailer-sendgrid-transport')
 
 const transporter = nodemailer.createTransport(sgTransport({
   host: 'smtp.sendgrid.net',
-  port: 465,
+  port: 25,
   auth: {
     api_key: process.env.SENDGRID_API_KEY
   }
