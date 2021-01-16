@@ -5,11 +5,11 @@ export default function RequestMaintenancePage() {
 
     const schema = {
         type: "object",
-        required: [],
+        required: ["instrument", "forName", "surName", "email", "comments", "gdprConsent"],
         properties: {
             instrument: {
                 type: "string",
-                title: "Instrument",
+                title: "Type snaarinstrument",
                 enum: [
                     "Ukelele",
                     "Gitaar",
@@ -35,8 +35,9 @@ export default function RequestMaintenancePage() {
             },
             gdprConsent: {
                 type: "boolean",
-                title: "Ik heb de privacyverklaring gelezen en ga hiermee akkoord.",
-                default: false
+                title: "Ik heb de privacyverklaring gelezen en ga hiermee akkoord",
+                default: false,
+                const: true
             },
         }
     };
