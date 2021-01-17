@@ -41,6 +41,27 @@
         padding: 0;
     }
 
+    button[type="submit"] {
+        margin-top: 24px;
+        padding: 12px;
+        max-width: 164px;
+        outline: none;
+        border: 2px solid $ukeGitBlue;
+        border-radius: 40px;
+        width: 100%;
+        transition: background .15s ease, color .15s ease;
+        font-family: $paragraphFont;
+        font-size: 16px;
+        background: $ukeGitBlue;
+        color: #fff;
+
+        &:hover, &:focus, &:active {
+            border: 2px solid $ukeGitBlue;
+            color: $ukeGitBlue;
+            background: #fff;
+        }
+    }
+
     label {
         display: block;
         margin: 24px 16px 4px 16px;

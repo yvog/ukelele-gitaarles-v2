@@ -41,6 +41,10 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
         error.message = "Ongeldige postcode";
       }
 
+      if (error.name === "minLength") {
+        error.message = `Mag niet korter dan ${error.params.limit} tekens zijn`;
+      }
+
       return error;
     });
   }, []);
