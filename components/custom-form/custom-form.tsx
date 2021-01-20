@@ -1,23 +1,31 @@
 import Form from "@rjsf/core";
 import classNames from "classnames";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styles from "./custom-form.module.scss";
 
 type CustomFormProps = {
   schema: any;
   uiSchema: any;
-  action: string;
+  httpAction: string;
   method: "POST" | "GET";
   className: string;
+  recaptchaAction: string;
 };
+
 const CustomFormComponent: React.FC<CustomFormProps> = ({
   schema,
   uiSchema,
   method,
-  action,
+  httpAction,
   className,
+  recaptchaAction,
 }) => {
   const [success, setSuccess] = useState<boolean>(false);
+  const [grecaptcha, setGrecaptcha] = useState<any>(null);
+
+  useEffect(() => {
+    setGrecaptcha(((window as unknown) as any).grecaptcha);
+  }, [setGrecaptcha]);
 
   const transformErrors = useCallback((errors) => {
     return errors.map((error) => {
@@ -50,17 +58,32 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
   }, []);
 
   const onSubmit = (formData) => {
-    fetch(action, {
-      method: method,
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    }).then((res) => {
-      if (res?.status === 200) {
-        setSuccess(true);
-      }
+    grecaptcha.ready(function () {
+      grecaptcha
+        .execute(process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY, {
+          action: recaptchaAction,
+        })
+        .then(function (token: string) {
+          fetch(httpAction, {
+            method: method,
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              ...formData,
+              token,
+            }),
+          })
+            .then((res) => {
+              return res.json();
+            })
+            .then((res) => {
+              if (res?.success) {
+                setSuccess(true);
+              }
+            });
+        });
     });
   };
 

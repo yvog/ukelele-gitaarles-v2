@@ -5,11 +5,13 @@ import styles from "./layout.module.scss";
 type LayoutProps = {
   title?: string;
   children?: React.ReactNode;
+  scripts?: string[];
 };
 
 const LayoutComponent: React.FC<LayoutProps> = ({
   children,
   title = "Ukelele-Gitaarles",
+  scripts = [],
 }) => {
   const description =
     "Bert Geldhof geeft gitaar-, ukelele- en pianolessen. Hiernaast repareert/onderhoudt hij snaarinstrumenten.";
@@ -38,6 +40,10 @@ const LayoutComponent: React.FC<LayoutProps> = ({
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:title" content={`${title} - Ukelele-Gitaarles`} />
+
+        {scripts.map((src: string, index: number) => {
+          return <script key={`script-${index}`} src={src} async></script>;
+        })}
       </Head>
 
       <h1 className="hidden">{title} - Ukelele-Gitaarles</h1>
