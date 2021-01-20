@@ -93,7 +93,12 @@ export default function SignUpPage() {
   };
 
   return (
-    <Layout title="Aanmelden">
+    <Layout
+      title="Aanmelden"
+      scripts={[
+        `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY}`,
+      ]}
+    >
       <div className="main-container">
         <HeaderNavigation variant="black" />
       </div>
@@ -111,9 +116,10 @@ export default function SignUpPage() {
           <CustomForm
             schema={schema}
             uiSchema={uiSchema}
-            action="/api/signup"
+            httpAction="/api/signup"
             method="POST"
             className="signup-form"
+            recaptchaAction="submitsignup"
           />
         </article>
       </section>

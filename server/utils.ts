@@ -1,5 +1,15 @@
 const sgMail = require('@sendgrid/mail')
 
+export function verifyRecaptchaToken(token) {
+  return fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`, {
+    method: 'POST'
+  }).then((res) => {
+    return res.json();
+  }).then((res) => {
+    return res
+  })
+}
+
 export const sendMail = async (subject, text) => {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 

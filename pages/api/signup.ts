@@ -1,12 +1,17 @@
-import { sendMail } from '../../server/mailer';
+import { sendMail, verifyRecaptchaToken } from '../../server/utils';
 
 export default async function handler(req, res) {
+  const formData = req.body.formData
+  const token = req.body.token
 
   res.setHeader('Content-Type', 'application/json')
 
-  const formData = req.body.formData
-
-  if (req.method === 'POST') {
+  await verifyRecaptchaToken(token).then(async (recaptchaRes) => {
+    if (req.method !== 'POST' || !recaptchaRes || !recaptchaRes.success || recaptchaRes.action !== 'submitsignup') {
+      res.end(JSON.stringify({
+        success: false
+      }))
+    }
 
     await sendMail('Nieuwe aanmelding via ukelele-gitaarles.nl', `
       Beste meneer Geldhof,
@@ -31,10 +36,9 @@ export default async function handler(req, res) {
 
       ukelele-gitaarles.nl
     `)
-    res.statusCode = 200
-  } else {
-    res.statusCode = 403
-  }
 
-  res.end()
+    res.end(JSON.stringify({
+      success: true
+    }))
+  })
 }
