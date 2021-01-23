@@ -1,4 +1,4 @@
-import { sendMail, verifyRecaptchaToken } from '../../server/utils';
+import { sendMail, verifyRecaptchaToken } from '../../server/utils'
 
 export default async function handler(req, res) {
   const formData = req.body.formData
@@ -7,13 +7,22 @@ export default async function handler(req, res) {
   res.setHeader('Content-Type', 'application/json')
 
   await verifyRecaptchaToken(token).then(async (recaptchaRes) => {
-    if (req.method !== 'POST' || !recaptchaRes || !recaptchaRes.success || recaptchaRes.action !== 'submitrequestmaintenance') {
-      res.end(JSON.stringify({
-        success: false
-      }))
+    if (
+      req.method !== 'POST' ||
+      !recaptchaRes ||
+      !recaptchaRes.success ||
+      recaptchaRes.action !== 'submitrequestmaintenance'
+    ) {
+      res.end(
+        JSON.stringify({
+          success: false,
+        }),
+      )
     }
 
-    await sendMail('Aanvraag reparatie/onderhoud via ukelele-gitaarles.nl', `
+    await sendMail(
+      'Aanvraag reparatie/onderhoud via ukelele-gitaarles.nl',
+      `
       Beste meneer Geldhof,
 
       Oh jee, iemand heeft zijn/haar instrument gesloopt en vraagt jouw hulp het te repareren/onderhouden via ukelele-gitaarles.nl.
@@ -30,10 +39,13 @@ export default async function handler(req, res) {
       Met vriendelijke groet,
 
       ukelele-gitaarles.nl
-    `)
+    `,
+    )
 
-    res.end(JSON.stringify({
-      success: true
-    }))
+    res.end(
+      JSON.stringify({
+        success: true,
+      }),
+    )
   })
 }

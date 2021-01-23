@@ -1,16 +1,16 @@
-import Form from "@rjsf/core";
-import classNames from "classnames";
-import React, { useCallback, useEffect, useState } from "react";
-import styles from "./custom-form.module.scss";
+import Form from '@rjsf/core'
+import classNames from 'classnames'
+import React, { useCallback, useEffect, useState } from 'react'
+import styles from './custom-form.module.scss'
 
 type CustomFormProps = {
-  schema: any;
-  uiSchema: any;
-  httpAction: string;
-  method: "POST" | "GET";
-  className: string;
-  recaptchaAction: string;
-};
+  schema: any
+  uiSchema: any
+  httpAction: string
+  method: 'POST' | 'GET'
+  className: string
+  recaptchaAction: string
+}
 
 const CustomFormComponent: React.FC<CustomFormProps> = ({
   schema,
@@ -20,44 +20,43 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
   className,
   recaptchaAction,
 }) => {
-  const [success, setSuccess] = useState<boolean>(false);
-  const [grecaptcha, setGrecaptcha] = useState<any>(null);
+  const [success, setSuccess] = useState<boolean>(false)
+  const [grecaptcha, setGrecaptcha] = useState<any>(null)
+  const [submitting, setSubmitting] = useState<boolean>(false)
 
   useEffect(() => {
-    setGrecaptcha(((window as unknown) as any).grecaptcha);
-  }, [setGrecaptcha]);
+    setGrecaptcha(((window as unknown) as any).grecaptcha)
+  }, [setGrecaptcha])
 
   const transformErrors = useCallback((errors) => {
     return errors.map((error) => {
-      if (
-        typeof error.params.allowedValue == "boolean" &&
-        error.params.allowedValue
-      ) {
-        error.message =
-          "Zonder toestemming kan het formulier niet worden verzonden";
+      if (typeof error.params.allowedValue == 'boolean' && error.params.allowedValue) {
+        error.message = 'Zonder toestemming kan het formulier niet worden verzonden'
       }
 
-      if (error.name === "required") {
-        error.message = "Vul dit veld in";
+      if (error.name === 'required') {
+        error.message = 'Vul dit veld in'
       }
 
-      if (error.name === "format" && error.params.format === "email") {
-        error.message = "Ongeldig e-mailadres";
+      if (error.name === 'format' && error.params.format === 'email') {
+        error.message = 'Ongeldig e-mailadres'
       }
 
-      if (error.name == "format" && error.params.format == "postalcode-nl") {
-        error.message = "Ongeldige postcode";
+      if (error.name == 'format' && error.params.format == 'postalcode-nl') {
+        error.message = 'Ongeldige postcode'
       }
 
-      if (error.name === "minLength") {
-        error.message = `Mag niet korter dan ${error.params.limit} tekens zijn`;
+      if (error.name === 'minLength') {
+        error.message = `Mag niet korter dan ${error.params.limit} tekens zijn`
       }
 
-      return error;
-    });
-  }, []);
+      return error
+    })
+  }, [])
 
   const onSubmit = (formData) => {
+    setSubmitting(true)
+
     grecaptcha.ready(function () {
       grecaptcha
         .execute(process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY, {
@@ -67,8 +66,8 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
           fetch(httpAction, {
             method: method,
             headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
             },
             body: JSON.stringify({
               ...formData,
@@ -76,20 +75,22 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
             }),
           })
             .then((res) => {
-              return res.json();
+              return res.json()
             })
             .then((res) => {
+              setSubmitting(false)
+
               if (res?.success) {
-                setSuccess(true);
+                setSuccess(true)
               }
-            });
-        });
-    });
-  };
+            })
+        })
+    })
+  }
 
   const customFormats = {
-    "postalcode-nl": /^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-z]{2}$/i,
-  };
+    'postalcode-nl': /^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-z]{2}$/i,
+  }
 
   return (
     <>
@@ -98,15 +99,10 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
           Het formulier is succesvol verzonden
           <div
             onClick={() => {
-              setSuccess(false);
+              setSuccess(false)
             }}
           >
-            <img
-              src="/images/icon/icon_close.svg"
-              width="18"
-              height="18"
-              alt="menu"
-            />
+            <img src="/images/icon/icon_close.svg" width="18" height="18" alt="menu" />
           </div>
         </div>
       )}
@@ -119,14 +115,19 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
         showErrorList={false}
         onSubmit={onSubmit}
         onError={() => {
-          setSuccess(false);
+          setSuccess(false)
         }}
         className={classNames(styles.custom_form, className)}
         transformErrors={transformErrors}
         customFormats={customFormats}
-      />
+        autoComplete={'off'}
+      >
+        <button type="submit" disabled={submitting}>
+          Verzend
+        </button>
+      </Form>
     </>
-  );
-};
+  )
+}
 
-export const CustomForm = CustomFormComponent;
+export const CustomForm = CustomFormComponent

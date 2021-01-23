@@ -1,4 +1,4 @@
-import { sendMail, verifyRecaptchaToken } from '../../server/utils';
+import { sendMail, verifyRecaptchaToken } from '../../server/utils'
 
 export default async function handler(req, res) {
   const formData = req.body.formData
@@ -8,12 +8,16 @@ export default async function handler(req, res) {
 
   await verifyRecaptchaToken(token).then(async (recaptchaRes) => {
     if (req.method !== 'POST' || !recaptchaRes || !recaptchaRes.success || recaptchaRes.action !== 'submitsignup') {
-      res.end(JSON.stringify({
-        success: false
-      }))
+      res.end(
+        JSON.stringify({
+          success: false,
+        }),
+      )
     }
 
-    await sendMail('Nieuwe aanmelding via ukelele-gitaarles.nl', `
+    await sendMail(
+      'Nieuwe aanmelding via ukelele-gitaarles.nl',
+      `
       Beste meneer Geldhof,
 
       Hoera! Je hebt een nieuwe aanmelding ontvangen via ukelele-gitaarles.nl.
@@ -35,10 +39,13 @@ export default async function handler(req, res) {
       Met vriendelijke groet,
 
       ukelele-gitaarles.nl
-    `)
+    `,
+    )
 
-    res.end(JSON.stringify({
-      success: true
-    }))
+    res.end(
+      JSON.stringify({
+        success: true,
+      }),
+    )
   })
 }

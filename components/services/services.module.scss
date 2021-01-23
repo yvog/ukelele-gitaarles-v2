@@ -1,24 +1,24 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .services {
-    .services_row {
-        //
-    }
+  .services_row {
+    //
+  }
 }
 
 @media (max-width: $smallDesktop) {
-    .services {
-        .services_row {
-            display: flex;
-            flex-wrap: wrap;
-        }
+  .services {
+    .services_row {
+      display: flex;
+      flex-wrap: wrap;
     }
+  }
 }
 
 @media (max-width: $mobile) {
-    .services {
-        .services_row {
-            justify-content: center;
-        }
+  .services {
+    .services_row {
+      justify-content: center;
     }
+  }
 }

@@ -1,50 +1,48 @@
-@import "../styles/variables";
+@import '../styles/variables';
 
 .about_me {
-    margin-bottom: 180px;
+  margin-bottom: 180px;
 
-    .about_me_content {
-        //
-    }
+  .about_me_content {
+    //
+  }
 
-    .about_me_image {
-        float: right;
-    }
+  .about_me_image {
+    float: right;
+  }
 }
 
 @media (max-width: $smallDesktop) {
-    .about_me {
-        .about_me_image {
-            margin: 0 auto;
-            float: none;
-            display: block;
-        }
-
-        .about_me_content {
-            p {
-                margin-bottom: 64px;
-            }
-        }
+  .about_me {
+    .about_me_image {
+      margin: 0 auto;
+      float: none;
+      display: block;
     }
-}
 
+    .about_me_content {
+      p {
+        margin-bottom: 64px;
+      }
+    }
+  }
+}
 
 @media (max-width: $tablet) {
-    .about_me {
-        .about_me_image {
-            max-width: 75%;
-            height: unset;
-        }
+  .about_me {
+    .about_me_image {
+      max-width: 75%;
+      height: unset;
     }
+  }
 }
 
-
 @media (max-width: $mobile) {
-    .about_me {
-        .about_me_image {
-            margin: 0 auto;
-            float: none;
-            display: block;
-        }
+  .about_me {
+    .about_me_image {
+      margin: 0 auto;
+      float: none;
+      display: block;
     }
+  }
 }
