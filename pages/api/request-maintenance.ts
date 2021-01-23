@@ -1,10 +1,9 @@
 import { sendMail, verifyRecaptchaToken } from '../../server/utils'
+import { NowRequest, NowResponse } from '@vercel/node'
 
-export default async function handler(req, res) {
+export default async function handler(req: NowRequest, res: NowResponse) {
   const formData = req.body.formData
   const token = req.body.token
-
-  res.setHeader('Content-Type', 'application/json')
 
   await verifyRecaptchaToken(token).then(async (recaptchaRes) => {
     if (
