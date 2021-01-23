@@ -34,7 +34,7 @@ export default async function handler(req: NowRequest, res: NowResponse) {
     )
 
     res.send({
-      success: false,
+      success: true,
     })
   })
 }
