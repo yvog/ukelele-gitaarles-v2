@@ -55,12 +55,18 @@
     background: $ukeGitBlue;
     color: #fff;
 
-    &:hover,
-    &:focus,
-    &:active {
-      border: 2px solid $ukeGitBlue;
-      color: $ukeGitBlue;
-      background: #fff;
+    &:not(:disabled) {
+      &:hover,
+      &:focus,
+      &:active {
+        border: 2px solid $ukeGitBlue;
+        color: $ukeGitBlue;
+        background: #fff;
+      }
+    }
+
+    &:disabled {
+      opacity: 0.25;
     }
   }
 
