@@ -1,15 +1,13 @@
 @import '../styles/variables';
 
-.success_message {
-  max-width: 300px;
-  background: $success;
-  border: 1px solid rgb(104, 189, 104);
-  border-radius: 20px;
-  color: rgb(48, 152, 48);
+.form_message {
+  max-width: 400px;
+  border-radius: 24px;
   margin: 0 auto;
   text-align: center;
-  padding: 16px;
+  padding: 8px;
   display: flex;
+  justify-content: space-evenly;
   position: fixed;
   top: 16px;
   left: 0;
@@ -27,6 +25,20 @@
       opacity: 0.75;
     }
   }
+}
+
+.success_message {
+  max-width: 308px;
+  background: $success;
+  border: 1px solid rgb(104, 189, 104);
+  color: rgb(48, 152, 48);
+}
+
+.error_message {
+  max-width: 396px;
+  background: $error;
+  border: 1px solid #e20019;
+  color: #e20019;
 }
 
 .custom_form {

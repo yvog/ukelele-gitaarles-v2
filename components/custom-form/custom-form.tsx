@@ -1,6 +1,7 @@
 import Form from '@rjsf/core'
 import classNames from 'classnames'
 import React, { useCallback, useEffect, useState } from 'react'
+import { Z_STREAM_ERROR } from 'zlib'
 import styles from './custom-form.module.scss'
 
 type CustomFormProps = {
@@ -21,6 +22,7 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
   recaptchaAction,
 }) => {
   const [success, setSuccess] = useState<boolean>(false)
+  const [error, setError] = useState<boolean>(false)
   const [submitting, setSubmitting] = useState<boolean>(false)
   const [grecaptcha, setGrecaptcha] = useState<any>(null)
 
@@ -74,14 +76,14 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
               token,
             }),
           })
-            .then((res) => {
-              return res.json()
-            })
+            .then((res) => res.json())
             .then((res) => {
               setSubmitting(false)
 
               if (res?.success) {
                 setSuccess(true)
+              } else {
+                setError(true)
               }
             })
         })
@@ -94,12 +96,18 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
 
   return (
     <>
-      {success && (
-        <div className={styles.success_message}>
-          Het formulier is succesvol verzonden
+      {(success || error) && (
+        <div
+          className={classNames(styles.form_message, {
+            [styles.success_message]: success,
+            [styles.error_message]: error,
+          })}
+        >
+          {success ? 'Het formulier is succesvol verzonden' : 'Het formulier kon helaas niet worden verzonden'}
           <div
             onClick={() => {
               setSuccess(false)
+              setError(false)
             }}
           >
             <img src="/images/icon/icon_close.svg" width="18" height="18" alt="menu" />
@@ -116,6 +124,7 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
         onSubmit={onSubmit}
         onError={() => {
           setSuccess(false)
+          setError(false)
         }}
         className={classNames(styles.custom_form, className)}
         transformErrors={transformErrors}

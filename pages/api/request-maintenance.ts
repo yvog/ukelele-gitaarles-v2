@@ -13,11 +13,10 @@ export default async function handler(req, res) {
       !recaptchaRes.success ||
       recaptchaRes.action !== 'submitrequestmaintenance'
     ) {
-      res.end(
-        JSON.stringify({
-          success: false,
-        }),
-      )
+      res.send({
+        success: false,
+        reason: 'invalid request',
+      })
     }
 
     await sendMail(
@@ -42,10 +41,8 @@ export default async function handler(req, res) {
     `,
     )
 
-    res.end(
-      JSON.stringify({
-        success: true,
-      }),
-    )
+    res.send({
+      success: true,
+    })
   })
 }
