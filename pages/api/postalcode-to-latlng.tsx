@@ -1,6 +1,7 @@
 import { verifyRecaptchaToken } from '../../server/utils'
+import { NowRequest, NowResponse } from '@vercel/node'
 
-export default async function handler(req, res) {
+export default async function handler(req: NowRequest, res: NowResponse) {
   const postalCode = req.body.postalCode
   const token = req.body.token
 
