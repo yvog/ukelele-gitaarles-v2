@@ -21,8 +21,8 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
   recaptchaAction,
 }) => {
   const [success, setSuccess] = useState<boolean>(false)
-  const [grecaptcha, setGrecaptcha] = useState<any>(null)
   const [submitting, setSubmitting] = useState<boolean>(false)
+  const [grecaptcha, setGrecaptcha] = useState<any>(null)
 
   useEffect(() => {
     setGrecaptcha(((window as unknown) as any).grecaptcha)
@@ -57,12 +57,12 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
   const onSubmit = (formData) => {
     setSubmitting(true)
 
-    grecaptcha.ready(function () {
+    grecaptcha.ready(() => {
       grecaptcha
         .execute(process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY, {
           action: recaptchaAction,
         })
-        .then(function (token: string) {
+        .then((token: string) => {
           fetch(httpAction, {
             method: method,
             headers: {

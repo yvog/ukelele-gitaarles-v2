@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import SyncLoader from 'react-spinners/SyncLoader'
 import { Button } from '..'
 import styles from './costs-calculator.module.scss'
@@ -13,8 +13,7 @@ type LocationData = {
 const CostsCalculatorComponent: React.FC = () => {
   const VALID_POSTALCODE_REGEX = /(^\d{4})(\w{2}|[ ]\w{2})$/
   const MAX_KM_RANGE = 40
-  const LOADING_DELAY = 1250
-  const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL
+  const LOADING_DELAY = 1000
 
   const [postalCode, setPostalCode] = useState<string>('')
   const [lessonTime, setLessonTime] = useState<string>('30')
@@ -23,6 +22,11 @@ const CostsCalculatorComponent: React.FC = () => {
   const [error, setError] = useState<string>('')
   const [price, setPrice] = useState<number>(null)
   const [loading, setLoading] = useState<boolean>(false)
+  const [grecaptcha, setGrecaptcha] = useState<any>(null)
+
+  useEffect(() => {
+    setGrecaptcha(((window as unknown) as any).grecaptcha)
+  }, [setGrecaptcha])
 
   const onCalculationStarted = (e: any) => {
     e.preventDefault()
@@ -44,41 +48,9 @@ const CostsCalculatorComponent: React.FC = () => {
       return
     }
 
-    convertPostalCodeToLatLng(postalCode, (location: LocationData) => {
+    convertPostalCodeToLatLng(postalCode.replace(' ', ''), (location: LocationData) => {
       calculateDistance(location)
     })
-  }
-
-  const calculateDistance = (location: LocationData): void => {
-    fetchUrl(
-      `${BASE_URL}?action=distance&latlng=${location.lat},${location.lng}`,
-      (json: any) => {
-        if (!json || json.status !== 'OK' || (json.error && json.error === 'invalid')) {
-          showError('Er ging iets mis. Probeer opnieuw a.u.b.')
-
-          return false
-        }
-
-        try {
-          let distance = json.rows[0].elements[0].distance.value
-
-          onDistanceCalculated(distance)
-
-          return true
-        } catch (e) {
-          console.error(e)
-          showError('Er ging iets mis. Probeer later opnieuw a.u.b.')
-
-          return false
-        }
-      },
-      (e: any) => {
-        console.log(e)
-        showError('Gegevens konden niet worden opgehaald. Controleer je internetverbinding a.u.b.')
-
-        return false
-      },
-    )
   }
 
   const onDistanceCalculated = (distance: number): boolean => {
@@ -115,37 +87,82 @@ const CostsCalculatorComponent: React.FC = () => {
     return true
   }
 
-  const convertPostalCodeToLatLng = (userPostalCode: string, callback: (location: LocationData) => void): void => {
-    fetchUrl(
-      `${BASE_URL}?action=postalcode_to_latlng&postal_code=${postalCode.replace(' ', '')}`,
-      (res: any) => {
-        let location: LocationData = res.results[0].geometry.location
-        callback(location)
+  const convertPostalCodeToLatLng = (postalCode: string, onConverted: (location: LocationData) => void): void => {
+    postData(
+      '/api/postalcode-to-latlng',
+      {
+        postalCode,
       },
-      (e: any) => {
-        showError('Er ging iets mis')
+      (json: any) => {
+        if (json.error) {
+          console.error(json)
+          showError('Er ging iets mis. Probeer later opnieuw a.u.b.')
+
+          return
+        }
+        onConverted(json.results[0].geometry.location)
       },
+      'postalcodetolatlng',
     )
   }
 
-  const fetchUrl = (url: string, onSuccess: (res: any) => void, onFailed: (res: any) => void): void => {
-    fetch(url, {
-      method: 'GET',
-      headers: {},
-    })
-      .then((response: any) => {
-        var contentType = response.headers.get('content-type')
+  const calculateDistance = (location: LocationData): void => {
+    postData(
+      '/api/calculate-distance',
+      {
+        latlng: `${location.lat},${location.lng}`,
+      },
+      (json: any) => {
+        if (json.error) {
+          showError('Er ging iets mis. Probeer opnieuw a.u.b.')
 
-        if (contentType && contentType.indexOf('application/json') !== -1) {
-          return response.json()
-        } else {
-          console.error('Response data was not in JSON format.')
+          return
         }
 
-        return null
-      })
-      .then(onSuccess)
-      .catch(onFailed)
+        try {
+          const distance = json.rows[0].elements[0].distance.value
+
+          onDistanceCalculated(distance)
+        } catch (e) {
+          console.error(e)
+          showError('Er ging iets mis. Probeer opnieuw a.u.b.')
+        }
+      },
+      'calculatedistance',
+    )
+  }
+
+  const postData = (
+    url: string,
+    data: { [key: string]: any },
+    onSuccess: (json: { [key: string]: any }) => void,
+    recaptchaAction: string,
+  ): void => {
+    grecaptcha.ready(() => {
+      grecaptcha
+        .execute(process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY, {
+          action: recaptchaAction,
+        })
+        .then((token: string) => {
+          fetch(url, {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              ...data,
+              token,
+            }),
+          })
+            .then((stream: any) => stream.json())
+            .then(onSuccess)
+            .catch((e: any) => {
+              console.error(e)
+              showError('Er ging iets mis')
+            })
+        })
+    })
   }
 
   const showError = (message: string, force: boolean = false): void => {
@@ -167,7 +184,7 @@ const CostsCalculatorComponent: React.FC = () => {
 
   return (
     <div className={styles.costs_calculator}>
-      {price && (
+      {!!price && (
         <>
           <div className={classNames(styles.message_box, styles.price)}>Jouw leskosten worden €{price} per les</div>
           <Button
