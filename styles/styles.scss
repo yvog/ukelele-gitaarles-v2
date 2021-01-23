@@ -124,6 +124,10 @@ a {
   max-width: $mainContainerMaxWidth;
 }
 
+.pageNotFound {
+  margin-bottom: 160px;
+}
+
 @media (max-width: $smallDesktop) {
   .main-container {
     padding: 20px 40px 0 40px;
