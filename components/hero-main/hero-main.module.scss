@@ -1,57 +1,56 @@
-@import "../styles/variables";
+@import '../styles/variables';
 
 .hero_main {
-    .hero_services_container {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        max-width: $mainContainerMaxWidth;
-        margin: 0 auto;
-        box-sizing: border-box;
+  .hero_services_container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: $mainContainerMaxWidth;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  #hero_info {
+    max-width: 57%;
+
+    h2 {
+      color: #fff;
     }
 
-    #hero_info {
-        max-width: 57%;
-
-        h2 {
-            color: #fff;
-        }
-
-        p {
-            color: #fff;
-            font-size: 16pt;
-            margin: 16px 0 36px 0;
-            font-weight: 300;
-        }
+    p {
+      color: #fff;
+      font-size: 16pt;
+      margin: 16px 0 36px 0;
+      font-weight: 300;
     }
+  }
 }
 
 @media (max-width: $smallDesktop) {
-    .hero_main {
-        #hero_info {
-            max-width: 600px;
-            text-align: center;
-            margin: 0 auto;
-        }
+  .hero_main {
+    #hero_info {
+      max-width: 600px;
+      text-align: center;
+      margin: 0 auto;
     }
+  }
 }
 
 @media (max-width: $tablet) {
-    .hero_main {
-        #hero_info {
-            p {
-                font-size: 12pt;
-            }
-        }
+  .hero_main {
+    #hero_info {
+      p {
+        font-size: 12pt;
+      }
     }
+  }
 }
 
 @media (max-width: $mobile) {
-    .hero_main {
-        #hero_info {
-            max-width: 100%;
-        }
+  .hero_main {
+    #hero_info {
+      max-width: 100%;
     }
+  }
 }
-
