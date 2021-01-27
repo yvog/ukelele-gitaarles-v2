@@ -278,6 +278,14 @@ const CostsCalculatorComponent: React.FC = () => {
       )}
 
       {error && <div className={styles.errors}>{error}</div>}
+
+      <div className="privacy-text">
+        * op dit formulier is mijn{' '}
+        <a href="/privacy-verklaring" target="_blank" className="blue-link">
+          privacyverklaring
+        </a>{' '}
+        van toepassing.
+      </div>
     </div>
   )
 }

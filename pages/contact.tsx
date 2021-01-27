@@ -51,8 +51,12 @@ export default function RequestMaintenancePage() {
         <article>
           <h2>Contact</h2>
           <p>
-            Voor eventuele vragen kun je onderstaand formulier invullen. Na ontvangst van je bericht neem ik zo spoedig
-            mogelijk contact met je op.
+            Voor overige vragen en/of opmerking(en) kun je onderstaand formulier invullen. Na ontvangst beantwoord ik zo
+            snel mogelijk het bericht. Voor het aanmelden voor lessen heb ik een apart formulier, zie{' '}
+            <a href="/aanmelden" className="blue-link">
+              het aanmeldformulier
+            </a>
+            .
           </p>
         </article>
 
@@ -65,6 +69,13 @@ export default function RequestMaintenancePage() {
             className="contact-form"
             recaptchaAction="submitcontact"
           />
+          <div className="privacy-text">
+            * op dit formulier is mijn{' '}
+            <a href="/privacy-verklaring" target="_blank" className="blue-link">
+              privacyverklaring
+            </a>{' '}
+            van toepassing.
+          </div>
         </article>
       </section>
     </Layout>

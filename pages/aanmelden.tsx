@@ -1,103 +1,85 @@
-import React from "react";
-import { CustomForm, HeaderNavigation, Layout } from "../components";
+import React from 'react'
+import { CustomForm, HeaderNavigation, Layout } from '../components'
 
 export default function SignUpPage() {
   const schema = {
-    type: "object",
-    required: [
-      "lessonType",
-      "forName",
-      "surName",
-      "dateOfBirth",
-      "postalCode",
-      "email",
-      "gdprConsent",
-    ],
+    type: 'object',
+    required: ['lessonType', 'forName', 'surName', 'dateOfBirth', 'postalCode', 'email', 'gdprConsent'],
     properties: {
       lessonType: {
-        type: "string",
-        title: "Welk instrument wil je leren bespelen?",
-        enum: ["Ukelele", "Gitaar", "Piano", "Keyboard"],
+        type: 'string',
+        title: 'Welk instrument wil je leren bespelen?',
+        enum: ['Ukelele', 'Gitaar', 'Piano', 'Keyboard'],
       },
       experience: {
-        type: "boolean",
-        title: "Heb je wel eens eerder muziekles gehad?",
+        type: 'boolean',
+        title: 'Heb je wel eens eerder muziekles gehad?',
         default: false,
-        enumNames: ["Ja", "Nee"],
+        enumNames: ['Ja', 'Nee'],
       },
       forName: {
-        type: "string",
-        title: "Voornaam",
+        type: 'string',
+        title: 'Voornaam',
       },
       surName: {
-        type: "string",
-        title: "Achternaam",
-      },
-      dateOfBirth: {
-        type: "string",
-        title: "Geboortedatum",
-      },
-      address: {
-        type: "string",
-        title: "Adres",
-      },
-      postalCode: {
-        type: "string",
-        title: "Postcode",
-        format: "postalcode-nl",
-      },
-      city: {
-        type: "string",
-        title: "Plaats",
+        type: 'string',
+        title: 'Achternaam',
       },
       email: {
-        type: "string",
-        format: "email",
-        title: "E-mailadres",
+        type: 'string',
+        format: 'email',
+        title: 'E-mailadres',
       },
       telephone: {
-        type: "string",
-        title: "Telefoonnummer",
-        format: "tel",
+        type: 'string',
+        title: 'Telefoonnummer',
+        format: 'tel',
         minLength: 7,
       },
+      dateOfBirth: {
+        type: 'string',
+        title: 'Geboortedatum',
+      },
+      postalCode: {
+        type: 'string',
+        title: 'Postcode',
+        format: 'postalcode-nl',
+      },
       comments: {
-        type: "string",
-        title: "Opmerkingen",
+        type: 'string',
+        title: 'Eventuele opmerkingen:',
       },
       gdprConsent: {
-        type: "boolean",
-        title: "Ik heb de privacyverklaring gelezen en ga hiermee akkoord",
+        type: 'boolean',
+        title: 'Ik heb de privacyverklaring gelezen en ga hiermee akkoord',
         default: false,
         const: true,
       },
     },
-  };
+  }
 
   const uiSchema = {
     lessonType: {
-      "ui:widget": "radio",
+      'ui:widget': 'radio',
     },
     experience: {
-      "ui:widget": "radio",
+      'ui:widget': 'radio',
     },
     dateOfBirth: {
-      "ui:widget": "date",
+      'ui:widget': 'date',
     },
     comments: {
-      "ui:widget": "textarea",
+      'ui:widget': 'textarea',
     },
     postalCode: {
-      "ui:placeholder": "2021 AB",
+      'ui:placeholder': '2021 AB',
     },
-  };
+  }
 
   return (
     <Layout
       title="Aanmelden"
-      scripts={[
-        `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY}`,
-      ]}
+      scripts={[`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY}`]}
     >
       <div className="main-container">
         <HeaderNavigation variant="black" />
@@ -106,10 +88,7 @@ export default function SignUpPage() {
       <section className="main-container">
         <article>
           <h2>Aanmelden voor lessen</h2>
-          <p>
-            Vul onderstaand formulier in om je aan te melden voor ukelele-,
-            gitaar-, piano- of keyboardlessen.
-          </p>
+          <p>Vul onderstaand formulier in om je aan te melden voor ukelele-, gitaar-, piano- of keyboardlessen.</p>
         </article>
 
         <article>
@@ -121,8 +100,15 @@ export default function SignUpPage() {
             className="signup-form"
             recaptchaAction="submitsignup"
           />
+          <div className="privacy-text">
+            * op dit formulier is mijn{' '}
+            <a href="/privacy-verklaring" target="_blank" className="blue-link">
+              privacyverklaring
+            </a>{' '}
+            van toepassing.
+          </div>
         </article>
       </section>
     </Layout>
-  );
+  )
 }

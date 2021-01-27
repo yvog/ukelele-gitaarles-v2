@@ -112,8 +112,9 @@
   }
 
   textarea {
-    height: 200px;
-    border-radius: 25px;
+    height: 148px;
+    border-radius: 32px;
+    resize: none;
   }
 
   :global {

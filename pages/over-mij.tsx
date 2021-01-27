@@ -1,19 +1,20 @@
-import {AboutMe, Experience, ExploreSignup, HeaderNavigation, Layout} from '../components';
+import React from 'react'
+import { AboutMe, ExploreSignup, HeaderNavigation, Layout, UspBar } from '../components'
 
 export default function AboutMePage() {
-    return (
-        <Layout title="Over mij">
+  return (
+    <Layout title="Over mij">
+      <div className="main-container">
+        <HeaderNavigation variant="black" />
+      </div>
 
-            <div className="main-container">
-                <HeaderNavigation variant='black' />
-            </div>
+      <AboutMe />
 
-            <AboutMe />
+      <div className="main-container">
+        <UspBar />
+      </div>
 
-            <Experience />
-
-            <ExploreSignup />
-
-        </Layout>
-    )
+      <ExploreSignup />
+    </Layout>
+  )
 }

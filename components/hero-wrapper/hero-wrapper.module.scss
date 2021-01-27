@@ -1,6 +1,7 @@
 .hero {
   width: 100%;
-  height: 1020px;
+  height: 100vh;
+  min-height: 800px;
 
   &:after {
     content: '';
@@ -17,6 +18,7 @@
     background-color: rgba(0, 0, 0, 0.3);
     background-blend-mode: darken;
     background-size: cover;
+    min-height: inherit;
   }
 
   &.blue {
