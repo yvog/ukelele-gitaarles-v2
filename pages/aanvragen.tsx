@@ -55,7 +55,7 @@ export default function RequestMaintenancePage() {
         <HeaderNavigation variant="black" />
       </div>
 
-      <section className="main-container">
+      <section className="main-container body">
         <article>
           <h2 className="repair-title">Reparatie/onderhoud aanvragen</h2>
           <p>

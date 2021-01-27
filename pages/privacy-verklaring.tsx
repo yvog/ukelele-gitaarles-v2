@@ -7,7 +7,7 @@ export default function PrivacyStatementPage() {
         <HeaderNavigation variant="black" />
       </div>
 
-      <section className="main-container">
+      <section className="main-container body">
         <h2>Privacyverklaring</h2>
         <p>
           Bij gebruik van deze website gaat u akkoord met de onderstaande privacyverklaring. Dit document verklaard

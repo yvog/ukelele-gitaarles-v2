@@ -13,6 +13,8 @@
 
   #hero_info {
     max-width: 57%;
+    padding-top: 64px;
+    padding-bottom: 128px;
 
     h2 {
       color: #fff;
@@ -29,6 +31,10 @@
 
 @media (max-width: $smallDesktop) {
   .hero_main {
+    section {
+      margin: 0 auto;
+    }
+
     #hero_info {
       max-width: 600px;
       text-align: center;

@@ -8,8 +8,11 @@ type HeroServiceChoiceComponentProps = {
 const HeroServiceChoiceComponent: React.FC<HeroServiceChoiceComponentProps> = ({ children }) => {
   return (
     <HeroWrapper classes={[styles.hero_service_choice]} blue={true}>
-      <HeaderNavigation />
-      {children}
+      <div className="main-container header-main-container">
+        <HeaderNavigation />
+
+        {children}
+      </div>
     </HeroWrapper>
   )
 }

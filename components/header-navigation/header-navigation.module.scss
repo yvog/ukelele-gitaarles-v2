@@ -4,10 +4,9 @@
 .header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10%;
+  width: 100%;
 
   .nav {
-    margin-left: 64px;
     padding-top: 56px;
 
     a {
@@ -35,15 +34,11 @@
 
 @media (max-width: $smallDesktop) {
   .header {
-    margin-bottom: 8%;
-    text-align: center;
     display: block;
+    text-align: center;
 
     .nav {
-      float: none;
-      text-align: left;
-      margin: 0 auto;
-      max-width: 600px;
+      text-align: center;
 
       a {
         padding: 8px 0 8px 0;
@@ -54,15 +49,12 @@
 }
 
 @media (max-width: $smallDesktop) {
-  .header {
-    margin-bottom: 80px;
-  }
+  //
 }
 
 @media (max-width: $mobile) {
   .header {
     text-align: left;
-    margin-bottom: 35%;
 
     nav {
       &:not(.show) {

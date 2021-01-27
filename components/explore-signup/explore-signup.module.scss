@@ -3,6 +3,7 @@
 .explore_signup {
   position: relative;
   width: 100%;
+  margin: $defaultBlockMargin;
 
   &:after {
     content: '';
@@ -47,8 +48,16 @@
   }
 }
 
+@media (max-width: $smallDesktop) {
+  .explore_signup {
+    margin: $smallBlockMargin;
+  }
+}
+
 @media (max-width: $tablet) {
   .explore_signup {
+    margin: $smallBlockMargin;
+
     .explore_signup_inner {
       padding: 96px 72px;
       max-width: 75%;

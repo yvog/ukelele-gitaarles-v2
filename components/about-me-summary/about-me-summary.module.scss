@@ -1,9 +1,9 @@
 @import '../styles/variables';
 
 .about_me_summary {
-  padding: 0;
   max-width: $mainInnerContainerMaxWidth;
-  margin: 160px auto 160px auto;
+  margin: 0 auto;
+  padding: 0;
 
   h2 {
     font-size: 28pt;

@@ -9,8 +9,8 @@ export default function FourOhFour() {
         <HeaderNavigation variant="black" />
       </div>
 
-      <div className="main-container">
-        <div className={classNames('row', 'pageNotFound')}>
+      <div className="main-container body">
+        <div className="row">
           <div className="col-lg-12">
             <h2>Pagina niet gevonden</h2>
           </div>

@@ -85,7 +85,7 @@ export default function SignUpPage() {
         <HeaderNavigation variant="black" />
       </div>
 
-      <section className="main-container">
+      <section className="main-container body">
         <article>
           <h2>Aanmelden voor lessen</h2>
           <p>Vul onderstaand formulier in om je aan te melden voor ukelele-, gitaar-, piano- of keyboardlessen.</p>

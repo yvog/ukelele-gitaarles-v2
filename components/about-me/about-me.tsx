@@ -1,11 +1,9 @@
 import classNames from 'classnames'
-import { UspBar } from '..'
-import { Experience } from '../experience/experience'
 import styles from './about-me.module.scss'
 
 const AboutMeComponent: React.FC = () => {
   return (
-    <section className={classNames(styles.about_me, 'main-container')}>
+    <section className={classNames(styles.about_me, 'main-container body')}>
       <h2>Bert Geldhof</h2>
 
       <div className="row">

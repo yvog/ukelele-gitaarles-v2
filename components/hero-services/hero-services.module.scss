@@ -4,7 +4,7 @@
   width: 100%;
   padding: 24px 36px 46px 36px;
   position: relative;
-  margin-top: -180px;
+  margin-top: -72px;
   background: rgba($ukeGitBlue, 0.95);
   border-radius: 18px;
 
@@ -14,12 +14,6 @@
 
   p {
     font-size: 11pt;
-  }
-}
-
-@media (max-width: $smallDesktop) {
-  .hero_services {
-    margin-top: -72px;
   }
 }
 

@@ -29,8 +29,8 @@ const HeroServiceChoiceArticleComponent: React.FC<HeroServiceChoiceArticleCompon
       <div className={parentStyles.crop} style={{ width: cropWidth + 'px' }}>
         <img
           src={imgSrc}
-          height={imgSize[0]}
-          width={imgSize[1]}
+          // height={imgSize[0]}
+          // width={imgSize[1]}
           alt={imgSrc}
           style={{
             transform: reversed ? `translate(-${cropWidth}px, 0)` : `translate(${cropWidth}px, 0)`,

@@ -140,22 +140,36 @@ a {
   }
 }
 
-.row-eq-height {
-  display: flex;
-}
-
 .main-container {
   margin: 0 auto;
   padding: 20px 100px 0 100px;
   max-width: $mainContainerMaxWidth;
+
+  &.body {
+    margin: $defaultBlockMargin;
+  }
+
+  &.full-height {
+    min-height: 100vh;
+  }
 }
 
-.pageNotFound {
-  margin-bottom: 160px;
+.header-main-container {
+  min-height: inherit;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row-eq-height {
+  display: flex;
 }
 
 @media (max-width: $smallDesktop) {
   .main-container {
     padding: 20px 40px 0 40px;
+
+    &.body {
+      margin: $smallBlockMargin;
+    }
   }
 }

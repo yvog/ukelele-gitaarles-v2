@@ -47,7 +47,7 @@ export default function RequestMaintenancePage() {
         <HeaderNavigation variant="black" />
       </div>
 
-      <section className="main-container">
+      <section className="main-container body">
         <article>
           <h2>Contact</h2>
           <p>

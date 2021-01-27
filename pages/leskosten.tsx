@@ -10,7 +10,7 @@ export default function CostsPage() {
         <HeaderNavigation variant="black" />
       </div>
 
-      <section className="main-container">
+      <section className="main-container body">
         <h2>Leskosten</h2>
         <p>
           Ukelele-Gitaarles biedt de mogelijkheid om ukelele- en/of gitaarles aan huis te krijgen. Je hoeft er de deur

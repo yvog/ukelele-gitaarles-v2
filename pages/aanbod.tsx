@@ -1,14 +1,12 @@
-import {HeaderNavigation, Layout, Services} from '../components';
+import { HeaderNavigation, Layout, Services } from '../components'
 
 export default function ServicesPage() {
-    return (
-        <Layout title="Aanbod">
-
-            <div className="main-container">
-                <HeaderNavigation variant='black' />
-                <Services />
-            </div>
-
-        </Layout>
-    )
+  return (
+    <Layout title="Aanbod">
+      <div className="main-container full-height">
+        <HeaderNavigation variant="black" />
+        <Services />
+      </div>
+    </Layout>
+  )
 }

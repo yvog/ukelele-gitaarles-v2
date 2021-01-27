@@ -7,7 +7,7 @@ export default function TermsOfUsePage() {
         <HeaderNavigation variant="black" />
       </div>
 
-      <section className="main-container">
+      <section className="main-container body">
         <h2>Algemene voorwaarden</h2>
 
         <p>Er worden lessen gegeven van augustus tot ongeveer midden juli in een lesjaar.</p>

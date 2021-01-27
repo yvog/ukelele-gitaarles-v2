@@ -1,22 +1,27 @@
 @import '../../styles/variables';
 
 .services {
+  margin: $defaultBlockMargin;
+
   .services_row {
-    //
+    margin-top: 64px;
   }
 }
 
 @media (max-width: $smallDesktop) {
   .services {
+    margin: $smallBlockMargin;
     .services_row {
       display: flex;
       flex-wrap: wrap;
+      margin-top: 0;
     }
   }
 }
 
 @media (max-width: $mobile) {
   .services {
+    //justify-content: center;
     .services_row {
       justify-content: center;
     }

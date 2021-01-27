@@ -4,6 +4,7 @@
   background: url('/images/background/testimonials_background.png') top no-repeat;
   background-size: cover;
   height: 900px;
+  margin-bottom: $defaultMargin;
   padding: 264px 20px 20px 20px;
 
   .testimonials_inner {
@@ -16,9 +17,9 @@
     }
 
     /* 
-            hacky way to override the carousel's 
-            arrows' style which only appear during runtime 
-        */
+      hacky way to override the carousel's 
+      arrows' style which only appear during runtime 
+    */
     button {
       background: none;
       border: none;
@@ -28,11 +29,13 @@
       font-size: 16pt;
       font-size: 26pt;
       border: 1px solid transparent;
+      opacity: 0.75;
+      transition: opacity 0.15s ease;
 
       &:hover {
         background: none !important;
         box-shadow: none;
-        border: 1px solid #fff;
+        opacity: 1;
       }
 
       &:nth-child(1) {
@@ -74,8 +77,12 @@
   }
 }
 
-@media (max-width: $tablet) {
-  //
+@media (max-width: $smallDesktop) {
+  .testimonials {
+    margin-bottom: $smallMargin;
+    padding: 140px 20px 20px 20px;
+    height: auto;
+  }
 }
 
 @media (max-width: $mobile) {
@@ -85,7 +92,7 @@
 
     .testimonials_inner {
       h4 {
-        font-size: 18pt;
+        font-size: 22pt;
         text-align: center;
       }
 
