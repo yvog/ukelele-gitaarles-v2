@@ -2,11 +2,13 @@
 $ukeGitBlue: #1193f5;
 $mainBgColor: #fff;
 $errors: #f35f5f;
-$success: rgb(155, 255, 155, 0.8);
+
+$error: rgba(#f35f5f, 0.75);
+$success: rgb(155, 255, 155, 0.75);
 
 /* fonts */
-$titleFont: "Salsa", cursive;
-$paragraphFont: "Open Sans", sans-serif;
+$titleFont: 'Salsa', cursive;
+$paragraphFont: 'Open Sans', sans-serif;
 
 /* layout */
 $mainContainerMaxWidth: 1440px;
@@ -20,3 +22,9 @@ $lightBoxShadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 $smallDesktop: 1200px;
 $tablet: 992px;
 $mobile: 768px;
+
+/* margins */
+$defaultMargin: 128px;
+$smallMargin: $defaultMargin * 0.5;
+$defaultBlockMargin: $defaultMargin auto $defaultMargin auto;
+$smallBlockMargin: ($defaultMargin * 0.5) auto ($defaultMargin * 0.5) auto;

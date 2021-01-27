@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Salsa&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
-@import "./variables";
-@import "./fonts";
+@import './variables';
+@import './fonts';
 
 html,
 body {
@@ -12,6 +12,28 @@ body {
 
 .hidden {
   display: none;
+}
+
+.privacy-text {
+  font-size: 9pt;
+  margin-top: 16px;
+  opacity: 0.75;
+  font-style: italic;
+}
+
+.blue-link {
+  color: $ukeGitBlue;
+
+  &:link,
+  &:visited,
+  &:active {
+    color: $ukeGitBlue;
+  }
+
+  &:hover {
+    text-decoration: underline;
+    color: $ukeGitBlue;
+  }
 }
 
 a {
@@ -35,9 +57,11 @@ a {
     div {
       &:nth-child(1),
       &:nth-child(2),
-      &:nth-child(6),
-      &:nth-child(11),
-      &:nth-child(12) {
+      &:nth-child(5),
+      &:nth-child(8),
+      &:nth-child(9),
+      &:nth-child(10),
+      &:nth-child(11) {
         grid-column: span 2;
       }
     }
@@ -70,19 +94,20 @@ a {
 }
 
 @media (max-width: $mobile) {
-
   .repair-title {
     font-size: 20pt;
   }
-  
+
   .signup-form {
     #root {
       div {
         &:nth-child(1),
         &:nth-child(2),
-        &:nth-child(6),
-        &:nth-child(11),
-        &:nth-child(12) {
+        &:nth-child(5),
+        &:nth-child(8),
+        &:nth-child(9),
+        &:nth-child(10),
+        &:nth-child(11) {
           grid-column: unset;
         }
       }
@@ -115,18 +140,36 @@ a {
   }
 }
 
-.row-eq-height {
-  display: flex;
-}
-
 .main-container {
   margin: 0 auto;
   padding: 20px 100px 0 100px;
   max-width: $mainContainerMaxWidth;
+
+  &.body {
+    margin: $defaultBlockMargin;
+  }
+
+  &.full-height {
+    min-height: 100vh;
+  }
+}
+
+.header-main-container {
+  min-height: inherit;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row-eq-height {
+  display: flex;
 }
 
 @media (max-width: $smallDesktop) {
   .main-container {
     padding: 20px 40px 0 40px;
+
+    &.body {
+      margin: $smallBlockMargin;
+    }
   }
 }

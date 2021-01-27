@@ -1,12 +1,12 @@
-import {AboutMeSummary, ExploreSignup, Gallery, Layout, MainHero, Usp} from '../components';
-import {Testimonials} from '../components/testimonials/testimonials';
+import { AboutMeSummary, ExploreSignup, Gallery, Layout, MainHero, Usp } from '../components'
+import { Testimonials } from '../components/testimonials/testimonials'
 
 export default function Home() {
   return (
     <Layout title="Welkom">
+      <MainHero />
 
-      <div className="main-container">
-        <MainHero />
+      <div className="main-container body">
         <Usp />
       </div>
 
@@ -17,9 +17,6 @@ export default function Home() {
       </div>
 
       <Testimonials />
-
-      {/* <Gallery /> */}
-
     </Layout>
   )
 }

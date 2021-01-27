@@ -1,32 +1,33 @@
-@import "../styles/variables";
+@import '../styles/variables';
 
 .usp {
-    margin: 160px auto 128px auto;
-    width: 100%;
-    max-width: $mainInnerContainerMaxWidth;
-    padding: 0;
+  width: 100%;
+  max-width: $mainInnerContainerMaxWidth;
+  padding: 0;
 
-    h4 {
-        margin-bottom: 128px;
-        font-size: 34pt;
-    }
+  h4 {
+    margin-bottom: $defaultBlockMargin;
+    font-size: 34pt;
+  }
 }
 
-@media (max-width: $tablet) {
-    .usp {
-        h4 {
-            font-size: 22pt;
-        }
+@media (max-width: $smallDesktop) {
+  .usp {
+    //margin: $smallBlockMargin;
+    h4 {
+      font-size: 28pt;
+      margin-bottom: $smallMargin;
     }
+  }
 }
 
 @media (max-width: $mobile) {
-    .usp {
-        margin: 80px auto 0 auto;
+  .usp {
+    //margin: 80px auto 0 auto;
 
-        h4 {
-            margin-bottom: 80px;
-            font-size: 18pt;
-        }
+    h4 {
+      margin-bottom: 80px;
+      font-size: 22pt;
     }
+  }
 }

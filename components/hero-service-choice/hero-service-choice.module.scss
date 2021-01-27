@@ -1,145 +1,166 @@
-@import "../styles/variables";
+@import '../styles/variables';
 
 .hero_service_choice {
+  height: inherit;
+  min-height: 900px !important;
+
+  &:after {
+    min-height: 900px !important;
+  }
+
+  section {
+    margin: 0;
+    padding: 0;
     height: inherit;
 
-    section {
-        margin: 0;
-        padding: 0;
-        height: inherit;
+    article {
+      padding: 0;
+      color: #fff;
+      transition: transform 0.15s ease, opacity 0.15s ease;
 
-        article {
-            padding: 0;
-            color: #fff;
-            padding-top: 100px;
-            transition: transform 0.15s ease, opacity 0.15s ease;
+      h2 {
+        margin-bottom: 48px;
+        z-index: 1;
+      }
 
-            h2 {
-                margin-bottom: 48px;
-                z-index: 1;
-            }
+      p {
+        max-width: 60%;
+        z-index: 1;
+      }
 
-            p {
-                max-width: 60%;
-                z-index: 1;
-            }
+      .button_wrap {
+        width: 100%;
+        float: right;
+        z-index: 1;
 
-            .button_wrap {
-                width: 100%;
-                float: right;
-                z-index: 1;
-
-                a {
-                    margin-top: 144px;
-                }
-            }
-
-            .crop {
-                overflow: hidden;
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                transform: translate(0, -220px);
-                transform-origin: center center;
-                transition: width 0.15s ease;
-
-                img {
-                    float: right;
-                    transition: transform 0.15s ease;
-                    border-radius: 16px;
-                    z-index: -1;
-                }
-            }
-
-            &:nth-child(2) {
-                text-align: right;
-
-                p {
-                    text-align: right;
-                    float: right;
-                    margin-top: 0;
-                }
-
-                .crop {
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    transition: width 0.15s ease;
-
-                    img {
-                        float: left;
-                    }
-                }
-            }
+        a {
+          margin-top: 144px;
         }
+      }
+
+      .crop {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        transform-origin: center center;
+        transition: width 0.15s ease;
+        height: 100%;
+
+        img {
+          transition: transform 0.15s ease;
+          border-radius: 16px;
+          z-index: -1;
+          float: right;
+          height: 100%;
+        }
+      }
+
+      &:nth-child(2) {
+        text-align: right;
+
+        p {
+          text-align: right;
+          float: right;
+          margin-top: 0;
+        }
+
+        .crop {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          min-height: 100vh;
+          transition: width 0.15s ease;
+
+          img {
+            float: left;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      article {
+        opacity: 0.25;
 
         &:hover {
-            article {
-                opacity: 0.25;
+          transform: scale(1.1);
+          opacity: 1;
+          z-index: 2;
 
-                &:hover {
-                    transform: scale(1.1);
-                    opacity: 1;
-                    z-index: 2;
+          .crop {
+            width: 100% !important;
+            transition: width 0.15s ease;
+            z-index: -1;
 
-                    .crop {
-                        width: 100% !important;
-                        transition: width 0.15s ease;
-                        z-index: -1;
-
-                        img {
-                            transform: translate(0, 0) !important;
-                        }
-                    }
-                }
+            img {
+              transform: translate(0, 0) !important;
             }
+          }
         }
+      }
     }
+  }
+}
+
+@media (max-width: $smallDesktop) {
+  .hero_service_choice {
+    section {
+      margin-top: 132px;
+      article {
+        padding-top: 0;
+      }
+    }
+  }
 }
 
 @media (max-width: $mobile) {
-    .hero_service_choice {
-        section {
-            display: block;
+  .hero_service_choice {
+    section {
+      display: block;
+      margin-top: 0;
 
-            article {
-                padding-top: 0;
-                width: 100%;
-                text-align: center;
-                margin-bottom: 72px;
+      article {
+        padding-top: 0;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 72px;
 
-                &:nth-child(2) {
-                    text-align: center;
+        &:nth-child(2) {
+          text-align: center;
 
-                    p {
-                        text-align: center;
-                        float: unset;
-                    }
-                }
-
-                h2 {
-                    text-align: center;
-                    margin-bottom: 16px;
-                }
-
-                p {
-                    text-align: center;
-                    margin: 24px auto 24px auto;
-                }
-
-                .button_wrap {
-                    float: unset;
-                    margin: 0 auto;
-
-                    a {
-                        margin-top: 0;
-                    }
-                }
-
-                .crop {
-                    display: none;
-                }
-            }
+          p {
+            text-align: center;
+            float: unset;
+          }
         }
+
+        h2 {
+          text-align: center;
+          margin-bottom: 16px;
+        }
+
+        p {
+          text-align: center;
+          margin: 24px auto 24px auto;
+        }
+
+        .button_wrap {
+          float: unset;
+          margin: 0 auto;
+
+          a {
+            margin-top: 0;
+          }
+        }
+
+        .crop {
+          display: none;
+        }
+      }
     }
+  }
 }

@@ -1,58 +1,58 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .button {
-    display: inline-block;
-    border-radius: 50px;
+  display: inline-block;
+  border-radius: 50px;
+  color: #fff;
+  border: 2px solid #fff;
+  min-width: 224px;
+  padding: 10px 18px 10px 18px;
+  letter-spacing: 2px;
+  font-size: 14pt;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.15s ease, color 0.15s ease;
+
+  &:link,
+  &:visited,
+  &:active {
     color: #fff;
-    border: 2px solid #fff;
-    min-width: 224px;
-    padding: 10px 18px 10px 18px;
-    letter-spacing: 2px;
-    font-size: 14pt;
     text-decoration: none;
-    text-align: center;
-    transition: background .15s ease, color .15s ease;
+  }
 
-    &:link,
-    &:visited,
-    &:active {
-        color: #fff;
-        text-decoration: none;
-    }
-
-    &:not(.disabled) {
-        &:hover {
-            background: #fff;
-            color: $ukeGitBlue;
-            text-decoration: none;
-        }
-
-        &.filled {
-            &:hover {
-                background: #fff;
-                color: $ukeGitBlue;
-                text-decoration: none;
-            }
-        }
+  &:not(.disabled) {
+    &:hover {
+      background: #fff;
+      color: $ukeGitBlue;
+      text-decoration: none;
     }
 
     &.filled {
-        background: $ukeGitBlue;
-        border: 2px solid $ukeGitBlue;
+      &:hover {
+        background: #fff;
+        color: $ukeGitBlue;
+        text-decoration: none;
+      }
     }
+  }
 
-    &.disabled {
-        opacity: 0.25;
+  &.filled {
+    background: $ukeGitBlue;
+    border: 2px solid $ukeGitBlue;
+  }
 
-        &:hover {
-            //
-        }
+  &.disabled {
+    opacity: 0.25;
+
+    &:hover {
+      //
     }
+  }
 }
 
 @media (max-width: $tablet) {
-    .button {
-        font-size: 11pt;
-        min-width: unset;
-    }
+  .button {
+    font-size: 11pt;
+    min-width: unset;
+  }
 }

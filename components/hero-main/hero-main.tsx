@@ -1,27 +1,32 @@
-import classNames from 'classnames';
-import {useEffect, useRef} from 'react';
-import {Button, HeaderNavigation, HeroServices, HeroWrapper} from '..';
-import styles from './hero-main.module.scss';
+import classnames from 'classnames'
+import { Button, HeaderNavigation, HeroServices, HeroWrapper } from '..'
+import styles from './hero-main.module.scss'
 
 const HeroMainComponent: React.FC = () => {
-    return (
-        <>
-            <HeroWrapper classes={[styles.hero_main]}>
-                <HeaderNavigation />
+  return (
+    <>
+      <HeroWrapper classes={[styles.hero_main]}>
+        <div className="main-container header-main-container">
+          <HeaderNavigation />
 
-                <section>
-                    <article id={styles.hero_info}>
-                        <h2>Bert Geldhof</h2>
-                        <p>Met veel plezier geef ik leuke ukelele- en gitaarlessen aan huis in Alphen aan den Rijn, Leiden en omstreken.</p>
-                        <Button href="/aanmelden">Aanmelden</Button>
-                    </article>
-                </section>
-                
-            </HeroWrapper>
+          <section>
+            <article id={styles.hero_info}>
+              <h2>Bert Geldhof</h2>
+              <p>
+                Met veel plezier geef ik persoonlijke ukelele-, gitaar- en pianolessen aan huis in Alphen aan den Rijn,
+                Leiden en omstreken.
+              </p>
+              <Button href="/aanmelden">Aanmelden</Button>
+            </article>
+          </section>
+        </div>
+      </HeroWrapper>
 
-            <HeroServices />
-        </>
-    );
-};
+      <div className="main-container">
+        <HeroServices />
+      </div>
+    </>
+  )
+}
 
-export const HeroMain = HeroMainComponent;
+export const HeroMain = HeroMainComponent

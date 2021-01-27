@@ -1,162 +1,183 @@
-@import "../styles/variables";
+@import '../styles/variables';
+
+.form_message {
+  max-width: 400px;
+  border-radius: 24px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 8px;
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  top: 16px;
+  left: 0;
+  right: 0;
+
+  img {
+    display: block;
+    margin-left: 16px;
+    margin-top: 3px;
+    opacity: 0.45;
+    transition: opacity 0.25 ease;
+    width: 15px;
+    height: 15px;
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
 
 .success_message {
-    max-width: 300px;
-    background: $success;
-    border: 1px solid rgb(104, 189, 104);
-    border-radius: 20px;
-    color: rgb(48, 152, 48);
-    margin: 0 auto;
-    text-align: center;
-    padding: 16px;
-    display: flex;
-    position: fixed;
-    top: 16px;
-    left: 0;
-    right: 0;
+  max-width: 308px;
+  background: $success;
+  border: 1px solid rgb(104, 189, 104);
+  color: rgb(48, 152, 48);
+}
 
-    img {
-        display: block;
-        margin-left: 16px;
-        margin-top: 3px;
-        opacity: 0.45;
-        transition: opacity 0.25 ease;
-        width: 15px;
-        height: 15px;
-        &:hover {
-            opacity: 0.75;
-        }
-    }
+.error_message {
+  max-width: 396px;
+  background: $error;
+  border: 1px solid #e20019;
+  color: #e20019;
 }
 
 .custom_form {
-    max-width: 550px;
+  max-width: 550px;
 
-    fieldset {
-        border: none;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-column-gap: 32px;
-        margin: 0;
-        padding: 0;
-    }
+  fieldset {
+    border: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 32px;
+    margin: 0;
+    padding: 0;
+  }
 
-    button[type="submit"] {
-        margin-top: 24px;
-        padding: 12px;
-        max-width: 164px;
-        outline: none;
+  button[type='submit'] {
+    margin-top: 24px;
+    padding: 12px;
+    max-width: 164px;
+    outline: none;
+    border: 2px solid $ukeGitBlue;
+    border-radius: 40px;
+    width: 100%;
+    transition: background 0.15s ease, color 0.15s ease;
+    font-family: $paragraphFont;
+    font-size: 16px;
+    background: $ukeGitBlue;
+    color: #fff;
+
+    &:not(:disabled) {
+      &:hover,
+      &:focus,
+      &:active {
         border: 2px solid $ukeGitBlue;
-        border-radius: 40px;
-        width: 100%;
-        transition: background .15s ease, color .15s ease;
-        font-family: $paragraphFont;
-        font-size: 16px;
-        background: $ukeGitBlue;
-        color: #fff;
-
-        &:hover, &:focus, &:active {
-            border: 2px solid $ukeGitBlue;
-            color: $ukeGitBlue;
-            background: #fff;
-        }
-    }
-
-    label {
-        display: block;
-        margin: 24px 16px 4px 16px;
-    }
-
-    input,
-    textarea {
+        color: $ukeGitBlue;
         background: #fff;
-        border-radius: 50px;
-        padding: 8px 16px;
-        border: 1px solid #ddd;
-        transition: border 0.15s ease, background 0.15s ease;
-
-        &:not([type="radio"]):not([type="checkbox"]) {
-            width: 100%;
-        }
-
-        &:focus {
-            outline: none;
-            border: 1px solid $ukeGitBlue;
-        }
-
-        &:hover {
-            &:not(:focus) {
-                border: 1px solid #555;
-            }
-        }
+      }
     }
 
-    textarea {
-        height: 200px;
-        border-radius: 25px;
+    &:disabled {
+      opacity: 0.25;
+    }
+  }
+
+  label {
+    display: block;
+    margin: 24px 16px 4px 16px;
+  }
+
+  input,
+  textarea {
+    background: #fff;
+    border-radius: 50px;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    transition: border 0.15s ease, background 0.15s ease;
+
+    &:not([type='radio']):not([type='checkbox']) {
+      width: 100%;
     }
 
-    :global {
-        .field-radio-group {
-            div {
-                display: inline-block;
-                margin-right: 16px;
-            }
-        }
-
-        .form-group {
-            div {
-                ul.error-detail {
-                    list-style-type: none;
-                    padding-left: 0;
-                    margin: 0 16px 4px 16px;
-                    li {
-                        color: $errors;
-                        font-size: 10pt;
-                    }
-                }
-            }
-        }
-
-        .checkbox,
-        .radio {
-            margin-right: 0 !important;
-
-            label {
-                margin: 0;
-            }
-            span {
-                margin-left: 0;
-                padding: 16px;
-            }
-        }
-
-        input[type="checkbox"],
-        input[type="radio"] {
-            min-width: 0;
-        }
+    &:focus {
+      outline: none;
+      border: 1px solid $ukeGitBlue;
     }
+
+    &:hover {
+      &:not(:focus) {
+        border: 1px solid #555;
+      }
+    }
+  }
+
+  textarea {
+    height: 148px;
+    border-radius: 32px;
+    resize: none;
+  }
+
+  :global {
+    .field-radio-group {
+      div {
+        display: inline-block;
+        margin-right: 16px;
+      }
+    }
+
+    .form-group {
+      div {
+        ul.error-detail {
+          list-style-type: none;
+          padding-left: 0;
+          margin: 0 16px 4px 16px;
+          li {
+            color: $errors;
+            font-size: 10pt;
+          }
+        }
+      }
+    }
+
+    .checkbox,
+    .radio {
+      margin-right: 0 !important;
+
+      label {
+        margin: 0;
+      }
+      span {
+        margin-left: 0;
+        padding: 16px;
+      }
+    }
+
+    input[type='checkbox'],
+    input[type='radio'] {
+      min-width: 0;
+    }
+  }
 }
 
 @media (max-width: $mobile) {
-    .custom_form {
-        max-width: 100%;
+  .custom_form {
+    max-width: 100%;
 
-        fieldset {
-            grid-column-gap: 8px;
-            grid-template-columns: repeat(1, 1fr);
-        }
-
-        :global {
-            .field-radio-group {
-                div {
-                    padding: 16px;
-                }
-            }
-
-            .checkbox {
-                padding: 16px 0 16px 0;
-            }
-        }
+    fieldset {
+      grid-column-gap: 8px;
+      grid-template-columns: repeat(1, 1fr);
     }
+
+    :global {
+      .field-radio-group {
+        div {
+          padding: 16px;
+        }
+      }
+
+      .checkbox {
+        padding: 16px 0 16px 0;
+      }
+    }
+  }
 }

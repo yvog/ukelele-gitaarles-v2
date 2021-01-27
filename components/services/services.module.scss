@@ -1,24 +1,29 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .services {
-    .services_row {
-        //
-    }
+  margin: $defaultBlockMargin;
+
+  .services_row {
+    margin-top: 64px;
+  }
 }
 
 @media (max-width: $smallDesktop) {
-    .services {
-        .services_row {
-            display: flex;
-            flex-wrap: wrap;
-        }
+  .services {
+    margin: $smallBlockMargin;
+    .services_row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 0;
     }
+  }
 }
 
 @media (max-width: $mobile) {
-    .services {
-        .services_row {
-            justify-content: center;
-        }
+  .services {
+    //justify-content: center;
+    .services_row {
+      justify-content: center;
     }
+  }
 }

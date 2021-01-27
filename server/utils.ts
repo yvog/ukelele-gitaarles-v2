@@ -1,13 +1,18 @@
 const sgMail = require('@sendgrid/mail')
 
 export function verifyRecaptchaToken(token) {
-  return fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`, {
-    method: 'POST'
-  }).then((res) => {
-    return res.json();
-  }).then((res) => {
-    return res
-  })
+  return fetch(
+    `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
+    {
+      method: 'POST',
+    },
+  )
+    .then((res) => {
+      return res.json()
+    })
+    .then((res) => {
+      return res
+    })
 }
 
 export const sendMail = async (subject, text) => {
@@ -19,12 +24,15 @@ export const sendMail = async (subject, text) => {
     from: from,
     subject: subject,
     text: text,
-    replyTo: from
+    replyTo: from,
   }
 
-  await sgMail.send(mail).then(() => {
-    console.log('mail sent')
-  }).catch((error) => {
-    console.error(error)
-  })
+  await sgMail
+    .send(mail)
+    .then(() => {
+      console.log('mail sent')
+    })
+    .catch((error) => {
+      console.error(error)
+    })
 }

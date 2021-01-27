@@ -1,19 +1,21 @@
-import { sendMail, verifyRecaptchaToken } from '../../server/utils';
+import { sendMail, verifyRecaptchaToken } from '../../server/utils'
+import { NowRequest, NowResponse } from '@vercel/node'
 
-export default async function handler(req, res) {
+export default async function handler(req: NowRequest, res: NowResponse) {
   const formData = req.body.formData
   const token = req.body.token
 
-  res.setHeader('Content-Type', 'application/json')
-
   await verifyRecaptchaToken(token).then(async (recaptchaRes) => {
     if (req.method !== 'POST' || !recaptchaRes || !recaptchaRes.success || recaptchaRes.action !== 'submitsignup') {
-      res.end(JSON.stringify({
-        success: false
-      }))
+      res.send({
+        success: false,
+        reason: 'invalid request',
+      })
     }
 
-    await sendMail('Nieuwe aanmelding via ukelele-gitaarles.nl', `
+    await sendMail(
+      'Nieuwe aanmelding via ukelele-gitaarles.nl',
+      `
       Beste meneer Geldhof,
 
       Hoera! Je hebt een nieuwe aanmelding ontvangen via ukelele-gitaarles.nl.
@@ -35,10 +37,11 @@ export default async function handler(req, res) {
       Met vriendelijke groet,
 
       ukelele-gitaarles.nl
-    `)
+    `,
+    )
 
-    res.end(JSON.stringify({
-      success: true
-    }))
+    res.send({
+      success: true,
+    })
   })
 }

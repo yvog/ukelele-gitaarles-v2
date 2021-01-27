@@ -1,21 +1,20 @@
-import {HeaderNavigation, HeroWrapper} from '..';
-import styles from './hero-service-choice.module.scss';
+import { HeaderNavigation, HeroWrapper } from '..'
+import styles from './hero-service-choice.module.scss'
 
 type HeroServiceChoiceComponentProps = {
-    children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
-const HeroServiceChoiceComponent: React.FC<HeroServiceChoiceComponentProps> = ({
-    children
-}) => {
-    return (
-        <HeroWrapper forceMinHeight={900} classes={[styles.hero_service_choice]} blue={true}>
-            <HeaderNavigation />
+const HeroServiceChoiceComponent: React.FC<HeroServiceChoiceComponentProps> = ({ children }) => {
+  return (
+    <HeroWrapper classes={[styles.hero_service_choice]} blue={true}>
+      <div className="main-container header-main-container">
+        <HeaderNavigation />
 
-            {children}
+        {children}
+      </div>
+    </HeroWrapper>
+  )
+}
 
-        </HeroWrapper>
-    );
-};
-
-export const HeroServiceChoice = HeroServiceChoiceComponent;
+export const HeroServiceChoice = HeroServiceChoiceComponent
