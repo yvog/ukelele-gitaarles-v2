@@ -2,6 +2,11 @@
 
 .hero_service_choice {
   height: inherit;
+  min-height: 900px !important;
+
+  &:after {
+    min-height: 900px !important;
+  }
 
   section {
     margin: 0;
@@ -97,10 +102,22 @@
   }
 }
 
+@media (max-width: $smallDesktop) {
+  .hero_service_choice {
+    section {
+      margin-top: 132px;
+      article {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
 @media (max-width: $mobile) {
   .hero_service_choice {
     section {
       display: block;
+      margin-top: 0;
 
       article {
         padding-top: 0;

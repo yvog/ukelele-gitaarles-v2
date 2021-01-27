@@ -1,5 +1,3 @@
-import classNames from 'classnames'
-import { useEffect, useRef } from 'react'
 import { Button, HeaderNavigation, HeroServices, HeroWrapper } from '..'
 import styles from './hero-main.module.scss'
 
