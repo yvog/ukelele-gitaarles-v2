@@ -6,14 +6,13 @@
   padding: 0;
 
   h4 {
-    margin-bottom: $defaultBlockMargin;
+    margin-bottom: $defaultMargin;
     font-size: 34pt;
   }
 }
 
 @media (max-width: $smallDesktop) {
   .usp {
-    //margin: $smallBlockMargin;
     h4 {
       font-size: 28pt;
       margin-bottom: $smallMargin;
@@ -23,8 +22,6 @@
 
 @media (max-width: $mobile) {
   .usp {
-    //margin: 80px auto 0 auto;
-
     h4 {
       margin-bottom: 80px;
       font-size: 22pt;
