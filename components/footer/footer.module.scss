@@ -11,16 +11,29 @@
   background: url('/images/background/blue_background.png') center repeat;
   background-size: cover;
 
+  .disclaimer {
+    padding-top: 36px;
+    padding-bottom: 36px;
+    text-align: center;
+    font-size: 10pt;
+  }
+
   .footer_nav {
+    padding: 0;
+
     h3 {
       margin-bottom: 32px;
     }
 
     nav {
-      a {
+      div {
         display: block;
-        width: 75px;
-        margin-bottom: 14px;
+        margin-bottom: 4px;
+
+        a {
+          padding: 6px 0 6px 0;
+          display: inline-block;
+        }
       }
     }
   }
@@ -30,7 +43,7 @@
 
     span {
       display: block;
-      margin-top: 32px;
+      margin-top: 16px;
     }
 
     a {
@@ -44,8 +57,7 @@
 
     span {
       display: block;
-      font-size: 11pt;
-      margin-top: 32px;
+      margin-top: 16px;
     }
   }
 }
@@ -56,6 +68,10 @@
       display: flex;
       padding: 0;
       justify-content: space-between;
+
+      & > div {
+        flex: 1 1 0;
+      }
     }
   }
 }
@@ -66,22 +82,27 @@
     padding: 24px;
 
     h3 {
-      font-size: 18pt;
+      font-size: 14pt;
     }
 
     & > div {
       display: block;
 
       .footer_nav {
+        display: block;
         text-align: center;
         margin-bottom: 36px;
+        padding-bottom: 24px;
+        border-bottom: 2px solid rgba(33, 33, 33, 0.15);
 
         nav {
-          a {
-            margin: 0 auto;
-            padding: 12px;
-            text-align: center;
-            width: 100px;
+          div {
+            display: inline-block;
+            a {
+              margin: 0 auto;
+              padding: 16px;
+              text-align: center;
+            }
           }
         }
       }
@@ -89,17 +110,20 @@
       .footer_contact {
         text-align: center;
         margin-bottom: 36px;
+        padding-bottom: 24px;
+        border-bottom: 2px solid rgba(33, 33, 33, 0.15);
 
         a {
           display: block;
           max-width: 75%;
-          margin: 16px auto 16px auto;
+          margin: 24px auto 24px auto;
         }
       }
 
       .footer_companydetails {
         text-align: center;
-        margin-bottom: 36px;
+        padding-bottom: 36px;
+        border-bottom: 2px solid rgba(33, 33, 33, 0.15);
 
         span {
           margin-top: 16px;
