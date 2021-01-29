@@ -6,7 +6,7 @@ const HeroMainComponent: React.FC = () => {
   return (
     <>
       <HeroWrapper classes={[styles.hero_main]}>
-        <div className="main-container header-main-container">
+        <div className="main-container header header-main-container">
           <HeaderNavigation />
 
           <section>

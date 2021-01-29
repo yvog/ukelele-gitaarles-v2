@@ -6,8 +6,8 @@ const AboutMeComponent: React.FC = () => {
     <section className={classNames(styles.about_me, 'main-container body')}>
       <h2>Bert Geldhof</h2>
 
-      <div className="row">
-        <div className={classNames(styles.about_me_content, 'col-lg-6')}>
+      <div className={styles.about_me_row}>
+        <div className={styles.about_me_content}>
           <p>
             Op jonge leeftijd ben ik begonnen met het maken van muziek. Ooit begonnen met blokfluitspelen, waardoor mijn
             brede interesse in muziek is ontstaan.
@@ -36,15 +36,13 @@ const AboutMeComponent: React.FC = () => {
             jonge of oudere leerlingen, ook geeft het mij plezier de opgedane ervaringen met hen te delen.
           </p>
         </div>
-        <div className="col-lg-6">
-          <img
-            className={classNames(styles.about_me_image)}
-            src="/images/misc/bert_geldhof.jpg"
-            alt="Bert Geldhof"
-            width="380"
-            height="524"
-          />
-        </div>
+        <img
+          className={classNames(styles.about_me_image)}
+          src="/images/misc/bert_geldhof.jpg"
+          alt="Bert Geldhof"
+          width="380"
+          height="524"
+        />
       </div>
     </section>
   )

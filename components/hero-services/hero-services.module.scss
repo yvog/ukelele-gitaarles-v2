@@ -17,6 +17,14 @@
   }
 }
 
+@media (max-width: $smallDesktop) {
+  .hero_services {
+    h3 {
+      font-size: 16pt;
+    }
+  }
+}
+
 @media (max-width: $tablet) {
   .hero_services {
     padding: 24px 30px 16px 30px;

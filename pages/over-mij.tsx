@@ -4,7 +4,7 @@ import { AboutMe, ExploreSignup, HeaderNavigation, Layout, UspBar } from '../com
 export default function AboutMePage() {
   return (
     <Layout title="Over mij">
-      <div className="main-container">
+      <div className="main-container header">
         <HeaderNavigation variant="black" />
       </div>
 

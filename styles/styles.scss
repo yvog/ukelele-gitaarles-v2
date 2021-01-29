@@ -142,8 +142,8 @@ a {
 
 .main-container {
   margin: 0 auto;
-  padding: 20px 100px 0 100px;
   max-width: $mainContainerMaxWidth;
+  padding: 0 100px 0 100px;
 
   &.body {
     margin: $defaultBlockMargin;
@@ -151,6 +151,10 @@ a {
 
   &.full-height {
     min-height: 100vh;
+  }
+
+  &.header {
+    padding-top: 20px;
   }
 }
 
@@ -166,10 +170,14 @@ a {
 
 @media (max-width: $smallDesktop) {
   .main-container {
-    padding: 20px 40px 0 40px;
+    padding: 0 40px 0 40px;
 
     &.body {
       margin: $smallBlockMargin;
+    }
+
+    &.header {
+      padding-top: 20px;
     }
   }
 }

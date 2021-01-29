@@ -3,7 +3,7 @@ import { HeaderNavigation, Layout } from '../components'
 export default function TermsOfUsePage() {
   return (
     <Layout title="Algemene voorwaarden">
-      <div className="main-container">
+      <div className="main-container header">
         <HeaderNavigation variant="black" />
       </div>
 

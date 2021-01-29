@@ -10,11 +10,24 @@ const FooterComponent: React.FC = () => {
         <div className={classNames(styles.footer_nav, 'col-md-4')}>
           <h3>Snel navigeren</h3>
           <nav className={styles.line_hover_nav}>
-            <a href="/over-mij">Over mij</a>
-            <a href="/aanbod">Aanbod</a>
-            <a href="/leskosten">Leskosten</a>
-            <a href="/aanvragen">Reparatie / onderhoud</a>
-            <a href="/aanmelden">Aanmelden</a>
+            <div>
+              <a href="/">Home</a>
+            </div>
+            <div>
+              <a href="/leskosten">Leskosten</a>
+            </div>
+            <div>
+              <a href="/aanmelden">Aanmelden</a>
+            </div>
+            <div>
+              <a href="/contact">Contact</a>
+            </div>
+            <div>
+              <a href="/privacy-verklaring">Privacyverklaring</a>
+            </div>
+            <div>
+              <a href="/algemene-voorwaarden">Algemene voorwaarden</a>
+            </div>
           </nav>
         </div>
         <div className={classNames('col-md-4', styles.footer_contact)}>
@@ -33,21 +46,10 @@ const FooterComponent: React.FC = () => {
         </div>
       </div>
 
-      <div className="main-container">
-        <div className="row">
-          &copy; Copyright {new Date().getFullYear()} Ukelele-Gitaarles, alle rechten voorbehouden. Website gerealiseerd
-          door <a href="https://github.com/yvog">Yvo Geldhof</a> en{' '}
-          <a href="https://dribbble.com/VeraGeldhof">Vera Geldhof</a>.
-          <br />
-          <br />
-          <a target="_blank" href="/privacy-verklaring">
-            Privacyverklaring
-          </a>{' '}
-          –{' '}
-          <a target="_blank" href="/algemene-voorwaarden">
-            Algemene voorwaarden
-          </a>
-        </div>
+      <div className={classNames('main-container row', styles.disclaimer)}>
+        &copy; Copyright {new Date().getFullYear()} Ukelele-Gitaarles, alle rechten voorbehouden. Website gerealiseerd
+        door <a href="https://github.com/yvog">Yvo Geldhof</a> en{' '}
+        <a href="https://dribbble.com/VeraGeldhof">Vera Geldhof</a>
       </div>
     </footer>
   )
