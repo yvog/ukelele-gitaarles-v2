@@ -1,20 +1,15 @@
-import Head from "next/head";
-import { Footer } from "..";
-import styles from "./layout.module.scss";
+import Head from 'next/head'
+import { PropsWithChildren } from 'react'
+import { Footer } from '..'
 
-type LayoutProps = {
-  title?: string;
-  children?: React.ReactNode;
-  scripts?: string[];
-};
+type LayoutProps = PropsWithChildren<{
+  title?: string
+  scripts?: string[]
+}>
 
-const LayoutComponent: React.FC<LayoutProps> = ({
-  children,
-  title = "Ukelele-Gitaarles",
-  scripts = [],
-}) => {
+const LayoutComponent: React.FC<LayoutProps> = ({ children, title = 'Ukelele-Gitaarles', scripts = [] }) => {
   const description =
-    "Bert Geldhof geeft gitaar-, ukelele- en pianolessen. Hiernaast repareert/onderhoudt hij snaarinstrumenten.";
+    'Bert Geldhof geeft gitaar-, ukelele- en pianolessen. Hiernaast repareert/onderhoudt hij snaarinstrumenten.'
 
   return (
     <>
@@ -33,16 +28,13 @@ const LayoutComponent: React.FC<LayoutProps> = ({
         <meta property="og:title" content={`${title} - Ukelele-Gitaarles`} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content="https://ukelele-gitaarles.nl/" />
-        <meta
-          property="og:site_name"
-          content="Bert Geldhof - Ukelele-Gitaarles"
-        />
+        <meta property="og:site_name" content="Bert Geldhof - Ukelele-Gitaarles" />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:title" content={`${title} - Ukelele-Gitaarles`} />
 
         {scripts.map((src: string, index: number) => {
-          return <script key={`script-${index}`} src={src} async></script>;
+          return <script key={`script-${index}`} src={src} async></script>
         })}
       </Head>
 
@@ -52,7 +44,7 @@ const LayoutComponent: React.FC<LayoutProps> = ({
 
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export const Layout = LayoutComponent;
+export const Layout = LayoutComponent

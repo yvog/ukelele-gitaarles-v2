@@ -1,35 +1,39 @@
 @import '../styles/variables';
 
-.about_me {
-  .about_me_row {
+.content_block {
+  .content_block_row {
     display: flex;
   }
 
-  .about_me_image {
+  img {
     margin-left: $smallMargin;
     border-radius: 16px;
+  }
+
+  .no_image {
+    max-width: 80%;
   }
 }
 
 @media (max-width: $smallDesktop) {
-  .about_me {
-    .about_me_row {
+  .content_block {
+    .content_block_row {
       display: flex;
     }
 
-    .about_me_content {
+    .content_block_content {
       margin-bottom: $smallMargin;
     }
   }
 }
 
 @media (max-width: $mobile) {
-  .about_me {
-    .about_me_row {
+  .content_block {
+    .content_block_row {
       display: block;
     }
 
-    .about_me_image {
+    img {
       display: block;
       margin: 0 auto;
       max-width: 50%;

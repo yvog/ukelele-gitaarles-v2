@@ -17,6 +17,13 @@
     }
 
     /* 
+      hacky way/fix to override the carousel's item & 1 pixel bug
+    */
+    & > div > div > div > div {
+      border: 1px solid transparent;
+    }
+
+    /* 
       hacky way to override the carousel's 
       arrows' style which only appear during runtime 
     */
@@ -26,7 +33,6 @@
       outline: none;
       color: #fff;
       box-shadow: none !important;
-      font-size: 16pt;
       font-size: 26pt;
       border: 1px solid transparent;
       opacity: 0.75;

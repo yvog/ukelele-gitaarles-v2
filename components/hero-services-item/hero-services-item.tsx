@@ -1,11 +1,11 @@
 import classNames from 'classnames'
 import styles from './hero-services-item.module.scss'
+import { PropsWithChildren } from 'react'
 
-type HeroServicesItemProps = {
+type HeroServicesItemProps = PropsWithChildren<{
   icon: string
   title: string
-  children: React.ReactNode
-}
+}>
 
 export const HeroServicesItemComponent: React.FC<HeroServicesItemProps> = ({ icon, title, children }) => {
   return (

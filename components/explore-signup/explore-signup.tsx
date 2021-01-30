@@ -6,7 +6,11 @@ const ExploreSignupComponent: React.FC = () => {
     <section className={styles.explore_signup}>
       <div className={styles.explore_signup_inner}>
         <h4>Ontdek het plezier in muziekmaken</h4>
-        <p>Probeer een vrijblijvende proefles</p>
+        <p>
+          Probeer een vrijblijvende proefles voor een
+          <br />
+          éénmalig verlaagd lesgeldtarief
+        </p>
         <Button href="/aanmelden">Aanmelden</Button>
       </div>
     </section>
