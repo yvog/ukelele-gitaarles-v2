@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import React from 'react'
-import { UspBar, UspItem } from '..'
+import { UspItem } from '..'
 import styles from './usp.module.scss'
 
 const UspComponent: React.FC = () => {
