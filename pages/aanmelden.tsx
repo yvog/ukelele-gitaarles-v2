@@ -47,7 +47,7 @@ export default function SignUpPage() {
       },
       comments: {
         type: 'string',
-        title: 'Eventuele opmerkingen:',
+        title: 'Eventuele opmerkingen (willen huren, proefles nemen, of iets anders?):',
       },
       gdprConsent: {
         type: 'boolean',

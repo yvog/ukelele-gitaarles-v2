@@ -1,11 +1,11 @@
 import classNames from 'classnames'
 import styles from './hero-wrapper.module.scss'
+import { PropsWithChildren } from 'react'
 
-type HeroWrapperComponentProps = {
+type HeroWrapperComponentProps = PropsWithChildren<{
   classes: string[]
   blue?: boolean
-  children: React.ReactNode
-}
+}>
 
 export const HeroWrapperComponent: React.FC<HeroWrapperComponentProps> = ({ classes, children, blue = false }) => {
   return <div className={classNames([styles.hero, ...classes, { [styles.blue]: blue }])}>{children}</div>

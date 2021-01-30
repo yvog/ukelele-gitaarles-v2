@@ -1,0 +1,60 @@
+@import '../../styles/variables';
+
+.service_page_hero {
+  display: grid;
+  grid-template-areas:
+    'title title'
+    'desc kvp'
+    'desc btn';
+  grid-template-columns: minmax(0, 1fr) minmax(1fr, 1fr);
+  grid-column-gap: $smallMargin;
+  grid-row-gap: $smallMargin;
+  margin: 0 auto;
+  width: 100%;
+  margin: $defaultBlockMargin;
+  color: #fff;
+  font-family: $paragraphFont;
+
+  h2 {
+    grid-area: title;
+  }
+
+  .description {
+    grid-area: desc;
+  }
+
+  ul.kvp {
+    grid-area: kvp;
+    width: 100%;
+    margin: 0;
+
+    li {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      img {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  .signup_btn {
+    grid-area: btn;
+    align-items: flex-end;
+    padding-bottom: $smallMargin;
+    a {
+      float: right;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .service_page_hero {
+    grid-template-areas:
+      'title title'
+      'desc desc'
+      'kvp kvp'
+      'btn btn';
+  }
+}
