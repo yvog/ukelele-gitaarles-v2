@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContentBlock, ExploreSignup, HeaderNavigation, Layout, UspBar, UspItem } from '../components'
+import { ContentBlock, ExploreSignup, HeaderNavigation, Layout, UspItem } from '../components'
 
 export default function AboutMePage() {
   return (
