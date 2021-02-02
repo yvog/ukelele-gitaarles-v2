@@ -9,7 +9,7 @@ const ExploreSignupComponent: React.FC = () => {
         <p>
           Probeer een vrijblijvende proefles voor een
           <br />
-          éénmalig verlaagd lesgeldtarief
+          éénmalig verlaagd lestarief
         </p>
         <Button href="/aanmelden">Aanmelden</Button>
       </div>

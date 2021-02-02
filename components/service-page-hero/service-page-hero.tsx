@@ -3,7 +3,7 @@ import styles from './service-page-hero.module.scss'
 
 type ServicePageHeroComponentProps = {
   title: string
-  description: string
+  description: React.ReactNode
   kvp: React.ReactNode
   button: React.ReactNode
 }

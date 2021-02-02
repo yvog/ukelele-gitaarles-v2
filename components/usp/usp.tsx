@@ -7,8 +7,8 @@ const UspComponent: React.FC = () => {
   return (
     <section className={classNames(styles.usp, 'container')}>
       <h4>
-        Je hoeft er de deur niet voor uit, want ik bied de mogelijkheid om gitaar, ukelele of pianoles bij jou thuis te
-        geven.
+        Je hoeft er de deur niet voor uit, want ik bied de mogelijkheid om gitaar-, ukelele- of pianoles bij jou thuis
+        te geven.
       </h4>
       <div className="row">
         <UspItem icon="/images/icon/icon_metronome.svg">

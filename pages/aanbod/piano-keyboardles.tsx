@@ -18,7 +18,7 @@ function PianoKeyboardLessonsKVP() {
       </li>
       <li>
         <img src="/images/icon/icon_guitar.svg" width="40" height="40" alt="warning" />
-        Deze lessen beperken zich tot alleen een introductiecursus
+        Deze keyboard- of pianolessen zijn vooral geschikt voor beginnende muzikanten
       </li>
       <li>
         <img src="/images/icon/icon_guitar.svg" width="40" height="40" alt="grandma" />
@@ -26,12 +26,8 @@ function PianoKeyboardLessonsKVP() {
         bespelen
       </li>
       <li>
-        <img src="/images/icon/icon_knowledge.svg" width="40" height="40" alt="knowledge" />
-        Voor het volgen van de lessen is geen voorkennis benodigd
-      </li>
-      <li>
         <img src="/images/icon/icon_guitar.svg" width="40" height="40" alt="guitar" />
-        Zowel persoonlijke lessen met veel aandacht voor het leerproces als groepslessen zijn mogelijk
+        Persoonlijke lessen met veel aandacht voor de leerling
       </li>
     </>
   )
@@ -45,7 +41,20 @@ export default function PianoKeyboardLessonsPage() {
           kvp={<PianoKeyboardLessonsKVP />}
           button={<Button href="/aanmelden">Aanmelden</Button>}
           title="Piano- of keyboardles"
-          description="Je favoriete muziek leren spelen in je eigen tempo. De gebruikte lesmethode is geschikt voor zowel jongeren als ouderen, die graag de gitaar of ukelele willen bespelen."
+          description={
+            <>
+              <p>
+                In de lessen komen verschillende speelstijlen aan bod; van (licht-)klassiek tot jazz. De lessen kunnen
+                zowel op keyboard als op een (akoestische) piano worden gevolgd. Hierbij luister ik altijd naar wat jij
+                wilt.
+              </p>
+              <p>
+                Als basis voor welke muziekstijl dan ook, wordt er gewerkt met een beproefde leermethode die ontworpen
+                is voor iedereen vanaf 6 á 7 jaar. Spelenderwijs leer je op een leuke manier keyboard of piano spelen en
+                muzieknoten lezen. Iedereen van jong of oud is van harte welkom.
+              </p>
+            </>
+          }
         />
       </HeroServiceChoice>
 

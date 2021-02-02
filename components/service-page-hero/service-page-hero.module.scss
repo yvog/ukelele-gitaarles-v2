@@ -14,6 +14,7 @@
   margin: $defaultBlockMargin;
   color: #fff;
   font-family: $paragraphFont;
+  padding-bottom: $smallMargin;
 
   h2 {
     grid-area: title;
@@ -42,7 +43,6 @@
   .signup_btn {
     grid-area: btn;
     align-items: flex-end;
-    padding-bottom: $smallMargin;
     a {
       float: right;
     }

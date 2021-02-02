@@ -13,8 +13,9 @@ export default function CostsPage() {
       <section className="main-container body">
         <h2>Leskosten</h2>
         <p>
-          Ukelele-Gitaarles biedt de mogelijkheid om ukelele- en/of gitaarles aan huis te krijgen. Je hoeft er de deur
+          Ukelele-Gitaarles bied de mogelijkheid om ukelele- en/of gitaarles aan huis te krijgen. Je hoeft er de deur
           niet voor uit! Hierdoor worden de leskosten bepaald op basis van het aantal kilometers vanaf mijn adres.
+          Hierbij geldt een maximale straal van 40 kilometer.
         </p>
 
         <CostsCalculator />
