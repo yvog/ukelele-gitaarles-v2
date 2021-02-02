@@ -31,7 +31,7 @@ function UkeleleGuitarLessonsKVP() {
       </li>
       <li>
         <img src="/images/icon/icon_guitar.svg" width="40" height="40" alt="guitar" />
-        Zowel persoonlijke lessen met veel aandacht voor het leerproces als groepslessen zijn mogelijk
+        Zowel persoonlijke lessen met veel aandacht voor de leerling als groepslessen zijn mogelijk
       </li>
     </>
   )
@@ -45,7 +45,25 @@ export default function UkeleleGuitarLessonsPage() {
           kvp={<UkeleleGuitarLessonsKVP />}
           button={<Button href="/aanmelden">Aanmelden</Button>}
           title="Ukelele- of gitaarles"
-          description="Je favoriete muziek leren spelen in je eigen tempo. De gebruikte lesmethode is geschikt voor zowel jongeren als ouderen, die graag de gitaar of ukelele willen bespelen."
+          description={
+            <>
+              <p>
+                In de lessen komen verschillende speelstijlen aan bod; van (licht-)klassiek, jazz, folk, country tot
+                moderne rock. Het samenspel wordt gestimuleerd, wat gitaar of ukulele spelen nóg leuker maakt. Hierbij
+                luister ik altijd naar wat jij wilt.
+              </p>
+              <p>
+                Les op een elektrische of een akoestische gitaar? Ook dat kan. Het plezier in het muziek maken staat
+                voorop!
+              </p>
+              <p>
+                Als basis voor welke muziekstijl dan ook, wordt er gewerkt met een beproefde leermethode die ontworpen
+                is voor iedereen vanaf 6 á 7 jaar. Spelenderwijs leer je op een leuke manier verschillende stijlen
+                spelen en (eventueel) muzieknoten lezen. Je hebt er dus geen voorkennis voor nodig.
+              </p>
+              <p>Iedereen van jong of oud is van harte welkom.</p>
+            </>
+          }
         />
       </HeroServiceChoice>
 
