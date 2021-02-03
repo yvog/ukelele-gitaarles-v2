@@ -13,24 +13,24 @@ function UkeleleGuitarLessonsKVP() {
   return (
     <>
       <li>
-        <img src="/images/icon/icon_home.svg" width="40" height="40" alt="home" />
+        <img src="/images/icon/icon_house.svg" width="40" height="40" alt="house" />
         Lessen aan huis. Je hoeft er de deur niet voor uit
       </li>
       <li>
-        <img src="/images/icon/icon_guitar.svg" width="40" height="40" alt="book" />
+        <img src="/images/icon/icon_book.svg" width="40" height="40" alt="book" />
         De lessen gaan verder dan alleen het leren van akkoorden of een introductiecursus
       </li>
       <li>
-        <img src="/images/icon/icon_guitar.svg" width="40" height="40" alt="grandma" />
+        <img src="/images/icon/icon_grandma.svg" width="40" height="40" alt="grandma" />
         Zowel kinderen als (oudere) volwassenen zijn welkom: je bent nooit te laat om een muziekinstrument te leren
         bespelen
       </li>
       <li>
-        <img src="/images/icon/icon_knowledge.svg" width="40" height="40" alt="knowledge" />
+        <img src="/images/icon/icon_preknowledge.svg" width="40" height="40" alt="preknowledge" />
         Voor het volgen van de lessen is geen voorkennis benodigd
       </li>
       <li>
-        <img src="/images/icon/icon_guitar.svg" width="40" height="40" alt="guitar" />
+        <img src="/images/icon/icon_man.svg" width="40" height="40" alt="man" />
         Zowel persoonlijke lessen met veel aandacht voor de leerling als groepslessen zijn mogelijk
       </li>
     </>
