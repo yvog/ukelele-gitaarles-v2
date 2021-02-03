@@ -13,20 +13,20 @@ function PianoKeyboardLessonsKVP() {
   return (
     <>
       <li>
-        <img src="/images/icon/icon_home.svg" width="40" height="40" alt="home" />
+        <img src="/images/icon/icon_house.svg" width="40" height="40" alt="house" />
         Lessen aan huis. Je hoeft er de deur niet voor uit
       </li>
       <li>
-        <img src="/images/icon/icon_guitar.svg" width="40" height="40" alt="warning" />
+        <img src="/images/icon/icon_book.svg" width="40" height="40" alt="book" />
         Deze keyboard- of pianolessen zijn vooral geschikt voor beginnende muzikanten
       </li>
       <li>
-        <img src="/images/icon/icon_guitar.svg" width="40" height="40" alt="grandma" />
+        <img src="/images/icon/icon_grandma.svg" width="40" height="40" alt="grandma" />
         Zowel kinderen als (oudere) volwassenen zijn welkom: je bent nooit te laat om een muziekinstrument te leren
         bespelen
       </li>
       <li>
-        <img src="/images/icon/icon_guitar.svg" width="40" height="40" alt="guitar" />
+        <img src="/images/icon/icon_man.svg" width="40" height="40" alt="man" />
         Persoonlijke lessen met veel aandacht voor de leerling
       </li>
     </>

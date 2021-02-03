@@ -1,11 +1,11 @@
 import React from 'react'
-import { Button, ContentBlock, ExploreSignup, HeroServiceChoice, Layout, ServicePageHero } from '../../components'
+import { Button, ExploreSignup, HeroServiceChoice, Layout, ServicePageHero } from '../../components'
 
 function RepairsOrMaintenanceKVP() {
   return (
     <>
       <li>
-        <img src="/images/icon/icon_guitar.svg" width="40" height="40" alt="guitar" />
+        <img src="/images/icon/icon_invoice.svg" width="40" height="40" alt="invoice" />
         Jarenlange vakkundige, technische kennis
       </li>
       <li>
@@ -13,7 +13,7 @@ function RepairsOrMaintenanceKVP() {
         Van nieuwe snaren en afstellen tot het repareren van een scheur in jouw gitaar
       </li>
       <li>
-        <img src="/images/icon/icon_guitar.svg" width="40" height="40" alt="guitar" />
+        <img src="/images/icon/icon_wrench.svg" width="40" height="40" alt="wrench" />
         Betaalbare reparatie / onderhoudsbeurt
       </li>
     </>
