@@ -33,6 +33,8 @@ const ExploreSignupComponent: React.FC = () => {
           alt="explore signup background"
           loading="lazy"
           className={classnames('section_background', styles.backdrop_image)}
+          width={800}
+          height={520}
         />
       </picture>
     </section>

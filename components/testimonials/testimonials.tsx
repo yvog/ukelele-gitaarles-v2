@@ -68,6 +68,8 @@ const TestimonialsComponent: React.FC = () => {
           loading="lazy"
           alt="blue "
           className={classnames('section_background')}
+          width={1920}
+          height={600}
         />
       </picture>
 

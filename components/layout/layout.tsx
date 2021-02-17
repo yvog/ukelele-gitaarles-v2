@@ -9,7 +9,7 @@ type LayoutProps = PropsWithChildren<{
 
 const LayoutComponent: React.FC<LayoutProps> = ({ children, title = 'Ukelele-Gitaarles', scripts = [] }) => {
   const description =
-    'Bert Geldhof geeft gitaar-, ukelele- en pianolessen. Hiernaast repareert/onderhoudt hij snaarinstrumenten.'
+    'Bert Geldhof geeft gitaar-, ukelele- en pianolessen aan huis in Alphen aan den Rijn, Leiden en omstreken. Hiernaast repareert en onderhoudt hij snaarinstrumenten.'
 
   return (
     <>

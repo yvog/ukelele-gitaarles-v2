@@ -12,7 +12,14 @@ const HeroServiceChoiceComponent: React.FC<HeroServiceChoiceComponentProps> = ({
         <source media="(min-width:1200px)" srcSet="/images/background/blue_background.png" />
         <source media="(min-width:992px)" srcSet="/images/background/blue_background.png" />
         <source media="(min-width:0)" srcSet="/images/background/blue_background.png" />
-        <img src="/images/background/blue_background.png" alt="alt" loading="eager" className="hero_background_image" />
+        <img
+          src="/images/background/blue_background.png"
+          alt="alt"
+          loading="eager"
+          className="hero_background_image"
+          width={1920}
+          height={540}
+        />
       </picture>
 
       <div className="main-container header">

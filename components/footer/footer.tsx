@@ -16,6 +16,8 @@ const FooterComponent: React.FC = () => {
           loading="lazy"
           alt="blue background"
           className={classnames('section_background')}
+          width={1920}
+          height={445}
         />
       </picture>
 
