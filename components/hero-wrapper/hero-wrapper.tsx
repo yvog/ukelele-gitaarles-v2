@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import styles from './hero-wrapper.module.scss'
 import { PropsWithChildren } from 'react'
+import Image from 'next/image'
 
 type HeroWrapperComponentProps = PropsWithChildren<{
   classes: string[]

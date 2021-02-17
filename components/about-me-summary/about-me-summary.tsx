@@ -10,7 +10,7 @@ const AboutMeSummaryComponent: React.FC = () => {
 
       <div className="row">
         <div className="col-lg-4">
-          <Image
+          <img
             className={classNames(styles.about_me_summary_image)}
             src="/images/misc/bert_geldhof.jpg"
             alt="Bert Geldhof"

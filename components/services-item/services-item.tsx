@@ -15,7 +15,7 @@ const ServicesItemComponent: React.FC<ServicesItemComponentProps> = ({ src, firs
     <>
       <div className={classNames('col-lg-4')}>
         <a href={url} className={styles.services_item}>
-          <Image src={src} width="300" height="200" alt={src} />
+          <img src={src} width="300" height="200" alt={src} loading="lazy" />
           <h3>
             {firstTitle}
             <span className={styles.divider}></span>

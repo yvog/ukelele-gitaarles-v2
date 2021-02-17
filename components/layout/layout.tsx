@@ -33,6 +33,10 @@ const LayoutComponent: React.FC<LayoutProps> = ({ children, title = 'Ukelele-Git
         <meta name="twitter:description" content={description} />
         <meta name="twitter:title" content={`${title} - Ukelele-Gitaarles`} />
 
+        <link rel="preload" href="/fonts/salsa.woff2" as="font" crossOrigin="" />
+        <link rel="preload" href="/fonts/open_sans_300.woff2" as="font" crossOrigin="" />
+        <link rel="preload" href="/fonts/open_sans_400.woff2" as="font" crossOrigin="" />
+
         {scripts.map((src: string, index: number) => {
           return <script key={`script-${index}`} src={src} async></script>
         })}

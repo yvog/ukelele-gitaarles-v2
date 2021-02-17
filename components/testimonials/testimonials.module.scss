@@ -1,8 +1,7 @@
 @import '../styles/variables';
 
 .testimonials {
-  background: url('/images/background/testimonials_background.png') top no-repeat;
-  background-size: cover;
+  position: relative;
   height: 900px;
   margin-bottom: $defaultMargin;
   padding: 264px 20px 20px 20px;

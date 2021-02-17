@@ -25,12 +25,13 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({ v
   return (
     <header className={classNames(styles.header, { [styles.black]: isBlack })}>
       <a href="/">
-        <Image
+        <img
           className={styles.logo}
           src={`/images/logo/ugl_logo_${variant}.svg`}
           alt={`UGL logo ${variant}`}
           width="280"
           height="100"
+          loading="eager"
         />
       </a>
 

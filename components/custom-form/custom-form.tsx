@@ -110,7 +110,7 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
               setError(false)
             }}
           >
-            <Image src="/images/icon/icon_close.svg" width="18" height="18" alt="icon_close" />
+            <img src="/images/icon/icon_close.svg" width="18" height="18" alt="icon_close" loading="lazy" />
           </div>
         </div>
       )}
