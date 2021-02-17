@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import Link from 'next/link'
+import Image from 'next/image'
 import React, { useCallback, useRef, useState } from 'react'
 import styles from './header-navigation.module.scss'
 import { MenuButton } from '../menu-button/menu-button'
@@ -25,10 +25,10 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({ v
   return (
     <header className={classNames(styles.header, { [styles.black]: isBlack })}>
       <a href="/">
-        <img
+        <Image
           className={styles.logo}
           src={`/images/logo/ugl_logo_${variant}.svg`}
-          alt="UGL logo white"
+          alt={`UGL logo ${variant}`}
           width="280"
           height="100"
         />

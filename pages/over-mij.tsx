@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 import { ContentBlock, ExploreSignup, HeaderNavigation, Layout, UspItem } from '../components'
 
@@ -10,7 +11,7 @@ export default function AboutMePage() {
 
       <ContentBlock
         title="Bert Geldhof"
-        img={<img src="/images/misc/bert_geldhof.jpg" alt="Bert Geldhof" width="380" height="524" />}
+        img={<Image src="/images/misc/bert_geldhof.jpg" alt="Bert Geldhof" width="380" height="524" />}
       >
         <p>
           Op jonge leeftijd ben ik begonnen met het maken van muziek. Ooit begonnen met blokfluitspelen, waardoor mijn

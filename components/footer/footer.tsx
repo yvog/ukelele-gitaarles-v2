@@ -35,7 +35,7 @@ const FooterComponent: React.FC = () => {
           <span>Tel.: 06 38462008</span>
           <Button href="/contact">Contact via mail</Button>
           <a href="https://www.facebook.com/ukelelegitaarles/">
-            <img src="/images/icon/icon_facebook.svg" width="40" height="40" alt="Facebook" />
+            <img src="/images/icon/icon_facebook.svg" width="40" height="40" alt="Facebook" loading="lazy" />
           </a>
         </div>
         <div className={classNames('col-md-4', styles.footer_companydetails)}>
