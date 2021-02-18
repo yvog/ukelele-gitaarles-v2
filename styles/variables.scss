@@ -6,6 +6,9 @@ $errors: #f35f5f;
 $error: rgba(#f35f5f, 0.75);
 $success: rgb(155, 255, 155, 0.75);
 
+/* border radius */
+$defaultBorderRadius: 25px;
+
 /* fonts */
 $titleFont: 'Salsa', cursive;
 $paragraphFont: 'Open Sans', sans-serif;
@@ -17,6 +20,7 @@ $mainInnerContainerMaxWidth: 1024px;
 /* shadows */
 $defaultBoxShadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
 $lightBoxShadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+$darkBoxShadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
 
 /* breakpoints */
 $smallDesktop: 1200px;

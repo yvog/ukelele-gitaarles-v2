@@ -1,7 +1,6 @@
 import classNames from 'classnames'
 import { Button } from '..'
 import styles from './about-me-summary.module.scss'
-import Image from 'next/image'
 
 const AboutMeSummaryComponent: React.FC = () => {
   return (
@@ -12,15 +11,15 @@ const AboutMeSummaryComponent: React.FC = () => {
         <div className="col-lg-4">
           <img
             className={classNames(styles.about_me_summary_image)}
-            src="/images/misc/bert_geldhof.jpg"
+            src="/images/bert_geldhof.jpg"
             alt="Bert Geldhof"
-            width={240}
-            height={312}
+            width={320}
+            height={240}
             loading="lazy"
           />
         </div>
 
-        <div className={classNames(styles.about_me_summary_content, 'col-lg-8')}>
+        <div className={classNames(styles.about_me_summary_content, 'col-lg-6')}>
           <p>
             Op jonge leeftijd ben ik begonnen met het maken van muziek. Ooit begonnen met blokfluitspelen, waardoor mijn
             brede interesse in muziek is ontstaan.

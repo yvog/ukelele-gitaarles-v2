@@ -51,7 +51,7 @@ export default function SignUpPage() {
       },
       gdprConsent: {
         type: 'boolean',
-        title: 'Ik heb de privacyverklaring gelezen en ga hiermee akkoord',
+        title: 'Ik heb de privacy verklaring gelezen en ga hiermee akkoord',
         default: false,
         const: true,
       },
@@ -103,7 +103,7 @@ export default function SignUpPage() {
           <div className="privacy-text">
             * op dit formulier is mijn{' '}
             <a href="/privacy-verklaring" target="_blank" className="blue-link">
-              privacyverklaring
+              privacy verklaring
             </a>{' '}
             van toepassing.
           </div>

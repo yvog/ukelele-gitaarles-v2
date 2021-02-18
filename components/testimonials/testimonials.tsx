@@ -7,46 +7,42 @@ import styles from './testimonials.module.scss'
 
 type TestimonialData = {
   name: string
-  age: number
   content: string
 }
 
 const TestimonialsComponent: React.FC = () => {
   const testimonials: TestimonialData[] = [
     {
-      name: 'Rosa van Dalen',
-      age: 50,
+      name: 'Samira',
       content:
-        'Ik kon hiervoor nog geen instrument aanraken. Nu heb ik er heel veel plezier in en wordt ik steeds beter!',
+        'Bert is een fijne leraar. Hij zoekt goede boeken uit en dankzij hem kan ik nu aardig piano spelen. Hij zoekt liedjes uit die passen bij de feestdagen en mijn niveau. En als liedjes te moeilijk zijn, past hij ze aan en maakt hij er een eigen versie van die ik wel kan spelen. Het is ook erg fijn dat hij gewoon bij ons thuis komt. Samenspelen klinkt ook erg mooi!',
     },
     {
-      name: 'Rosa van Daal',
-      age: 12,
+      name: 'Annelinde',
       content:
-        'Ik kon hiervoor nog geen instrument aanraken. Nu heb ik er heel veel plezier in en wordt ik steeds beter!',
+        'Ik vind Bert Geldhof een hele fijne en geduldige meester. Hij legt alles goed en duidelijk uit. Ik ben nu 11 jaar. Ik heb al 3 jaar lang ukulele les van hem en ben nu net begonnen met gitaarles.',
     },
     {
-      name: 'Daal van Rosen',
-      age: 6,
+      name: 'Marjolein en Iris',
       content:
-        'Ik kon hiervoor nog geen instrument aanraken. Nu heb ik er heel veel plezier in en wordt ik steeds beter!',
+        'Mijn dochter zit nu al een tijdje op les. Bert geeft heel leuk les aan kinderen. Dit gaat op het tempo van het kind wat heel fijn is. Er is ook ruimte om een liedje te leren spelen wat je zelf wil. In de tussentijd bespreek ik dit met mijn dochter en vraag wat zij van de lessen vind. Ze steekt een dikke duim omhoog. Bert komt aan huis: heerlijk en handig als je een druk schema hebt en in de zomer zitten we gezellig in de tuin met les. Ook krijg ik zelf piano les. Heel fijn dat dit te combineren is met de gitaarles van mijn dochter. We krijgen privéles. Dat vind ik zelf prettiger dan in een groepje: zo kan je op je eigen niveau ontwikkelen.',
     },
     {
-      name: 'Rosa den Dal',
-      age: 35,
+      name: 'Rosanne',
       content:
-        'Ik kon hiervoor nog geen instrument aanraken. Nu heb ik er heel veel plezier in en wordt ik steeds beter!',
+        'Inmiddels heb ik al ruim 2.5 jaar les van Bert. Hij heeft mij veel liedjes geleerd en daar ben ik blij mee. Ik leer iedere keer een stukje meer. Als je een bepaalt liedje wilt spelen zoekt hij de noten er voor je bij. Het klinkt steeds mooier en ik vind het leuk om met hem samen te spelen. Zowel met ukelele als met de gitaar staat hij voor mij klaar!',
     },
   ]
 
-  const [itemsToShow, setItemsToShow] = useState<number>(3)
+  const defaultItemsToShow = 2
+  const [itemsToShow, setItemsToShow] = useState<number>(defaultItemsToShow)
 
   useEffect(() => {
     function updateItemsToShow() {
       if (window.innerWidth <= 760) {
         setItemsToShow(1)
       } else {
-        setItemsToShow(3)
+        setItemsToShow(defaultItemsToShow)
       }
     }
 
@@ -59,19 +55,14 @@ const TestimonialsComponent: React.FC = () => {
 
   return (
     <section className={styles.testimonials}>
-      <picture>
-        <source media="(min-width:1200px)" srcSet="/images/background/testimonials_background.png" />
-        <source media="(min-width:992px)" srcSet="/images/background/testimonials_background.png" />
-        <source media="(min-width:0)" srcSet="/images/background/testimonials_background.png" />
-        <img
-          src="/images/background/testimonials_background.png"
-          loading="lazy"
-          alt="blue "
-          className={classnames('section_background')}
-          width={1920}
-          height={600}
-        />
-      </picture>
+      <img
+        src="/images/background/testimonials_background.jpg"
+        loading="lazy"
+        alt="blue "
+        className={classnames('section_background', styles.testimonials_background)}
+        width={1600}
+        height={793}
+      />
 
       <div className={styles.testimonials_inner}>
         <h4>Anderen zijn je voorgegaan</h4>
@@ -79,12 +70,12 @@ const TestimonialsComponent: React.FC = () => {
         <Carousel
           itemsToShow={itemsToShow}
           itemPadding={[16, 16, 16, 0]}
-          transitionMs={200}
+          transitionMs={150}
           pagination={false}
           disableArrowsOnEnd={false}
         >
           {testimonials.map((item, i) => {
-            return <TestimonialsItem key={i} name={item.name} age={item.age} content={item.content} />
+            return <TestimonialsItem key={i} name={item.name} content={item.content} />
           })}
         </Carousel>
 

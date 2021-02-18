@@ -4,7 +4,7 @@
   text-align: center;
   box-shadow: $defaultBoxShadow;
   border: 1px solid #dfdfdf;
-  border-radius: 25px;
+  border-radius: $defaultBorderRadius;
   padding: 32px;
   max-width: 396px;
   font-family: $paragraphFont;
@@ -28,8 +28,9 @@
     width: 100%;
     padding: 16px;
     color: #333;
-    border-radius: 24px;
+    border-radius: $defaultBorderRadius;
     border: 1px solid #ddd;
+    background: #fff;
 
     &:focus {
       outline: none;

@@ -8,11 +8,11 @@ const FooterComponent: React.FC = () => {
   return (
     <footer className={classNames(styles.footer, 'container')}>
       <picture>
-        <source media="(min-width:1200px)" srcSet="/images/background/blue_background.png" />
-        <source media="(min-width:992px)" srcSet="/images/background/blue_background.png" />
-        <source media="(min-width:0)" srcSet="/images/background/blue_background.png" />
+        <source media="(min-width:1200px)" srcSet="/images/background/blue_background.jpg" />
+        <source media="(min-width:992px)" srcSet="/images/background/blue_background.jpg" />
+        <source media="(min-width:0)" srcSet="/images/background/blue_background.jpg" />
         <img
-          src="/images/background/blue_background.png"
+          src="/images/background/blue_background.jpg"
           loading="lazy"
           alt="blue background"
           className={classnames('section_background')}
@@ -38,7 +38,7 @@ const FooterComponent: React.FC = () => {
               <a href="/contact">Contact</a>
             </div>
             <div>
-              <a href="/privacy-verklaring">Privacyverklaring</a>
+              <a href="/privacy-verklaring">Privacy verklaring</a>
             </div>
             <div>
               <a href="/algemene-voorwaarden">Algemene voorwaarden</a>
