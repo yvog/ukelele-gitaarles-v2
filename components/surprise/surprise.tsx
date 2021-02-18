@@ -5,7 +5,7 @@ const SurpriseComponent: React.FC = () => {
   return (
     <ContentBlock
       title="Lessenkaart cadeau geven"
-      img={<img src="/images/icon/icon_box.svg" width="100" height="100" />}
+      img={<img src="/images/icon/icon_box.svg" width="100" height="100" loading="lazy" />}
     >
       <p>
         Mocht je liever iemand anders willen verrassen met een vaste reeks muzieklessen kan dat ook. Hiervoor bied ik

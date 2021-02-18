@@ -2,10 +2,20 @@ import classNames from 'classnames'
 import React from 'react'
 import { HeroServicesItem } from '..'
 import styles from './hero-services.module.scss'
+import classnames from 'classnames'
 
 const HeroServicesComponent: React.FC = () => {
   return (
     <section className={classNames(styles.hero_services, 'container')}>
+      <img
+        src="/images/background/blue_background.jpg"
+        alt="blue background"
+        loading="lazy"
+        width={446}
+        height={300}
+        className={classnames('hero_background_image')}
+      />
+
       <div className="row">
         <HeroServicesItem
           icon="/images/icon/icon_guitar.svg"

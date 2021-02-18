@@ -282,7 +282,7 @@ const CostsCalculatorComponent: React.FC = () => {
       <div className="privacy-text">
         * op dit formulier is mijn{' '}
         <a href="/privacy-verklaring" target="_blank" className="blue-link">
-          privacyverklaring
+          privacy verklaring
         </a>{' '}
         van toepassing.
       </div>

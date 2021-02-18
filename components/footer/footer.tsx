@@ -1,3 +1,4 @@
+import classnames from 'classnames'
 import classNames from 'classnames'
 import Link from 'next/link'
 import { Button } from '../button/button'
@@ -6,6 +7,20 @@ import styles from './footer.module.scss'
 const FooterComponent: React.FC = () => {
   return (
     <footer className={classNames(styles.footer, 'container')}>
+      <picture>
+        <source media="(min-width:1200px)" srcSet="/images/background/blue_background.jpg" />
+        <source media="(min-width:992px)" srcSet="/images/background/blue_background.jpg" />
+        <source media="(min-width:0)" srcSet="/images/background/blue_background.jpg" />
+        <img
+          src="/images/background/blue_background.jpg"
+          loading="lazy"
+          alt="blue background"
+          className={classnames('section_background')}
+          width={1920}
+          height={445}
+        />
+      </picture>
+
       <div className="main-container row">
         <div className={classNames(styles.footer_nav, 'col-md-4')}>
           <h3>Snel navigeren</h3>
@@ -23,7 +38,7 @@ const FooterComponent: React.FC = () => {
               <a href="/contact">Contact</a>
             </div>
             <div>
-              <a href="/privacy-verklaring">Privacyverklaring</a>
+              <a href="/privacy-verklaring">Privacy verklaring</a>
             </div>
             <div>
               <a href="/algemene-voorwaarden">Algemene voorwaarden</a>
@@ -35,7 +50,7 @@ const FooterComponent: React.FC = () => {
           <span>Tel.: 06 38462008</span>
           <Button href="/contact">Contact via mail</Button>
           <a href="https://www.facebook.com/ukelelegitaarles/">
-            <img src="/images/icon/icon_facebook.svg" width="40" height="40" alt="Facebook" />
+            <img src="/images/icon/icon_facebook.svg" width="40" height="40" alt="Facebook" loading="lazy" />
           </a>
         </div>
         <div className={classNames('col-md-4', styles.footer_companydetails)}>

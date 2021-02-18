@@ -5,28 +5,24 @@
   width: 100%;
   margin: $defaultBlockMargin;
 
-  &:after {
-    content: '';
-    background: url('/images/background/explore_signup_background.png') center no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 80%;
-    position: absolute;
-    top: 54px;
-    left: 0;
-    z-index: -1;
+  .explore_signup_background {
+    border-radius: $defaultBorderRadius;
+  }
+
+  .backdrop_image {
+    height: 418px;
+    z-index: -2;
   }
 
   .explore_signup_inner {
+    position: relative;
     padding: 80px;
     max-width: 800px;
     margin: 0 auto;
     width: 100%;
-    background: url('/images/background/blue_background.png') center repeat;
-    background-size: cover;
     text-align: center;
-    border-radius: 25px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+    border-radius: $defaultBorderRadius;
+    box-shadow: $darkBoxShadow;
 
     h4 {
       color: #fff;
@@ -59,7 +55,7 @@
     margin: $smallBlockMargin;
 
     .explore_signup_inner {
-      padding: 96px 72px;
+      padding: 72px 64px;
       max-width: 60%;
     }
   }
@@ -67,6 +63,10 @@
 
 @media (max-width: $mobile) {
   .explore_signup {
+    .backdrop_image {
+      height: 164px;
+    }
+
     &:after {
       top: 24px;
     }

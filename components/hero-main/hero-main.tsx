@@ -1,4 +1,3 @@
-import classnames from 'classnames'
 import { Button, HeaderNavigation, HeroServices, HeroWrapper } from '..'
 import styles from './hero-main.module.scss'
 
@@ -20,6 +19,19 @@ const HeroMainComponent: React.FC = () => {
             </article>
           </section>
         </div>
+
+        <picture>
+          <source media="(min-width:1200px)" srcSet="/images/background/hero_1600x900.jpg" />
+          <source media="(min-width:0)" srcSet="/images/background/hero_768x432.jpg" />
+          <img
+            src="/images/background/hero_1600x900.jpg"
+            alt="alt"
+            loading="eager"
+            className="hero_background_image darken"
+            width={1366}
+            height={768}
+          />
+        </picture>
       </HeroWrapper>
 
       <div className="main-container">

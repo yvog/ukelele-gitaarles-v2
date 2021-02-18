@@ -1,15 +1,18 @@
 @import '../styles/variables';
 
 .testimonials {
-  background: url('/images/background/testimonials_background.png') top no-repeat;
-  background-size: cover;
+  position: relative;
   height: 900px;
   margin-bottom: $defaultMargin;
   padding: 264px 20px 20px 20px;
 
+  .testimonials_background {
+    object-fit: unset;
+  }
+
   .testimonials_inner {
     margin: 0 auto;
-    max-width: $mainInnerContainerMaxWidth;
+    max-width: $mainContainerMaxWidth;
     position: relative;
 
     *:focus {
@@ -81,6 +84,26 @@
       margin-top: 56px;
     }
   }
+
+  :global {
+    .rec-carousel-wrapper {
+      .rec-carousel {
+        .rec-slider-container {
+          .rec-slider {
+            .rec-carousel-item {
+              .rec-swipable {
+                .rec-item-wrapper {
+                  padding: 0 !important;
+                  padding-right: 8px !important;
+                  padding-left: 8px !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: $smallDesktop) {
@@ -88,6 +111,10 @@
     margin-bottom: $smallMargin;
     padding: 140px 20px 20px 20px;
     height: auto;
+
+    .testimonials_background {
+      object-fit: cover;
+    }
   }
 }
 
@@ -106,6 +133,11 @@
         margin: 40px auto;
         display: block;
         max-width: 75%;
+      }
+
+      article {
+        max-height: 264px;
+        overflow-y: scroll;
       }
     }
   }

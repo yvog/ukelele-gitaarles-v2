@@ -1,7 +1,7 @@
 import Form from '@rjsf/core'
 import classNames from 'classnames'
+import Image from 'next/image'
 import React, { useCallback, useEffect, useState } from 'react'
-import { Z_STREAM_ERROR } from 'zlib'
 import styles from './custom-form.module.scss'
 
 type CustomFormProps = {
@@ -110,7 +110,7 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
               setError(false)
             }}
           >
-            <img src="/images/icon/icon_close.svg" width="18" height="18" alt="menu" />
+            <img src="/images/icon/icon_close.svg" width="18" height="18" alt="icon_close" loading="lazy" />
           </div>
         </div>
       )}

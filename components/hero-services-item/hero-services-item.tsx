@@ -11,7 +11,7 @@ type HeroServicesItemProps = PropsWithChildren<{
 export const HeroServicesItemComponent: React.FC<HeroServicesItemProps> = ({ icon, title, href, children }) => {
   return (
     <article className={classNames(styles.hero_services_item, 'col-md-4')}>
-      <img src={icon} alt={icon} width="60" height="60" />
+      <img src={icon} alt={icon} width="60" height="60" loading="eager" />
       <a href={href} className={styles.hero_services_item_link}>
         <h3>{title}</h3>
       </a>

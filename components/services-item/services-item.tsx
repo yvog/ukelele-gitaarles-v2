@@ -1,25 +1,21 @@
-import classNames from "classnames";
-import Link from "next/link";
-import styles from "./services-item.module.scss";
+import classNames from 'classnames'
+import Image from 'next/image'
+import Link from 'next/link'
+import styles from './services-item.module.scss'
 
 type ServicesItemComponentProps = {
-  src: string;
-  firstTitle: string;
-  secondTitle: string;
-  url: string;
-};
+  src: string
+  firstTitle: string
+  secondTitle: string
+  url: string
+}
 
-const ServicesItemComponent: React.FC<ServicesItemComponentProps> = ({
-  src,
-  firstTitle,
-  secondTitle,
-  url,
-}) => {
+const ServicesItemComponent: React.FC<ServicesItemComponentProps> = ({ src, firstTitle, secondTitle, url }) => {
   return (
     <>
-      <div className={classNames("col-lg-4")}>
+      <div className={classNames('col-lg-4')}>
         <a href={url} className={styles.services_item}>
-          <img src={src} width="300" height="200" alt={src} />
+          <img src={src} width="300" height="200" alt={src} loading="lazy" />
           <h3>
             {firstTitle}
             <span className={styles.divider}></span>
@@ -28,7 +24,7 @@ const ServicesItemComponent: React.FC<ServicesItemComponentProps> = ({
         </a>
       </div>
     </>
-  );
-};
+  )
+}
 
-export const ServicesItem = ServicesItemComponent;
+export const ServicesItem = ServicesItemComponent
