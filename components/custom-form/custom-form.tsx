@@ -1,6 +1,5 @@
 import Form from '@rjsf/core'
 import classNames from 'classnames'
-import Image from 'next/image'
 import React, { useCallback, useEffect, useState } from 'react'
 import styles from './custom-form.module.scss'
 

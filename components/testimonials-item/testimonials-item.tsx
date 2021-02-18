@@ -5,7 +5,7 @@ type TestimonialsItemProps = {
   content: string
 }
 
-const TestimonialsItemComponent: React.FC<TestimonialsItemProps> = ({ name, age, content }) => {
+const TestimonialsItemComponent: React.FC<TestimonialsItemProps> = ({ name, content }) => {
   return (
     <article className={styles.testimonials_item}>
       <h3>{name}</h3>

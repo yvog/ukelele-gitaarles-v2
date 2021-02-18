@@ -1,6 +1,5 @@
 import classNames from 'classnames'
-import Image from 'next/image'
-import React, { useCallback, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './header-navigation.module.scss'
 import { MenuButton } from '../menu-button/menu-button'
 
