@@ -74,11 +74,11 @@ export default function RequestMaintenancePage() {
             recaptchaAction="submitrequestmaintenance"
           />
           <div className="privacy-text">
-            * op dit formulier is mijn{' '}
+            * op dit formulier is de{' '}
             <a href="/privacy-verklaring" target="_blank" className="blue-link">
               privacy verklaring
             </a>{' '}
-            van toepassing.
+            van toepassing
           </div>
         </article>
       </section>

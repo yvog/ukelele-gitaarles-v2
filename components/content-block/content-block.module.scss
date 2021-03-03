@@ -31,12 +31,20 @@
   .content_block {
     .content_block_row {
       display: block;
+
+      &.swapOnMobile {
+        display: grid;
+
+        :first-child {
+          order: 1;
+        }
+      }
     }
 
     img {
       display: block;
       margin: $smallMargin auto;
-      max-width: 50%;
+      max-width: 75%;
       height: unset;
     }
   }

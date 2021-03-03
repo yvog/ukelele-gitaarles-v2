@@ -31,6 +31,7 @@
     border-radius: $defaultBorderRadius;
     border: 1px solid #ddd;
     background: #fff;
+    -webkit-appearance: none;
 
     &:focus {
       outline: none;

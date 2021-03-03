@@ -2,6 +2,9 @@ import classNames from 'classnames'
 import React, { useState } from 'react'
 import styles from './header-navigation.module.scss'
 import { MenuButton } from '../menu-button/menu-button'
+import Link from 'next/link'
+import { useRouter } from 'next/dist/client/router'
+import { UspItem } from '../usp-item/usp-item'
 
 type HeaderNavigationComponentProps = {
   variant?: 'white' | 'black'
@@ -20,6 +23,39 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({ v
   }
 
   const menuButtonLabel = menuOpen ? 'Close' : 'Menu'
+
+  const menuItems = [
+    {
+      href: '/',
+      label: 'Home',
+    },
+    {
+      href: '/over-mij',
+      label: 'Over mij',
+    },
+    {
+      href: '/aanbod',
+      label: 'Aanbod',
+    },
+    {
+      href: '/leskosten',
+      label: 'Leskosten',
+    },
+    {
+      href: '/aanvragen',
+      label: 'Aanvragen',
+    },
+    {
+      href: '/aanmelden',
+      label: 'Aanmelden',
+    },
+    {
+      href: '/contact',
+      label: 'Contact',
+    },
+  ]
+
+  const { asPath, pathname, basePath } = useRouter()
 
   return (
     <header className={classNames(styles.header, { [styles.black]: isBlack })}>
@@ -42,13 +78,19 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({ v
         })}
       >
         <div className={styles.nav_inner}>
-          <a href="/">Home</a>
-          <a href="/over-mij">Over mij</a>
-          <a href="/aanbod">Aanbod</a>
-          <a href="/leskosten">Leskosten</a>
-          <a href="/aanvragen">Reparatie / onderhoud</a>
-          <a href="/aanmelden">Aanmelden</a>
-          <a href="/contact">Contact</a>
+          {menuItems.map((item) => (
+            <Link key={`menuItem-${item.label}`} href={item.href}>
+              <a
+                className={classNames({
+                  [styles.active]:
+                    (pathname.startsWith(item.href) && item.href != '/') ||
+                    (pathname === '/' && pathname.startsWith(item.href)),
+                })}
+              >
+                {item.label}
+              </a>
+            </Link>
+          ))}
         </div>
       </nav>
 

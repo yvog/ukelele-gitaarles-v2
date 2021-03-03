@@ -15,7 +15,8 @@ nav {
         transition: opacity 0.2s ease;
       }
 
-      &:hover {
+      &:hover,
+      &.active {
         &:after {
           opacity: 1;
         }
@@ -37,7 +38,8 @@ nav {
         transition: opacity 0.2s ease;
       }
 
-      &:hover {
+      &:hover,
+      &.active {
         &:after {
           opacity: 1;
         }

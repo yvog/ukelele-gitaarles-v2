@@ -138,6 +138,11 @@ const CostsCalculatorComponent: React.FC = () => {
     onSuccess: (json: { [key: string]: any }) => void,
     recaptchaAction: string,
   ): void => {
+    if (!grecaptcha) {
+      showError('Er ging iets mis. Probeer opnieuw na het herladen van de pagina')
+      return
+    }
+
     grecaptcha.ready(() => {
       grecaptcha
         .execute(process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY, {
@@ -280,11 +285,11 @@ const CostsCalculatorComponent: React.FC = () => {
       {error && <div className={styles.errors}>{error}</div>}
 
       <div className="privacy-text">
-        * op dit formulier is mijn{' '}
+        * op dit formulier is de{' '}
         <a href="/privacy-verklaring" target="_blank" className="blue-link">
           privacy verklaring
         </a>{' '}
-        van toepassing.
+        van toepassing
       </div>
     </div>
   )

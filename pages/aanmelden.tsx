@@ -45,9 +45,19 @@ export default function SignUpPage() {
         title: 'Postcode',
         format: 'postalcode-nl',
       },
+      hire: {
+        type: 'boolean',
+        title: 'Ik wil een instrument huren (optioneel)',
+        default: false,
+      },
+      testLesson: {
+        type: 'boolean',
+        title: 'Aanmelden voor een proefles (optioneel)',
+        default: false,
+      },
       comments: {
         type: 'string',
-        title: 'Eventuele opmerkingen (willen huren, proefles nemen, of iets anders?):',
+        title: 'Eventuele opmerkingen:',
       },
       gdprConsent: {
         type: 'boolean',
@@ -67,6 +77,7 @@ export default function SignUpPage() {
     },
     dateOfBirth: {
       'ui:widget': 'date',
+      'ui:placeholder': 'DD/MM/YYYY',
     },
     comments: {
       'ui:widget': 'textarea',
@@ -101,11 +112,11 @@ export default function SignUpPage() {
             recaptchaAction="submitsignup"
           />
           <div className="privacy-text">
-            * op dit formulier is mijn{' '}
+            * op dit formulier is de{' '}
             <a href="/privacy-verklaring" target="_blank" className="blue-link">
               privacy verklaring
             </a>{' '}
-            van toepassing.
+            van toepassing
           </div>
         </article>
       </section>

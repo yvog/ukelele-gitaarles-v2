@@ -11,6 +11,7 @@ export default function AboutMePage() {
       <ContentBlock
         title="Bert Geldhof"
         img={<img src="/images/bert_geldhof.jpg" alt="Bert Geldhof" width="320" height="240" loading="eager" />}
+        swapOnMobile
       >
         <p>
           Op jonge leeftijd ben ik begonnen met het maken van muziek. Ooit begonnen met blokfluitspelen, waardoor mijn
