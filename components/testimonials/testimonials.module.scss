@@ -87,6 +87,7 @@
 
       p {
         margin-top: 24px;
+        min-height: 248px;
       }
     }
 
@@ -130,7 +131,11 @@
     .testimonials_background {
       object-fit: cover;
     }
+  }
+}
 
+@media (max-width: $tablet) {
+  .testimonials {
     article {
       max-height: 348px;
       padding-bottom: 0;
@@ -156,6 +161,7 @@
         overflow-y: scroll;
         height: 234px;
         padding-bottom: 8px;
+        min-height: unset;
       }
     }
   }
@@ -185,8 +191,14 @@
       }
 
       article {
-        max-height: 264px;
+        max-height: 275px;
         padding-bottom: 0;
+
+        p {
+          height: 196px;
+          padding-bottom: 24px;
+          min-height: unset;
+        }
       }
     }
   }
