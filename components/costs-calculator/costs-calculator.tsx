@@ -138,6 +138,11 @@ const CostsCalculatorComponent: React.FC = () => {
     onSuccess: (json: { [key: string]: any }) => void,
     recaptchaAction: string,
   ): void => {
+    if (!grecaptcha) {
+      showError('Er ging iets mis. Probeer opnieuw na het herladen van de pagina')
+      return
+    }
+
     grecaptcha.ready(() => {
       grecaptcha
         .execute(process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY, {

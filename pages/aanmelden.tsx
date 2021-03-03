@@ -77,6 +77,7 @@ export default function SignUpPage() {
     },
     dateOfBirth: {
       'ui:widget': 'date',
+      'ui:placeholder': 'DD/MM/YYYY',
     },
     comments: {
       'ui:widget': 'textarea',
