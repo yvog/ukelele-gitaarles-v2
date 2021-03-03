@@ -56,12 +56,21 @@ const TestimonialsComponent: React.FC = () => {
   return (
     <section className={styles.testimonials}>
       <img
-        src="/images/background/testimonials_background.jpg"
+        src="/images/background/blue_background.jpg"
+        alt="blue background"
         loading="lazy"
-        alt="blue "
+        width={446}
+        height={300}
         className={classnames('section_background', styles.testimonials_background)}
-        width={1600}
-        height={793}
+      />
+
+      <img
+        src="/images/background/quote.svg"
+        alt="quote"
+        loading="lazy"
+        width={64}
+        height={64}
+        className={styles.quote}
       />
 
       <div className={styles.testimonials_inner}>
