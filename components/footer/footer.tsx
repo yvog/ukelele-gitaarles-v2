@@ -63,8 +63,7 @@ const FooterComponent: React.FC = () => {
 
       <div className={classNames('main-container row', styles.disclaimer)}>
         &copy; Copyright {new Date().getFullYear()} Ukelele-Gitaarles, alle rechten voorbehouden. Website gerealiseerd
-        door <a href="https://github.com/yvog">Yvo Geldhof</a> en{' '}
-        <a href="https://dribbble.com/VeraGeldhof">Vera Geldhof</a>
+        door <a href="https://github.com/yvog">Yvo Geldhof</a> en <a href="https://verageldhof.nl">Vera Geldhof</a>
       </div>
     </footer>
   )
