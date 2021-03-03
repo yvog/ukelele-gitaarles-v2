@@ -75,6 +75,7 @@
       box-shadow: $defaultBoxShadow;
       border-radius: 16px;
       padding: 24px;
+      position: relative;
 
       span {
         color: $ukeGitBlue;
@@ -129,6 +130,34 @@
     .testimonials_background {
       object-fit: cover;
     }
+
+    article {
+      max-height: 348px;
+      padding-bottom: 0;
+
+      &:after {
+        content: 'scroll om meer te lezen';
+        background: linear-gradient(0deg, white, rgba(255, 255, 255, 0) 30%);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 16px;
+        pointer-events: none;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding-bottom: 4px;
+        color: #eee;
+      }
+
+      p {
+        overflow-y: scroll;
+        height: 234px;
+        padding-bottom: 8px;
+      }
+    }
   }
 }
 
@@ -157,7 +186,7 @@
 
       article {
         max-height: 264px;
-        overflow-y: scroll;
+        padding-bottom: 0;
       }
     }
   }
