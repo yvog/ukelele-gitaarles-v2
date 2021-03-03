@@ -43,6 +43,7 @@
 
 .custom_form {
   max-width: 550px;
+  margin-top: 64px;
 
   fieldset {
     border: none;
@@ -54,7 +55,7 @@
   }
 
   button[type='submit'] {
-    margin-top: 24px;
+    margin-top: 8px;
     padding: 12px;
     max-width: 164px;
     outline: none;
@@ -84,7 +85,6 @@
 
   label {
     display: block;
-    margin: 24px 16px 4px 16px;
   }
 
   input,
@@ -123,9 +123,28 @@
         display: inline-block;
         margin-right: 16px;
       }
+
+      .radio {
+        label {
+          padding: 16px 16px 16px 0;
+          span {
+            display: flex;
+            align-items: center;
+
+            input {
+              display: inline-block;
+              width: 16px;
+              height: 16px;
+              margin-right: 8px;
+            }
+          }
+        }
+      }
     }
 
     .form-group {
+      margin-top: 8px;
+      margin-bottom: 8px;
       div {
         ul.error-detail {
           list-style-type: none;
@@ -137,6 +156,10 @@
           }
         }
       }
+
+      .control-label {
+        padding-bottom: 8px;
+      }
     }
 
     .checkbox,
@@ -146,15 +169,29 @@
       label {
         margin: 0;
       }
+
       span {
         margin-left: 0;
-        padding: 16px;
       }
+    }
+
+    .checkbox label {
+      display: flex;
+      align-items: center;
+      padding: 8px 16px 8px 0;
     }
 
     input[type='checkbox'],
     input[type='radio'] {
       min-width: 0;
+    }
+
+    input[type='checkbox'] {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+      flex-shrink: 0;
     }
   }
 }
@@ -166,18 +203,6 @@
     fieldset {
       grid-column-gap: 8px;
       grid-template-columns: repeat(1, 1fr);
-    }
-
-    :global {
-      .field-radio-group {
-        div {
-          padding: 16px;
-        }
-      }
-
-      .checkbox {
-        padding: 16px 0 16px 0;
-      }
     }
   }
 }

@@ -22,14 +22,18 @@ export default async function handler(req: NowRequest, res: NowResponse) {
 
       Instrument: ${formData.lessonType ?? ''}
       Eerder muziekles gehad: ${formData.experience ? 'Ja' : 'Nee'}
+      Wilt een instrument huren: ${formData.hire ? 'Ja' : 'Nee'}
+      Neemt een proefles: ${formData.testLesson ? 'Ja' : 'Nee'}
+
       Volledige naam: ${formData.forName ?? ''} ${formData.surName ?? ''}
       Geboortedatum: ${formData.dateOfBirth ?? ''}
-      Adres: ${formData.address ?? ''}
       Postcode: ${formData.postalCode ?? ''}
-      Plaats: ${formData.city ?? ''}
+
       E-mailadres: ${formData.email ?? ''}
       Telefoonnummer: ${formData.telephone ?? ''}
+
       AVG toestemming: ${formData.gdprConsent ? 'Ja' : 'Nee'}
+
       Opmerkingen: 
       
       ${formData.comments ?? ''}

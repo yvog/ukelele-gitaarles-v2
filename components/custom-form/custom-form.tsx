@@ -116,7 +116,6 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
 
       <Form
         schema={schema as any}
-        liveValidate
         noHtml5Validate
         uiSchema={uiSchema}
         showErrorList={false}
