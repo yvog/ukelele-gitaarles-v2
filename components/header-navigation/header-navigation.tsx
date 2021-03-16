@@ -1,10 +1,9 @@
 import classNames from 'classnames'
-import React, { useState } from 'react'
-import styles from './header-navigation.module.scss'
-import { MenuButton } from '../menu-button/menu-button'
-import Link from 'next/link'
 import { useRouter } from 'next/dist/client/router'
-import { UspItem } from '../usp-item/usp-item'
+import Link from 'next/link'
+import React, { useState } from 'react'
+import { MenuButton } from '../menu-button/menu-button'
+import styles from './header-navigation.module.scss'
 
 type HeaderNavigationComponentProps = {
   variant?: 'white' | 'black'
@@ -15,11 +14,17 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({ v
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
 
   const onMenuOpen = () => {
-    if (!menuOpen) {
-      setMenuOpen(true)
-    } else {
-      setMenuOpen(false)
-    }
+    const open = !menuOpen
+
+    setMenuOpen(open)
+
+    const event = new CustomEvent('mobile-menu-toggled', {
+      detail: {
+        open,
+      },
+    })
+
+    window.dispatchEvent(event)
   }
 
   const menuButtonLabel = menuOpen ? 'Close' : 'Menu'
@@ -55,7 +60,7 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({ v
     },
   ]
 
-  const { asPath, pathname, basePath } = useRouter()
+  const { pathname } = useRouter()
 
   return (
     <header className={classNames(styles.header, { [styles.black]: isBlack })}>
@@ -81,6 +86,9 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({ v
           {menuItems.map((item) => (
             <Link key={`menuItem-${item.label}`} href={item.href}>
               <a
+                onClick={() => {
+                  menuOpen && onMenuOpen()
+                }}
                 className={classNames({
                   [styles.active]:
                     (pathname.startsWith(item.href) && item.href != '/') ||
