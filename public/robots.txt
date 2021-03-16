@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ukelele-gitaarles.nl
+
+# Sitemaps
+Sitemap: https://ukelele-gitaarles.nl/sitemap.xml

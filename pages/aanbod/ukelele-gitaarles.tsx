@@ -69,20 +69,13 @@ export default function UkeleleGuitarLessonsPage() {
 
       <ContentBlock title="Gitaar of ukelele huren">
         <p>
-          Als service bied ik verhuur van een redelijke lesgitaar/ukulele aan in combinatie met 12 lessen (mits
-          voorradig). Alle gitaren en ukelele's zijn van redelijke kwaliteit en klank. Daarnaast makkelijk bespeelbaar
-          en goed genoeg om er de lessen mee te volgen. De huurprijs is inclusief normaal onderhoud, zoals bijvoorbeeld
-          snaren vervangen. Let er wel op dat als het instrument verloren, gestolen of beschadigd is, je aansprakelijk
-          bent voor eventueel herstel of vervanging ervan (zie{' '}
+          Als service bied ik verhuur van een Spaanse gitaar of ukulele aan. Je komt hiervoor in aanmerking als je
+          minimaal 12 lessen volgt. De huurprijs is €5,- per maand, inclusief normaal onderhoud. Hieronder valt onder
+          andere het vervangen van de snaren. Let op, de{' '}
           <a className="blue-link" target="_blank" href="/algemene-voorwaarden">
             algemene voorwaarden
-          </a>
-          ). Alle gitaren worden met hoes geleverd. Bij interesse kun je het huren van een gitaar of ukelele benoemen in
-          het{' '}
-          <a className="blue-link" href="/aanmelden">
-            aanmeldformulier
-          </a>
-          .
+          </a>{' '}
+          zijn hierop van toepassing.
         </p>
       </ContentBlock>
 

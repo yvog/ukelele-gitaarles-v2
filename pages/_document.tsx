@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import useEffect from 'react'
 
 class CustomDocument extends Document {
   static async getInitialProps(ctx) {
