@@ -19,7 +19,7 @@ const AboutMeSummaryComponent: React.FC = () => {
           />
         </div>
 
-        <div className={classNames(styles.about_me_summary_content, 'col-lg-6')}>
+        <div className={classNames(styles.about_me_summary_content, 'col-lg-6' /*col-lg-6*/)}>
           <p>
             Op jonge leeftijd ben ik begonnen met het maken van muziek. Ooit begonnen met blokfluitspelen, waardoor mijn
             brede interesse in muziek is ontstaan.

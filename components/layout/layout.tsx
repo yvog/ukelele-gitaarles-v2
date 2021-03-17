@@ -1,5 +1,7 @@
+import classes from '*.module.css'
+import classNames from 'classnames'
 import Head from 'next/head'
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, useEffect, useState } from 'react'
 import { Footer } from '..'
 
 type LayoutProps = PropsWithChildren<{
@@ -10,6 +12,36 @@ type LayoutProps = PropsWithChildren<{
 const LayoutComponent: React.FC<LayoutProps> = ({ children, title = 'Ukelele-Gitaarles', scripts = [] }) => {
   const description =
     'Bert Geldhof geeft gitaar-, ukelele- en pianolessen aan huis in Alphen aan den Rijn, Leiden en omstreken. Hiernaast repareert en onderhoudt hij snaarinstrumenten.'
+
+  function preventDefault(e) {
+    e.preventDefault()
+  }
+
+  const disableScroll = function () {
+    window.addEventListener('scroll', preventDefault, { passive: false })
+    window.addEventListener('wheel', preventDefault, { passive: false })
+    window.addEventListener('touchmove', preventDefault, { passive: false })
+  }
+
+  const enableScroll = function () {
+    window.removeEventListener('scroll', preventDefault)
+    window.removeEventListener('wheel', preventDefault)
+    window.removeEventListener('touchmove', preventDefault)
+  }
+
+  const onMobileMenuToggled = (e: any) => {
+    if (e.detail.open) {
+      disableScroll()
+    } else {
+      enableScroll()
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('mobile-menu-toggled', onMobileMenuToggled, false)
+
+    return () => window.removeEventListener('mobile-menu-toggled', onMobileMenuToggled, true)
+  }, [])
 
   return (
     <>
