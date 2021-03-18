@@ -70,7 +70,7 @@ const LayoutComponent: React.FC<LayoutProps> = ({ children, title = 'Ukelele-Git
         <link rel="preload" href="/fonts/open_sans_400.woff2" as="font" crossOrigin="" />
 
         {scripts.map((src: string, index: number) => {
-          return <script key={`script-${index}`} src={src} async></script>
+          return <script key={`script-${index}`} src={src}></script>
         })}
       </Head>
 
