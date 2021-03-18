@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prod": "npx next start -p 8080",
     "build": "next build && npm run gen:sitemap",
     "start": "next start",
     "export": "next export",
