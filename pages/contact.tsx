@@ -39,10 +39,7 @@ export default function RequestMaintenancePage() {
   }
 
   return (
-    <Layout
-      title="Contact"
-      scripts={[`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY}`]}
-    >
+    <Layout title="Contact" useReCaptcha>
       <div className="main-container header">
         <HeaderNavigation variant="black" />
       </div>

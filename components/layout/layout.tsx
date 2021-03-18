@@ -6,10 +6,10 @@ import { Footer } from '..'
 
 type LayoutProps = PropsWithChildren<{
   title?: string
-  scripts?: string[]
+  useReCaptcha?: boolean
 }>
 
-const LayoutComponent: React.FC<LayoutProps> = ({ children, title = 'Ukelele-Gitaarles', scripts = [] }) => {
+const LayoutComponent: React.FC<LayoutProps> = ({ children, title = 'Ukelele-Gitaarles', useReCaptcha = false }) => {
   const description =
     'Bert Geldhof geeft gitaar-, ukelele- en pianolessen aan huis in Alphen aan den Rijn, Leiden en omstreken. Hiernaast repareert en onderhoudt hij snaarinstrumenten.'
 
@@ -69,9 +69,11 @@ const LayoutComponent: React.FC<LayoutProps> = ({ children, title = 'Ukelele-Git
         <link rel="preload" href="/fonts/open_sans_300.woff2" as="font" crossOrigin="" />
         <link rel="preload" href="/fonts/open_sans_400.woff2" as="font" crossOrigin="" />
 
-        {scripts.map((src: string, index: number) => {
-          return <script key={`script-${index}`} src={src}></script>
-        })}
+        {useReCaptcha && (
+          <script
+            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY}`}
+          ></script>
+        )}
       </Head>
 
       <h1 className="hidden">{title} - Ukelele-Gitaarles</h1>

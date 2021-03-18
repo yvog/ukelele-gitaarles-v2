@@ -2,10 +2,7 @@ import { CostsCalculator, HeaderNavigation, Layout } from '../components'
 
 export default function CostsPage() {
   return (
-    <Layout
-      title="Leskosten"
-      scripts={[`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY}`]}
-    >
+    <Layout title="Leskosten" useReCaptcha>
       <div className="main-container header">
         <HeaderNavigation variant="black" />
       </div>

@@ -33,7 +33,6 @@ export default function SignUpPage() {
       telephone: {
         type: 'string',
         title: 'Telefoonnummer',
-        format: 'tel',
         minLength: 7,
       },
       dateOfBirth: {
@@ -88,10 +87,7 @@ export default function SignUpPage() {
   }
 
   return (
-    <Layout
-      title="Aanmelden"
-      scripts={[`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY}`]}
-    >
+    <Layout title="Aanmelden" useReCaptcha>
       <div className="main-container header">
         <HeaderNavigation variant="black" />
       </div>
