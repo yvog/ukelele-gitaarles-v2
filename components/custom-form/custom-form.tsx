@@ -1,6 +1,6 @@
 import Form from '@rjsf/core'
 import classNames from 'classnames'
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import styles from './custom-form.module.scss'
 
 type CustomFormProps = {
@@ -23,11 +23,6 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
   const [success, setSuccess] = useState<boolean>(false)
   const [error, setError] = useState<boolean>(false)
   const [submitting, setSubmitting] = useState<boolean>(false)
-  const [grecaptcha, setGrecaptcha] = useState<any>(null)
-
-  useEffect(() => {
-    setGrecaptcha(((window as unknown) as any).grecaptcha)
-  }, [setGrecaptcha])
 
   const transformErrors = useCallback((errors) => {
     return errors.map((error) => {
@@ -58,8 +53,17 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
   const onSubmit = (formData) => {
     setSubmitting(true)
 
-    grecaptcha.ready(() => {
-      grecaptcha
+    const googleRecaptcha = (window as any).grecaptcha
+
+    if (!googleRecaptcha) {
+      setSubmitting(false)
+      setError(true)
+
+      return
+    }
+
+    googleRecaptcha.ready(() => {
+      googleRecaptcha
         .execute(process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY, {
           action: recaptchaAction,
         })
