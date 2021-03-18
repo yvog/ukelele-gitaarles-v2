@@ -5,13 +5,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prod": "npx next start -p 8080",
     "build": "next build && npm run gen:sitemap",
     "start": "next start",
     "export": "next export",
     "format": "prettier --write \"{components,api,server,pages,styles}/**/*.{ts,js,json,scss,css}\" ",
     "cleanup": "rimraf node_modules",
-    "gen:sitemap": "next-sitemap --config sitemap.config.js"
+    "gen:sitemap": "next-sitemap --config sitemap.config.js",
+    "prod:restart": "sudo forever restart",
+    "prod:stop": "sudo forever stopall",
+    "prod:start": "sudo forever run -c \"npx next start -p 8080\""
   },
   "repository": {
     "type": "git",
