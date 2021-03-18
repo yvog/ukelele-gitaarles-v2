@@ -5,23 +5,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prod": "npx next start -p 8080",
     "build": "next build && npm run gen:sitemap",
     "start": "next start",
     "export": "next export",
     "format": "prettier --write \"{components,api,server,pages,styles}/**/*.{ts,js,json,scss,css}\" ",
     "cleanup": "rimraf node_modules",
     "gen:sitemap": "next-sitemap --config sitemap.config.js"
-  },
-  "dependencies": {
-    "@sendgrid/mail": "^7.4.2",
-    "classnames": "^2.2.6",
-    "next": "^10.0.7",
-    "normalize.css": "^8.0.1",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-elastic-carousel": "^0.7.9",
-    "sass": "^1.26.11",
-    "styled-components": "^5.2.0"
   },
   "repository": {
     "type": "git",
@@ -38,9 +28,18 @@
     "@types/react": "^16.9.52",
     "@types/react-jsonschema-form": "^1.7.4",
     "@vercel/node": "^1.9.0",
+    "@sendgrid/mail": "^7.4.2",
     "next-sitemap": "^1.5.18",
     "prettier": "^2.2.1",
     "react-spinners": "^0.9.0",
-    "typescript": "^4.0.3"
+    "sharp": "^0.27.2",
+    "typescript": "^4.0.3",
+    "classnames": "^2.2.6",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-elastic-carousel": "^0.7.9",
+    "sass": "^1.26.11",
+    "styled-components": "^5.2.0",
+    "next": "^10.0.7"
   }
 }
