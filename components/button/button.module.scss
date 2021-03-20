@@ -1,7 +1,11 @@
 @import '../../styles/variables';
 
-.button {
+.button_link {
   display: inline-block;
+  max-width: max-content;
+}
+
+.button {
   border-radius: 50px;
   color: #fff;
   border: 2px solid #fff;
@@ -12,6 +16,10 @@
   text-decoration: none;
   text-align: center;
   transition: background 0.15s ease, color 0.15s ease;
+  z-index: 2;
+  position: relative;
+  background: transparent;
+  outline: none;
 
   &:link,
   &:visited,

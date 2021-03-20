@@ -35,36 +35,6 @@
       border: 1px solid transparent;
     }
 
-    /* 
-      hacky way to override the carousel's 
-      arrows' style which only appear during runtime 
-    */
-    button {
-      background: none;
-      border: none;
-      outline: none;
-      color: #fff;
-      box-shadow: none !important;
-      font-size: 26pt;
-      border: 1px solid transparent;
-      opacity: 0.75;
-      transition: opacity 0.15s ease;
-
-      &:hover {
-        background: none !important;
-        box-shadow: none;
-        opacity: 1;
-      }
-
-      &:nth-child(1) {
-        background: none !important;
-      }
-
-      &:nth-child(3) {
-        background: none !important;
-      }
-    }
-
     h4 {
       color: #fff;
     }
@@ -92,11 +62,42 @@
     }
 
     a {
-      margin-top: 56px;
+      display: block;
+      margin: 56px auto 0 auto;
     }
   }
 
   :global {
+    /* 
+      hacky way to override the carousel's 
+      arrows' style which only appear during runtime 
+    */
+    button.rec {
+      background: none;
+      border: none;
+      outline: none;
+      color: #fff;
+      box-shadow: none !important;
+      font-size: 26pt;
+      border: 1px solid transparent;
+      opacity: 0.75;
+      transition: opacity 0.15s ease;
+
+      &:hover {
+        background: none !important;
+        box-shadow: none;
+        opacity: 1;
+      }
+
+      &:nth-child(1) {
+        background: none !important;
+      }
+
+      &:nth-child(3) {
+        background: none !important;
+      }
+    }
+
     .rec-carousel-wrapper {
       .rec-carousel {
         .rec-slider-container {

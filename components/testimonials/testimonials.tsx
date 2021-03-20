@@ -37,21 +37,21 @@ const TestimonialsComponent: React.FC = () => {
   const defaultItemsToShow = 2
   const [itemsToShow, setItemsToShow] = useState<number>(defaultItemsToShow)
 
-  useEffect(() => {
-    function updateItemsToShow() {
-      if (window.innerWidth <= 760) {
-        setItemsToShow(1)
-      } else {
-        setItemsToShow(defaultItemsToShow)
-      }
+  const updateItemsToShow = () => {
+    if (window.innerWidth <= 760) {
+      setItemsToShow(1)
+    } else {
+      setItemsToShow(defaultItemsToShow)
     }
+  }
 
+  useEffect(() => {
     updateItemsToShow()
 
     window.addEventListener('resize', updateItemsToShow)
 
     return () => window.removeEventListener('resize', updateItemsToShow)
-  }, [itemsToShow])
+  }, [itemsToShow, updateItemsToShow])
 
   return (
     <section className={styles.testimonials}>

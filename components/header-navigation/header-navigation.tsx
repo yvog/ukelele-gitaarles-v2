@@ -27,7 +27,7 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({ v
     window.dispatchEvent(event)
   }
 
-  const menuButtonLabel = menuOpen ? 'Close' : 'Menu'
+  const menuButtonLabel = menuOpen ? 'Sluit' : 'Menu'
 
   const menuItems = [
     {
