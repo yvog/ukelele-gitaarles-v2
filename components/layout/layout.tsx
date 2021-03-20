@@ -1,7 +1,5 @@
-import classes from '*.module.css'
-import classNames from 'classnames'
 import Head from 'next/head'
-import { PropsWithChildren, useEffect, useState } from 'react'
+import { PropsWithChildren, useEffect } from 'react'
 import { Footer } from '..'
 
 type LayoutProps = PropsWithChildren<{
@@ -13,7 +11,7 @@ const LayoutComponent: React.FC<LayoutProps> = ({ children, title = 'Ukelele-Git
   const description =
     'Bert Geldhof geeft gitaar-, ukelele- en pianolessen aan huis in Alphen aan den Rijn, Leiden en omstreken. Hiernaast repareert en onderhoudt hij snaarinstrumenten.'
 
-  function preventDefault(e) {
+  const preventDefault = (e) => {
     e.preventDefault()
   }
 

@@ -16,12 +16,13 @@ const ButtonComponent: React.FC<ButtonComponentProps> = ({
   onClickHandler,
 }) => {
   return (
-    <a
-      onClick={onClickHandler}
-      href={href}
-      className={classNames(styles.button, { [styles.filled]: filled }, { [styles.disabled]: disabled })}
-    >
-      {children}
+    <a href={href} className={styles.button_link}>
+      <button
+        onClick={onClickHandler}
+        className={classNames(styles.button, { [styles.filled]: filled }, { [styles.disabled]: disabled })}
+      >
+        {children}
+      </button>
     </a>
   )
 }
