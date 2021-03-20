@@ -22,11 +22,6 @@ const CostsCalculatorComponent: React.FC = () => {
   const [error, setError] = useState<string>('')
   const [price, setPrice] = useState<number>(null)
   const [loading, setLoading] = useState<boolean>(false)
-  const [grecaptcha, setGrecaptcha] = useState<any>(null)
-
-  useEffect(() => {
-    setGrecaptcha(((window as unknown) as any).grecaptcha)
-  }, [setGrecaptcha])
 
   const onCalculationStarted = (e: any) => {
     e.preventDefault()
@@ -138,13 +133,16 @@ const CostsCalculatorComponent: React.FC = () => {
     onSuccess: (json: { [key: string]: any }) => void,
     recaptchaAction: string,
   ): void => {
-    if (!grecaptcha) {
-      showError('Er ging iets mis. Probeer opnieuw na het herladen van de pagina')
+    const googleRecaptcha = (window as any).grecaptcha
+
+    if (!googleRecaptcha) {
+      showError('ReCaptcha kon niet worden geladen. Herlaad de pagina.')
+
       return
     }
 
-    grecaptcha.ready(() => {
-      grecaptcha
+    googleRecaptcha.ready(() => {
+      googleRecaptcha
         .execute(process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY, {
           action: recaptchaAction,
         })
