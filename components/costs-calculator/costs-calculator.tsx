@@ -237,6 +237,8 @@ const CostsCalculatorComponent: React.FC = () => {
                 <option value="45">45 minuten</option>
                 <option value="60">60 minuten</option>
               </select>
+
+              <img src="/images/icon/icon_chevron_down.svg" width="18" height="18" loading="eager" />
             </div>
           </div>
 
@@ -254,6 +256,8 @@ const CostsCalculatorComponent: React.FC = () => {
                 <option value="2">Twee personen</option>
                 <option value="3">Drie personen</option>
               </select>
+
+              <img src="/images/icon/icon_chevron_down.svg" width="18" height="18" loading="eager" />
             </div>
           </div>
 
