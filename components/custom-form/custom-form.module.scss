@@ -113,6 +113,7 @@
     .form-group {
       margin-top: 8px;
       margin-bottom: 8px;
+
       div {
         ul.error-detail {
           list-style-type: none;
@@ -140,13 +141,22 @@
 
       span {
         margin-left: 0;
+        p {
+          margin: 6px 0 6px 0;
+          a {
+            color: $ukeGitBlue;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
       }
     }
 
     .checkbox label {
       display: flex;
       align-items: center;
-      padding: 8px 16px 8px 0;
+      padding: 0;
     }
 
     input[type='checkbox'],

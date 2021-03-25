@@ -1,7 +1,8 @@
-import Form from '@rjsf/core'
+import Form, { WidgetProps } from '@rjsf/core'
 import classNames from 'classnames'
 import React, { useCallback, useState } from 'react'
 import styles from './custom-form.module.scss'
+import CheckboxWidget from './widgets/CheckboxWidget'
 
 type CustomFormProps = {
   schema: any
@@ -100,6 +101,9 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
   return (
     <>
       <Form
+        widgets={{
+          CheckboxWidget: (props: WidgetProps): JSX.Element => <CheckboxWidget {...props} />,
+        }}
         schema={schema as any}
         noHtml5Validate
         uiSchema={uiSchema}

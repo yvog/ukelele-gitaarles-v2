@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { useRouter } from 'next/dist/client/router'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { MenuButton } from '../menu-button/menu-button'

@@ -47,6 +47,9 @@
 
     &:focus {
       opacity: 1;
+      & ~ img {
+        opacity: 1;
+      }
     }
   }
 

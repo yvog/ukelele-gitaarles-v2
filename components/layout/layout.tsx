@@ -49,7 +49,7 @@ const LayoutComponent: React.FC<LayoutProps> = ({ children, title = 'Ukelele-Git
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="format-detection" content="telephone=no,date=no" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
         <meta name="description" content={description} />
         <meta name="robots" content="noodp" />
         <link rel="canonical" href="https://ukelele-gitaarles.nl/" />
