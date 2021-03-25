@@ -99,25 +99,6 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
 
   return (
     <>
-      {(success || error) && (
-        <div
-          className={classNames(styles.form_message, {
-            [styles.success_message]: success,
-            [styles.error_message]: error,
-          })}
-        >
-          {success ? 'Het formulier is succesvol verzonden' : 'Het formulier kon helaas niet worden verzonden'}
-          <div
-            onClick={() => {
-              setSuccess(false)
-              setError(false)
-            }}
-          >
-            <img src="/images/icon/icon_close.svg" width="18" height="18" alt="icon_close" loading="lazy" />
-          </div>
-        </div>
-      )}
-
       <Form
         schema={schema as any}
         noHtml5Validate
@@ -128,6 +109,12 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
           setSuccess(false)
           setError(false)
         }}
+        onChange={() => {
+          if (success) {
+            setSuccess(false)
+            setError(false)
+          }
+        }}
         className={classNames(styles.custom_form, className)}
         transformErrors={transformErrors}
         customFormats={customFormats}
@@ -137,6 +124,17 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
           Verzend
         </button>
       </Form>
+
+      {(success || error) && (
+        <div
+          className={classNames(styles.form_message, {
+            [styles.success_message]: success,
+            [styles.error_message]: error,
+          })}
+        >
+          {success ? 'Het formulier is succesvol verzonden' : 'Het formulier kon helaas niet worden verzonden'}
+        </div>
+      )}
     </>
   )
 }
