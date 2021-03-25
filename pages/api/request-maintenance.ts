@@ -21,22 +21,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     await sendMail(
       'Aanvraag reparatie/onderhoud via ukelele-gitaarles.nl',
       `
-      Beste meneer Geldhof,
-
-      Oh jee, iemand heeft zijn/haar instrument gesloopt en vraagt jouw hulp het te repareren/onderhouden via ukelele-gitaarles.nl.
+      Aanvraag reparatie/onderhoud via ukelele-gitaarles.nl
 
       Instrument: ${formData.instrument ?? ''}
-      Volledige naam: ${formData.forName ?? ''} ${formData.surName ?? ''}
+      Naam: ${formData.forName ?? ''} ${formData.surName ?? ''}
       E-mailadres: ${formData.email ?? ''}
       AVG toestemming: ${formData.gdprConsent ? 'Ja' : 'Nee'}
-      Opmerkingen: 
+      Bericht: 
       
       ${formData.comments ?? ''}
-
-
-      Met vriendelijke groet,
-
-      ukelele-gitaarles.nl
+      
     `,
     )
 
