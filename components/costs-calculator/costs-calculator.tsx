@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import SyncLoader from 'react-spinners/SyncLoader'
 import { Button } from '..'
 import styles from './costs-calculator.module.scss'
@@ -71,7 +71,7 @@ const CostsCalculatorComponent: React.FC = () => {
     }
 
     if (!price) {
-      showError('Er ging helaas iets mis')
+      showError('Leskosten konden niet worden berekend')
 
       return false
     }
@@ -91,7 +91,7 @@ const CostsCalculatorComponent: React.FC = () => {
       (json: any) => {
         if (json.error) {
           console.error(json)
-          showError('Er ging iets mis. Probeer later opnieuw a.u.b.')
+          showError('Ingevulde postcode is mogelijk onjuist')
 
           return
         }
@@ -109,7 +109,7 @@ const CostsCalculatorComponent: React.FC = () => {
       },
       (json: any) => {
         if (json.error) {
-          showError('Er ging iets mis. Probeer opnieuw a.u.b.')
+          showError('Afstand kon niet worden berekend')
 
           return
         }
@@ -120,7 +120,7 @@ const CostsCalculatorComponent: React.FC = () => {
           onDistanceCalculated(distance)
         } catch (e) {
           console.error(e)
-          showError('Er ging iets mis. Probeer opnieuw a.u.b.')
+          showError('Afstand kon niet worden berekend')
         }
       },
       'calculatedistance',
