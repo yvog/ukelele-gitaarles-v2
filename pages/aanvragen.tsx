@@ -57,7 +57,7 @@ export default function RequestMaintenancePage() {
           <h2 className="repair-title">Reparatie/onderhoud aanvragen</h2>
           <p>
             Gebruik onderstaand formulier om reparatie of onderhoud voor je snaarinstrument aan te vragen. Na ontvangst
-            zal ik (e-mail/telefonisch) contact met je opnemen, waaruit een vrijblijvende offerte zal voortkomen.
+            zal ik via e-mail contact met je opnemen, waaruit een vrijblijvende offerte zal voortkomen.
           </p>
         </article>
 

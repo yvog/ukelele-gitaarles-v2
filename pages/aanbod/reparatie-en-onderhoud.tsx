@@ -5,7 +5,7 @@ function RepairsOrMaintenanceKVP() {
   return (
     <>
       <li>
-        <img src="/images/icon/icon_invoice.svg" width="40" height="40" alt="invoice" loading="lazy" />
+        <img src="/images/icon/icon_wrench.svg" width="40" height="40" alt="invoice" loading="lazy" />
         Jarenlange vakkundige, technische kennis
       </li>
       <li>
@@ -13,7 +13,7 @@ function RepairsOrMaintenanceKVP() {
         Van nieuwe snaren en afstellen tot het repareren van een scheur in jouw gitaar
       </li>
       <li>
-        <img src="/images/icon/icon_wrench.svg" width="40" height="40" alt="wrench" loading="lazy" />
+        <img src="/images/icon/icon_invoice.svg" width="40" height="40" alt="wrench" loading="lazy" />
         Betaalbare reparatie / onderhoudsbeurt
       </li>
     </>
