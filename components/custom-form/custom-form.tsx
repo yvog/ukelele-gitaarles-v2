@@ -1,7 +1,8 @@
-import Form from '@rjsf/core'
+import Form, { WidgetProps } from '@rjsf/core'
 import classNames from 'classnames'
 import React, { useCallback, useState } from 'react'
 import styles from './custom-form.module.scss'
+import CheckboxWidget from './widgets/CheckboxWidget'
 
 type CustomFormProps = {
   schema: any
@@ -99,26 +100,10 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
 
   return (
     <>
-      {(success || error) && (
-        <div
-          className={classNames(styles.form_message, {
-            [styles.success_message]: success,
-            [styles.error_message]: error,
-          })}
-        >
-          {success ? 'Het formulier is succesvol verzonden' : 'Het formulier kon helaas niet worden verzonden'}
-          <div
-            onClick={() => {
-              setSuccess(false)
-              setError(false)
-            }}
-          >
-            <img src="/images/icon/icon_close.svg" width="18" height="18" alt="icon_close" loading="lazy" />
-          </div>
-        </div>
-      )}
-
       <Form
+        widgets={{
+          CheckboxWidget: (props: WidgetProps): JSX.Element => <CheckboxWidget {...props} />,
+        }}
         schema={schema as any}
         noHtml5Validate
         uiSchema={uiSchema}
@@ -127,6 +112,12 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
         onError={() => {
           setSuccess(false)
           setError(false)
+        }}
+        onChange={() => {
+          if (success) {
+            setSuccess(false)
+            setError(false)
+          }
         }}
         className={classNames(styles.custom_form, className)}
         transformErrors={transformErrors}
@@ -137,6 +128,17 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
           Verzend
         </button>
       </Form>
+
+      {(success || error) && (
+        <div
+          className={classNames(styles.form_message, {
+            [styles.success_message]: success,
+            [styles.error_message]: error,
+          })}
+        >
+          {success ? 'Het formulier is succesvol verzonden' : 'Het formulier kon helaas niet worden verzonden'}
+        </div>
+      )}
     </>
   )
 }

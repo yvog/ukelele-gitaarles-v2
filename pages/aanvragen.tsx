@@ -30,7 +30,7 @@ export default function RequestMaintenancePage() {
       },
       gdprConsent: {
         type: 'boolean',
-        title: 'Ik heb de privacy verklaring gelezen en ga hiermee akkoord',
+        title: 'Ik heb de [privacy verklaring](/privacy-verklaring) gelezen en ga hiermee akkoord',
         default: false,
         const: true,
       },
@@ -57,7 +57,7 @@ export default function RequestMaintenancePage() {
           <h2 className="repair-title">Reparatie/onderhoud aanvragen</h2>
           <p>
             Gebruik onderstaand formulier om reparatie of onderhoud voor je snaarinstrument aan te vragen. Na ontvangst
-            zal ik (e-mail/telefonisch) contact met je opnemen, waaruit een vrijblijvende offerte zal voortkomen.
+            zal ik via e-mail contact met je opnemen, waaruit een vrijblijvende offerte zal voortkomen.
           </p>
         </article>
 
@@ -70,13 +70,6 @@ export default function RequestMaintenancePage() {
             className="maintenance-form"
             recaptchaAction="submitrequestmaintenance"
           />
-          <div className="privacy-text">
-            * op dit formulier is de{' '}
-            <a href="/privacy-verklaring" target="_blank" className="blue-link">
-              privacy verklaring
-            </a>{' '}
-            van toepassing
-          </div>
         </article>
       </section>
     </Layout>

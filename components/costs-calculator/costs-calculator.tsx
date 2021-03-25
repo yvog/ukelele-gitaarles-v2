@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import SyncLoader from 'react-spinners/SyncLoader'
 import { Button } from '..'
 import styles from './costs-calculator.module.scss'
@@ -71,7 +71,7 @@ const CostsCalculatorComponent: React.FC = () => {
     }
 
     if (!price) {
-      showError('Er ging helaas iets mis')
+      showError('Leskosten konden niet worden berekend')
 
       return false
     }
@@ -91,7 +91,7 @@ const CostsCalculatorComponent: React.FC = () => {
       (json: any) => {
         if (json.error) {
           console.error(json)
-          showError('Er ging iets mis. Probeer later opnieuw a.u.b.')
+          showError('Ingevulde postcode is mogelijk onjuist')
 
           return
         }
@@ -109,7 +109,7 @@ const CostsCalculatorComponent: React.FC = () => {
       },
       (json: any) => {
         if (json.error) {
-          showError('Er ging iets mis. Probeer opnieuw a.u.b.')
+          showError('Afstand kon niet worden berekend')
 
           return
         }
@@ -120,7 +120,7 @@ const CostsCalculatorComponent: React.FC = () => {
           onDistanceCalculated(distance)
         } catch (e) {
           console.error(e)
-          showError('Er ging iets mis. Probeer opnieuw a.u.b.')
+          showError('Afstand kon niet worden berekend')
         }
       },
       'calculatedistance',
@@ -237,6 +237,8 @@ const CostsCalculatorComponent: React.FC = () => {
                 <option value="45">45 minuten</option>
                 <option value="60">60 minuten</option>
               </select>
+
+              <img src="/images/icon/icon_chevron_down.svg" width="18" height="18" loading="eager" />
             </div>
           </div>
 
@@ -254,6 +256,8 @@ const CostsCalculatorComponent: React.FC = () => {
                 <option value="2">Twee personen</option>
                 <option value="3">Drie personen</option>
               </select>
+
+              <img src="/images/icon/icon_chevron_down.svg" width="18" height="18" loading="eager" />
             </div>
           </div>
 
@@ -281,14 +285,6 @@ const CostsCalculatorComponent: React.FC = () => {
       )}
 
       {error && <div className={styles.errors}>{error}</div>}
-
-      <div className={classNames('privacy-text', styles.privacy)}>
-        * op dit formulier is de{' '}
-        <a href="/privacy-verklaring" target="_blank" className="blue-link">
-          privacy verklaring
-        </a>{' '}
-        van toepassing
-      </div>
     </div>
   )
 }

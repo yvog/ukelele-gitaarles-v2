@@ -16,31 +16,25 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     await sendMail(
       'Nieuwe aanmelding via ukelele-gitaarles.nl',
       `
-      Beste meneer Geldhof,
+      Nieuwe aanmelding via ukelele-gitaarles.nl
 
-      Hoera! Je hebt een nieuwe aanmelding ontvangen via ukelele-gitaarles.nl.
-
-      Instrument: ${formData.lessonType ?? ''}
-      Eerder muziekles gehad: ${formData.experience ? 'Ja' : 'Nee'}
-      Wilt een instrument huren: ${formData.hire ? 'Ja' : 'Nee'}
-      Neemt een proefles: ${formData.testLesson ? 'Ja' : 'Nee'}
-
-      Volledige naam: ${formData.forName ?? ''} ${formData.surName ?? ''}
+      Naam: ${formData.forName ?? ''} ${formData.surName ?? ''}
+      E-mailadres: ${formData.email ?? ''}
+      Telefoonnummer: ${formData.telephone ?? ''}
       Geboortedatum: ${formData.dateOfBirth ?? ''}
       Postcode: ${formData.postalCode ?? ''}
 
-      E-mailadres: ${formData.email ?? ''}
-      Telefoonnummer: ${formData.telephone ?? ''}
+      Instrument: ${formData.lessonType ?? ''}
+      Eerder muziekles gehad: ${formData.experience ? 'Ja' : 'Nee'}
+      Instrument huren: ${formData.hire ? 'Ja' : 'Nee'}
+      Proefles: ${formData.testLesson ? 'Ja' : 'Nee'}
 
       AVG toestemming: ${formData.gdprConsent ? 'Ja' : 'Nee'}
 
-      Opmerkingen: 
+      Opmerkingen:
       
       ${formData.comments ?? ''}
 
-      Met vriendelijke groet,
-
-      ukelele-gitaarles.nl
     `,
     )
 

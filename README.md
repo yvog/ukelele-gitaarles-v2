@@ -18,3 +18,9 @@ Sass            ^1.26.11
 
 Designed by [Vera Geldhof](https://github.com/VGeldhof), visit [portfolio](https://verageldhof.nl)  
 Developed by [Yvo Geldhof](https://github.com/yvog)
+
+# Known issues
+
+error - ./node_modules/next/dist/next-server/lib/side-effect.js
+
+- delete .next folder

@@ -33,6 +33,10 @@ function UkeleleGuitarLessonsKVP() {
         <img src="/images/icon/icon_man.svg" width="40" height="40" alt="man" loading="lazy" />
         Zowel persoonlijke lessen met veel aandacht voor de leerling als groepslessen zijn mogelijk
       </li>
+      <li>
+        <img src="/images/icon/icon_camera.svg" width="40" height="40" alt="man" loading="lazy" />
+        Les op afstand via Zoom gedurende de Covid-19 pandemie, maar ook op aanvraag
+      </li>
     </>
   )
 }
