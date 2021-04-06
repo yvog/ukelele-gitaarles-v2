@@ -1,6 +1,7 @@
 import Form, { WidgetProps } from '@rjsf/core'
 import classNames from 'classnames'
-import React, { useCallback, useState } from 'react'
+import { fileURLToPath } from 'node:url'
+import React, { useCallback, useRef, useState } from 'react'
 import styles from './custom-form.module.scss'
 import CheckboxWidget from './widgets/CheckboxWidget'
 
@@ -24,6 +25,8 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
   const [success, setSuccess] = useState<boolean>(false)
   const [error, setError] = useState<boolean>(false)
   const [submitting, setSubmitting] = useState<boolean>(false)
+
+  const ref = useRef<any>()
 
   const transformErrors = useCallback((errors) => {
     return errors.map((error) => {
@@ -52,6 +55,8 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
   }, [])
 
   const onSubmit = (formData) => {
+    setSuccess(false)
+    setError(false)
     setSubmitting(true)
 
     const googleRecaptcha = (window as any).grecaptcha
@@ -86,6 +91,7 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
 
               if (res?.success) {
                 setSuccess(true)
+                setError(false)
               } else {
                 setError(true)
               }
@@ -101,15 +107,15 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
   return (
     <>
       <Form
+        noHtml5Validate
         widgets={{
           CheckboxWidget: (props: WidgetProps): JSX.Element => <CheckboxWidget {...props} />,
         }}
         schema={schema as any}
-        noHtml5Validate
         uiSchema={uiSchema}
         showErrorList={false}
         onSubmit={onSubmit}
-        onError={() => {
+        onError={(e) => {
           setSuccess(false)
           setError(false)
         }}
@@ -122,7 +128,8 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
         className={classNames(styles.custom_form, className)}
         transformErrors={transformErrors}
         customFormats={customFormats}
-        autoComplete={'off'}
+        autoComplete="off"
+        noValidate={submitting || success}
       >
         <button type="submit" disabled={submitting}>
           Verzend

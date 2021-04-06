@@ -10,21 +10,21 @@ const ServicesComponent: React.FC = () => {
 
       <div className={classNames('row', styles.services_row)}>
         <ServicesItem
-          src="/images/background/aanbod_ukeleleles_gitaarles.jpg"
+          src="/images/background/aanbod_ukeleleles_gitaarles.webp"
           firstTitle="Ukelele les"
           secondTitle="Gitaarles"
           url="/aanbod/ukelele-gitaarles"
         />
 
         <ServicesItem
-          src="/images/background/aanbod_pianoles_keyboardles.jpg"
+          src="/images/background/aanbod_pianoles_keyboardles.webp"
           firstTitle="Pianoles"
           secondTitle="Keyboardles"
           url="/aanbod/piano-keyboardles"
         />
 
         <ServicesItem
-          src="/images/background/aanbod_gitaarreparatie_onderhoud.jpg"
+          src="/images/background/aanbod_gitaarreparatie_onderhoud.webp"
           firstTitle="Reparatie"
           secondTitle="Onderhoud"
           url="/aanbod/reparatie-en-onderhoud"

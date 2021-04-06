@@ -21,10 +21,10 @@ const HeroMainComponent: React.FC = () => {
         </div>
 
         <picture>
-          <source media="(min-width:1200px)" srcSet="/images/background/hero_1600x900.jpg" />
-          <source media="(min-width:0)" srcSet="/images/background/hero_768x432.jpg" />
+          <source media="(min-width:1200px)" srcSet="/images/background/hero_1600x900.webp" />
+          <source media="(min-width:0)" srcSet="/images/background/hero_768x432.webp" />
           <img
-            src="/images/background/hero_1600x900.jpg"
+            src="/images/background/hero_1600x900.webp"
             alt="alt"
             loading="eager"
             className="hero_background_image darken"

@@ -9,7 +9,7 @@ const HeroServiceChoiceComponent: React.FC<HeroServiceChoiceComponentProps> = ({
   return (
     <HeroWrapper classes={[styles.hero_service_choice]}>
       <img
-        src="/images/background/blue_background.jpg"
+        src="/images/background/blue_background.webp"
         alt="alt"
         loading="eager"
         className="hero_background_image"

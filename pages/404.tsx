@@ -4,7 +4,7 @@ import { Button } from '../components/button/button'
 
 export default function FourOhFour() {
   return (
-    <Layout title="Pagina niet gevonden">
+    <Layout title="Pagina niet gevonden" description="De opgevraagde pagina kon helaas niet worden gevonden.">
       <div className="main-container header">
         <HeaderNavigation variant="black" />
       </div>

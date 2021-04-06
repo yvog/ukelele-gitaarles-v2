@@ -11,7 +11,7 @@ const AboutMeSummaryComponent: React.FC = () => {
         <div className="col-lg-4">
           <img
             className={classNames(styles.about_me_summary_image)}
-            src="/images/bert_geldhof.jpg"
+            src="/images/bert_geldhof.webp"
             alt="Bert Geldhof"
             width={320}
             height={240}
