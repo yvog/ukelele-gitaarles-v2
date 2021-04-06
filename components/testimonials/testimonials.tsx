@@ -56,7 +56,7 @@ const TestimonialsComponent: React.FC = () => {
   return (
     <section className={styles.testimonials}>
       <img
-        src="/images/background/blue_background.jpg"
+        src="/images/background/blue_background.webp"
         alt="blue background"
         loading="lazy"
         width={446}

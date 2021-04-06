@@ -8,11 +8,11 @@ const FooterComponent: React.FC = () => {
   return (
     <footer className={classNames(styles.footer, 'container')}>
       <picture>
-        <source media="(min-width:1200px)" srcSet="/images/background/blue_background.jpg" />
-        <source media="(min-width:992px)" srcSet="/images/background/blue_background.jpg" />
-        <source media="(min-width:0)" srcSet="/images/background/blue_background.jpg" />
+        <source media="(min-width:1200px)" srcSet="/images/background/blue_background.webp" />
+        <source media="(min-width:992px)" srcSet="/images/background/blue_background.webp" />
+        <source media="(min-width:0)" srcSet="/images/background/blue_background.webp" />
         <img
-          src="/images/background/blue_background.jpg"
+          src="/images/background/blue_background.webp"
           loading="lazy"
           alt="blue background"
           className={classnames('section_background')}

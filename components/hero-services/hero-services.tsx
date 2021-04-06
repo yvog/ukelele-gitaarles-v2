@@ -8,7 +8,7 @@ const HeroServicesComponent: React.FC = () => {
   return (
     <section className={classNames(styles.hero_services, 'container')}>
       <img
-        src="/images/background/blue_background.jpg"
+        src="/images/background/blue_background.webp"
         alt="blue background"
         loading="lazy"
         width={446}

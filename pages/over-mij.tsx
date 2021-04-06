@@ -10,7 +10,7 @@ export default function AboutMePage() {
 
       <ContentBlock
         title="Bert Geldhof"
-        img={<img src="/images/bert_geldhof.jpg" alt="Bert Geldhof" width="320" height="240" loading="eager" />}
+        img={<img src="/images/bert_geldhof.webp" alt="Bert Geldhof" width="320" height="240" loading="eager" />}
         swapOnMobile
       >
         <p>

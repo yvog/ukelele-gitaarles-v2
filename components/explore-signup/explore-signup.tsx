@@ -17,7 +17,7 @@ const ExploreSignupComponent: React.FC = () => {
         </div>
 
         <img
-          src="/images/background/blue_background.jpg"
+          src="/images/background/blue_background.webp"
           alt="blue background"
           loading="lazy"
           width={446}
@@ -27,10 +27,10 @@ const ExploreSignupComponent: React.FC = () => {
       </div>
 
       <picture>
-        <source media="(min-width:1200px)" srcSet="/images/background/explore_signup_background_1600x450.jpg" />
-        <source media="(min-width:0)" srcSet="/images/background/explore_signup_background_1024x576.jpg" />
+        <source media="(min-width:1200px)" srcSet="/images/background/explore_signup_background_1600x450.webp" />
+        <source media="(min-width:0)" srcSet="/images/background/explore_signup_background_1024x576.webp" />
         <img
-          src="/images/background/explore_signup_background_1600x450.jpg"
+          src="/images/background/explore_signup_background_1600x450.webp"
           alt="explore signup background"
           loading="lazy"
           className={classnames('section_background', styles.backdrop_image)}

@@ -35,6 +35,8 @@
     "@types/react": "^16.9.52",
     "@types/react-jsonschema-form": "^1.7.4",
     "classnames": "^2.2.6",
+    "imagemin": "^7.0.1",
+    "imagemin-webp": "^6.0.0",
     "next-sitemap": "^1.5.18",
     "prettier": "^2.2.1",
     "react": "16.13.1",
