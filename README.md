@@ -20,6 +20,7 @@ Sass            ^1.26.11
 cd stack/apps/ukelele-gitaarles-v2
 sudo su
 sudo npm run prod:stop
+sudo git pull origin master
 sudo rm -rf node_modules
 sudo npm install
 sudo rm -rf .next
