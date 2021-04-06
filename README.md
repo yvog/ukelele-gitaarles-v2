@@ -14,6 +14,19 @@ TypeScript      ^4.0.3
 Sass            ^1.26.11
 ```
 
+### AWS Lightsail Deployment
+
+```
+cd stack/apps/ukelele-gitaarles-v2
+sudo su
+sudo rm -rf node_modules
+sudo npm install
+sudo npm run prod:stop
+sudo rm -rf .next
+sudo npm run build
+sudo npm run prod:start
+```
+
 # Credits
 
 Designed by [Vera Geldhof](https://github.com/VGeldhof), visit [portfolio](https://verageldhof.nl)  
