@@ -2,7 +2,11 @@ import { CostsCalculator, HeaderNavigation, Layout } from '../components'
 
 export default function CostsPage() {
   return (
-    <Layout title="Leskosten" useReCaptcha>
+    <Layout
+      title="Leskosten"
+      useReCaptcha
+      description={'Bereken jouw kosten voor gitaarles, ukelele les of pianoles aan huis van Bert Geldhof.'}
+    >
       <div className="main-container header">
         <HeaderNavigation variant="black" />
       </div>

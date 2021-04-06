@@ -47,7 +47,11 @@ export default function RequestMaintenancePage() {
   }
 
   return (
-    <Layout title="Reparatie/onderhoud aanvragen" useReCaptcha>
+    <Layout
+      title="Reparatie/onderhoud aanvragen"
+      useReCaptcha
+      description={'Laat jouw snaarinstrument repareren door Bert Geldhof.'}
+    >
       <div className="main-container header">
         <HeaderNavigation variant="black" />
       </div>

@@ -5,11 +5,18 @@ import { Footer } from '..'
 type LayoutProps = PropsWithChildren<{
   title?: string
   useReCaptcha?: boolean
+  description?: string
 }>
 
-const LayoutComponent: React.FC<LayoutProps> = ({ children, title = 'Ukelele-Gitaarles', useReCaptcha = false }) => {
-  const description =
-    'Bert Geldhof geeft gitaar-, ukelele- en pianolessen aan huis in Alphen aan den Rijn, Leiden en omstreken. Hiernaast repareert en onderhoudt hij snaarinstrumenten.'
+const LayoutComponent: React.FC<LayoutProps> = ({
+  children,
+  title = 'Ukelele-Gitaarles',
+  description,
+  useReCaptcha = false,
+}) => {
+  const descr =
+    description ||
+    'Bert Geldhof geeft gitaarles, ukelele les en pianoles aan huis in Alphen, Leiden en omstreken. Daarnaast  repareert en onderhoudt hij snaarinstrumenten.'
 
   const preventDefault = (e) => {
     e.preventDefault()
@@ -50,17 +57,17 @@ const LayoutComponent: React.FC<LayoutProps> = ({ children, title = 'Ukelele-Git
         <meta name="format-detection" content="telephone=no,date=no" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.png" />
-        <meta name="description" content={description} />
+        <meta name="description" content={descr} />
         <meta name="robots" content="noodp" />
         <link rel="canonical" href="https://ukelele-gitaarles.nl/" />
         <meta property="og:locale" content="nl_NL" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={`${title} - Ukelele-Gitaarles`} />
-        <meta property="og:description" content={description} />
+        <meta property="og:description" content={descr} />
         <meta property="og:url" content="https://ukelele-gitaarles.nl/" />
         <meta property="og:site_name" content="Bert Geldhof - Ukelele-Gitaarles" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:description" content={description} />
+        <meta name="twitter:description" content={descr} />
         <meta name="twitter:title" content={`${title} - Ukelele-Gitaarles`} />
 
         <link rel="preload" href="/fonts/salsa.woff2" as="font" crossOrigin="" />

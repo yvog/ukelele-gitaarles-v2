@@ -87,7 +87,11 @@ export default function SignUpPage() {
   }
 
   return (
-    <Layout title="Aanmelden" useReCaptcha>
+    <Layout
+      title="Aanmelden"
+      useReCaptcha
+      description="Meld je op deze pagina aan voor gitaarles, ukelele les of pianoles van Bert Geldhof."
+    >
       <div className="main-container header">
         <HeaderNavigation variant="black" />
       </div>
