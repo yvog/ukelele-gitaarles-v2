@@ -19,9 +19,9 @@ Sass            ^1.26.11
 ```
 cd stack/apps/ukelele-gitaarles-v2
 sudo su
+sudo npm run prod:stop
 sudo rm -rf node_modules
 sudo npm install
-sudo npm run prod:stop
 sudo rm -rf .next
 sudo npm run build
 sudo npm run prod:start
