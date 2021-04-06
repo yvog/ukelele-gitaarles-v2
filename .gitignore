@@ -34,3 +34,6 @@ env.php
 # vscode
 /.vs/
 
+# imagemin
+/imagemin
+
