@@ -19,11 +19,10 @@ Sass            ^1.26.11
 ```
 cd stack/apps/ukelele-gitaarles-v2
 sudo su
+git pull origin master
 sudo npm run prod:stop
-sudo git pull origin master
-sudo rm -rf node_modules
+rm -rf node_modules .next package-lock.json
 sudo npm install
-sudo rm -rf .next
 sudo npm run build
 sudo npm run prod:start
 ```
