@@ -21,7 +21,7 @@ cd stack/apps/ukelele-gitaarles-v2
 sudo su
 git pull origin master
 sudo npm run prod:stop
-rm -rf node_modules .next package-lock.json
+rm -rf node_modules .next
 sudo npm install
 sudo npm run build
 sudo npm run prod:start

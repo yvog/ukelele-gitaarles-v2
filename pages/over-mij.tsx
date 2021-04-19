@@ -18,25 +18,25 @@ export default function AboutMePage() {
           interesse in muziek is ontstaan.
         </p>
         <p>
-          Een flink aantal jaren heb ik intensief <b>klassiek-pianolessen</b> gevolgd bij{' '}
-          <b>Tine Broersma (Sweelinck Conservatorium, Amsterdam)</b> en later nog bij{' '}
-          <b>Leon van Veen (Koninklijk Conservatorium, Den Haag)</b>. Daar ik mijn muzikale horizon wilde verbreden, ben
-          ik destijds ook met de gitaar aan de slag gegaan. Eerst begonnen met het ontdekken van de klassieke gitaar en
-          later kwam daar rockgitaar bij. Ik vond gitaarspelen zo geweldig dat het mijn hoofdinstrument is geworden en
-          de piano mijn tweede instrument.
+          Een flink aantal jaren heb ik intensief <strong>klassiek-pianolessen</strong> gevolgd bij{' '}
+          <strong>Tine Broersma (Sweelinck Conservatorium, Amsterdam)</strong> en later nog bij{' '}
+          <strong>Leon van Veen (Koninklijk Conservatorium, Den Haag)</strong>. Daar ik mijn muzikale horizon wilde
+          verbreden, ben ik destijds ook met de gitaar aan de slag gegaan. Eerst begonnen met het ontdekken van de
+          klassieke gitaar en later kwam daar rockgitaar bij. Ik vond gitaarspelen zo geweldig dat het mijn
+          hoofdinstrument is geworden en de piano mijn tweede instrument.
         </p>
         <p>
-          Tijdens en na mijn studietijd heb ik met veel plezier gespeeld in <b>Gospelband Dawwagiem</b> in Voorschoten.
-          Ook bij <b>Stichting Kerk & Theater</b> in Oegstgeest heb ik gitaar gespeeld als{' '}
-          <b>Lead- en Rhythm- gitarist</b> in verschillende Christelijke producties, zoals de musicals: Jesus Christ
-          Superstar (1990-1991), The Story of J.C. (1996), Starring Peter (1997-Frank Sanders), Josef and the Amazing
-          Technicolor Dreamcoat (1998) en Tamara (2000). Later speelde ik nog een aantal jaren gitaar bij
-          <b>Rising Hope/Together Gospelkoor</b> in Hazerswoude-Dorp.
+          Tijdens en na mijn studietijd heb ik met veel plezier gespeeld in <strong>Gospelband Dawwagiem</strong> in
+          Voorschoten. Ook bij <strong>Stichting Kerk & Theater</strong> in Oegstgeest heb ik gitaar gespeeld als{' '}
+          <strong>Lead- en Rhythm- gitarist</strong> in verschillende Christelijke producties, zoals de musicals: Jesus
+          Christ Superstar (1990-1991), The Story of J.C. (1996), Starring Peter (1997-Frank Sanders), Josef and the
+          Amazing Technicolor Dreamcoat (1998) en Tamara (2000). Later speelde ik nog een aantal jaren gitaar bij
+          <strong>Rising Hope/Together Gospelkoor</strong> in Hazerswoude-Dorp.
         </p>
         <p>
-          Ook in de band <b>NEON</b> (Voorschoten) heb ik met veel plezier op vele podia binnen Nederland gitaar
-          gespeeld, onder andere voor bedrijven en tijdens bruiloften. Momenteel draag ik mijn muzikaal spel bij “De
-          Band” in Koudekerk aan den Rijn (ukelele en gitaar).
+          Ook in de band <strong>NEON</strong> (Voorschoten) heb ik met veel plezier op vele podia binnen Nederland
+          gitaar gespeeld, onder andere voor bedrijven en tijdens bruiloften. Momenteel draag ik mijn muzikaal spel bij
+          “De Band” in Koudekerk aan den Rijn (ukelele en gitaar).
         </p>
         <p>
           Het geeft mij niet alleen enorme voldoening om mijn muzikale kennis op dit gebied over te brengen aan jonge of

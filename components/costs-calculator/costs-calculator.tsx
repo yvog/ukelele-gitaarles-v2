@@ -244,7 +244,9 @@ const CostsCalculatorComponent: React.FC = () => {
 
           <div className="row">
             <div className="col-sm-12">
-              <label>Hoeveel personen krijgen les tegelijk?</label>
+              <label>
+                Hoeveel personen krijgen <br /> tegelijkertijd les?
+              </label>
               <select
                 id="user_persons"
                 value={persons}
