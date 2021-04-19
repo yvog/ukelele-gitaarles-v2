@@ -30,7 +30,7 @@ export default function AboutMePage() {
           Voorschoten. Ook bij <strong>Stichting Kerk & Theater</strong> in Oegstgeest heb ik gitaar gespeeld als{' '}
           <strong>Lead- en Rhythm- gitarist</strong> in verschillende Christelijke producties, zoals de musicals: Jesus
           Christ Superstar (1990-1991), The Story of J.C. (1996), Starring Peter (1997-Frank Sanders), Josef and the
-          Amazing Technicolor Dreamcoat (1998) en Tamara (2000). Later speelde ik nog een aantal jaren gitaar bij
+          Amazing Technicolor Dreamcoat (1998) en Tamara (2000). Later speelde ik nog een aantal jaren gitaar bij{' '}
           <strong>Rising Hope/Together Gospelkoor</strong> in Hazerswoude-Dorp.
         </p>
         <p>
