@@ -12,6 +12,9 @@
 .custom_form {
   max-width: 550px;
   margin-top: 64px;
+  font-family: $paragraphFont;
+  letter-spacing: 1px;
+  font-size: 12pt;
 
   fieldset {
     border: none;
@@ -176,6 +179,12 @@
     input[type='date'] {
       text-transform: uppercase;
     }
+  }
+}
+
+@media (max-width: $tablet) {
+  .custom_form {
+    font-size: 10pt;
   }
 }
 
