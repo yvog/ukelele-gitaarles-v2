@@ -1,10 +1,8 @@
 # Ukelele-Gitaarles v2.0
 
-[![Build Status](https://travis-ci.org/yvog/ukelele-gitaarles-v2.svg?branch=master)](https://travis-ci.org/yvog/ukelele-gitaarles-v2)
+New company website for  ([Ukelele-Gitaarles](https://ukelele-gitaarles.nl)).
 
-New company website for Ukelele-Gitaarles ([preview](https://ukelele-gitaarles-v2.vercel.app/)).
-
-### Versions
+## Versions
 
 ```
 Node            12.18.3 LTS
@@ -14,7 +12,7 @@ TypeScript      ^4.0.3
 Sass            ^1.26.11
 ```
 
-### AWS Lightsail Deployment
+##  Deployment
 
 ```
 cd stack/apps/ukelele-gitaarles-v2
@@ -27,13 +25,12 @@ sudo npm run build
 sudo npm run prod:start
 ```
 
-# Credits
+## Credits
 
 Designed by [Vera Geldhof](https://github.com/VGeldhof), visit [portfolio](https://verageldhof.nl)  
 Developed by [Yvo Geldhof](https://github.com/yvog)
 
-# Known issues
+## Known issues
 
-error - ./node_modules/next/dist/next-server/lib/side-effect.js
-
-- delete .next folder
+- Sometimes an error pops up saying something like `./node_modules/next/dist/next-server/lib/side-effect.js` when building
+    - fix: delete `.next` folder
