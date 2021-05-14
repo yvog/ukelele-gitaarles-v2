@@ -43,7 +43,7 @@ function UkeleleGuitarLessonsKVP() {
 
 export default function UkeleleGuitarLessonsPage() {
   return (
-    <Layout title="Ukelele- of gitaarles">
+    <Layout title="Ukelele- of gitaarles" canonical="/aanbod/ukelele-gitaarles">
       <HeroServiceChoice>
         <ServicePageHero
           kvp={<UkeleleGuitarLessonsKVP />}

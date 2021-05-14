@@ -39,7 +39,12 @@ export default function RequestMaintenancePage() {
   }
 
   return (
-    <Layout title="Contact" useReCaptcha description={'Stel gerust vragen aan Bert Geldhof via het contactformulier'}>
+    <Layout
+      title="Contact"
+      useReCaptcha
+      description={'Stel gerust vragen aan Bert Geldhof via het contactformulier'}
+      canonical="/contact"
+    >
       <div className="main-container header">
         <HeaderNavigation variant="black" />
       </div>

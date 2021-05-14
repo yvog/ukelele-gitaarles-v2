@@ -6,6 +6,7 @@ export default function CostsPage() {
       title="Leskosten"
       useReCaptcha
       description={'Bereken jouw kosten voor gitaarles, ukelele les of pianoles aan huis van Bert Geldhof.'}
+      canonical="/leskosten"
     >
       <div className="main-container header">
         <HeaderNavigation variant="black" />

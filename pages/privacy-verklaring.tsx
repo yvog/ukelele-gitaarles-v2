@@ -2,7 +2,7 @@ import { HeaderNavigation, Layout } from '../components'
 
 export default function PrivacyStatementPage() {
   return (
-    <Layout title="Privacy verklaring">
+    <Layout title="Privacy verklaring" canonical="/privacy-verklaring">
       <div className="main-container header">
         <HeaderNavigation variant="black" />
       </div>

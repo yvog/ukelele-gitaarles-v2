@@ -22,7 +22,7 @@ function RepairsOrMaintenanceKVP() {
 
 export default function RepairsOrMaintenancePage() {
   return (
-    <Layout title="Snaarinstrument reparatie en onderhoud">
+    <Layout title="Snaarinstrument reparatie en onderhoud" canonical="/aanbod/reparatie-en-onderhoud">
       <HeroServiceChoice>
         <ServicePageHero
           kvp={<RepairsOrMaintenanceKVP />}
