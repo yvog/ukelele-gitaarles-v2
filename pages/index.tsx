@@ -3,7 +3,7 @@ import { Testimonials } from '../components/testimonials/testimonials'
 
 export default function Home() {
   return (
-    <Layout title="Welkom">
+    <Layout title="Welkom" canonical="/">
       <MainHero />
 
       <div className="main-container body">

@@ -1,3 +1,5 @@
+import Head from 'next/head'
+import React from 'react'
 import { Button, HeaderNavigation, HeroServices, HeroWrapper } from '..'
 import styles from './hero-main.module.scss'
 
@@ -7,6 +9,11 @@ const HeroMainComponent: React.FC = () => {
       <HeroWrapper classes={[styles.hero_main]}>
         <div className="main-container header header-main-container">
           <HeaderNavigation />
+
+          <Head>
+            <link rel="preload" as="image" href="/images/background/hero_1600x900.webp"></link>
+            <link rel="preload" as="image" href="/images/background/hero_768x432.webp"></link>
+          </Head>
 
           <section>
             <article id={styles.hero_info}>

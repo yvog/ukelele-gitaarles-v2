@@ -1,13 +1,17 @@
-import { PropsWithChildren } from 'react'
+import Head from 'next/head'
+import React, { PropsWithChildren } from 'react'
 import { HeaderNavigation, HeroWrapper } from '..'
 import styles from './hero-service-choice.module.scss'
 
 type HeroServiceChoiceComponentProps = PropsWithChildren<unknown>
 
-// TODO: ServicePageHeroWrapper component
 const HeroServiceChoiceComponent: React.FC<HeroServiceChoiceComponentProps> = ({ children }) => {
   return (
     <HeroWrapper classes={[styles.hero_service_choice]}>
+      <Head>
+        <link rel="preload" as="image" href="/images/background/blue_background.webp"></link>
+      </Head>
+
       <img
         src="/images/background/blue_background.webp"
         alt="alt"

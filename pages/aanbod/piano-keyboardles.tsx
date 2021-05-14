@@ -1,13 +1,5 @@
 import React from 'react'
-import {
-  Button,
-  ContentBlock,
-  ExploreSignup,
-  HeroServiceChoice,
-  Layout,
-  ServicePageHero,
-  Surprise,
-} from '../../components'
+import { Button, ExploreSignup, HeroServiceChoice, Layout, ServicePageHero, Surprise } from '../../components'
 
 function PianoKeyboardLessonsKVP() {
   return (
@@ -39,7 +31,7 @@ function PianoKeyboardLessonsKVP() {
 
 export default function PianoKeyboardLessonsPage() {
   return (
-    <Layout title="Piano- of keyboardles">
+    <Layout title="Piano- of keyboardles" canonical="/aanbod/piano-keyboardles">
       <HeroServiceChoice>
         <ServicePageHero
           kvp={<PianoKeyboardLessonsKVP />}

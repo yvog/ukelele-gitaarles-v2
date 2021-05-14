@@ -3,7 +3,7 @@ import { ContentBlock, ExploreSignup, HeaderNavigation, Layout, UspItem } from '
 
 export default function AboutMePage() {
   return (
-    <Layout title="Over mij">
+    <Layout title="Over mij" canonical="/over-mij">
       <div className="main-container header">
         <HeaderNavigation variant="black" />
       </div>

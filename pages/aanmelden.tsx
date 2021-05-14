@@ -91,6 +91,7 @@ export default function SignUpPage() {
       title="Aanmelden"
       useReCaptcha
       description="Meld je op deze pagina aan voor gitaarles, ukelele les of pianoles van Bert Geldhof."
+      canonical="/aanmelden"
     >
       <div className="main-container header">
         <HeaderNavigation variant="black" />
