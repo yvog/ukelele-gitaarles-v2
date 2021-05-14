@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { MenuButton } from '../menu-button/menu-button'
 import styles from './header-navigation.module.scss'
+import Head from 'next/head'
 
 type HeaderNavigationComponentProps = {
   variant?: 'white' | 'black'
@@ -74,6 +75,10 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({ v
           loading="eager"
         />
       </a>
+
+      <Head>
+        <link rel="preload" as="image" href={`/images/logo/ugl_logo_${variant}.svg`}></link>
+      </Head>
 
       <nav
         className={classNames(styles.nav, {
