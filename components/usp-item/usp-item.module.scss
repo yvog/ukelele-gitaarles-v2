@@ -1,6 +1,8 @@
 @import '../styles/variables';
 
 .usp_item {
+  flex: 1;
+
   img {
     margin-bottom: 14px;
   }
@@ -8,7 +10,7 @@
 
 @media (max-width: $tablet) {
   .usp_item {
-    text-align: center;
+    text-align: left;
     max-width: 50%;
     display: inline-block;
     margin-bottom: 64px;
@@ -17,8 +19,9 @@
 
 @media (max-width: $mobile) {
   .usp_item {
-    text-align: center;
-    max-width: 80%;
+    text-align: left;
+    width: 75%;
+    max-width: 400px;
     display: block;
     margin: 0 auto 64px auto;
   }

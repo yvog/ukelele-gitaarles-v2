@@ -24,6 +24,12 @@
   src: url('/fonts/open_sans_400.woff2') format('woff2');
 }
 
+body {
+  font-size: 14px;
+  line-height: 1.42857143;
+  font-family: $paragraphFont;
+}
+
 h1,
 h2,
 h3,

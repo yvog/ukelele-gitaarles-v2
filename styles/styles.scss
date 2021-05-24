@@ -1,10 +1,23 @@
 @import './variables';
 @import './fonts';
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   height: 100%;
   margin: 0;
+}
+
+.row {
+  display: flex;
+  gap: 32px;
+}
+
+.container {
+  width: 100%;
 }
 
 .hidden {
@@ -120,7 +133,65 @@ a {
   }
 }
 
+.main-container {
+  margin: 0 auto;
+  max-width: $mainContainerMaxWidth;
+  padding: 0 100px 0 100px;
+
+  &.body {
+    margin: $defaultBlockMargin;
+  }
+
+  &.full-height {
+    min-height: 100vh;
+  }
+
+  &.header {
+    padding-top: 20px;
+  }
+}
+
+.header-main-container {
+  min-height: inherit;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row-eq-height {
+  display: flex;
+}
+
+@media (max-width: $smallDesktop) {
+  .main-container {
+    padding: 0 40px 0 40px;
+
+    &.body {
+      margin: $smallBlockMargin;
+    }
+
+    &.header {
+      padding-top: 20px;
+    }
+  }
+}
+
 @media (max-width: $mobile) {
+  .main-container {
+    padding: 0 40px 0 40px;
+
+    &.body {
+      margin: $smallBlockMargin;
+    }
+
+    &.header {
+      padding-top: 20px;
+    }
+  }
+
+  .row {
+    display: block;
+  }
+
   .repair-title {
     font-size: 20pt;
   }
@@ -164,48 +235,6 @@ a {
           grid-column: unset;
         }
       }
-    }
-  }
-}
-
-.main-container {
-  margin: 0 auto;
-  max-width: $mainContainerMaxWidth;
-  padding: 0 100px 0 100px;
-
-  &.body {
-    margin: $defaultBlockMargin;
-  }
-
-  &.full-height {
-    min-height: 100vh;
-  }
-
-  &.header {
-    padding-top: 20px;
-  }
-}
-
-.header-main-container {
-  min-height: inherit;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.row-eq-height {
-  display: flex;
-}
-
-@media (max-width: $smallDesktop) {
-  .main-container {
-    padding: 0 40px 0 40px;
-
-    &.body {
-      margin: $smallBlockMargin;
-    }
-
-    &.header {
-      padding-top: 20px;
     }
   }
 }

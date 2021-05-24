@@ -206,82 +206,74 @@ const CostsCalculatorComponent: React.FC = () => {
         <>
           <h3>Leskosten berekenen</h3>
 
-          <div className="row">
-            <div className="col-sm-12">
-              <label>Je postcode</label>
-              <input
-                type="text"
-                value={postalCode}
-                onChange={(e) => {
-                  setPostalCode(e.target.value)
-                }}
-                id="user_postalcode"
-                name="userpostalcode"
-                max="7"
-                placeholder="1234 AB"
-              />
-            </div>
+          <div>
+            <label>Je postcode</label>
+            <input
+              type="text"
+              value={postalCode}
+              onChange={(e) => {
+                setPostalCode(e.target.value)
+              }}
+              id="user_postalcode"
+              name="userpostalcode"
+              max="7"
+              placeholder="1234 AB"
+            />
           </div>
 
-          <div className="row">
-            <div className="col-sm-12">
-              <label>Gewenste lestijd</label>
-              <select
-                id="user_time"
-                value={lessonTime}
-                onChange={(e) => {
-                  setLessonTime(e.target.value)
-                }}
-              >
-                <option value="30">30 minuten</option>
-                <option value="45">45 minuten</option>
-                <option value="60">60 minuten</option>
-              </select>
+          <div>
+            <label>Gewenste lestijd</label>
+            <select
+              id="user_time"
+              value={lessonTime}
+              onChange={(e) => {
+                setLessonTime(e.target.value)
+              }}
+            >
+              <option value="30">30 minuten</option>
+              <option value="45">45 minuten</option>
+              <option value="60">60 minuten</option>
+            </select>
 
-              <img src="/images/icon/icon_chevron_down.svg" width="18" height="18" loading="eager" />
-            </div>
+            <img src="/images/icon/icon_chevron_down.svg" width="18" height="18" loading="eager" />
           </div>
 
-          <div className="row">
-            <div className="col-sm-12">
-              <label>
-                Hoeveel personen krijgen <br /> tegelijkertijd les?
-              </label>
-              <select
-                id="user_persons"
-                value={persons}
-                onChange={(e) => {
-                  setPersons(e.target.value)
-                }}
-              >
-                <option value="1">Één persoon</option>
-                <option value="2">Twee personen</option>
-                <option value="3">Drie personen</option>
-              </select>
+          <div>
+            <label>
+              Hoeveel personen krijgen <br /> tegelijkertijd les?
+            </label>
+            <select
+              id="user_persons"
+              value={persons}
+              onChange={(e) => {
+                setPersons(e.target.value)
+              }}
+            >
+              <option value="1">Één persoon</option>
+              <option value="2">Twee personen</option>
+              <option value="3">Drie personen</option>
+            </select>
 
-              <img src="/images/icon/icon_chevron_down.svg" width="18" height="18" loading="eager" />
-            </div>
+            <img src="/images/icon/icon_chevron_down.svg" width="18" height="18" loading="eager" />
           </div>
 
-          <div className="row">
-            <div className="col-sm-12">
-              <Button
-                disabled={loading}
-                filled={true}
-                href="#"
-                onClickHandler={(e) => {
-                  onCalculationStarted(e)
-                }}
-              >
-                Bereken leskosten
-              </Button>
+          <div>
+            <Button
+              disabled={loading}
+              filled={true}
+              href="#"
+              onClickHandler={(e) => {
+                onCalculationStarted(e)
+              }}
+            >
+              Bereken leskosten
+            </Button>
 
-              {loading && (
-                <div className={styles.spinner}>
-                  <SyncLoader size={16} color={'#1193f5'} loading={loading} />
-                </div>
-              )}
-            </div>
+            {loading && (
+              <div className={styles.spinner}>
+                <SyncLoader size={16} color={'#1193f5'} loading={loading} />
+              </div>
+            )}
           </div>
         </>
       )}

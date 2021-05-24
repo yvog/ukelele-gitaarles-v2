@@ -4,7 +4,14 @@
   margin: $defaultBlockMargin;
 
   .services_row {
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
     margin-top: 64px;
+
+    a {
+      margin: 0;
+    }
   }
 }
 
@@ -12,16 +19,14 @@
   .services {
     margin: $smallBlockMargin;
     .services_row {
-      display: flex;
       flex-wrap: wrap;
-      margin-top: 0;
+      justify-content: start;
     }
   }
 }
 
 @media (max-width: $mobile) {
   .services {
-    //justify-content: center;
     .services_row {
       justify-content: center;
     }

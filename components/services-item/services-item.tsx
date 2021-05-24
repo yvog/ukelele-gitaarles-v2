@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import styles from './services-item.module.scss'
 
 type ServicesItemComponentProps = {
@@ -10,18 +9,16 @@ type ServicesItemComponentProps = {
 
 const ServicesItemComponent: React.FC<ServicesItemComponentProps> = ({ src, firstTitle, secondTitle, url }) => {
   return (
-    <>
-      <div className={classNames('col-lg-4')}>
-        <a href={url} className={styles.services_item}>
-          <img src={src} width="300" height="200" alt={src} loading="eager" />
-          <h3>
-            {firstTitle}
-            <span className={styles.divider}></span>
-            {secondTitle}
-          </h3>
-        </a>
-      </div>
-    </>
+    <div className={styles.item_container}>
+      <a href={url} className={styles.services_item}>
+        <img src={src} width="300" height="200" alt={src} loading="eager" />
+        <h3>
+          {firstTitle}
+          <span className={styles.divider}></span>
+          {secondTitle}
+        </h3>
+      </a>
+    </div>
   )
 }
 

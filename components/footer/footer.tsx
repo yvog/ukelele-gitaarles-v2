@@ -1,6 +1,4 @@
-import classnames from 'classnames'
-import classNames from 'classnames'
-import Link from 'next/link'
+import { default as classNames } from 'classnames'
 import { Button } from '../button/button'
 import styles from './footer.module.scss'
 
@@ -15,14 +13,14 @@ const FooterComponent: React.FC = () => {
           src="/images/background/blue_background.webp"
           loading="lazy"
           alt="blue background"
-          className={classnames('section_background')}
+          className={classNames('section_background')}
           width={1920}
           height={445}
         />
       </picture>
 
-      <div className="main-container row">
-        <div className={classNames(styles.footer_nav, 'col-md-4')}>
+      <div className={classNames(styles.inner_container, 'main-container row')}>
+        <div className={styles.footer_nav}>
           <h3>Snel navigeren</h3>
           <nav className={styles.line_hover_nav}>
             <div>
@@ -45,7 +43,7 @@ const FooterComponent: React.FC = () => {
             </div>
           </nav>
         </div>
-        <div className={classNames('col-md-4', styles.footer_contact)}>
+        <div className={styles.footer_contact}>
           <h3>Contact</h3>
           <span>Tel.: 06 38462008</span>
           <Button href="/contact">Contact via mail</Button>
@@ -53,7 +51,7 @@ const FooterComponent: React.FC = () => {
             <img src="/images/icon/icon_facebook.svg" width="40" height="40" alt="Facebook" loading="lazy" />
           </a>
         </div>
-        <div className={classNames('col-md-4', styles.footer_companydetails)}>
+        <div className={styles.footer_companydetails}>
           <h3>Bedrijfsgegevens</h3>
           <span>Gitaar- en Ukelele lessen aan huis!</span>
           <span> Koudekerk aan den Rijn, Zuid-Holland </span>

@@ -8,9 +8,9 @@ const AboutMeSummaryComponent: React.FC = () => {
       <h4>Bert Geldhof</h4>
 
       <div className="row">
-        <div className="col-lg-4">
+        <div>
           <img
-            className={classNames(styles.about_me_summary_image)}
+            className={styles.about_me_summary_image}
             src="/images/bert_geldhof.webp"
             alt="Bert Geldhof"
             width={320}
@@ -19,7 +19,7 @@ const AboutMeSummaryComponent: React.FC = () => {
           />
         </div>
 
-        <div className={classNames(styles.about_me_summary_content, 'col-lg-6' /*col-lg-6*/)}>
+        <div className={styles.about_me_summary_content}>
           <p>
             Op jonge leeftijd ben ik begonnen met het maken van muziek. Ooit begonnen met blokfluitspelen, waardoor mijn
             brede interesse in muziek is ontstaan.

@@ -15,10 +15,8 @@ export default function FourOhFour() {
 
       <div className="main-container body">
         <div className="row">
-          <div className="col-lg-12">
+          <div>
             <h2>Pagina niet gevonden</h2>
-          </div>
-          <div className="col-lg-8">
             <p>De opgevraagde pagina kon helaas niet worden gevonden.</p>
             <Button filled={true} href="/">
               Terug
