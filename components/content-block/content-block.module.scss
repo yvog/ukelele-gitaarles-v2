@@ -43,7 +43,9 @@
 
     img {
       display: block;
-      margin: $smallMargin auto;
+      margin-top: $smallMargin;
+      margin-left: 0;
+      margin-bottom: $smallMargin;
       max-width: 75%;
       height: unset;
     }

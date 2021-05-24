@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import { PropsWithChildren } from 'react'
 import styles from './hero-services-item.module.scss'
 
@@ -10,7 +9,7 @@ type HeroServicesItemProps = PropsWithChildren<{
 
 export const HeroServicesItemComponent: React.FC<HeroServicesItemProps> = ({ icon, title, href, children }) => {
   return (
-    <article className={classNames(styles.hero_services_item, 'col-md-4')}>
+    <article className={styles.hero_services_item}>
       <img src={icon} alt={icon} width="60" height="60" loading="eager" />
       <a href={href} className={styles.hero_services_item_link}>
         <h3>{title}</h3>

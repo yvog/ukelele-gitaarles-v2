@@ -16,7 +16,7 @@ const ServicesComponent: React.FC = () => {
         <link rel="preload" as="image" href="/images/background/aanbod_gitaarreparatie_onderhoud.webp"></link>
       </Head>
 
-      <div className={classNames('row', styles.services_row)}>
+      <div className={styles.services_row}>
         <ServicesItem
           src="/images/background/aanbod_ukeleleles_gitaarles.webp"
           firstTitle="Ukelele les"

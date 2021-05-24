@@ -3,17 +3,25 @@
 
 .footer {
   color: #fff;
-  width: 100%;
   padding: 40px;
   font-family: $paragraphFont;
   font-size: 11pt;
   position: relative;
 
+  .inner_container {
+    justify-content: space-between;
+
+    & > div {
+      flex: 1;
+    }
+  }
+
   .disclaimer {
     padding-top: 36px;
     padding-bottom: 36px;
-    text-align: center;
     font-size: 10pt;
+    justify-content: center;
+    gap: 4px;
   }
 
   .footer_nav {
@@ -66,10 +74,6 @@
       display: flex;
       padding: 0;
       justify-content: space-between;
-
-      & > div {
-        flex: 1 1 0;
-      }
     }
   }
 }

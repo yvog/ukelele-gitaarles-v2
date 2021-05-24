@@ -1,6 +1,5 @@
-import classNames from 'classnames'
-import styles from './usp-item.module.scss'
 import { PropsWithChildren } from 'react'
+import styles from './usp-item.module.scss'
 
 type UspItemProps = PropsWithChildren<{
   icon?: string
@@ -8,7 +7,7 @@ type UspItemProps = PropsWithChildren<{
 
 const UspItemComponent: React.FC<UspItemProps> = ({ icon, children }) => {
   return (
-    <article className={classNames(styles.usp_item, 'col-md-4')}>
+    <article className={styles.usp_item}>
       <img src={icon} alt={icon} width="60" height="60" loading="lazy" />
       <p>{children}</p>
     </article>
