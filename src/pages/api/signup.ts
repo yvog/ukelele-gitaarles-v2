@@ -6,7 +6,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const token = req.body.token
 
   await verifyRecaptchaToken(token).then(async (recaptchaRes) => {
-    if (req.method !== 'POST' || !recaptchaRes || !recaptchaRes.success || recaptchaRes.action !== 'submitsignup') {
+    if (
+      req.method !== 'POST' ||
+      !recaptchaRes ||
+      !recaptchaRes.success ||
+      recaptchaRes.action !== 'submitsignup'
+    ) {
       res.send({
         success: false,
         reason: 'invalid request',
@@ -35,7 +40,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       
       ${formData.comments ?? ''}
 
-    `,
+    `
     )
 
     res.send({

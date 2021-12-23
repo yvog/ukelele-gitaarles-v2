@@ -82,7 +82,10 @@ const CostsCalculatorComponent: React.FC = () => {
     return true
   }
 
-  const convertPostalCodeToLatLng = (postalCode: string, onConverted: (location: LocationData) => void): void => {
+  const convertPostalCodeToLatLng = (
+    postalCode: string,
+    onConverted: (location: LocationData) => void
+  ): void => {
     postData(
       '/api/postalcode-to-latlng',
       {
@@ -97,7 +100,7 @@ const CostsCalculatorComponent: React.FC = () => {
         }
         onConverted(json.results[0].geometry.location)
       },
-      'postalcodetolatlng',
+      'postalcodetolatlng'
     )
   }
 
@@ -123,7 +126,7 @@ const CostsCalculatorComponent: React.FC = () => {
           showError('Afstand kon niet worden berekend')
         }
       },
-      'calculatedistance',
+      'calculatedistance'
     )
   }
 
@@ -131,7 +134,7 @@ const CostsCalculatorComponent: React.FC = () => {
     url: string,
     data: { [key: string]: any },
     onSuccess: (json: { [key: string]: any }) => void,
-    recaptchaAction: string,
+    recaptchaAction: string
   ): void => {
     const googleRecaptcha = (window as any).grecaptcha
 
@@ -189,7 +192,9 @@ const CostsCalculatorComponent: React.FC = () => {
     <div className={styles.costs_calculator}>
       {!!price && (
         <>
-          <div className={classNames(styles.message_box, styles.price)}>Jouw leskosten worden €{price} per les</div>
+          <div className={classNames(styles.message_box, styles.price)}>
+            Jouw leskosten worden €{price} per les
+          </div>
           <Button
             filled={true}
             href="#"

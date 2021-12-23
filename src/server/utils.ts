@@ -5,7 +5,7 @@ export function verifyRecaptchaToken(token) {
     `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
     {
       method: 'POST',
-    },
+    }
   )
     .then((res) => {
       return res.json()

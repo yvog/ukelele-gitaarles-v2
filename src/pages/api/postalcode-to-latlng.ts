@@ -22,20 +22,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       `https://maps.googleapis.com/maps/api/geocode/json?address=${postalCode},Nederland&key=${process.env.GEOCODING_API_KEY}`,
       {
         method: 'GET',
-      },
+      }
     )
       .then((stream: any) => stream.json())
       .then((data: any) =>
         res.send({
           error: false,
           ...data,
-        }),
+        })
       )
       .catch((data: any) =>
         res.send({
           error: true,
           ...data,
-        }),
+        })
       )
   })
 }

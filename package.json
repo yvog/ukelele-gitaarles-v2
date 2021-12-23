@@ -8,7 +8,7 @@
     "build": "next build && npm run gen:sitemap",
     "start": "next start",
     "export": "next export",
-    "format": "prettier --write \"{components,api,server,pages,styles}/**/*.{ts,js,json,scss,css}\" ",
+    "format": "prettier --write \"src/**/*.{ts,js,json,scss,css}\" ",
     "cleanup": "rimraf node_modules",
     "gen:sitemap": "next-sitemap --config sitemap.config.js",
     "prod:cleanup": "rm -rf package-lock.json ./public/sitemap.js",
@@ -48,5 +48,12 @@
     "sharp": "^0.27.2",
     "styled-components": "^5.2.0",
     "typescript": "^4.0.3"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "printWidth": 100
   }
 }
