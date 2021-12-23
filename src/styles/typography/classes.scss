@@ -6,49 +6,49 @@
 */
 
 .h1 {
-  @include fluid(font-size, 48, 72);
+  font-size: fluid(48, 72);
 }
 
 .h2 {
-  @include fluid(font-size, 40, 64);
+  font-size: fluid(40, 64);
 }
 
 .h3 {
-  @include fluid(font-size, 32, 48);
+  font-size: fluid(32, 48);
 }
 
 .h4 {
-  @include fluid(font-size, 24, 40);
+  font-size: fluid(24, 40);
 }
 
 .h5 {
-  @include fluid(font-size, 16, 32);
+  font-size: fluid(16, 32);
 }
 
 .h6 {
-  @include fluid(font-size, 16, 24);
+  font-size: fluid(16, 24);
 }
 
 .body1 {
-  @include fluid(font-size, 12, 14);
+  font-size: fluid(12, 14);
   font-family: $paragraphFont;
   letter-spacing: 1px;
 }
 
 .body2 {
-  @include fluid(font-size, 16, 20);
+  font-size: fluid(16, 20);
   font-family: $paragraphFont;
   letter-spacing: 1px;
 }
 
 .button {
-  @include fluid(font-size, 12, 14);
+  font-size: fluid(12, 14);
   font-family: $paragraphFont;
   letter-spacing: 1px;
 }
 
 .caption {
-  @include fluid(font-size, 8, 12);
+  font-size: fluid(8, 12);
   font-family: $paragraphFont;
   letter-spacing: 1px;
 }

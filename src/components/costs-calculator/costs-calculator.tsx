@@ -196,7 +196,7 @@ const CostsCalculatorComponent: React.FC = () => {
             Jouw leskosten worden €{price} per les
           </div>
           <Button
-            filled={true}
+            filled
             href="#"
             onClickHandler={(e) => {
               onCalculateAgain(e)
@@ -265,7 +265,7 @@ const CostsCalculatorComponent: React.FC = () => {
           <div>
             <Button
               disabled={loading}
-              filled={true}
+              filled
               href="#"
               onClickHandler={(e) => {
                 onCalculationStarted(e)

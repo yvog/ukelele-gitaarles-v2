@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+@import '../../styles/util/fluid';
 
 .button_link {
   display: inline-block;
@@ -9,7 +10,7 @@
   border-radius: 50px;
   color: #fff;
   border: 2px solid #fff;
-  min-width: 224px;
+  width: fluid(96, 156);
   padding: 10px 18px 10px 18px;
   letter-spacing: 2px;
   text-decoration: none;
@@ -51,11 +52,5 @@
 
   &.disabled {
     opacity: 0.25;
-  }
-}
-
-@media (max-width: $tablet) {
-  .button {
-    min-width: unset;
   }
 }

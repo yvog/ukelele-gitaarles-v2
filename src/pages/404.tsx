@@ -18,7 +18,7 @@ export default function FourOhFour() {
           <div>
             <h2>Pagina niet gevonden</h2>
             <p>De opgevraagde pagina kon helaas niet worden gevonden.</p>
-            <Button filled={true} href="/">
+            <Button filled href="/">
               Terug
             </Button>
           </div>

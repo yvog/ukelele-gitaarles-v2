@@ -1,3 +1,5 @@
+@import '../styles/util/fluid';
+
 /* colors */
 $ukeGitBlue: #1193f5;
 $mainBgColor: #fff;
@@ -7,7 +9,8 @@ $error: #f35f5f;
 $success: #6dd66d;
 
 /* border radius */
-$defaultBorderRadius: 25px;
+$borderRadiusSM: 16px;
+$borderRadiusMD: 25px;
 
 /* fonts */
 $titleFont: 'Salsa', cursive;
@@ -22,17 +25,20 @@ $mainContainerMinWidthInt: 320;
 $mainContainerMaxWidthInt: 1440;
 
 /* shadows */
-$defaultBoxShadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
-$lightBoxShadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-$darkBoxShadow: 5px 5px 15px rgba(0, 0, 0, 0.7);
+$defaultBoxShadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+$lightBoxShadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+$darkBoxShadow: 4px 4px 16px rgba(0, 0, 0, 0.25);
 
 /* breakpoints */
 $smallDesktop: 1200px;
 $tablet: 992px;
 $mobile: 768px;
+$smallMobile: 550px;
 
-/* margins */
-$defaultMargin: 128px;
-$smallMargin: $defaultMargin * 0.5;
-$defaultBlockMargin: $defaultMargin auto $defaultMargin auto;
-$smallBlockMargin: ($defaultMargin * 0.5) auto ($defaultMargin * 0.5) auto;
+/* spacings */
+$spacingXXS: fluid(8, 16);
+$spacingXS: fluid(16, 32);
+$spacingSM: fluid(32, 64);
+$spacingMD: fluid(64, 128);
+$spacingLG: fluid(128, 256);
+$spacingXL: fluid(256, 512);

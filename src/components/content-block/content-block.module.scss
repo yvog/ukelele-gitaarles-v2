@@ -11,7 +11,7 @@
   }
 
   img {
-    margin-left: $smallMargin;
+    margin-left: $spacingSM;
     border-radius: 16px;
   }
 
@@ -27,7 +27,7 @@
     }
 
     .content_block_content {
-      margin-bottom: $smallMargin;
+      margin-bottom: $spacingSM;
     }
   }
 }
@@ -48,9 +48,9 @@
 
     img {
       display: block;
-      margin-top: $smallMargin;
+      margin-top: $spacingSM;
       margin-left: 0;
-      margin-bottom: $smallMargin;
+      margin-bottom: $spacingSM;
       max-width: 75%;
       height: unset;
     }

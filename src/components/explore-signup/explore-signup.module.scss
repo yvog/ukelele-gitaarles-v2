@@ -3,10 +3,10 @@
 .explore_signup {
   position: relative;
   width: 100%;
-  margin: $defaultBlockMargin;
+  margin: $spacingMD auto $spacingMD auto;
 
   .explore_signup_background {
-    border-radius: $defaultBorderRadius;
+    border-radius: $borderRadiusMD;
   }
 
   .backdrop_image {
@@ -21,7 +21,7 @@
     margin: 0 auto;
     width: 100%;
     text-align: center;
-    border-radius: $defaultBorderRadius;
+    border-radius: $borderRadiusMD;
     box-shadow: $darkBoxShadow;
 
     h4 {
@@ -44,13 +44,13 @@
 
 @media (max-width: $smallDesktop) {
   .explore_signup {
-    margin: $smallBlockMargin;
+    margin: $spacingSM auto $spacingSM auto;
   }
 }
 
 @media (max-width: $tablet) {
   .explore_signup {
-    margin: $smallBlockMargin;
+    margin: $spacingSM auto $spacingSM auto;
 
     .explore_signup_inner {
       padding: 72px 64px;

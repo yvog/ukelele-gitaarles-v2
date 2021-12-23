@@ -1,61 +1,47 @@
 @import '../../styles/variables';
+@import '../../styles/typography/classes';
 
 .about_me_summary {
   max-width: $mainInnerContainerMaxWidth;
   margin: 0 auto;
-  padding: 0;
 
   h4 {
-    padding: 0;
+    margin-bottom: $spacingXS;
   }
 
-  .about_me_summary_image {
-    margin-top: 44px;
-    border-radius: 16px;
-    margin-right: 16px;
-    display: block;
-  }
+  .about_me_summary_inner {
+    display: flex;
+    gap: $spacingXS;
+    align-items: center;
 
-  .about_me_summary_content {
-    margin-top: 44px;
-    margin-left: $smallMargin;
-    padding: 0;
-
-    p {
-      padding: 0;
-      margin: 0;
-      margin-bottom: 36px;
+    img {
+      border-radius: 100%;
+      object-fit: cover;
+      box-shadow: $defaultBoxShadow;
+      width: fluid(176, 240);
+      height: fluid(176, 240);
+      margin-right: $spacingXS;
     }
 
-    button {
-      margin-top: 50px;
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      margin-top: $spacingXXS;
     }
   }
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $smallMobile) {
   .about_me_summary {
-    margin: 60px auto;
     text-align: center;
 
-    .about_me_summary_image {
-      width: 50%;
-      height: unset;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .about_me_summary_content {
-      margin-left: 0;
-      text-align: justify;
-
-      a {
-        display: block;
-        margin: 0 auto;
-      }
-
-      button {
-        margin-top: 0;
+    .about_me_summary_inner {
+      display: block;
+      img {
+        margin: 0 0 $spacingXS 0;
       }
     }
   }

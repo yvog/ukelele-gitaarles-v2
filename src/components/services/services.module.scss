@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .services {
-  margin: $defaultBlockMargin;
+  margin: $spacingMD auto $spacingMD auto;
 
   .services_row {
     display: flex;
@@ -17,7 +17,7 @@
 
 @media (max-width: $smallDesktop) {
   .services {
-    margin: $smallBlockMargin;
+    margin: $spacingSM auto $spacingSM auto;
     .services_row {
       flex-wrap: wrap;
       justify-content: start;

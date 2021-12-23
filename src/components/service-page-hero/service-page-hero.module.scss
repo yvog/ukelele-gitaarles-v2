@@ -7,14 +7,14 @@
     'desc kvp'
     'desc btn';
   grid-template-columns: minmax(0, 1fr) minmax(1fr, 1fr);
-  grid-column-gap: $smallMargin;
-  grid-row-gap: $smallMargin;
+  grid-column-gap: $spacingSM;
+  grid-row-gap: $spacingSM;
   margin: 0 auto;
   width: 100%;
-  margin: $defaultBlockMargin;
+  margin: $spacingMD auto $spacingMD auto;
   color: #fff;
   font-family: $paragraphFont;
-  padding-bottom: $smallMargin;
+  padding-bottom: $spacingSM;
 
   h2 {
     grid-area: title;

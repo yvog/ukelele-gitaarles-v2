@@ -1,16 +1,21 @@
 @import '../../styles/variables';
+@import '../../styles/typography/classes';
 
 .costs_calculator {
   text-align: center;
   box-shadow: $defaultBoxShadow;
   border: 1px solid #dfdfdf;
-  border-radius: $defaultBorderRadius;
+  border-radius: $borderRadiusMD;
   padding: 32px;
   max-width: 396px;
   margin-top: 80px;
   position: relative;
   font-family: $paragraphFont;
   letter-spacing: 1px;
+
+  h3 {
+    @extend .h6;
+  }
 
   label {
     display: block;
@@ -60,7 +65,7 @@
     width: 100%;
     padding: 16px;
     color: #333;
-    border-radius: $defaultBorderRadius;
+    border-radius: $borderRadiusMD;
     border: 1px solid #ddd;
     background: #fff;
     -webkit-appearance: none;

@@ -88,7 +88,9 @@ const TestimonialsComponent: React.FC = () => {
           })}
         </Carousel>
 
-        <Button href="/aanmelden">Begin met muziek maken</Button>
+        <div className={styles.button}>
+          <Button href="/aanmelden">Start met muziek maken</Button>
+        </div>
       </div>
     </section>
   )

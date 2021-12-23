@@ -9,6 +9,7 @@ html,
 body {
   height: 100%;
   margin: 0;
+  overflow-x: hidden;
 }
 
 .row {
@@ -88,6 +89,19 @@ a {
     color: #fff;
     text-decoration: none;
   }
+
+  &.text {
+    display: inline-block;
+    color: $ukeGitBlue;
+    transition: border-bottom 0.15s ease;
+    border-bottom: 1px solid transparent;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    &:hover {
+      border-bottom: 1px solid $ukeGitBlue;
+    }
+  }
 }
 
 .signup-form {
@@ -138,7 +152,7 @@ a {
   padding: 0 100px 0 100px;
 
   &.body {
-    margin: $defaultBlockMargin;
+    margin: $spacingMD auto $spacingMD auto;
   }
 
   &.full-height {
@@ -165,7 +179,7 @@ a {
     padding: 0 40px 0 40px;
 
     &.body {
-      margin: $smallBlockMargin;
+      margin: $spacingSM auto $spacingSM auto;
     }
 
     &.header {
@@ -179,7 +193,7 @@ a {
     padding: 0 40px 0 40px;
 
     &.body {
-      margin: $smallBlockMargin;
+      margin: $spacingSM auto $spacingSM auto;
     }
 
     &.header {

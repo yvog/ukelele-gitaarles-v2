@@ -1,9 +1,9 @@
 @import '../../styles/variables';
+@import '../../styles/util/fluid';
 
 .testimonials {
   position: relative;
-  margin-top: $defaultMargin;
-  margin-bottom: $defaultMargin;
+  margin: $spacingMD 0 $spacingMD 0;
 
   .quote {
     position: absolute;
@@ -28,6 +28,12 @@
       outline: none;
     }
 
+    .button {
+      button {
+        width: fluid(225, 300);
+      }
+    }
+
     /* 
       hacky way/fix to override the carousel's item & 1 pixel bug
     */
@@ -42,7 +48,6 @@
     article {
       margin-top: 46px;
       background: #fff;
-      box-shadow: $defaultBoxShadow;
       border-radius: 16px;
       padding: 24px;
       position: relative;
@@ -118,8 +123,8 @@
 
 @media (max-width: $smallDesktop) {
   .testimonials {
-    margin-top: $smallMargin;
-    margin-bottom: $smallMargin;
+    margin-top: $spacingSM;
+    margin-bottom: $spacingSM;
     height: auto;
 
     .quote {
