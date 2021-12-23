@@ -10,7 +10,9 @@ type HeaderNavigationComponentProps = {
   variant?: 'white' | 'black'
 }
 
-const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({ variant = 'white' }) => {
+const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
+  variant = 'white',
+}) => {
   const isBlack = variant === 'black'
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
 
@@ -27,8 +29,6 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({ v
 
     window.dispatchEvent(event)
   }
-
-  const menuButtonLabel = menuOpen ? 'Sluit' : 'Menu'
 
   const menuItems = [
     {
@@ -109,7 +109,6 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({ v
 
       <MenuButton
         icon={`/images/icon/icon_${menuOpen ? 'close' : 'menu'}.svg`}
-        label={menuButtonLabel}
         onMenuOpen={onMenuOpen}
       />
     </header>
