@@ -42,16 +42,8 @@
   }
 }
 
-@media (max-width: $smallDesktop) {
-  .explore_signup {
-    margin: $spacingSM auto $spacingSM auto;
-  }
-}
-
 @media (max-width: $tablet) {
   .explore_signup {
-    margin: $spacingSM auto $spacingSM auto;
-
     .explore_signup_inner {
       padding: 72px 64px;
       max-width: 60%;

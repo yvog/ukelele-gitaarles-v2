@@ -5,6 +5,9 @@
   position: relative;
   margin: $spacingMD 0 $spacingMD 0;
 
+  // todo: margin weg
+  // todo: 404 & over mij fixen want row is weg.
+
   .quote {
     position: absolute;
     height: auto;
@@ -123,8 +126,6 @@
 
 @media (max-width: $smallDesktop) {
   .testimonials {
-    margin-top: $spacingSM;
-    margin-bottom: $spacingSM;
     height: auto;
 
     .quote {

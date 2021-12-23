@@ -14,7 +14,7 @@ export default function FourOhFour() {
       </div>
 
       <div className="main-container body">
-        <div className="row">
+        <div>
           <div>
             <h2>Pagina niet gevonden</h2>
             <p>De opgevraagde pagina kon helaas niet worden gevonden.</p>

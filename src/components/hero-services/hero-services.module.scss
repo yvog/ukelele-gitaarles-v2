@@ -2,20 +2,27 @@
 
 .hero_services {
   width: 100%;
-  padding: 24px 36px 46px 36px;
   position: relative;
   margin-top: -72px;
   border-radius: $borderRadiusMD;
   overflow: hidden;
   box-shadow: $darkBoxShadow;
+  padding: $spacingXS $spacingXS;
+
+  .hero_services_items {
+    display: flex;
+    gap: $spacingSM;
+  }
 
   img {
     opacity: 0.95;
   }
 }
 
-@media (max-width: $tablet) {
+@media (max-width: $mobile) {
   .hero_services {
-    padding: 24px 30px 16px 30px;
+    .hero_services_items {
+      display: block;
+    }
   }
 }

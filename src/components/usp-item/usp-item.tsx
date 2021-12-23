@@ -2,13 +2,13 @@ import { PropsWithChildren } from 'react'
 import styles from './usp-item.module.scss'
 
 type UspItemProps = PropsWithChildren<{
-  icon?: string
+  icon: string
 }>
 
 const UspItemComponent: React.FC<UspItemProps> = ({ icon, children }) => {
   return (
     <article className={styles.usp_item}>
-      <img src={icon} alt={icon} width="60" height="60" loading="lazy" />
+      <object data={icon} type="image/svg+xml" className={styles.icon} />
       <p>{children}</p>
     </article>
   )

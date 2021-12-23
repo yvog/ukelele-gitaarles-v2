@@ -1,0 +1,15 @@
+@import '../variables';
+
+.about_me_usps {
+  display: flex;
+  gap: $spacingSM;
+}
+
+@media (max-width: $smallMobile) {
+  .about_me_usps {
+    display: block;
+    & > article:not(:last-of-type) {
+      margin-bottom: $spacingXS;
+    }
+  }
+}

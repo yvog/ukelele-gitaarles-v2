@@ -7,7 +7,12 @@ type ServicesItemComponentProps = {
   url: string
 }
 
-const ServicesItemComponent: React.FC<ServicesItemComponentProps> = ({ src, firstTitle, secondTitle, url }) => {
+const ServicesItemComponent: React.FC<ServicesItemComponentProps> = ({
+  src,
+  firstTitle,
+  secondTitle,
+  url,
+}) => {
   return (
     <div className={styles.item_container}>
       <a href={url} className={styles.services_item}>

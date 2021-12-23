@@ -1,5 +1,5 @@
-// @import './variables';
-// @import './fonts';
+@import 'variables';
+@import 'typography/font-faces';
 
 * {
   box-sizing: border-box;
@@ -10,11 +10,6 @@ body {
   height: 100%;
   margin: 0;
   overflow-x: hidden;
-}
-
-.row {
-  display: flex;
-  gap: 32px;
 }
 
 .container {
@@ -149,7 +144,7 @@ a {
 .main-container {
   margin: 0 auto;
   max-width: $mainContainerMaxWidth;
-  padding: 0 100px 0 100px;
+  padding: 0 $spacingSM 0 $spacingSM;
 
   &.body {
     margin: $spacingMD auto $spacingMD auto;
@@ -170,41 +165,7 @@ a {
   flex-wrap: wrap;
 }
 
-.row-eq-height {
-  display: flex;
-}
-
-@media (max-width: $smallDesktop) {
-  .main-container {
-    padding: 0 40px 0 40px;
-
-    &.body {
-      margin: $spacingSM auto $spacingSM auto;
-    }
-
-    &.header {
-      padding-top: 20px;
-    }
-  }
-}
-
 @media (max-width: $mobile) {
-  .main-container {
-    padding: 0 40px 0 40px;
-
-    &.body {
-      margin: $spacingSM auto $spacingSM auto;
-    }
-
-    &.header {
-      padding-top: 20px;
-    }
-  }
-
-  .row {
-    display: block;
-  }
-
   .signup-form {
     #root {
       div {

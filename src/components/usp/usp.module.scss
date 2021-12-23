@@ -7,4 +7,17 @@
   h4 {
     margin-bottom: $spacingMD;
   }
+
+  .usp_items {
+    display: flex;
+    gap: $spacingSM;
+  }
+}
+
+@media (max-width: $smallMobile) {
+  .usp {
+    .usp_items {
+      display: block;
+    }
+  }
 }
