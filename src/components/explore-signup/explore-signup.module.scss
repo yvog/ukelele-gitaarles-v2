@@ -1,0 +1,88 @@
+@import '../../styles/variables';
+
+.explore_signup {
+  position: relative;
+  width: 100%;
+  margin: $defaultBlockMargin;
+
+  .explore_signup_background {
+    border-radius: $defaultBorderRadius;
+  }
+
+  .backdrop_image {
+    height: 418px;
+    z-index: -2;
+  }
+
+  .explore_signup_inner {
+    position: relative;
+    padding: 80px;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    border-radius: $defaultBorderRadius;
+    box-shadow: $darkBoxShadow;
+
+    h4 {
+      color: #fff;
+      font-size: 34pt;
+      word-wrap: break-word;
+    }
+
+    p {
+      color: #fff;
+      margin-top: 40px;
+      margin-bottom: 96px;
+      font-size: 14pt;
+      font-weight: 300;
+    }
+
+    a {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: $smallDesktop) {
+  .explore_signup {
+    margin: $smallBlockMargin;
+  }
+}
+
+@media (max-width: $tablet) {
+  .explore_signup {
+    margin: $smallBlockMargin;
+
+    .explore_signup_inner {
+      padding: 72px 64px;
+      max-width: 60%;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .explore_signup {
+    .backdrop_image {
+      height: 164px;
+    }
+
+    &:after {
+      top: 24px;
+    }
+
+    .explore_signup_inner {
+      padding: 24px 36px;
+
+      h4 {
+        font-size: 16pt;
+      }
+
+      p {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        font-size: 12pt;
+      }
+    }
+  }
+}

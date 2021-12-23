@@ -1,0 +1,37 @@
+@import '../../styles/variables';
+
+.hero_services_item {
+  padding: 0 16px 0 16px;
+  color: #fff;
+
+  .hero_services_item_link {
+    h3 {
+      padding: 8px;
+      margin-left: -12px;
+    }
+  }
+
+  p {
+    margin-top: 12px;
+    font-weight: 300;
+  }
+
+  img {
+    margin-bottom: 18px;
+    filter: invert(100%);
+  }
+}
+
+@media (max-width: $tablet) {
+  .hero_services_item {
+    p {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .hero_services_item {
+    padding: 0;
+  }
+}

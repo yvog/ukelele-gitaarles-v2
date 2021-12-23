@@ -1,0 +1,53 @@
+@import '../../styles/variables';
+
+.content_block {
+  .content_block_row {
+    display: flex;
+  }
+
+  img {
+    margin-left: $smallMargin;
+    border-radius: 16px;
+  }
+
+  .no_image {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: $smallDesktop) {
+  .content_block {
+    .content_block_row {
+      display: flex;
+    }
+
+    .content_block_content {
+      margin-bottom: $smallMargin;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .content_block {
+    .content_block_row {
+      display: block;
+
+      &.swapOnMobile {
+        display: grid;
+
+        :first-child {
+          order: 1;
+        }
+      }
+    }
+
+    img {
+      display: block;
+      margin-top: $smallMargin;
+      margin-left: 0;
+      margin-bottom: $smallMargin;
+      max-width: 75%;
+      height: unset;
+    }
+  }
+}
