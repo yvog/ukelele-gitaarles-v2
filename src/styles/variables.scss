@@ -14,8 +14,12 @@ $titleFont: 'Salsa', cursive;
 $paragraphFont: 'Open Sans', sans-serif;
 
 /* layout */
+$mainContainerMinWidth: 320px;
 $mainContainerMaxWidth: 1440px;
 $mainInnerContainerMaxWidth: 1024px;
+
+$mainContainerMinWidthInt: 320;
+$mainContainerMaxWidthInt: 1440;
 
 /* shadows */
 $defaultBoxShadow: 4px 4px 8px rgba(0, 0, 0, 0.1);

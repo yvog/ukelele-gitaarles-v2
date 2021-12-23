@@ -1,12 +1,17 @@
 @import '../../styles/variables';
 @import '../../styles/nav';
+@import '../../styles/typography/classes';
 
 .footer {
   color: #fff;
   padding: 40px;
   font-family: $paragraphFont;
-  font-size: 11pt;
   position: relative;
+
+  h3 {
+    margin-bottom: 32px;
+    @extend .h6;
+  }
 
   .inner_container {
     justify-content: space-between;
@@ -19,17 +24,12 @@
   .disclaimer {
     padding-top: 36px;
     padding-bottom: 36px;
-    font-size: 10pt;
     justify-content: center;
     gap: 4px;
   }
 
   .footer_nav {
     padding: 0;
-
-    h3 {
-      margin-bottom: 32px;
-    }
 
     nav {
       div {
@@ -82,10 +82,6 @@
   .footer {
     padding-bottom: 60px;
     padding: 24px;
-
-    h3 {
-      font-size: 14pt;
-    }
 
     & > div {
       display: block;

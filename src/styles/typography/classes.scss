@@ -1,0 +1,54 @@
+@import '../variables';
+@import '../util/fluid';
+
+/** 
+  Allow elements to appear like a h1, h2, h3 etc.
+*/
+
+.h1 {
+  @include fluid(font-size, 48, 72);
+}
+
+.h2 {
+  @include fluid(font-size, 40, 64);
+}
+
+.h3 {
+  @include fluid(font-size, 32, 48);
+}
+
+.h4 {
+  @include fluid(font-size, 24, 40);
+}
+
+.h5 {
+  @include fluid(font-size, 16, 32);
+}
+
+.h6 {
+  @include fluid(font-size, 16, 24);
+}
+
+.body1 {
+  @include fluid(font-size, 12, 14);
+  font-family: $paragraphFont;
+  letter-spacing: 1px;
+}
+
+.body2 {
+  @include fluid(font-size, 16, 20);
+  font-family: $paragraphFont;
+  letter-spacing: 1px;
+}
+
+.button {
+  @include fluid(font-size, 12, 14);
+  font-family: $paragraphFont;
+  letter-spacing: 1px;
+}
+
+.caption {
+  @include fluid(font-size, 8, 12);
+  font-family: $paragraphFont;
+  letter-spacing: 1px;
+}

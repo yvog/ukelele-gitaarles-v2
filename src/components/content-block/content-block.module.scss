@@ -1,8 +1,13 @@
 @import '../../styles/variables';
+@import '../../styles/typography/classes';
 
 .content_block {
   .content_block_row {
     display: flex;
+  }
+
+  h2 {
+    @extend .h4;
   }
 
   img {

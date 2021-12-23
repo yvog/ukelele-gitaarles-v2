@@ -17,7 +17,7 @@ const HeroMainComponent: React.FC = () => {
 
           <section>
             <article id={styles.hero_info}>
-              <h2>Bert Geldhof</h2>
+              <h2 className={styles.new_typography}>Bert Geldhof</h2>
               <p>
                 Met veel plezier geef ik persoonlijke ukelele-, gitaar- en pianolessen aan huis in
                 Alphen aan den Rijn, Leiden en omstreken.

@@ -12,30 +12,10 @@
   img {
     opacity: 0.95;
   }
-
-  h3 {
-    font-size: 20pt;
-  }
-
-  p {
-    font-size: 11pt;
-  }
-}
-
-@media (max-width: $smallDesktop) {
-  .hero_services {
-    h3 {
-      font-size: 16pt;
-    }
-  }
 }
 
 @media (max-width: $tablet) {
   .hero_services {
     padding: 24px 30px 16px 30px;
-
-    h3 {
-      font-size: 18pt;
-    }
   }
 }

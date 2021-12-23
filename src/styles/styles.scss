@@ -1,5 +1,5 @@
-@import './variables';
-@import './fonts';
+// @import './variables';
+// @import './fonts';
 
 * {
   box-sizing: border-box;
@@ -25,7 +25,6 @@ body {
 }
 
 .privacy-text {
-  font-size: 9pt;
   margin-top: 16px;
   opacity: 0.75;
   font-style: italic;
@@ -190,10 +189,6 @@ a {
 
   .row {
     display: block;
-  }
-
-  .repair-title {
-    font-size: 20pt;
   }
 
   .signup-form {

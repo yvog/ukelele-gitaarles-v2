@@ -6,14 +6,12 @@
 
   h4 {
     margin-bottom: $defaultMargin;
-    font-size: 34pt;
   }
 }
 
 @media (max-width: $smallDesktop) {
   .usp {
     h4 {
-      font-size: 28pt;
       margin-bottom: $smallMargin;
     }
   }
@@ -23,7 +21,6 @@
   .usp {
     h4 {
       margin-bottom: 80px;
-      font-size: 22pt;
     }
   }
 }
