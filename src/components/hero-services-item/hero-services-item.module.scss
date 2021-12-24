@@ -8,6 +8,12 @@
   .hero_services_item_link {
     h3 {
       @extend .h6;
+      transition: border-bottom 0.25s ease;
+      border-bottom: 2px solid transparent;
+      display: inline-block;
+      &:hover {
+        border-bottom: 2px solid rgba($ukeGitBlue, 0.75);
+      }
     }
   }
 
