@@ -141,6 +141,10 @@ a {
   }
 }
 
+.max-width-content {
+  width: 75%;
+}
+
 .main-container {
   margin: 0 auto;
   max-width: $mainContainerMaxWidth;
@@ -164,6 +168,12 @@ a {
   min-height: inherit;
   display: flex;
   flex-wrap: wrap;
+}
+
+@media (max-width: $smallDesktop) {
+  .max-width-content {
+    width: unset;
+  }
 }
 
 @media (max-width: $mobile) {

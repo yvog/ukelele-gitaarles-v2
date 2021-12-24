@@ -52,9 +52,10 @@ export default function RequestMaintenancePage() {
       <section className="main-container body">
         <article>
           <h2>Contact</h2>
-          <p>
-            Voor overige vragen en/of opmerking(en) kun je onderstaand formulier invullen. Na ontvangst beantwoord ik zo
-            snel mogelijk het bericht. Voor het aanmelden voor lessen heb ik een apart formulier, zie{' '}
+          <p className="max-width-content">
+            Voor overige vragen en/of opmerking(en) kun je onderstaand formulier invullen. Na
+            ontvangst beantwoord ik zo snel mogelijk het bericht. Voor het aanmelden voor lessen heb
+            ik een apart formulier, zie{' '}
             <a href="/aanmelden" className="blue-link">
               het aanmeldformulier
             </a>
