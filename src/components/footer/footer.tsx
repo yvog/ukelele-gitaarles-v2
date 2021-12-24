@@ -1,5 +1,7 @@
 import { default as classNames } from 'classnames'
-import { Button } from '../button/button'
+import iconFacebook from '../../../public/images/icon/icon_facebook.svg'
+import iconEmail from '../../../public/images/icon/icon_email.svg'
+import iconTelephone from '../../../public/images/icon/icon_telephone.svg'
 import styles from './footer.module.scss'
 
 const FooterComponent: React.FC = () => {
@@ -47,17 +49,18 @@ const FooterComponent: React.FC = () => {
             </div>
             <div className={styles.footer_contact}>
               <h3>Contact</h3>
-              <span>Tel.: 06 38462008</span>
-              <Button href="/contact">Contact via mail</Button>
-              <a href="https://www.facebook.com/ukelelegitaarles/">
-                <img
-                  src="/images/icon/icon_facebook.svg"
-                  width="40"
-                  height="40"
-                  alt="Facebook"
-                  loading="lazy"
-                />
-              </a>
+
+              <div className={styles.footer_contact_icons}>
+                <a href="tel:0638462008">
+                  <object data={iconTelephone} />
+                </a>
+                <a href="/contact">
+                  <object data={iconEmail} />
+                </a>
+                <a href="https://www.facebook.com/ukelelegitaarles/" target="_blank">
+                  <object data={iconFacebook} />
+                </a>
+              </div>
             </div>
             <div className={styles.footer_companydetails}>
               <h3>Bedrijfsgegevens</h3>

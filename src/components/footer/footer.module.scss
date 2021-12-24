@@ -42,15 +42,32 @@
 
     .footer_contact {
       text-align: center;
+      padding-bottom: $spacingSM;
 
-      span {
-        display: block;
-        margin-top: 16px;
-      }
+      .footer_contact_icons {
+        display: flex;
+        justify-content: space-around;
+        gap: $spacingXXS;
+        max-width: fluid(200, 225);
+        margin: 0 auto;
 
-      a {
-        display: block;
-        margin: 32px auto 32px auto;
+        a {
+          display: block;
+          width: fluid(48, 56);
+          height: fluid(48, 56);
+          border: 1px solid transparent;
+          border-radius: $borderRadiusSM;
+          padding: fluid(2, 8);
+          transition: border 0.2s ease;
+
+          &:hover {
+            border: 1px solid #fff;
+          }
+
+          object {
+            pointer-events: none;
+          }
+        }
       }
     }
 
@@ -68,7 +85,7 @@
     display: flex;
     justify-content: center;
     gap: 4px;
-    padding: $spacingSM 0 $spacingSM 0;
+    padding: $spacingXS 0 0 0;
   }
 }
 
@@ -83,12 +100,14 @@
         .footer_nav {
           display: none;
         }
+
         .footer_contact,
         .footer_companydetails {
           text-align: center;
           width: 100%;
           border-bottom: 2px solid rgba(33, 33, 33, 0.15);
         }
+
         .footer_companydetails {
           padding-top: $spacingSM;
           padding-bottom: $spacingSM;
