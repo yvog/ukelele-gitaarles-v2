@@ -1,7 +1,6 @@
 import classNames from 'classnames'
 import React from 'react'
 import { ContentBlock, ExploreSignup, HeaderNavigation, Layout, UspItem } from '../components'
-
 import styles from '../styles/page/over-mij.module.scss'
 
 export default function AboutMePage() {

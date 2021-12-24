@@ -48,10 +48,6 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
       label: 'Leskosten',
     },
     {
-      href: '/aanvragen',
-      label: 'Aanvragen',
-    },
-    {
       href: '/aanmelden',
       label: 'Aanmelden',
     },

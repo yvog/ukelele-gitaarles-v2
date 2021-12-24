@@ -6,10 +6,6 @@
     display: flex;
   }
 
-  h2 {
-    @extend .h4;
-  }
-
   img {
     margin-left: $spacingSM;
     border-radius: 16px;

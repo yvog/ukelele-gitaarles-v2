@@ -1,6 +1,5 @@
 import Form, { WidgetProps } from '@rjsf/core'
 import classNames from 'classnames'
-import { fileURLToPath } from 'node:url'
 import React, { useCallback, useRef, useState } from 'react'
 import styles from './custom-form.module.scss'
 import CheckboxWidget from './widgets/CheckboxWidget'
@@ -143,7 +142,9 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
             [styles.error_message]: error,
           })}
         >
-          {success ? 'Het formulier is succesvol verzonden' : 'Het formulier kon helaas niet worden verzonden'}
+          {success
+            ? 'Het formulier is succesvol verzonden'
+            : 'Het formulier kon helaas niet worden verzonden'}
         </div>
       )}
     </>
