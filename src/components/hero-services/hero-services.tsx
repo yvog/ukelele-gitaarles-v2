@@ -22,7 +22,7 @@ const HeroServicesComponent: React.FC = () => {
         <HeroServicesItem
           icon={iconGuitar}
           title="Ukelele / Gitaarles"
-          href="/aanbod/ukelele-gitaarles"
+          href="/diensten/ukelele-gitaarles"
         >
           Je favoriete muziek leren spelen in je eigen tempo. De gebruikte lesmethode is geschikt
           voor zowel jongeren als ouderen, die graag de gitaar of ukelele willen bespelen.
@@ -31,7 +31,7 @@ const HeroServicesComponent: React.FC = () => {
         <HeroServicesItem
           icon={iconPiano}
           title="Piano / Keyboardles"
-          href="/aanbod/piano-keyboardles"
+          href="/diensten/piano-keyboardles"
         >
           Er komen verschillende speelstijlen aan bod; van (licht-)klassiek tot jazz. De lessen
           kunnen zowel op keyboard als op een (akoestische) piano worden gevolgd. Hierbij luister ik
@@ -41,7 +41,7 @@ const HeroServicesComponent: React.FC = () => {
         <HeroServicesItem
           icon={iconWrench}
           title="Reparatie / Onderhoud"
-          href="/aanbod/reparatie-en-onderhoud"
+          href="/diensten/reparatie-en-onderhoud"
         >
           Mogelijkheid om snaarinstrumenten te laten repareren / onderhouden. Dit beperkt zich niet
           tot alleen gitaren en ukelele's, ook banjo's of Arabische snaarinstrumenten zijn welkom.

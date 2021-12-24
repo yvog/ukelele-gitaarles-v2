@@ -21,12 +21,24 @@ function UkeleleGuitarLessonsKVP() {
         De lessen gaan verder dan alleen het leren van akkoorden of een introductiecursus
       </li>
       <li>
-        <img src="/images/icon/icon_grandma.svg" width="40" height="40" alt="grandma" loading="lazy" />
-        Zowel kinderen als (oudere) volwassenen zijn welkom: je bent nooit te laat om een muziekinstrument te leren
-        bespelen
+        <img
+          src="/images/icon/icon_grandma.svg"
+          width="40"
+          height="40"
+          alt="grandma"
+          loading="lazy"
+        />
+        Zowel kinderen als (oudere) volwassenen zijn welkom: je bent nooit te laat om een
+        muziekinstrument te leren bespelen
       </li>
       <li>
-        <img src="/images/icon/icon_preknowledge.svg" width="40" height="40" alt="preknowledge" loading="lazy" />
+        <img
+          src="/images/icon/icon_preknowledge.svg"
+          width="40"
+          height="40"
+          alt="preknowledge"
+          loading="lazy"
+        />
         Voor het volgen van de lessen is geen voorkennis benodigd
       </li>
       <li>
@@ -43,7 +55,7 @@ function UkeleleGuitarLessonsKVP() {
 
 export default function UkeleleGuitarLessonsPage() {
   return (
-    <Layout title="Ukelele- of gitaarles" canonical="/aanbod/ukelele-gitaarles">
+    <Layout title="Ukelele- of gitaarles" canonical="/diensten/ukelele-gitaarles">
       <HeroServiceChoice>
         <ServicePageHero
           kvp={<UkeleleGuitarLessonsKVP />}
@@ -52,18 +64,19 @@ export default function UkeleleGuitarLessonsPage() {
           description={
             <>
               <p>
-                In de lessen komen verschillende speelstijlen aan bod; van (licht-)klassiek, jazz, folk, country tot
-                moderne rock. Het samenspel wordt gestimuleerd, wat gitaar of ukulele spelen nóg leuker maakt. Hierbij
-                luister ik altijd naar wat jij wilt.
+                In de lessen komen verschillende speelstijlen aan bod; van (licht-)klassiek, jazz,
+                folk, country tot moderne rock. Het samenspel wordt gestimuleerd, wat gitaar of
+                ukulele spelen nóg leuker maakt. Hierbij luister ik altijd naar wat jij wilt.
               </p>
               <p>
-                Les op een elektrische of een akoestische gitaar? Ook dat kan. Het plezier in het muziek maken staat
-                voorop!
+                Les op een elektrische of een akoestische gitaar? Ook dat kan. Het plezier in het
+                muziek maken staat voorop!
               </p>
               <p>
-                Als basis voor welke muziekstijl dan ook, wordt er gewerkt met een beproefde leermethode die ontworpen
-                is voor iedereen vanaf 6 á 7 jaar. Spelenderwijs leer je op een leuke manier verschillende stijlen
-                spelen en (eventueel) muzieknoten lezen. Je hebt er dus geen voorkennis voor nodig.
+                Als basis voor welke muziekstijl dan ook, wordt er gewerkt met een beproefde
+                leermethode die ontworpen is voor iedereen vanaf 6 á 7 jaar. Spelenderwijs leer je
+                op een leuke manier verschillende stijlen spelen en (eventueel) muzieknoten lezen.
+                Je hebt er dus geen voorkennis voor nodig.
               </p>
               <p>Iedereen van jong of oud is van harte welkom.</p>
             </>
@@ -73,9 +86,9 @@ export default function UkeleleGuitarLessonsPage() {
 
       <ContentBlock title="Gitaar of ukelele huren">
         <p>
-          Als service bied ik verhuur van een Spaanse gitaar of ukulele aan. Je komt hiervoor in aanmerking als je
-          minimaal 12 lessen volgt. De huurprijs is €5,- per maand, inclusief normaal onderhoud. Hieronder valt onder
-          andere het vervangen van de snaren. Let op, de{' '}
+          Als service bied ik verhuur van een Spaanse gitaar of ukulele aan. Je komt hiervoor in
+          aanmerking als je minimaal 12 lessen volgt. De huurprijs is €5,- per maand, inclusief
+          normaal onderhoud. Hieronder valt onder andere het vervangen van de snaren. Let op, de{' '}
           <a className="blue-link" target="_blank" href="/algemene-voorwaarden">
             algemene voorwaarden
           </a>{' '}
