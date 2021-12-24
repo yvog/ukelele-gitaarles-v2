@@ -2,6 +2,11 @@
 User-agent: *
 Allow: /
 
+Disallow: /*.png$
+Disallow: /*.webp$
+Disallow: /*.jpg$
+Disallow: /*.svg$
+
 # Host
 Host: https://ukelele-gitaarles.nl
 

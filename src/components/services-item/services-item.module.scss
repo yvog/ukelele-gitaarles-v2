@@ -1,0 +1,66 @@
+@import '../../styles/variables';
+@import '../../styles/typography/classes';
+@import '../../styles/util/fluid';
+
+.services_item {
+  display: block;
+  width: fluid(150, 300);
+  height: fluid(100, 200);
+  background: #000;
+  transition: background 0.25s ease;
+  box-shadow: $defaultBoxShadow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.75;
+    transition: opacity 0.25s ease;
+    width: fluid(150, 300);
+    height: fluid(100, 200);
+  }
+
+  .divider {
+    display: block;
+    background: #fff;
+    height: 3px;
+    width: fluid(40, 80);
+    margin: 16px auto 16px auto;
+    z-index: 3;
+    transition: background 0.25s 0.05s ease, width 0.25s 0.05s ease;
+  }
+
+  h3 {
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    transition: color 0.15s ease;
+    @extend .h6;
+  }
+
+  &:hover {
+    background: #fff;
+
+    img {
+      opacity: 0.9;
+    }
+
+    .divider {
+      background: $ukeGitBlue;
+      width: 100px;
+    }
+  }
+}
+
+@media (max-width: $smallMobile) {
+  .item_container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}

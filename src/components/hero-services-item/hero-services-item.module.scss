@@ -1,0 +1,42 @@
+@import '../../styles/variables';
+@import '../../styles/typography/classes';
+@import '../../styles/util/fluid';
+
+.hero_services_item {
+  color: #fff;
+
+  .hero_services_item_link {
+    h3 {
+      @extend .h6;
+      transition: border-bottom 0.25s ease;
+      border-bottom: 2px solid transparent;
+      display: inline-block;
+      &:hover {
+        border-bottom: 2px solid rgba($ukeGitBlue, 0.75);
+      }
+    }
+  }
+
+  p {
+    @extend .body1;
+    font-weight: 300;
+  }
+
+  object {
+    margin-bottom: $spacingXXS;
+    filter: invert(100%);
+    width: fluid(40, 56);
+    height: fluid(40, 56);
+  }
+}
+
+@media (max-width: $mobile) {
+  .hero_services_item {
+    align-items: center;
+    display: flex;
+    gap: $spacingXS;
+    &:not(:last-of-type) {
+      margin-bottom: $spacingXS;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@import '../variables';
+@import '../util/fluid';
+@import '../typography/classes';
+
+body {
+  @extend .body1;
+  line-height: 1.42857143;
+  letter-spacing: 1;
+}
+
+p {
+  @extend .body1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $titleFont;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+  word-break: break-word;
+  font-weight: normal;
+}
+
+h1 {
+  @extend .h1;
+}
+
+h2 {
+  @extend .h2;
+}
+
+h3 {
+  @extend .h3;
+}
+
+h4 {
+  @extend .h4;
+}
+
+h5 {
+  @extend .h5;
+}
+
+h6 {
+  @extend .h6;
+}
+
+button {
+  @extend .button;
+}

@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.services {
+  margin: $spacingMD auto $spacingMD auto;
+
+  .services_row {
+    display: flex;
+    gap: $spacingSM;
+    justify-content: start;
+    flex-wrap: wrap;
+    margin-top: $spacingSM;
+
+    a {
+      margin: 0;
+    }
+  }
+}

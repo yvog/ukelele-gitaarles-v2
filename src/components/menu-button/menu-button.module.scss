@@ -1,0 +1,38 @@
+@import '../../styles/variables';
+
+.menu_button {
+  border-radius: 50px;
+  outline: none;
+  background: #fff;
+  padding: 16px;
+  border: none;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  margin: 0 auto;
+  z-index: 9999;
+  box-shadow: $lightBoxShadow;
+  transition: background 0.2s ease;
+  display: none;
+
+  &:hover {
+    background: #ededed;
+  }
+
+  &:active,
+  &:focus {
+    background: #fff;
+  }
+
+  img {
+    width: 18px;
+    height: 18px;
+    padding-top: 2px;
+  }
+}
+
+@media (max-width: $mobile) {
+  .menu_button {
+    display: flex;
+  }
+}

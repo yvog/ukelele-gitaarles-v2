@@ -1,0 +1,48 @@
+@import '../../styles/variables';
+@import '../../styles/typography/classes';
+
+.about_me_summary {
+  max-width: $mainInnerContainerMaxWidth;
+  margin: 0 auto;
+
+  h4 {
+    margin-bottom: $spacingXS;
+  }
+
+  .about_me_summary_inner {
+    display: flex;
+    gap: $spacingXS;
+    align-items: center;
+
+    img {
+      border-radius: 100%;
+      object-fit: cover;
+      box-shadow: $defaultBoxShadow;
+      width: fluid(176, 240);
+      height: fluid(176, 240);
+      margin-right: $spacingXS;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      margin-top: $spacingXXS;
+    }
+  }
+}
+
+@media (max-width: $smallMobile) {
+  .about_me_summary {
+    text-align: center;
+
+    .about_me_summary_inner {
+      display: block;
+      img {
+        margin: 0 0 $spacingXS 0;
+      }
+    }
+  }
+}

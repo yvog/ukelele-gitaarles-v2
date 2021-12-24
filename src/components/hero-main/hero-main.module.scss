@@ -1,0 +1,52 @@
+@import '../../styles/variables';
+@import '../../styles/typography/classes';
+
+.hero_main {
+  .hero_services_container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: $mainContainerMaxWidth;
+    margin: 0 auto;
+  }
+
+  #hero_info {
+    max-width: 57%;
+    padding-top: 64px;
+    padding-bottom: 128px;
+
+    h2 {
+      color: #fff;
+    }
+
+    p {
+      color: #fff;
+      margin: 16px 0 36px 0;
+      font-weight: 300;
+      @extend .body2;
+    }
+  }
+}
+
+@media (max-width: $smallDesktop) {
+  .hero_main {
+    section {
+      margin: 0 auto;
+    }
+
+    #hero_info {
+      max-width: 600px;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .hero_main {
+    #hero_info {
+      max-width: 100%;
+    }
+  }
+}

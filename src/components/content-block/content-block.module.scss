@@ -1,0 +1,54 @@
+@import '../../styles/variables';
+@import '../../styles/typography/classes';
+
+.content_block {
+  .content_block_row {
+    display: flex;
+  }
+
+  img {
+    margin-left: $spacingSM;
+    border-radius: 16px;
+  }
+
+  .no_image {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: $smallDesktop) {
+  .content_block {
+    .content_block_row {
+      display: flex;
+    }
+
+    .content_block_content {
+      margin-bottom: $spacingSM;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .content_block {
+    .content_block_row {
+      display: block;
+
+      &.swapOnMobile {
+        display: grid;
+
+        :first-child {
+          order: 1;
+        }
+      }
+    }
+
+    img {
+      display: block;
+      margin-top: $spacingSM;
+      margin-left: 0;
+      margin-bottom: $spacingSM;
+      max-width: 75%;
+      height: unset;
+    }
+  }
+}

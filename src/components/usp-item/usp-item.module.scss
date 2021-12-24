@@ -1,0 +1,20 @@
+@import '../../styles/variables';
+@import '../../styles/util/fluid';
+
+.usp_item {
+  flex: 1;
+
+  .icon {
+    margin-bottom: 14px;
+    width: fluid(40, 56);
+    height: fluid(40, 56);
+  }
+}
+
+@media (max-width: $smallMobile) {
+  .usp_item {
+    display: flex;
+    align-items: center;
+    gap: $spacingSM;
+  }
+}
