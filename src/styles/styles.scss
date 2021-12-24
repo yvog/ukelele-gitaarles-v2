@@ -159,6 +159,11 @@ a {
   }
 }
 
+.grecaptcha-badge {
+  // display: none; breaks spam check
+  visibility: hidden;
+}
+
 .header-main-container {
   min-height: inherit;
   display: flex;

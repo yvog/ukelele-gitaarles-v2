@@ -6,6 +6,7 @@ import {
   Layout,
   ServicePageHero,
   Surprise,
+  Testimonials,
 } from '../../components'
 
 function PianoKeyboardLessonsKVP() {
@@ -69,6 +70,8 @@ export default function PianoKeyboardLessonsPage() {
       </HeroServiceChoice>
 
       <Surprise />
+
+      <Testimonials />
 
       <ExploreSignup />
     </Layout>

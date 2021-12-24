@@ -22,7 +22,7 @@ const HeroMainComponent: React.FC = () => {
                 Met veel plezier geef ik persoonlijke ukelele-, gitaar- en pianolessen aan huis in
                 Alphen aan den Rijn, Leiden en omstreken.
               </p>
-              <Button href="/aanmelden">Aanmelden</Button>
+              <Button href="/diensten">Ontdek mijn diensten</Button>
             </article>
           </section>
         </div>

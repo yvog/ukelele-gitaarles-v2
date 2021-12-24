@@ -7,6 +7,7 @@ import {
   Layout,
   ServicePageHero,
   Surprise,
+  Testimonials,
 } from '../../components'
 
 function UkeleleGuitarLessonsKVP() {
@@ -96,9 +97,11 @@ export default function UkeleleGuitarLessonsPage() {
         </p>
       </ContentBlock>
 
-      <ExploreSignup />
+      <Testimonials />
 
       <Surprise />
+
+      <ExploreSignup />
     </Layout>
   )
 }
