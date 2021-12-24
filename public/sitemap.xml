@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://ukelele-gitaarles.nl</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-19T16:01:56.854Z</lastmod></url>
-<url><loc>https://ukelele-gitaarles.nl/aanbod</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-19T16:01:56.854Z</lastmod></url>
-<url><loc>https://ukelele-gitaarles.nl/aanbod/piano-keyboardles</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-19T16:01:56.854Z</lastmod></url>
-<url><loc>https://ukelele-gitaarles.nl/aanbod/reparatie-en-onderhoud</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-19T16:01:56.854Z</lastmod></url>
-<url><loc>https://ukelele-gitaarles.nl/aanbod/ukelele-gitaarles</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-19T16:01:56.854Z</lastmod></url>
-<url><loc>https://ukelele-gitaarles.nl/aanmelden</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-19T16:01:56.854Z</lastmod></url>
-<url><loc>https://ukelele-gitaarles.nl/aanvragen</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-19T16:01:56.854Z</lastmod></url>
-<url><loc>https://ukelele-gitaarles.nl/algemene-voorwaarden</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-19T16:01:56.854Z</lastmod></url>
-<url><loc>https://ukelele-gitaarles.nl/contact</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-19T16:01:56.854Z</lastmod></url>
-<url><loc>https://ukelele-gitaarles.nl/leskosten</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-19T16:01:56.854Z</lastmod></url>
-<url><loc>https://ukelele-gitaarles.nl/over-mij</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-19T16:01:56.854Z</lastmod></url>
-<url><loc>https://ukelele-gitaarles.nl/privacy-verklaring</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-04-19T16:01:56.854Z</lastmod></url>
+<url><loc>https://ukelele-gitaarles.nl</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-12-24T07:41:38.916Z</lastmod></url>
+<url><loc>https://ukelele-gitaarles.nl/diensten</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-12-24T07:41:38.916Z</lastmod></url>
+<url><loc>https://ukelele-gitaarles.nl/diensten/reparatie-en-onderhoud</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2021-12-24T07:41:38.916Z</lastmod></url>
 </urlset>

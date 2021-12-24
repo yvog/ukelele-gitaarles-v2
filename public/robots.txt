@@ -1,6 +1,7 @@
 # *
 User-agent: *
 Allow: /
+
 Disallow: /*.png$
 Disallow: /*.webp$
 Disallow: /*.jpg$
