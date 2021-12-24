@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+@import '../../styles/util/fluid';
 
 .explore_signup {
   position: relative;
@@ -10,16 +11,16 @@
   }
 
   .backdrop_image {
-    height: 418px;
+    max-height: fluid(200, 300);
     z-index: -2;
   }
 
   .explore_signup_inner {
     position: relative;
-    padding: 80px;
+    padding: fluid(60, 80);
     max-width: 800px;
+    width: 50%;
     margin: 0 auto;
-    width: 100%;
     text-align: center;
     border-radius: $borderRadiusMD;
     box-shadow: $darkBoxShadow;
@@ -31,8 +32,8 @@
 
     p {
       color: #fff;
-      margin-top: 40px;
-      margin-bottom: 96px;
+      margin-top: $spacingSM;
+      margin-bottom: $spacingSM;
       font-weight: 300;
     }
 
@@ -42,32 +43,10 @@
   }
 }
 
-@media (max-width: $tablet) {
-  .explore_signup {
-    .explore_signup_inner {
-      padding: 72px 64px;
-      max-width: 60%;
-    }
-  }
-}
-
 @media (max-width: $mobile) {
   .explore_signup {
-    .backdrop_image {
-      height: 164px;
-    }
-
-    &:after {
-      top: 24px;
-    }
-
     .explore_signup_inner {
-      padding: 24px 36px;
-
-      p {
-        margin-top: 20px;
-        margin-bottom: 40px;
-      }
+      width: 75%;
     }
   }
 }
