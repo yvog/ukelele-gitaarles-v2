@@ -6,11 +6,11 @@
 */
 
 .h1 {
-  font-size: fluid(48, 72);
+  font-size: fluid(64, 72);
 }
 
 .h2 {
-  font-size: fluid(40, 64);
+  font-size: fluid(48, 64);
 }
 
 .h3 {
@@ -30,13 +30,13 @@
 }
 
 .body1 {
-  font-size: fluid(12, 14);
+  font-size: fluid(13, 16);
   font-family: $paragraphFont;
   letter-spacing: 1px;
 }
 
 .body2 {
-  font-size: fluid(16, 20);
+  font-size: fluid(14, 20);
   font-family: $paragraphFont;
   letter-spacing: 1px;
 }
@@ -47,7 +47,7 @@
 }
 
 .caption {
-  font-size: fluid(8, 12);
+  font-size: fluid(10, 13);
   font-family: $paragraphFont;
   letter-spacing: 1px;
 }

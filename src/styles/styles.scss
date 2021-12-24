@@ -150,17 +150,13 @@ a {
     margin: $spacingMD auto $spacingMD auto;
   }
 
-  &.full-height {
-    min-height: 100vh;
-  }
-
   &.header {
     padding-top: 20px;
   }
 }
 
 .grecaptcha-badge {
-  // display: none; breaks spam check
+  // 'display: none' breaks spam check
   visibility: hidden;
 }
 

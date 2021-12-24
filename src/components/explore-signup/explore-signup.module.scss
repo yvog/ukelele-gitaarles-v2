@@ -1,5 +1,6 @@
 @import '../../styles/variables';
 @import '../../styles/util/fluid';
+@import '../../styles/typography/classes';
 
 .explore_signup {
   position: relative;
@@ -35,6 +36,7 @@
       margin-top: $spacingSM;
       margin-bottom: $spacingSM;
       font-weight: 300;
+      @extend .body2;
     }
 
     a {

@@ -5,30 +5,13 @@
 
   .services_row {
     display: flex;
-    gap: 32px;
-    justify-content: space-between;
-    margin-top: 64px;
+    gap: $spacingSM;
+    justify-content: start;
+    flex-wrap: wrap;
+    margin-top: $spacingSM;
 
     a {
       margin: 0;
-    }
-  }
-}
-
-@media (max-width: $smallDesktop) {
-  .services {
-    margin: $spacingSM auto $spacingSM auto;
-    .services_row {
-      flex-wrap: wrap;
-      justify-content: start;
-    }
-  }
-}
-
-@media (max-width: $mobile) {
-  .services {
-    .services_row {
-      justify-content: center;
     }
   }
 }

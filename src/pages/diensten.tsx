@@ -9,7 +9,7 @@ export default function ServicesPage() {
       }
       canonical="/diensten"
     >
-      <div className="main-container header full-height">
+      <div className="main-container header">
         <HeaderNavigation variant="black" />
         <Services />
       </div>
