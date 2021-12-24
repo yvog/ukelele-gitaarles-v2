@@ -18,7 +18,7 @@ export default function AboutMePage() {
               src="/images/bert_geldhof.webp"
               alt="Bert Geldhof"
               width="550"
-              height="550"
+              height="413"
               loading="eager"
               className={styles.image}
             />
