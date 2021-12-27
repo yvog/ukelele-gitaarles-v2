@@ -49,7 +49,7 @@ const RepairMaintenanceFormComponent: React.FC<RepairMaintenanceFormProps> = () 
   }
 
   return (
-    <section className="main-container body">
+    <section className="main-container body" id="repair-maintenance-form">
       <article>
         <h3>Reparatie/onderhoud aanvragen</h3>
         <p>
