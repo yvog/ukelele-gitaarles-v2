@@ -54,16 +54,17 @@
 
   .testimonials_inner {
     margin: 0 auto;
-    max-width: $mainContainerMaxWidth;
     position: relative;
-    padding: 64px 24px 64px 24px;
+    padding-top: $spacingSM;
+    padding-bottom: $spacingSM;
+    box-sizing: border-box;
 
     h4 {
       color: #fff;
     }
 
     article {
-      margin-top: 46px;
+      margin-top: $spacingSM;
       background: #fff;
       border-radius: 16px;
       padding: 24px;
@@ -81,14 +82,13 @@
       }
 
       p {
-        margin-top: 24px;
-        min-height: 248px;
+        margin-top: $spacingXXS;
       }
     }
 
     a {
       display: block;
-      margin: 56px auto 0 auto;
+      margin: $spacingSM auto 0 auto;
     }
   }
 }
@@ -98,8 +98,8 @@
     height: auto;
 
     .quote {
-      width: 248px;
-      transform: translate(-32px, -136px);
+      width: 200px;
+      transform: translate(-32px, -100px);
     }
 
     .testimonials_background {

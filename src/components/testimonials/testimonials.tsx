@@ -73,7 +73,7 @@ const TestimonialsComponent: React.FC = () => {
         className={styles.quote}
       />
 
-      <div className={styles.testimonials_inner}>
+      <div className={classnames(styles.testimonials_inner, 'main-container')}>
         <h4>Anderen zijn je voorgegaan</h4>
 
         <div className={styles.swiper_outer_container}>
