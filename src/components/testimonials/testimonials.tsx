@@ -36,6 +36,7 @@ const TestimonialsComponent: React.FC = () => {
 
   const defaultItemsToShow = 2
   const [itemsToShow, setItemsToShow] = useState<number>(defaultItemsToShow)
+  const [slidesPerView, setSlidesPerView] = useState<number>()
 
   const updateItemsToShow = () => {
     if (window.innerWidth <= 760) {
@@ -49,7 +50,6 @@ const TestimonialsComponent: React.FC = () => {
     updateItemsToShow()
 
     window.addEventListener('resize', updateItemsToShow)
-
     return () => window.removeEventListener('resize', updateItemsToShow)
   }, [itemsToShow, updateItemsToShow])
 
