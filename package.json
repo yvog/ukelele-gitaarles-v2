@@ -26,29 +26,28 @@
   },
   "dependencies": {
     "@sendgrid/mail": "^7.4.2",
-    "@vercel/node": "^1.9.0",
-    "next": "^10.0.7",
-    "next-images": "^1.8.4"
+    "@vercel/node": "^1.12.1",
+    "next": "^12.0.7",
+    "next-images": "^1.8.4",
+    "swiper": "^7.4.1"
   },
   "devDependencies": {
     "@rjsf/core": "^2.4.0",
-    "@types/classnames": "^2.2.10",
+    "@types/classnames": "^2.3.1",
     "@types/node": "^14.11.8",
-    "@types/react": "^16.9.52",
+    "@types/react": "^17.0.38",
     "@types/react-jsonschema-form": "^1.7.4",
-    "classnames": "^2.2.6",
+    "classnames": "^2.3.1",
     "imagemin": "^7.0.1",
     "imagemin-webp": "^6.0.0",
     "next-sitemap": "^1.5.18",
     "prettier": "^2.2.1",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-elastic-carousel": "^0.7.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-markdown": "^5.0.3",
     "react-spinners": "^0.9.0",
     "sass": "^1.26.11",
     "sharp": "^0.27.2",
-    "styled-components": "^5.2.0",
     "typescript": "^4.0.3"
   },
   "prettier": {
