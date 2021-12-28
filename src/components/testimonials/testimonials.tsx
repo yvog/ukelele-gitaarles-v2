@@ -1,7 +1,12 @@
 import classnames from 'classnames'
 import { useEffect, useState } from 'react'
-import Carousel from 'react-elastic-carousel'
-import { TestimonialsItem } from '..'
+import { Navigation, Virtual } from 'swiper'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/virtual'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import iconChevronLeft from '../../../public/images/icon/icon_chevron_left.svg'
+import iconChevronRight from '../../../public/images/icon/icon_chevron_right.svg'
 import { Button } from '../button/button'
 import styles from './testimonials.module.scss'
 
@@ -34,24 +39,19 @@ const TestimonialsComponent: React.FC = () => {
     },
   ]
 
-  const defaultItemsToShow = 2
-  const [itemsToShow, setItemsToShow] = useState<number>(defaultItemsToShow)
+  const defaultSlidesPerView = 3
   const [slidesPerView, setSlidesPerView] = useState<number>()
 
-  const updateItemsToShow = () => {
-    if (window.innerWidth <= 760) {
-      setItemsToShow(1)
-    } else {
-      setItemsToShow(defaultItemsToShow)
-    }
-  }
+  const updateSlidesPerView = () =>
+    setSlidesPerView(
+      window.innerWidth <= 1100 ? (window.innerWidth <= 760 ? 1 : 2) : defaultSlidesPerView
+    )
 
   useEffect(() => {
-    updateItemsToShow()
-
-    window.addEventListener('resize', updateItemsToShow)
-    return () => window.removeEventListener('resize', updateItemsToShow)
-  }, [itemsToShow, updateItemsToShow])
+    updateSlidesPerView()
+    window.addEventListener('resize', updateSlidesPerView)
+    return () => window.removeEventListener('resize', updateSlidesPerView)
+  }, [slidesPerView, updateSlidesPerView])
 
   return (
     <section className={styles.testimonials}>
@@ -76,18 +76,39 @@ const TestimonialsComponent: React.FC = () => {
       <div className={styles.testimonials_inner}>
         <h4>Anderen zijn je voorgegaan</h4>
 
-        <Carousel
-          itemsToShow={itemsToShow}
-          itemPadding={[16, 16, 16, 0]}
-          transitionMs={150}
-          pagination={false}
-          disableArrowsOnEnd={false}
-        >
-          {testimonials.map((item, i) => {
-            return <TestimonialsItem key={i} name={item.name} content={item.content} />
-          })}
-        </Carousel>
-
+        <div className={styles.swiper_outer_container}>
+          <button id="swiper-prev">
+            <object data={iconChevronLeft}></object>
+          </button>
+          <div className={styles.swiper_container}>
+            <Swiper
+              modules={[Navigation, Virtual]}
+              autoHeight
+              resizeObserver
+              spaceBetween={50}
+              slidesPerView={slidesPerView}
+              navigation={{
+                prevEl: '#swiper-prev',
+                nextEl: '#swiper-next',
+              }}
+              virtual
+              direction="horizontal"
+              watchSlidesProgress
+            >
+              {testimonials.map((item, index) => (
+                <SwiperSlide key={item.name} virtualIndex={index}>
+                  <article className={styles.testimonials_item}>
+                    <h3>{item.name}</h3>
+                    <p>{item.content}</p>
+                  </article>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+          <button id="swiper-next">
+            <object data={iconChevronRight}></object>
+          </button>
+        </div>
         <div className={styles.button}>
           <Button href="/aanmelden">Start met muziek maken</Button>
         </div>
