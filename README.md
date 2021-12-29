@@ -1,18 +1,8 @@
 # Ukelele-Gitaarles v2.0
 
-New company website for  ([Ukelele-Gitaarles](https://ukelele-gitaarles.nl)).
+New company website for ([Ukelele-Gitaarles](https://ukelele-gitaarles.nl))
 
-## Versions
-
-```
-Node            12.18.3 LTS
-Next.js         10.0.7
-React           16.13.1
-TypeScript      ^4.0.3
-Sass            ^1.26.11
-```
-
-##  Deployment
+## Production deployment
 
 ```
 cd stack/apps/ukelele-gitaarles-v2
@@ -29,8 +19,3 @@ sudo npm run prod:start
 
 Designed by [Vera Geldhof](https://github.com/VGeldhof), visit [portfolio](https://verageldhof.nl)  
 Developed by [Yvo Geldhof](https://github.com/yvog)
-
-## Known issues
-
-- Sometimes an error pops up saying something like `./node_modules/next/dist/next-server/lib/side-effect.js` when building
-    - fix: delete `.next` folder
