@@ -17,7 +17,9 @@ const ContentBlockComponent: React.FC<PropsWithChildren<ContentBlockComponentPro
   return (
     <section className={classNames(styles.content_block, 'main-container body')}>
       <h2>{title}</h2>
-      <div className={classNames(styles.content_block_row, { [styles.swapOnMobile]: swapOnMobile })}>
+      <div
+        className={classNames(styles.content_block_row, { [styles.swapOnMobile]: swapOnMobile })}
+      >
         <div
           className={classNames(styles.content_block_row_content, {
             [styles.no_image]: img === undefined,
@@ -25,7 +27,7 @@ const ContentBlockComponent: React.FC<PropsWithChildren<ContentBlockComponentPro
         >
           {children}
         </div>
-        {img}
+        <div className={styles.image}>{img}</div>
       </div>
     </section>
   )

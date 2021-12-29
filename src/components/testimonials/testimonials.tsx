@@ -9,6 +9,7 @@ import iconChevronLeft from '../../../public/images/icon/icon_chevron_left.svg'
 import iconChevronRight from '../../../public/images/icon/icon_chevron_right.svg'
 import { Button } from '../button/button'
 import styles from './testimonials.module.scss'
+import iconQuote from '../../../public/images/background/quote.svg'
 
 type TestimonialData = {
   name: string
@@ -64,14 +65,9 @@ const TestimonialsComponent: React.FC = () => {
         className={classnames('section_background', styles.testimonials_background)}
       />
 
-      <img
-        src="/images/background/quote.svg"
-        alt="quote"
-        loading="lazy"
-        width={64}
-        height={64}
-        className={styles.quote}
-      />
+      <object data={iconQuote} width="64" height="64" className={styles.quote}>
+        quote
+      </object>
 
       <div className={classnames(styles.testimonials_inner, 'main-container')}>
         <h4>Anderen zijn je voorgegaan</h4>

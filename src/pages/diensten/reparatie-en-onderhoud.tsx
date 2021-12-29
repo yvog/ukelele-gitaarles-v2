@@ -1,7 +1,9 @@
 import React from 'react'
+import iconGuitar from '../../../public/images/icon/icon_guitar.svg'
+import iconInvoice from '../../../public/images/icon/icon_invoice.svg'
+import iconWrench from '../../../public/images/icon/icon_wrench.svg'
 import {
   Button,
-  ExploreSignup,
   HeroServiceChoice,
   Layout,
   RepairMaintenanceForm,
@@ -12,33 +14,21 @@ function RepairsOrMaintenanceKVP() {
   return (
     <>
       <li>
-        <img
-          src="/images/icon/icon_wrench.svg"
-          width="40"
-          height="40"
-          alt="invoice"
-          loading="lazy"
-        />
+        <object data={iconWrench} width="40" height="40">
+          wrench
+        </object>
         Jarenlange vakkundige, technische kennis
       </li>
       <li>
-        <img
-          src="/images/icon/icon_guitar.svg"
-          width="40"
-          height="40"
-          alt="guitar"
-          loading="lazy"
-        />
+        <object data={iconGuitar} width="40" height="40">
+          guitar
+        </object>
         Van nieuwe snaren en afstellen tot het repareren van een scheur in jouw gitaar
       </li>
       <li>
-        <img
-          src="/images/icon/icon_invoice.svg"
-          width="40"
-          height="40"
-          alt="wrench"
-          loading="lazy"
-        />
+        <object data={iconInvoice} width="40" height="40">
+          invoice
+        </object>
         Betaalbare reparatie / onderhoudsbeurt
       </li>
     </>

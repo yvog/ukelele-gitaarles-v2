@@ -1,4 +1,10 @@
 import React from 'react'
+import iconBook from '../../../public/images/icon/icon_book.svg'
+import iconCamera from '../../../public/images/icon/icon_camera.svg'
+import iconGrandma from '../../../public/images/icon/icon_grandma.svg'
+import iconHouse from '../../../public/images/icon/icon_house.svg'
+import iconMan from '../../../public/images/icon/icon_man.svg'
+import iconPreknowledge from '../../../public/images/icon/icon_preknowledge.svg'
 import {
   Button,
   ContentBlock,
@@ -14,40 +20,40 @@ function UkeleleGuitarLessonsKVP() {
   return (
     <>
       <li>
-        <img src="/images/icon/icon_house.svg" width="40" height="40" alt="house" loading="lazy" />
+        <object data={iconHouse} width="40" height="40">
+          house
+        </object>
         Lessen aan huis. Je hoeft er de deur niet voor uit
       </li>
       <li>
-        <img src="/images/icon/icon_book.svg" width="40" height="40" alt="book" loading="lazy" />
+        <object data={iconBook} width="40" height="40">
+          book
+        </object>
         De lessen gaan verder dan alleen het leren van akkoorden of een introductiecursus
       </li>
       <li>
-        <img
-          src="/images/icon/icon_grandma.svg"
-          width="40"
-          height="40"
-          alt="grandma"
-          loading="lazy"
-        />
+        <object data={iconGrandma} width="40" height="40">
+          grandma
+        </object>
         Zowel kinderen als (oudere) volwassenen zijn welkom: je bent nooit te laat om een
         muziekinstrument te leren bespelen
       </li>
       <li>
-        <img
-          src="/images/icon/icon_preknowledge.svg"
-          width="40"
-          height="40"
-          alt="preknowledge"
-          loading="lazy"
-        />
+        <object data={iconPreknowledge} width="40" height="40">
+          preknowledge
+        </object>
         Voor het volgen van de lessen is geen voorkennis benodigd
       </li>
       <li>
-        <img src="/images/icon/icon_man.svg" width="40" height="40" alt="man" loading="lazy" />
+        <object data={iconMan} width="40" height="40">
+          man
+        </object>
         Zowel persoonlijke lessen met veel aandacht voor de leerling als groepslessen zijn mogelijk
       </li>
       <li>
-        <img src="/images/icon/icon_camera.svg" width="40" height="40" alt="man" loading="lazy" />
+        <object data={iconCamera} width="40" height="40">
+          camera
+        </object>
         Les op afstand via Zoom gedurende de Covid-19 pandemie, maar ook op aanvraag
       </li>
     </>
