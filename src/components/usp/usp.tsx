@@ -2,9 +2,9 @@ import classNames from 'classnames'
 import React from 'react'
 import { UspItem } from '..'
 import styles from './usp.module.scss'
-import * as iconMetronome from '../../../public/images/icon/icon_metronome.svg'
-import * as iconHome from '../../../public/images/icon/icon_home.svg'
-import * as iconKnowledge from '../../../public/images/icon/icon_knowledge.svg'
+import iconMetronome from '../../../public/images/icon/icon_metronome.svg'
+import iconHome from '../../../public/images/icon/icon_home.svg'
+import iconKnowledge from '../../../public/images/icon/icon_knowledge.svg'
 
 const UspComponent: React.FC = () => {
   return (
