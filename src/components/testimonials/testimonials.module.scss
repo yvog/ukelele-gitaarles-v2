@@ -1,12 +1,43 @@
 @import '../../styles/variables';
 @import '../../styles/util/fluid';
+@import '../../styles/typography/classes';
 
 .testimonials {
   position: relative;
   margin: $spacingMD 0 $spacingMD 0;
+  user-select: none;
 
-  // todo: margin weg
-  // todo: 404 & over mij fixen want row is weg.
+  .swiper_outer_container {
+    display: flex;
+    gap: $spacingXS;
+    align-items: center;
+
+    button {
+      border-radius: 100%;
+      width: fluid(56, 72);
+      height: fluid(56, 72);
+      min-width: fluid(56, 72);
+      padding: 16px;
+      background: rgba($ukeGitBlue, 0.75);
+      outline: none;
+      border: 1px solid transparent;
+      transition: border 0.15s ease;
+
+      &:not(:disabled):hover {
+        border: 1px solid #fff;
+      }
+
+      object {
+        pointer-events: none;
+        filter: invert(100%);
+      }
+    }
+
+    .swiper_container {
+      width: 100%;
+      overflow: hidden;
+    }
+  }
 
   .quote {
     position: absolute;
@@ -23,37 +54,25 @@
 
   .testimonials_inner {
     margin: 0 auto;
-    max-width: $mainContainerMaxWidth;
     position: relative;
-    padding: 64px 24px 64px 24px;
-
-    *:focus {
-      outline: none;
-    }
-
-    .button {
-      button {
-        width: fluid(225, 300);
-      }
-    }
-
-    /* 
-      hacky way/fix to override the carousel's item & 1 pixel bug
-    */
-    & > div > div > div > div {
-      border: 1px solid transparent;
-    }
+    padding-top: $spacingSM;
+    padding-bottom: $spacingSM;
+    box-sizing: border-box;
 
     h4 {
       color: #fff;
     }
 
     article {
-      margin-top: 46px;
+      margin-top: $spacingSM;
       background: #fff;
       border-radius: 16px;
       padding: 24px;
       position: relative;
+
+      h3 {
+        @extend .h6;
+      }
 
       span {
         color: $ukeGitBlue;
@@ -63,63 +82,13 @@
       }
 
       p {
-        margin-top: 24px;
-        min-height: 248px;
+        margin-top: $spacingXXS;
       }
     }
 
     a {
       display: block;
-      margin: 56px auto 0 auto;
-    }
-  }
-
-  :global {
-    /* 
-      hacky way to override the carousel's 
-      arrows' style which only appear during runtime 
-    */
-    button.rec {
-      background: none;
-      border: none;
-      outline: none;
-      color: #fff;
-      box-shadow: none !important;
-      border: 1px solid transparent;
-      opacity: 0.75;
-      transition: opacity 0.15s ease;
-
-      &:hover {
-        background: none !important;
-        box-shadow: none;
-        opacity: 1;
-      }
-
-      &:nth-child(1) {
-        background: none !important;
-      }
-
-      &:nth-child(3) {
-        background: none !important;
-      }
-    }
-
-    .rec-carousel-wrapper {
-      .rec-carousel {
-        .rec-slider-container {
-          .rec-slider {
-            .rec-carousel-item {
-              .rec-swipable {
-                .rec-item-wrapper {
-                  padding: 0 !important;
-                  padding-right: 8px !important;
-                  padding-left: 8px !important;
-                }
-              }
-            }
-          }
-        }
-      }
+      margin: $spacingSM auto 0 auto;
     }
   }
 }
@@ -129,8 +98,8 @@
     height: auto;
 
     .quote {
-      width: 248px;
-      transform: translate(-32px, -136px);
+      width: 200px;
+      transform: translate(-32px, -100px);
     }
 
     .testimonials_background {
@@ -139,68 +108,13 @@
   }
 }
 
-@media (max-width: $tablet) {
-  .testimonials {
-    article {
-      max-height: 348px;
-      padding-bottom: 0;
-
-      &:after {
-        content: 'scroll om meer te lezen';
-        background: linear-gradient(0deg, white, rgba(255, 255, 255, 0) 30%);
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: 16px;
-        pointer-events: none;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        padding-bottom: 4px;
-        color: #eee;
-      }
-
-      p {
-        overflow-y: scroll;
-        height: 234px;
-        padding-bottom: 8px;
-        min-height: unset;
-      }
-    }
-  }
-}
-
 @media (max-width: $mobile) {
   .testimonials {
-    height: auto;
-
-    .quote {
-      width: 148px;
-      transform: translate(-32px, -80px);
-    }
-
-    .testimonials_inner {
-      padding: 32px 8px 16px 8px;
-
-      h4 {
-        text-align: center;
-      }
-
-      a {
-        margin: 40px auto;
-      }
-
-      article {
-        max-height: 275px;
-        padding-bottom: 0;
-
-        p {
-          height: 196px;
-          padding-bottom: 24px;
-          min-height: unset;
-        }
+    .swiper_outer_container {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      .swiper_container {
+        order: -1;
       }
     }
   }

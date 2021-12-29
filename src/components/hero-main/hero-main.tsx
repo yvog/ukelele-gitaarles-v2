@@ -10,11 +10,6 @@ const HeroMainComponent: React.FC = () => {
         <div className="main-container header header-main-container">
           <HeaderNavigation />
 
-          <Head>
-            <link rel="preload" as="image" href="/images/background/hero_1600x900.webp"></link>
-            <link rel="preload" as="image" href="/images/background/hero_768x432.webp"></link>
-          </Head>
-
           <section>
             <article id={styles.hero_info}>
               <h2 className={styles.new_typography}>Bert Geldhof</h2>

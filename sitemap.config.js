@@ -1,4 +1,4 @@
 module.exports = {
   siteUrl: 'https://ukelele-gitaarles.nl',
-  generateRobotsTxt: true,
+  generateRobotsTxt: false,
 }

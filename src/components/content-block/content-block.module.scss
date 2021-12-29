@@ -28,7 +28,7 @@
   }
 }
 
-@media (max-width: $mobile) {
+@media (max-width: $smallMobile) {
   .content_block {
     .content_block_row {
       display: block;
@@ -44,11 +44,9 @@
 
     img {
       display: block;
-      margin-top: $spacingSM;
-      margin-left: 0;
-      margin-bottom: $spacingSM;
+      margin: $spacingSM auto $spacingSM auto;
       max-width: 75%;
-      height: unset;
+      height: auto;
     }
   }
 }

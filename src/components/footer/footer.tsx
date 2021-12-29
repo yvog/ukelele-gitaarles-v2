@@ -52,13 +52,13 @@ const FooterComponent: React.FC = () => {
 
               <div className={styles.footer_contact_icons}>
                 <a href="tel:0638462008">
-                  <object data={iconTelephone} />
+                  <object data={iconTelephone}>telephone</object>
                 </a>
                 <a href="/contact">
-                  <object data={iconEmail} />
+                  <object data={iconEmail}>email</object>
                 </a>
                 <a href="https://www.facebook.com/ukelelegitaarles/" target="_blank">
-                  <object data={iconFacebook} />
+                  <object data={iconFacebook}>facebook</object>
                 </a>
               </div>
             </div>

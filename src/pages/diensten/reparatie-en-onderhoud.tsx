@@ -54,7 +54,7 @@ export default function RepairsOrMaintenancePage() {
       <HeroServiceChoice>
         <ServicePageHero
           kvp={<RepairsOrMaintenanceKVP />}
-          button={<Button href="/aanvragen">Aanvragen</Button>}
+          button={<Button href="#repair-maintenance-form">Aanvragen</Button>}
           title="Snaarinstrument reparatie en onderhoud"
           description={
             <>
