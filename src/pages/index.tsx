@@ -1,4 +1,4 @@
-import { AboutMeSummary, ExploreSignup, Gallery, Layout, MainHero, Usp } from '../components'
+import { AboutMeSummary, ExploreSignup, Layout, MainHero, Usp } from '../components'
 import { Testimonials } from '../components/testimonials/testimonials'
 
 export default function Home() {
