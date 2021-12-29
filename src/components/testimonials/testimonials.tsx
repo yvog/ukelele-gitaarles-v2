@@ -78,7 +78,7 @@ const TestimonialsComponent: React.FC = () => {
 
         <div className={styles.swiper_outer_container}>
           <button id="swiper-prev">
-            <object data={iconChevronLeft}></object>
+            <object data={iconChevronLeft}>chevron left</object>
           </button>
           <div className={styles.swiper_container}>
             <Swiper
@@ -106,7 +106,7 @@ const TestimonialsComponent: React.FC = () => {
             </Swiper>
           </div>
           <button id="swiper-next">
-            <object data={iconChevronRight}></object>
+            <object data={iconChevronRight}>chevron right</object>
           </button>
         </div>
         <div className={styles.button}>
