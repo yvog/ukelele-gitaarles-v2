@@ -44,7 +44,7 @@ const TestimonialsComponent: React.FC = () => {
 
   const updateSlidesPerView = () =>
     setSlidesPerView(
-      window.innerWidth <= 1100 ? (window.innerWidth <= 760 ? 1 : 2) : defaultSlidesPerView
+      window.innerWidth <= 1100 ? (window.innerWidth < 768 ? 1 : 2) : defaultSlidesPerView
     )
 
   useEffect(() => {

@@ -69,10 +69,6 @@ const LayoutComponent: React.FC<LayoutProps> = ({
         <meta name="twitter:description" content={descr} />
         <meta name="twitter:title" content={`${title} - Ukelele-Gitaarles`} />
 
-        <link rel="preload" href="/fonts/salsa.woff2" as="font" />
-        <link rel="preload" href="/fonts/open_sans_300.woff2" as="font" />
-        <link rel="preload" href="/fonts/open_sans_400.woff2" as="font" />
-
         {useReCaptcha && (
           <script
             src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY}`}
