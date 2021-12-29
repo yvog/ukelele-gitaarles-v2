@@ -4,6 +4,7 @@ import SyncLoader from 'react-spinners/SyncLoader'
 import { Button } from '..'
 import styles from './costs-calculator.module.scss'
 import priceTable from './prices.json'
+import iconChevronDown from '../../../public/images/icon/icon_chevron_down.svg'
 
 type LocationData = {
   lat: string
@@ -239,7 +240,9 @@ const CostsCalculatorComponent: React.FC = () => {
               <option value="45">45 minuten</option>
               <option value="60">60 minuten</option>
             </select>
-            <img src="/images/icon/icon_chevron_down.svg" width="18" height="18" loading="eager" />
+            <object data={iconChevronDown} width="18" height="18">
+              chevron down
+            </object>
           </div>
 
           <div>
@@ -258,7 +261,9 @@ const CostsCalculatorComponent: React.FC = () => {
               <option value="3">Drie personen</option>
             </select>
 
-            <img src="/images/icon/icon_chevron_down.svg" width="18" height="18" loading="eager" />
+            <object data={iconChevronDown} width="18" height="18">
+              chevron down
+            </object>
           </div>
 
           <div>

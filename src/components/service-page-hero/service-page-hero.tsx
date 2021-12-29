@@ -8,7 +8,12 @@ type ServicePageHeroComponentProps = {
   button: React.ReactNode
 }
 
-const ServicePageHeroComponent: React.FC<ServicePageHeroComponentProps> = ({ title, description, kvp, button }) => {
+const ServicePageHeroComponent: React.FC<ServicePageHeroComponentProps> = ({
+  title,
+  description,
+  kvp,
+  button,
+}) => {
   return (
     <section className={styles.service_page_hero}>
       <h2>{title}</h2>

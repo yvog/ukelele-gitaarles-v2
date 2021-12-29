@@ -33,7 +33,7 @@
     width: 100%;
   }
 
-  select ~ img {
+  select ~ object {
     width: 18px;
     height: 18px;
     position: absolute;
@@ -46,14 +46,14 @@
 
   select {
     &:hover {
-      & ~ img {
+      & ~ object {
         opacity: 1;
       }
     }
 
     &:focus {
       opacity: 1;
-      & ~ img {
+      & ~ object {
         opacity: 1;
       }
     }
