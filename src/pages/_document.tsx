@@ -10,16 +10,18 @@ class CustomDocument extends Document {
     return (
       <Html lang="nl">
         <Head>
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77664365-1" />
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+          />
           <script
             dangerouslySetInnerHTML={{
               __html: `
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-77664365-1');
-            `,
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+              `,
             }}
           />
         </Head>
