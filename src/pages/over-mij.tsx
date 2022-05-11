@@ -50,9 +50,7 @@ export default function AboutMePage() {
           </p>
           <p>
             Ook in de band <strong>NEON</strong> (Voorschoten) heb ik met veel plezier op vele podia
-            binnen Nederland gitaar gespeeld, onder andere voor bedrijven en tijdens bruiloften.
-            Momenteel draag ik mijn muzikaal spel bij “De Band” in Koudekerk aan den Rijn (ukelele
-            en gitaar).
+            binnen Nederland gitaar gespeeld, onder andere voor bedrijven en tijdens bruiloften. Tot slot heb ik mijn muzikaal spel bijgedragen aan “De Band” in Koudekerk aan den Rijn (ukelele en gitaar).
           </p>
           <p>
             Het geeft mij niet alleen enorme voldoening om mijn muzikale kennis op dit gebied over
