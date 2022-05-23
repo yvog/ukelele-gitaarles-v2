@@ -20,7 +20,9 @@ const ServicePageHeroComponent: React.FC<ServicePageHeroComponentProps> = ({
 
       <div className={styles.description}>{description}</div>
 
-      <ul className={styles.kvp}>{kvp}</ul>
+      <ul className={styles.kvp} role="list">
+        {kvp}
+      </ul>
 
       <div className={styles.signup_btn}>{button}</div>
     </section>

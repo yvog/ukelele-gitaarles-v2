@@ -27,17 +27,17 @@ const ButtonComponent: React.FC<ButtonComponentProps> = ({
   }
 
   return (
-    <a href={href} className={styles.button_link} ref={ref}>
-      <button
-        onClick={isSmoothScrollBtn ? smoothScrollIntoView : onClickHandler}
-        className={classNames(
-          styles.button,
-          { [styles.filled]: filled },
-          { [styles.disabled]: disabled }
-        )}
-      >
-        {children}
-      </button>
+    <a
+      href={href}
+      ref={ref}
+      onClick={isSmoothScrollBtn ? smoothScrollIntoView : onClickHandler}
+      className={classNames(
+        styles.button,
+        { [styles.filled]: filled },
+        { [styles.disabled]: disabled }
+      )}
+    >
+      {children}
     </a>
   )
 }

@@ -48,9 +48,8 @@ export default function RequestMaintenancePage() {
       <div className="main-container header">
         <HeaderNavigation variant="black" />
       </div>
-
-      <section className="main-container body">
-        <article>
+      <main role="main">
+        <section className="main-container body">
           <h2>Contact</h2>
           <p className="max-width-content">
             Voor overige vragen en/of opmerking(en) kun je onderstaand formulier invullen. Na
@@ -61,9 +60,6 @@ export default function RequestMaintenancePage() {
             </a>
             .
           </p>
-        </article>
-
-        <article>
           <CustomForm
             schema={schema}
             uiSchema={uiSchema}
@@ -79,8 +75,8 @@ export default function RequestMaintenancePage() {
             </a>{' '}
             van toepassing
           </div>
-        </article>
-      </section>
+        </section>
+      </main>
     </Layout>
   )
 }

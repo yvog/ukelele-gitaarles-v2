@@ -10,6 +10,7 @@ import iconWrench from '../../../public/images/icon/icon_wrench.svg'
 const HeroServicesComponent: React.FC = () => {
   return (
     <section className={classNames(styles.hero_services, 'container')}>
+      <h2 className="hidden">Hero services</h2>
       <img
         src="/images/background/blue_background.webp"
         alt="blue background"

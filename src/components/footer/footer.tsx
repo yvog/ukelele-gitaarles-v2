@@ -26,39 +26,51 @@ const FooterComponent: React.FC = () => {
           <div className={styles.inner_container}>
             <div className={styles.footer_nav}>
               <h3>Snel navigeren</h3>
-              <nav className={styles.line_hover_nav}>
-                <div>
-                  <a href="/">Home</a>
-                </div>
-                <div>
-                  <a href="/leskosten">Leskosten</a>
-                </div>
-                <div>
-                  <a href="/aanmelden">Aanmelden</a>
-                </div>
-                <div>
-                  <a href="/contact">Contact</a>
-                </div>
-                <div>
-                  <a href="/privacy-verklaring">Privacy verklaring</a>
-                </div>
-                <div>
-                  <a href="/algemene-voorwaarden">Algemene voorwaarden</a>
-                </div>
+              <nav className={styles.line_hover_nav} aria-label="Main navigation">
+                <ul>
+                  <li>
+                    <a href="/">Home</a>
+                  </li>
+                  <li>
+                    <a href="/leskosten">Leskosten</a>
+                  </li>
+                  <li>
+                    <a href="/aanmelden">Aanmelden</a>
+                  </li>
+                  <li>
+                    <a href="/contact">Contact</a>
+                  </li>
+                  <li>
+                    <a href="/privacy-verklaring">Privacy verklaring</a>
+                  </li>
+                  <li>
+                    <a href="/algemene-voorwaarden">Algemene voorwaarden</a>
+                  </li>
+                </ul>
               </nav>
             </div>
             <div className={styles.footer_contact}>
               <h3>Contact</h3>
 
               <div className={styles.footer_contact_icons}>
-                <a href="tel:0638462008">
-                  <object data={iconTelephone}>telephone</object>
+                <a href="tel:0638462008" aria-label="telephone number">
+                  <object data={iconTelephone} aria-hidden="true">
+                    telephone
+                  </object>
                 </a>
-                <a href="/contact">
-                  <object data={iconEmail}>email</object>
+                <a href="/contact" aria-label="email address">
+                  <object data={iconEmail} aria-hidden="true">
+                    email
+                  </object>
                 </a>
-                <a href="https://www.facebook.com/ukelelegitaarles/" target="_blank">
-                  <object data={iconFacebook}>facebook</object>
+                <a
+                  href="https://www.facebook.com/ukelelegitaarles/"
+                  target="_blank"
+                  aria-label="facebook link"
+                >
+                  <object data={iconFacebook} aria-hidden="true">
+                    facebook
+                  </object>
                 </a>
               </div>
             </div>

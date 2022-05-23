@@ -60,7 +60,7 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
   const { pathname } = useRouter()
 
   return (
-    <header className={classNames(styles.header, { [styles.black]: isBlack })}>
+    <header className={classNames(styles.header, { [styles.black]: isBlack })} role="banner">
       <a href="/">
         <img
           className={styles.logo}
@@ -82,30 +82,38 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
           [styles.line_hover_nav]: !isBlack,
           [styles.show]: menuOpen,
         })}
+        aria-label="Footer navigation"
       >
-        <div className={styles.nav_inner}>
-          {menuItems.map((item) => (
-            <Link key={`menuItem-${item.label}`} href={item.href}>
-              <a
-                onClick={() => {
-                  menuOpen && onMenuOpen()
-                }}
-                className={classNames({
-                  [styles.active]:
-                    (pathname.startsWith(item.href) && item.href != '/') ||
-                    (pathname === '/' && pathname.startsWith(item.href)),
-                })}
-              >
-                {item.label}
-              </a>
-            </Link>
-          ))}
-        </div>
+        <ul className={styles.nav_inner}>
+          {menuItems.map((item) => {
+            const isActiveLink =
+              (pathname.startsWith(item.href) && item.href != '/') ||
+              (pathname === '/' && pathname.startsWith(item.href))
+
+            return (
+              <li>
+                <Link key={`menuItem-${item.label}`} href={item.href}>
+                  <a
+                    onClick={() => {
+                      menuOpen && onMenuOpen()
+                    }}
+                    className={classNames({
+                      [styles.active]: isActiveLink,
+                    })}
+                  >
+                    {item.label}
+                  </a>
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
       </nav>
 
       <MenuButton
         icon={`/images/icon/icon_${menuOpen ? 'close' : 'menu'}.svg`}
         onMenuOpen={onMenuOpen}
+        aria-expanded={menuOpen}
       />
     </header>
   )

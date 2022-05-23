@@ -13,19 +13,21 @@ export default function FourOhFour() {
         <HeaderNavigation variant="black" />
       </div>
 
-      <div className="main-container body">
-        <div>
+      <main role="main">
+        <div className="main-container body">
           <div>
-            <h2>Pagina niet gevonden</h2>
-            <p>De opgevraagde pagina kon helaas niet worden gevonden.</p>
-            <Button filled href="/">
-              Terug
-            </Button>
+            <div>
+              <h2>Pagina niet gevonden</h2>
+              <p>De opgevraagde pagina kon helaas niet worden gevonden.</p>
+              <Button filled href="/">
+                Terug
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <ExploreSignup />
+        <ExploreSignup />
+      </main>
     </Layout>
   )
 }

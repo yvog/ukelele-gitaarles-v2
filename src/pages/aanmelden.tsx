@@ -4,7 +4,15 @@ import { CustomForm, HeaderNavigation, Layout } from '../components'
 export default function SignUpPage() {
   const schema = {
     type: 'object',
-    required: ['lessonType', 'forName', 'surName', 'dateOfBirth', 'postalCode', 'email', 'gdprConsent'],
+    required: [
+      'lessonType',
+      'forName',
+      'surName',
+      'dateOfBirth',
+      'postalCode',
+      'email',
+      'gdprConsent',
+    ],
     properties: {
       lessonType: {
         type: 'string',
@@ -97,13 +105,13 @@ export default function SignUpPage() {
         <HeaderNavigation variant="black" />
       </div>
 
-      <section className="main-container body">
-        <article>
+      <main role="main">
+        <section className="main-container body">
           <h2>Aanmelden voor lessen</h2>
-          <p>Vul onderstaand formulier in om je aan te melden voor ukelele-, gitaar-, piano- of keyboardlessen.</p>
-        </article>
-
-        <article>
+          <p>
+            Vul onderstaand formulier in om je aan te melden voor ukelele-, gitaar-, piano- of
+            keyboardlessen.
+          </p>
           <CustomForm
             schema={schema}
             uiSchema={uiSchema}
@@ -112,8 +120,8 @@ export default function SignUpPage() {
             className="signup-form"
             recaptchaAction="submitsignup"
           />
-        </article>
-      </section>
+        </section>
+      </main>
     </Layout>
   )
 }
