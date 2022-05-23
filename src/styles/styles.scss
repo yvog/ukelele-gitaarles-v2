@@ -91,14 +91,14 @@ a {
     display: inline-block;
     color: #222;
     transition: border-bottom 0.15s ease;
-    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid #222;
     padding-top: 8px;
     padding-bottom: 8px;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
 
     &:hover {
-      border-bottom: 1px solid #222;
+      border-bottom: 1px solid transparent;
     }
   }
 }

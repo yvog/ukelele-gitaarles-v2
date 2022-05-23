@@ -18,14 +18,21 @@
       height: fluid(56, 72);
       min-width: fluid(56, 72);
       padding: 16px;
-      background: rgba($ukeGitBlue, 0.75);
+      background: rgb(26 151 245 / 40%);
       outline: none;
       border: 1px solid transparent;
-      transition: border 0.15s ease;
+      transition: background 0.2s ease;
 
       &:not(:disabled):hover {
-        border: 1px solid #fff;
         cursor: pointer;
+        background: rgb(26 151 245 / 60%);
+      }
+
+      &:disabled {
+        background: rgb(26 151 245 / 30%);
+        object {
+          opacity: 0.2;
+        }
       }
 
       object {

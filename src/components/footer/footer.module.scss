@@ -56,12 +56,12 @@
           width: fluid(48, 56);
           height: fluid(48, 56);
           border: 1px solid transparent;
-          border-radius: $borderRadiusSM;
+          border-radius: 100%;
           padding: fluid(2, 8);
-          transition: border 0.2s ease;
+          transition: background 0.2s ease;
 
           &:hover {
-            border: 1px solid #fff;
+            background: rgb(26 151 245 / 35%);
           }
 
           object {
