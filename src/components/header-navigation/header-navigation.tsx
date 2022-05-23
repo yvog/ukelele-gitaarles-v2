@@ -91,8 +91,8 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
               (pathname === '/' && pathname.startsWith(item.href))
 
             return (
-              <li>
-                <Link key={`menuItem-${item.label}`} href={item.href}>
+              <li key={`menuItem-${item.label}`}>
+                <Link href={item.href}>
                   <a
                     onClick={() => {
                       menuOpen && onMenuOpen()
