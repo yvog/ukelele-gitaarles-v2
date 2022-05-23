@@ -13,20 +13,20 @@ import {
 function RepairsOrMaintenanceKVP() {
   return (
     <>
-      <li>
-        <object data={iconWrench} width="40" height="40">
+      <li role="listitem">
+        <object data={iconWrench} width="40" height="40" aria-hidden="true">
           wrench
         </object>
         Jarenlange vakkundige, technische kennis
       </li>
-      <li>
-        <object data={iconGuitar} width="40" height="40">
+      <li role="listitem">
+        <object data={iconGuitar} width="40" height="40" aria-hidden="true">
           guitar
         </object>
         Van nieuwe snaren en afstellen tot het repareren van een scheur in jouw gitaar
       </li>
-      <li>
-        <object data={iconInvoice} width="40" height="40">
+      <li role="listitem">
+        <object data={iconInvoice} width="40" height="40" aria-hidden="true">
           invoice
         </object>
         Betaalbare reparatie / onderhoudsbeurt
@@ -68,8 +68,9 @@ export default function RepairsOrMaintenancePage() {
           }
         />
       </HeroServiceChoice>
-
-      <RepairMaintenanceForm />
+      <main role="main">
+        <RepairMaintenanceForm />
+      </main>
     </Layout>
   )
 }

@@ -6,17 +6,19 @@ export default function Home() {
     <Layout title="Welkom" canonical="/">
       <MainHero />
 
-      <div className="main-container body">
-        <Usp />
-      </div>
+      <main role="main">
+        <div className="main-container body">
+          <Usp />
+        </div>
 
-      <ExploreSignup />
+        <ExploreSignup />
 
-      <div className="main-container">
-        <AboutMeSummary />
-      </div>
+        <div className="main-container">
+          <AboutMeSummary />
+        </div>
 
-      <Testimonials />
+        <Testimonials />
+      </main>
     </Layout>
   )
 }

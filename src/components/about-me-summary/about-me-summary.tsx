@@ -1,11 +1,10 @@
 import classNames from 'classnames'
-import { Button } from '..'
 import styles from './about-me-summary.module.scss'
 
 const AboutMeSummaryComponent: React.FC = () => {
   return (
     <section className={classNames(styles.about_me_summary, 'container')}>
-      <h4>Bert Geldhof</h4>
+      <h2>Bert Geldhof</h2>
       <div className={styles.about_me_summary_inner}>
         <img
           src="/images/bert_geldhof.webp"

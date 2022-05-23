@@ -9,10 +9,10 @@ import iconKnowledge from '../../../public/images/icon/icon_knowledge.svg'
 const UspComponent: React.FC = () => {
   return (
     <section className={classNames(styles.usp, 'container')}>
-      <h4>
+      <h2>
         Je hoeft er de deur niet voor uit, want ik bied de mogelijkheid om gitaar-, ukelele- of
         pianoles bij jou thuis te geven.
-      </h4>
+      </h2>
       <div className={styles.usp_items}>
         <UspItem icon={iconMetronome}>
           Je favoriete muziek leren spelen in je eigen tempo. De gebruikte lesmethode is geschikt

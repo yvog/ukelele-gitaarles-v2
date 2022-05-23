@@ -65,16 +65,18 @@ const TestimonialsComponent: React.FC = () => {
         className={classnames('section_background', styles.testimonials_background)}
       />
 
-      <object data={iconQuote} width="64" height="64" className={styles.quote}>
+      <object data={iconQuote} width="64" height="64" className={styles.quote} aria-hidden="true">
         quote
       </object>
 
       <div className={classnames(styles.testimonials_inner, 'main-container')}>
-        <h4>Anderen zijn je voorgegaan</h4>
+        <h2>Anderen zijn je voorgegaan</h2>
 
         <div className={styles.swiper_outer_container}>
-          <button id="swiper-prev">
-            <object data={iconChevronLeft}>chevron left</object>
+          <button id="swiper-prev" name="Navigate back" aria-label="Navigate back">
+            <object data={iconChevronLeft} aria-hidden="true">
+              chevron left
+            </object>
           </button>
           <div className={styles.swiper_container}>
             <Swiper
@@ -101,8 +103,10 @@ const TestimonialsComponent: React.FC = () => {
               ))}
             </Swiper>
           </div>
-          <button id="swiper-next">
-            <object data={iconChevronRight}>chevron right</object>
+          <button id="swiper-next" aria-label="Navigate forward" name="Navigate forward">
+            <object data={iconChevronRight} aria-hidden="true">
+              chevron right
+            </object>
           </button>
         </div>
         <div className={styles.button}>

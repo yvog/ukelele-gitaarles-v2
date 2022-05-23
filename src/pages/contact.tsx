@@ -48,39 +48,40 @@ export default function RequestMaintenancePage() {
       <div className="main-container header">
         <HeaderNavigation variant="black" />
       </div>
+      <main role="main">
+        <section className="main-container body">
+          <article>
+            <h2>Contact</h2>
+            <p className="max-width-content">
+              Voor overige vragen en/of opmerking(en) kun je onderstaand formulier invullen. Na
+              ontvangst beantwoord ik zo snel mogelijk het bericht. Voor het aanmelden voor lessen
+              heb ik een apart formulier, zie{' '}
+              <a href="/aanmelden" className="blue-link">
+                het aanmeldformulier
+              </a>
+              .
+            </p>
+          </article>
 
-      <section className="main-container body">
-        <article>
-          <h2>Contact</h2>
-          <p className="max-width-content">
-            Voor overige vragen en/of opmerking(en) kun je onderstaand formulier invullen. Na
-            ontvangst beantwoord ik zo snel mogelijk het bericht. Voor het aanmelden voor lessen heb
-            ik een apart formulier, zie{' '}
-            <a href="/aanmelden" className="blue-link">
-              het aanmeldformulier
-            </a>
-            .
-          </p>
-        </article>
-
-        <article>
-          <CustomForm
-            schema={schema}
-            uiSchema={uiSchema}
-            httpAction="/api/contact"
-            method="POST"
-            className="contact-form"
-            recaptchaAction="submitcontact"
-          />
-          <div className="privacy-text">
-            * op dit formulier is de{' '}
-            <a href="/privacy-verklaring" target="_blank" className="blue-link">
-              privacy verklaring
-            </a>{' '}
-            van toepassing
-          </div>
-        </article>
-      </section>
+          <article>
+            <CustomForm
+              schema={schema}
+              uiSchema={uiSchema}
+              httpAction="/api/contact"
+              method="POST"
+              className="contact-form"
+              recaptchaAction="submitcontact"
+            />
+            <div className="privacy-text">
+              * op dit formulier is de{' '}
+              <a href="/privacy-verklaring" target="_blank" className="blue-link">
+                privacy verklaring
+              </a>{' '}
+              van toepassing
+            </div>
+          </article>
+        </section>
+      </main>
     </Layout>
   )
 }

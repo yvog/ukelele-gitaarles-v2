@@ -7,7 +7,7 @@ const ExploreSignupComponent: React.FC = () => {
     <section className={styles.explore_signup}>
       <div className={styles.explore_signup_inner}>
         <div>
-          <h4>Ontdek het plezier in muziekmaken</h4>
+          <h2>Ontdek het plezier in muziekmaken</h2>
           <p>
             Probeer een vrijblijvende proefles voor een
             <br />
@@ -27,8 +27,14 @@ const ExploreSignupComponent: React.FC = () => {
       </div>
 
       <picture>
-        <source media="(min-width:1200px)" srcSet="/images/background/explore_signup_background_1600x450.webp" />
-        <source media="(min-width:0)" srcSet="/images/background/explore_signup_background_1024x576.webp" />
+        <source
+          media="(min-width:1200px)"
+          srcSet="/images/background/explore_signup_background_1600x450.webp"
+        />
+        <source
+          media="(min-width:0)"
+          srcSet="/images/background/explore_signup_background_1024x576.webp"
+        />
         <img
           src="/images/background/explore_signup_background_1600x450.webp"
           alt="explore signup background"

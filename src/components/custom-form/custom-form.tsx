@@ -141,6 +141,8 @@ const CustomFormComponent: React.FC<CustomFormProps> = ({
             [styles.success_message]: success,
             [styles.error_message]: error,
           })}
+          aria-live="assertive"
+          role="alert"
         >
           {success
             ? 'Het formulier is succesvol verzonden'

@@ -7,7 +7,7 @@ const SurpriseComponent: React.FC = () => {
     <ContentBlock
       title="Lessenkaart cadeau geven"
       img={
-        <object data={iconBox} width="100" height="100">
+        <object data={iconBox} width="100" height="100" aria-hidden="true">
           box
         </object>
       }

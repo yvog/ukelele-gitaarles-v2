@@ -13,10 +13,6 @@
     .inner_container {
       display: flex;
       justify-content: space-between;
-
-      & > div {
-        flex: 1;
-      }
     }
 
     h3 {
@@ -28,13 +24,17 @@
       padding: 0;
 
       nav {
-        div {
-          display: block;
-          margin-bottom: 4px;
+        ul {
+          padding-left: 0;
+          > li {
+            list-style-type: none;
+            display: block;
+            margin-bottom: 4px;
 
-          a {
-            padding: 6px 0 6px 0;
-            display: inline-block;
+            a {
+              padding: 6px 0 6px 0;
+              display: inline-block;
+            }
           }
         }
       }
@@ -72,7 +72,7 @@
     }
 
     .footer_companydetails {
-      text-align: right;
+      text-align: left;
 
       span {
         display: block;
