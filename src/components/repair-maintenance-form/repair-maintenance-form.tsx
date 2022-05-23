@@ -50,25 +50,20 @@ const RepairMaintenanceFormComponent: React.FC<RepairMaintenanceFormProps> = () 
 
   return (
     <section className="main-container body" id="repair-maintenance-form">
-      <article>
-        <h3>Reparatie/onderhoud aanvragen</h3>
-        <p>
-          Gebruik onderstaand formulier om reparatie of onderhoud voor je snaarinstrument aan te
-          vragen. Na ontvangst zal ik via e-mail contact met je opnemen, waaruit een vrijblijvende
-          offerte zal voortkomen.
-        </p>
-      </article>
-
-      <article>
-        <CustomForm
-          schema={schema}
-          uiSchema={uiSchema}
-          httpAction="/api/request-maintenance"
-          method="POST"
-          className="maintenance-form"
-          recaptchaAction="submitrequestmaintenance"
-        />
-      </article>
+      <h3>Reparatie/onderhoud aanvragen</h3>
+      <p>
+        Gebruik onderstaand formulier om reparatie of onderhoud voor je snaarinstrument aan te
+        vragen. Na ontvangst zal ik via e-mail contact met je opnemen, waaruit een vrijblijvende
+        offerte zal voortkomen.
+      </p>
+      <CustomForm
+        schema={schema}
+        uiSchema={uiSchema}
+        httpAction="/api/request-maintenance"
+        method="POST"
+        className="maintenance-form"
+        recaptchaAction="submitrequestmaintenance"
+      />
     </section>
   )
 }

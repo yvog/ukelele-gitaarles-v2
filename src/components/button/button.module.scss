@@ -1,12 +1,9 @@
 @import '../../styles/variables';
 @import '../../styles/util/fluid';
 
-.button_link {
+.button {
   display: inline-block;
   max-width: max-content;
-}
-
-.button {
   border-radius: 50px;
   color: #fff;
   border: 2px solid #fff;

@@ -10,15 +10,13 @@ const HeroMainComponent: React.FC = () => {
         <div className="main-container header header-main-container">
           <HeaderNavigation />
 
-          <section>
-            <article id={styles.hero_info}>
-              <h2 className={styles.new_typography}>Bert Geldhof</h2>
-              <p>
-                Met veel plezier geef ik persoonlijke ukelele-, gitaar- en pianolessen aan huis in
-                Alphen aan den Rijn, Leiden en omstreken.
-              </p>
-              <Button href="/diensten">Ontdek mijn diensten</Button>
-            </article>
+          <section id={styles.hero_info}>
+            <h2 className={styles.new_typography}>Bert Geldhof</h2>
+            <p>
+              Met veel plezier geef ik persoonlijke ukelele-, gitaar- en pianolessen aan huis in
+              Alphen aan den Rijn, Leiden en omstreken.
+            </p>
+            <Button href="/diensten">Ontdek mijn diensten</Button>
           </section>
         </div>
 

@@ -107,24 +107,19 @@ export default function SignUpPage() {
 
       <main role="main">
         <section className="main-container body">
-          <article>
-            <h2>Aanmelden voor lessen</h2>
-            <p>
-              Vul onderstaand formulier in om je aan te melden voor ukelele-, gitaar-, piano- of
-              keyboardlessen.
-            </p>
-          </article>
-
-          <article>
-            <CustomForm
-              schema={schema}
-              uiSchema={uiSchema}
-              httpAction="/api/signup"
-              method="POST"
-              className="signup-form"
-              recaptchaAction="submitsignup"
-            />
-          </article>
+          <h2>Aanmelden voor lessen</h2>
+          <p>
+            Vul onderstaand formulier in om je aan te melden voor ukelele-, gitaar-, piano- of
+            keyboardlessen.
+          </p>
+          <CustomForm
+            schema={schema}
+            uiSchema={uiSchema}
+            httpAction="/api/signup"
+            method="POST"
+            className="signup-form"
+            recaptchaAction="submitsignup"
+          />
         </section>
       </main>
     </Layout>

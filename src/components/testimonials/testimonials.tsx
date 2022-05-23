@@ -56,6 +56,7 @@ const TestimonialsComponent: React.FC = () => {
 
   return (
     <section className={styles.testimonials}>
+      <h2 className="hidden">Testimonials</h2>
       <img
         src="/images/background/blue_background.webp"
         alt="blue background"
