@@ -84,19 +84,25 @@
         max-width: unset !important;
         align-items: flex-start;
         z-index: 999;
-        padding: 48px;
+        padding: 100px;
         margin: unset;
         color: #fff;
 
-        a {
-          display: block;
-          width: 100%;
-          text-align: center;
-          font-family: $titleFont;
-          color: #fff !important;
+        ul {
+          padding-left: 0;
+          li {
+            a {
+              display: block;
+              width: 100%;
+              text-align: center;
+              font-family: $titleFont;
+              color: #fff !important;
+              font-size: 18px;
 
-          &:after {
-            background: #fff;
+              &:after {
+                background: #fff;
+              }
+            }
           }
         }
       }
