@@ -14,7 +14,8 @@
     "prod:cleanup": "rm -rf package-lock.json ./public/sitemap.js",
     "prod:restart": "sudo forever restart",
     "prod:stop": "sudo forever stopall",
-    "prod:start": "sudo forever start -c 'npx next start -p 8080' ./"
+    "prod:start": "sudo forever start -c 'npx next start -p 8080' ./",
+    "prod:update": "sudo npm run prod:stop && sudo rm -rf .next && sudo npm run build && sudo npm run prod:start"
   },
   "repository": {
     "type": "git",
