@@ -13,7 +13,7 @@ export default function FourOhFour() {
         <HeaderNavigation variant="black" />
       </div>
 
-      <main role="main">
+      <main>
         <div className="main-container body">
           <div>
             <div>

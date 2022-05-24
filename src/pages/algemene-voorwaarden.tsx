@@ -6,7 +6,7 @@ export default function TermsOfUsePage() {
       <div className="main-container header">
         <HeaderNavigation variant="black" />
       </div>
-      <main role="main">
+      <main>
         <section className="main-container body">
           <h2>Algemene voorwaarden</h2>
 

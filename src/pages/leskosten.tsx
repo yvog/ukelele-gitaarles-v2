@@ -13,7 +13,7 @@ export default function CostsPage() {
       <div className="main-container header">
         <HeaderNavigation variant="black" />
       </div>
-      <main role="main">
+      <main>
         <section className="main-container body">
           <h2>Leskosten</h2>
           <p className="max-width-content">

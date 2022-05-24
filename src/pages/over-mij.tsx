@@ -10,7 +10,7 @@ export default function AboutMePage() {
         <HeaderNavigation variant="black" />
       </div>
 
-      <main role="main">
+      <main>
         <div className={styles.content}>
           <ContentBlock
             title="Bert Geldhof"

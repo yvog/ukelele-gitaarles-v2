@@ -14,7 +14,7 @@ export const HeroServicesItemComponent: React.FC<HeroServicesItemProps> = ({
   children,
 }) => {
   return (
-    <article className={styles.hero_services_item}>
+    <div className={styles.hero_services_item}>
       <object data={icon} type="image/svg+xml" width="60" height="60" aria-hidden="true">
         service icon
       </object>
@@ -24,7 +24,7 @@ export const HeroServicesItemComponent: React.FC<HeroServicesItemProps> = ({
         </a>
         <p>{children}</p>
       </div>
-    </article>
+    </div>
   )
 }
 

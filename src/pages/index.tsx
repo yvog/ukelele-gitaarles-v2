@@ -6,7 +6,7 @@ export default function Home() {
     <Layout title="Welkom" canonical="/">
       <MainHero />
 
-      <main role="main">
+      <main>
         <div className="main-container body">
           <Usp />
         </div>

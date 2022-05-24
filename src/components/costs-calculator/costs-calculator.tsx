@@ -222,7 +222,6 @@ const CostsCalculatorComponent: React.FC = () => {
               }}
               id="user_postalcode"
               name="userpostalcode"
-              max="7"
               placeholder="1234 AB"
             />
           </div>

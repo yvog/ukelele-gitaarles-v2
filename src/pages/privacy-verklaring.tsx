@@ -9,7 +9,7 @@ export default function PrivacyStatementPage() {
         <HeaderNavigation variant="black" />
       </div>
 
-      <main role="main">
+      <main>
         <section
           className={classNames('main-container', 'body', 'max-width-content', styles.container)}
         >

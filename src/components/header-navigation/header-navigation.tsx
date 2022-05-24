@@ -60,7 +60,7 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
   const { pathname } = useRouter()
 
   return (
-    <header className={classNames(styles.header, { [styles.black]: isBlack })} role="banner">
+    <header className={classNames(styles.header, { [styles.black]: isBlack })}>
       <a href="/">
         <img
           className={styles.logo}

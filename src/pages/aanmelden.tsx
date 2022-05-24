@@ -105,7 +105,7 @@ export default function SignUpPage() {
         <HeaderNavigation variant="black" />
       </div>
 
-      <main role="main">
+      <main>
         <section className="main-container body">
           <h2>Aanmelden voor lessen</h2>
           <p>

@@ -17,32 +17,32 @@ import {
 function PianoKeyboardLessonsKVP() {
   return (
     <>
-      <li role="listitem">
+      <li>
         <object data={iconHouse} width="40" height="40" aria-hidden="true">
           house
         </object>
         Lessen aan huis. Je hoeft er de deur niet voor uit
       </li>
-      <li role="listitem">
+      <li>
         <object data={iconBook} width="40" height="40" aria-hidden="true">
           book
         </object>
         Deze keyboard- of pianolessen zijn vooral geschikt voor beginnende muzikanten
       </li>
-      <li role="listitem">
+      <li>
         <object data={iconGrandma} width="40" height="40" aria-hidden="true">
           grandma
         </object>
         Zowel kinderen als (oudere) volwassenen zijn welkom: je bent nooit te laat om een
         muziekinstrument te leren bespelen
       </li>
-      <li role="listitem">
+      <li>
         <object data={iconMan} width="40" height="40" aria-hidden="true">
           man
         </object>
         Persoonlijke lessen met veel aandacht voor de leerling
       </li>
-      <li role="listitem">
+      <li>
         <object data={iconCamera} width="40" height="40" aria-hidden="true">
           camera
         </object>
@@ -78,7 +78,7 @@ export default function PianoKeyboardLessonsPage() {
         />
       </HeroServiceChoice>
 
-      <main role="main">
+      <main>
         <Surprise />
 
         <Testimonials />
