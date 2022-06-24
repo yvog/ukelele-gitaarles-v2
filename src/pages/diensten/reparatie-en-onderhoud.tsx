@@ -14,19 +14,19 @@ function RepairsOrMaintenanceKVP() {
   return (
     <>
       <li>
-        <object data={iconWrench} width="40" height="40" aria-hidden="true">
+        <object data={iconWrench} width="40" height="40" aria-hidden="true" tabIndex={-1}>
           wrench
         </object>
         Jarenlange vakkundige, technische kennis
       </li>
       <li>
-        <object data={iconGuitar} width="40" height="40" aria-hidden="true">
+        <object data={iconGuitar} width="40" height="40" aria-hidden="true" tabIndex={-1}>
           guitar
         </object>
         Van nieuwe snaren en afstellen tot het repareren van een scheur in jouw gitaar
       </li>
       <li>
-        <object data={iconInvoice} width="40" height="40" aria-hidden="true">
+        <object data={iconInvoice} width="40" height="40" aria-hidden="true" tabIndex={-1}>
           invoice
         </object>
         Betaalbare reparatie / onderhoudsbeurt

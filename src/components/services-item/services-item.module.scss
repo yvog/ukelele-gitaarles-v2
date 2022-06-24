@@ -43,7 +43,8 @@
     @extend .h6;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: #fff;
 
     img {
