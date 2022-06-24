@@ -98,6 +98,7 @@
       .radio {
         label {
           padding: 16px 16px 16px 0;
+
           span {
             display: flex;
             align-items: center;
@@ -136,6 +137,12 @@
     .checkbox,
     .radio {
       margin-right: 0 !important;
+
+      &:focus-within {
+        label span {
+          font-weight: bold;
+        }
+      }
 
       label {
         margin: 0;

@@ -23,9 +23,12 @@
       border: 1px solid transparent;
       transition: background 0.2s ease;
 
-      &:not(:disabled):hover {
-        cursor: pointer;
-        background: rgb(26 151 245 / 60%);
+      &:not(:disabled) {
+        &:hover,
+        &:focus {
+          cursor: pointer;
+          background: rgb(26 151 245 / 60%);
+        }
       }
 
       &:disabled {

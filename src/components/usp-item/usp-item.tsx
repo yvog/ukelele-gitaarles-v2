@@ -8,7 +8,13 @@ type UspItemProps = PropsWithChildren<{
 const UspItemComponent: React.FC<UspItemProps> = ({ icon, children }) => {
   return (
     <div className={styles.usp_item}>
-      <object data={icon} type="image/svg+xml" className={styles.icon} aria-hidden="true">
+      <object
+        data={icon}
+        type="image/svg+xml"
+        className={styles.icon}
+        aria-hidden="true"
+        tabIndex={-1}
+      >
         usp icon
       </object>
       <p>{children}</p>

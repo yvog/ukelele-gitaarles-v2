@@ -15,7 +15,14 @@ export const HeroServicesItemComponent: React.FC<HeroServicesItemProps> = ({
 }) => {
   return (
     <div className={styles.hero_services_item}>
-      <object data={icon} type="image/svg+xml" width="60" height="60" aria-hidden="true">
+      <object
+        data={icon}
+        type="image/svg+xml"
+        width="60"
+        height="60"
+        aria-hidden="true"
+        tabIndex={-1}
+      >
         service icon
       </object>
       <div>

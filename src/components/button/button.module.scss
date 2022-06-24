@@ -26,7 +26,8 @@
   }
 
   &:not(.disabled) {
-    &:hover {
+    &:hover,
+    &:focus {
       background: #fff;
       color: $ukeGitBlue;
       text-decoration: none;
@@ -34,7 +35,8 @@
     }
 
     &.filled {
-      &:hover {
+      &:hover,
+      &:focus {
         background: #fff;
         color: $ukeGitBlue;
         text-decoration: none;

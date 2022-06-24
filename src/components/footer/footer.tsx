@@ -54,12 +54,12 @@ const FooterComponent: React.FC = () => {
 
               <div className={styles.footer_contact_icons}>
                 <a href="tel:0638462008" aria-label="telephone number">
-                  <object data={iconTelephone} aria-hidden="true">
+                  <object data={iconTelephone} aria-hidden="true" tabIndex={-1}>
                     telephone
                   </object>
                 </a>
                 <a href="/contact" aria-label="email address">
-                  <object data={iconEmail} aria-hidden="true">
+                  <object data={iconEmail} aria-hidden="true" tabIndex={-1}>
                     email
                   </object>
                 </a>
@@ -68,7 +68,7 @@ const FooterComponent: React.FC = () => {
                   target="_blank"
                   aria-label="facebook link"
                 >
-                  <object data={iconFacebook} aria-hidden="true">
+                  <object data={iconFacebook} aria-hidden="true" tabIndex={-1}>
                     facebook
                   </object>
                 </a>

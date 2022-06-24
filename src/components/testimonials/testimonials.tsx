@@ -1,6 +1,6 @@
 import classnames from 'classnames'
 import { useEffect, useState } from 'react'
-import { Navigation, Virtual } from 'swiper'
+import { Keyboard, Navigation, Virtual } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/virtual'
@@ -66,7 +66,14 @@ const TestimonialsComponent: React.FC = () => {
         className={classnames('section_background', styles.testimonials_background)}
       />
 
-      <object data={iconQuote} width="64" height="64" className={styles.quote} aria-hidden="true">
+      <object
+        data={iconQuote}
+        width="64"
+        height="64"
+        className={styles.quote}
+        aria-hidden="true"
+        tabIndex={-1}
+      >
         quote
       </object>
 
@@ -74,15 +81,21 @@ const TestimonialsComponent: React.FC = () => {
         <h2>Anderen zijn je voorgegaan</h2>
 
         <div className={styles.swiper_outer_container}>
-          <button id="swiper-prev" name="Navigate back" aria-label="Navigate back">
-            <object data={iconChevronLeft} aria-hidden="true">
-              chevron left
-            </object>
+          <button id="swiper-prev" name="Navigate back" aria-label="Navigate back" tabIndex={0}>
+            <>
+              <object data={iconChevronLeft} aria-hidden="true" tabIndex={-1}>
+                chevron left
+              </object>
+            </>
           </button>
           <div className={styles.swiper_container}>
             <Swiper
-              modules={[Navigation, Virtual]}
+              modules={[Navigation, Virtual, Keyboard]}
               autoHeight
+              keyboard={{
+                enabled: true,
+                onlyInViewport: true,
+              }}
               resizeObserver
               spaceBetween={50}
               slidesPerView={slidesPerView}
@@ -104,10 +117,17 @@ const TestimonialsComponent: React.FC = () => {
               ))}
             </Swiper>
           </div>
-          <button id="swiper-next" aria-label="Navigate forward" name="Navigate forward">
-            <object data={iconChevronRight} aria-hidden="true">
-              chevron right
-            </object>
+          <button
+            id="swiper-next"
+            aria-label="Navigate forward"
+            name="Navigate forward"
+            tabIndex={0}
+          >
+            <>
+              <object data={iconChevronRight} aria-hidden="true" tabIndex={-1}>
+                chevron right
+              </object>
+            </>
           </button>
         </div>
         <div className={styles.button}>

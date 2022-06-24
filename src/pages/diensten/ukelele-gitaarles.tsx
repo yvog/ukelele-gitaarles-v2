@@ -20,38 +20,38 @@ function UkeleleGuitarLessonsKVP() {
   return (
     <>
       <li>
-        <object data={iconHouse} width="40" height="40" aria-hidden="true">
+        <object data={iconHouse} width="40" height="40" aria-hidden="true" tabIndex={-1}>
           house
         </object>
         Lessen aan huis. Je hoeft er de deur niet voor uit
       </li>
       <li>
-        <object data={iconBook} width="40" height="40" aria-hidden="true">
+        <object data={iconBook} width="40" height="40" aria-hidden="true" tabIndex={-1}>
           book
         </object>
         De lessen gaan verder dan alleen het leren van akkoorden of een introductiecursus
       </li>
       <li>
-        <object data={iconGrandma} width="40" height="40" aria-hidden="true">
+        <object data={iconGrandma} width="40" height="40" aria-hidden="true" tabIndex={-1}>
           grandma
         </object>
         Zowel kinderen als (oudere) volwassenen zijn welkom: je bent nooit te laat om een
         muziekinstrument te leren bespelen
       </li>
       <li>
-        <object data={iconPreknowledge} width="40" height="40" aria-hidden="true">
+        <object data={iconPreknowledge} width="40" height="40" aria-hidden="true" tabIndex={-1}>
           preknowledge
         </object>
         Voor het volgen van de lessen is geen voorkennis benodigd
       </li>
       <li>
-        <object data={iconMan} width="40" height="40" aria-hidden="true">
+        <object data={iconMan} width="40" height="40" aria-hidden="true" tabIndex={-1}>
           man
         </object>
         Zowel persoonlijke lessen met veel aandacht voor de leerling als groepslessen zijn mogelijk
       </li>
       <li>
-        <object data={iconCamera} width="40" height="40" aria-hidden="true">
+        <object data={iconCamera} width="40" height="40" aria-hidden="true" tabIndex={-1}>
           camera
         </object>
         Les op afstand via Zoom gedurende de Covid-19 pandemie, maar ook op aanvraag

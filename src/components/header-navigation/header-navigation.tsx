@@ -1,10 +1,10 @@
 import classNames from 'classnames'
-import { useRouter } from 'next/router'
+import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import { MenuButton } from '../menu-button/menu-button'
 import styles from './header-navigation.module.scss'
-import Head from 'next/head'
 
 type HeaderNavigationComponentProps = {
   variant?: 'white' | 'black'
@@ -82,7 +82,7 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
           [styles.line_hover_nav]: !isBlack,
           [styles.show]: menuOpen,
         })}
-        aria-label="Footer navigation"
+        aria-label="Header navigation"
       >
         <ul className={styles.nav_inner}>
           {menuItems.map((item) => {
@@ -111,9 +111,11 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
       </nav>
 
       <MenuButton
-        icon={`/images/icon/icon_${menuOpen ? 'close' : 'menu'}.svg`}
+        iconOpened={'/images/icon/icon_close.svg'}
+        iconClosed={'/images/icon/icon_menu.svg'}
         onMenuOpen={onMenuOpen}
         aria-expanded={menuOpen}
+        open={menuOpen}
       />
     </header>
   )
