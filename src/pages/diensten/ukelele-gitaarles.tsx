@@ -1,4 +1,3 @@
-import React from 'react'
 import iconBook from '../../../public/images/icon/icon_book.svg'
 import iconCamera from '../../../public/images/icon/icon_camera.svg'
 import iconGrandma from '../../../public/images/icon/icon_grandma.svg'

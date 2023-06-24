@@ -1,4 +1,3 @@
-import React from 'react'
 import iconGuitar from '../../../public/images/icon/icon_guitar.svg'
 import iconInvoice from '../../../public/images/icon/icon_invoice.svg'
 import iconWrench from '../../../public/images/icon/icon_wrench.svg'
@@ -40,6 +39,7 @@ export default function RepairsOrMaintenancePage() {
     <Layout
       title="Snaarinstrument reparatie en onderhoud"
       canonical="/aanbod/reparatie-en-onderhoud"
+      useReCaptcha
     >
       <HeroServiceChoice>
         <ServicePageHero

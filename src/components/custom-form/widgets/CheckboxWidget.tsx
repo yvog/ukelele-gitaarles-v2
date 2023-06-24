@@ -1,4 +1,3 @@
-import React from 'react'
 import ReactMarkdown from 'react-markdown'
 import { schemaRequiresTrueValue } from './schemaRequiresTrueValue'
 
@@ -37,9 +36,9 @@ function CheckboxWidget(props) {
           onBlur={onBlur && ((event) => onBlur(id, event.target.checked))}
           onFocus={onFocus && ((event) => onFocus(id, event.target.checked))}
         />
-        <span>
-          <ReactMarkdown>{label}</ReactMarkdown>
-        </span>
+        <ReactMarkdown linkTarget="_blank" renderers={{ paragraph: 'span' }}>
+          {label}
+        </ReactMarkdown>
       </label>
     </div>
   )

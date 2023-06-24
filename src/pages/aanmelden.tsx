@@ -1,4 +1,3 @@
-import React from 'react'
 import { CustomForm, HeaderNavigation, Layout } from '../components'
 
 export default function SignUpPage() {
@@ -97,9 +96,9 @@ export default function SignUpPage() {
   return (
     <Layout
       title="Aanmelden"
-      useReCaptcha
       description="Meld je op deze pagina aan voor gitaarles, ukelele les of pianoles van Bert Geldhof."
       canonical="/aanmelden"
+      useReCaptcha
     >
       <div className="main-container header">
         <HeaderNavigation variant="black" />

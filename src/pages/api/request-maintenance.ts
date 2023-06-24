@@ -1,5 +1,5 @@
-import { sendMail, verifyRecaptchaToken } from '../../server/utils'
 import { VercelRequest, VercelResponse } from '@vercel/node'
+import { sendMail, verifyRecaptchaToken } from '../../server/utils'
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const formData = req.body.formData
@@ -27,10 +27,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       Naam: ${formData.forName ?? ''} ${formData.surName ?? ''}
       E-mailadres: ${formData.email ?? ''}
       AVG toestemming: ${formData.gdprConsent ? 'Ja' : 'Nee'}
-      Bericht: 
-      
+      Bericht:
+
       ${formData.comments ?? ''}
-      
+
     `
     )
 

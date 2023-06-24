@@ -1,4 +1,3 @@
-import React from 'react'
 import { CustomForm, HeaderNavigation, Layout } from '../components'
 
 export default function RequestMaintenancePage() {
@@ -25,7 +24,7 @@ export default function RequestMaintenancePage() {
       },
       gdprConsent: {
         type: 'boolean',
-        title: 'Ik heb de privacy verklaring gelezen en ga hiermee akkoord.',
+        title: 'Ik heb de [privacy verklaring](/privacy-verklaring) gelezen en ga hiermee akkoord',
         default: false,
         const: true,
       },
@@ -41,9 +40,9 @@ export default function RequestMaintenancePage() {
   return (
     <Layout
       title="Contact"
-      useReCaptcha
       description={'Stel gerust vragen aan Bert Geldhof via het contactformulier'}
       canonical="/contact"
+      useReCaptcha
     >
       <div className="main-container header">
         <HeaderNavigation variant="black" />
@@ -68,13 +67,6 @@ export default function RequestMaintenancePage() {
             className="contact-form"
             recaptchaAction="submitcontact"
           />
-          <div className="privacy-text">
-            * op dit formulier is de{' '}
-            <a href="/privacy-verklaring" target="_blank" className="blue-link">
-              privacy verklaring
-            </a>{' '}
-            van toepassing
-          </div>
         </section>
       </main>
     </Layout>
