@@ -118,7 +118,7 @@ export const CustomForm: React.FC<CustomFormProps> = ({
         uiSchema={uiSchema}
         showErrorList={false}
         onSubmit={onSubmit}
-        onError={(e) => {
+        onError={() => {
           setSuccess(false);
           setError(false);
         }}
@@ -134,7 +134,7 @@ export const CustomForm: React.FC<CustomFormProps> = ({
         autoComplete="off"
         noValidate={submitting || success}
       >
-        <button type="submit" disabled={submitting}>
+        <button type="submit" disabled={submitting || success}>
           Verzend
         </button>
       </Form>
