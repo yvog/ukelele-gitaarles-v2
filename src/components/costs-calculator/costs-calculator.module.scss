@@ -112,3 +112,21 @@
     z-index: 1;
   }
 }
+
+@media (max-width: $smallDesktop) {
+  .costs_calculator {
+    margin-top: -32px;
+  }
+}
+
+@media (max-width: $mobile) {
+  .costs_calculator {
+    margin-top: -16px;
+  }
+}
+
+@media (max-width: $smallMobile) {
+  .costs_calculator {
+    margin-top: 0;
+  }
+}

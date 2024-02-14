@@ -1,10 +1,11 @@
 @import '../../styles/variables';
+@import '../../styles/typography/classes';
 @import '../../styles/util/fluid';
 
 .services_item {
   display: block;
-  width: fluid(150, 300);
-  height: fluid(100, 200);
+  width: fluid(200, 300);
+  height: fluid(150, 200);
   background: #000;
   transition: background 0.25s ease;
   box-shadow: $defaultBoxShadow;
@@ -19,8 +20,8 @@
     z-index: 1;
     opacity: 0.75;
     transition: opacity 0.25s ease;
-    width: fluid(150, 300);
-    height: fluid(100, 200);
+    width: fluid(200, 300);
+    height: fluid(150, 200);
   }
 
   .divider {
@@ -34,6 +35,7 @@
   }
 
   h3 {
+    @extend .h4;
     position: relative;
     z-index: 3;
     color: #fff;

@@ -209,13 +209,26 @@
   }
 }
 
+@media (max-width: $smallDesktop) {
+  .custom_form {
+    margin-top: -32px;
+  }
+}
+
 @media (max-width: $mobile) {
   .custom_form {
     max-width: 100%;
+    margin-top: -16px;
 
     fieldset {
       grid-column-gap: 8px;
       grid-template-columns: repeat(1, 1fr);
     }
+  }
+}
+
+@media (max-width: $smallMobile) {
+  .custom_form {
+    margin-top: 0;
   }
 }
