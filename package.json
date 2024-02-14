@@ -8,15 +8,12 @@
     "codegen": "graphql-codegen --require dotenv/config --config codegen.ts",
     "build": "npm run codegen && next build && npm run gen:sitemap",
     "start": "next start",
-    "export": "next export",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,json,scss,css}\" ",
     "cleanup": "rimraf node_modules",
     "gen:sitemap": "next-sitemap --config sitemap.config.js",
     "prod:cleanup": "rm -rf package-lock.json ./public/sitemap.js",
-    "prod:restart": "sudo forever restart",
-    "prod:stop": "sudo forever stopall",
-    "prod:start": "sudo forever start -c 'npx next start -p 8080' ./",
-    "prod:update": "sudo npm run prod:stop && sudo rm -rf .next && sudo npm run build && sudo npm run prod:start"
+    "prod:start": "npx pm2 start npx --name \"ukelele-gitaarles\" -- 'next start -p 8080'",
+    "prod:stop": "npx pm2 stop ukelele-gitaarles"
   },
   "repository": {
     "type": "git",
@@ -49,7 +46,6 @@
     "eslint": "8.9.0",
     "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "^8.4.0",
-    "forever": "^4.0.3",
     "imagemin": "^7.0.1",
     "imagemin-webp": "^6.0.0",
     "next-sitemap": "^1.5.18",
