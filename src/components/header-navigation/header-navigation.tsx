@@ -1,71 +1,48 @@
-import classNames from 'classnames'
-import Head from 'next/head'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import React, { useState } from 'react'
-import { MenuButton } from '../menu-button/menu-button'
-import styles from './header-navigation.module.scss'
+import classNames from 'classnames';
+import Head from 'next/head';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React, { useState } from 'react';
+import { NavigationItemFragment } from '../../gql/graphql';
+import { MenuButton } from '../menu-button/menu-button';
+import styles from './header-navigation.module.scss';
 
-type HeaderNavigationComponentProps = {
-  variant?: 'white' | 'black'
-}
+type HeaderNavigationProps = {
+  items?: NavigationItemFragment[];
+  variant?: 'white' | 'white_full' | 'black';
+};
 
-const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
+export const HeaderNavigation: React.FC<HeaderNavigationProps> = ({
   variant = 'white',
+  items,
 }) => {
-  const isBlack = variant === 'black'
-  const [menuOpen, setMenuOpen] = useState<boolean>(false)
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const isBlack = variant === 'black';
+
+  const { query } = useRouter();
+  const pathname = query?.url ? `/${(query.url as string[]).join('/')}` : '/';
 
   const onMenuOpen = () => {
-    const open = !menuOpen
+    const open = !menuOpen;
 
-    setMenuOpen(open)
+    setMenuOpen(open);
 
     const event = new CustomEvent('mobile-menu-toggled', {
       detail: {
         open,
       },
-    })
+    });
 
-    window.dispatchEvent(event)
-  }
-
-  const menuItems = [
-    {
-      href: '/',
-      label: 'Home',
-    },
-    {
-      href: '/over-mij',
-      label: 'Over mij',
-    },
-    {
-      href: '/diensten',
-      label: 'Diensten',
-    },
-    {
-      href: '/leskosten',
-      label: 'Leskosten',
-    },
-    {
-      href: '/aanmelden',
-      label: 'Aanmelden',
-    },
-    {
-      href: '/contact',
-      label: 'Contact',
-    },
-  ]
-
-  const { pathname } = useRouter()
+    window.dispatchEvent(event);
+  };
 
   return (
     <header className={classNames(styles.header, { [styles.black]: isBlack })}>
       <a href="/">
         <img
           className={styles.logo}
-          src={`/images/logo/ugl_logo_${variant}.svg`}
-          alt={`UGL logo ${variant}`}
+          src={`/images/logo/ukelele_gitaarles_logo_${variant}.svg`}
+          alt="Ukelele-Gitaarles logo"
           width="280"
           height="100"
           loading="eager"
@@ -73,52 +50,56 @@ const HeaderNavigationComponent: React.FC<HeaderNavigationComponentProps> = ({
       </a>
 
       <Head>
-        <link rel="preload" as="image" href={`/images/logo/ugl_logo_${variant}.svg`}></link>
+        <link
+          rel="preload"
+          as="image"
+          href={`/images/logo/ukelele_gitaarles_logo_${variant}.svg`}
+        ></link>
       </Head>
 
-      <nav
-        className={classNames(styles.nav, {
-          [styles.line_hover_nav_black]: isBlack,
-          [styles.line_hover_nav]: !isBlack,
-          [styles.show]: menuOpen,
-        })}
-        aria-label="Header navigation"
-      >
-        <ul className={styles.nav_inner}>
-          {menuItems.map((item) => {
-            const isActiveLink =
-              (pathname.startsWith(item.href) && item.href != '/') ||
-              (pathname === '/' && pathname.startsWith(item.href))
-
-            return (
-              <li key={`menuItem-${item.label}`}>
-                <Link href={item.href}>
-                  <a
-                    onClick={() => {
-                      menuOpen && onMenuOpen()
-                    }}
-                    className={classNames({
-                      [styles.active]: isActiveLink,
-                    })}
-                  >
-                    {item.label}
-                  </a>
-                </Link>
-              </li>
-            )
+      {items && (
+        <nav
+          className={classNames(styles.nav, {
+            [styles.line_hover_nav_black]: isBlack,
+            [styles.line_hover_nav]: !isBlack,
+            [styles.show]: menuOpen,
           })}
-        </ul>
-      </nav>
+          aria-label="Header navigation"
+        >
+          <ul className={styles.nav_inner}>
+            {items.map((item) => {
+              const isActiveLink =
+                (pathname.startsWith(item.url) && item.url != '/') ||
+                (pathname === '/' && pathname.startsWith(item.url));
+
+              return (
+                <li key={`menuItem-${item.label}`}>
+                  <Link href={item.url}>
+                    <a
+                      onClick={() => {
+                        menuOpen && onMenuOpen();
+                      }}
+                      className={classNames({
+                        [styles.active]: isActiveLink,
+                      })}
+                    >
+                      {item.label}
+                    </a>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      )}
 
       <MenuButton
-        iconOpened={'/images/icon/icon_close.svg'}
-        iconClosed={'/images/icon/icon_menu.svg'}
+        iconOpened="/images/icon/icon_close.svg"
+        iconClosed="/images/icon/icon_menu.svg"
         onMenuOpen={onMenuOpen}
         aria-expanded={menuOpen}
         open={menuOpen}
       />
     </header>
-  )
-}
-
-export const HeaderNavigation = HeaderNavigationComponent
+  );
+};

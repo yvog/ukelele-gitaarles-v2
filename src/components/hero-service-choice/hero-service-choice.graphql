@@ -1,0 +1,12 @@
+fragment HeroServiceChoice on HeroServiceChoice {
+  __typename
+  id
+  mainNavigation {
+    items {
+      ...NavigationItem
+    }
+  }
+  servicePageHero {
+    ...ServicePageHero
+  }
+}

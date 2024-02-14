@@ -1,30 +1,32 @@
-import classNames from 'classnames'
-import styles from './button.module.scss'
-import React, { PropsWithChildren, useRef } from 'react'
+import classNames from 'classnames';
+import React, { useRef } from 'react';
+import styles from './button.module.scss';
 
-type ButtonComponentProps = PropsWithChildren<{
-  filled?: boolean
-  href: string
-  disabled?: boolean
-  onClickHandler?: (e: any) => void
-}>
-const ButtonComponent: React.FC<ButtonComponentProps> = ({
+type ButtonProps = {
+  children: React.ReactNode;
+  filled?: boolean;
+  href: string;
+  disabled?: boolean;
+  onClickHandler?: (e: any) => void;
+};
+
+export const Button: React.FC<ButtonProps> = ({
   children,
   filled = false,
   href,
   disabled = false,
   onClickHandler,
 }) => {
-  const isSmoothScrollBtn = href.startsWith('#') && href.length > 1
-  const ref = useRef<HTMLAnchorElement>(null)
+  const isSmoothScrollBtn = href.startsWith('#') && href.length > 1;
+  const ref = useRef<HTMLAnchorElement>(null);
 
   const smoothScrollIntoView = (e: React.MouseEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
     document.querySelector(ref.current.getAttribute('href')).scrollIntoView({
       behavior: 'smooth',
-    })
-  }
+    });
+  };
 
   return (
     <a
@@ -39,7 +41,5 @@ const ButtonComponent: React.FC<ButtonComponentProps> = ({
     >
       {children}
     </a>
-  )
-}
-
-export const Button = ButtonComponent
+  );
+};

@@ -17,5 +17,5 @@ sudo npm run prod:start
 
 ## Credits
 
-Designed by [Vera Geldhof](https://github.com/VGeldhof), visit [portfolio](https://verageldhof.nl)  
-Developed by [Yvo Geldhof](https://github.com/yvog)
+- Designed by [Vera Geldhof](https://github.com/VGeldhof)
+- Developed by [Yvo Geldhof](https://github.com/yvog)

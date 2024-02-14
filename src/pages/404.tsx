@@ -1,14 +1,15 @@
-import classNames from 'classnames'
-import { ExploreSignup, HeaderNavigation, Layout } from '../components'
-import { Button } from '../components/button/button'
+import { HeaderNavigation, LayoutMeta } from '../components';
+import { Button } from '../components/button/button';
 
-export default function FourOhFour() {
+export default function NotFound() {
   return (
-    <Layout
-      title="Pagina niet gevonden"
-      description="De opgevraagde pagina kon helaas niet worden gevonden."
-      robots={['noindex', 'nofollow']}
-    >
+    <>
+      <LayoutMeta
+        title="Pagina niet gevonden"
+        description="De opgevraagde pagina kon helaas niet worden gevonden."
+        robots={['noindex', 'nofollow']}
+      />
+
       <div className="main-container header">
         <HeaderNavigation variant="black" />
       </div>
@@ -20,14 +21,12 @@ export default function FourOhFour() {
               <h2>Pagina niet gevonden</h2>
               <p>De opgevraagde pagina kon helaas niet worden gevonden.</p>
               <Button filled href="/">
-                Terug
+                Terug naar home
               </Button>
             </div>
           </div>
         </div>
-
-        <ExploreSignup />
       </main>
-    </Layout>
-  )
+    </>
+  );
 }

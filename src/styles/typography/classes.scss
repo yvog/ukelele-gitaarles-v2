@@ -6,27 +6,27 @@
 */
 
 .h1 {
-  font-size: fluid(64, 72);
+  font-size: fluid(36, 48);
 }
 
 .h2 {
-  font-size: fluid(40, 56);
+  font-size: fluid(28, 36);
 }
 
 .h3 {
-  font-size: fluid(32, 48);
+  font-size: fluid(26, 28);
 }
 
 .h4 {
-  font-size: fluid(24, 40);
+  font-size: fluid(22, 26);
 }
 
 .h5 {
-  font-size: fluid(16, 32);
+  font-size: fluid(18, 22);
 }
 
 .h6 {
-  font-size: fluid(16, 24);
+  font-size: fluid(16, 18);
 }
 
 .body1 {
@@ -50,4 +50,21 @@
   font-size: fluid(10, 13);
   font-family: $paragraphFont;
   letter-spacing: 1px;
+}
+
+.link {
+  color: #333;
+  text-decoration: underline;
+
+  &:link,
+  &:visited,
+  &:active {
+    color: #222;
+    text-decoration: underline;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: #222;
+  }
 }

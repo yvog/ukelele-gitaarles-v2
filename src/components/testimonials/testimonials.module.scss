@@ -5,6 +5,7 @@
 .testimonials {
   position: relative;
   margin: $spacingMD 0 $spacingMD 0;
+  -webkit-user-select: none;
   user-select: none;
 
   .swiper_outer_container {
@@ -59,10 +60,6 @@
     z-index: -1;
   }
 
-  .testimonials_background {
-    z-index: -2;
-  }
-
   .testimonials_inner {
     margin: 0 auto;
     position: relative;
@@ -72,29 +69,6 @@
 
     h2 {
       color: #fff;
-    }
-
-    article {
-      margin-top: $spacingSM;
-      background: #fff;
-      border-radius: 16px;
-      padding: 24px;
-      position: relative;
-
-      h3 {
-        @extend .h6;
-      }
-
-      span {
-        color: $ukeGitBlue;
-        margin-top: 4px;
-        display: block;
-        font-family: $titleFont;
-      }
-
-      p {
-        margin-top: $spacingXXS;
-      }
     }
 
     a {

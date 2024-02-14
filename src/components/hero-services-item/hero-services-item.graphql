@@ -1,0 +1,8 @@
+fragment HeroMainServicesItem on HeroMainServicesItem {
+  __typename
+  id
+  icon
+  title
+  description
+  slug
+}

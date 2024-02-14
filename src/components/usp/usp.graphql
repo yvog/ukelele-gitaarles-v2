@@ -1,0 +1,8 @@
+fragment Usp on Usp {
+  __typename
+  id
+  compact
+  items {
+    ...UspItem
+  }
+}

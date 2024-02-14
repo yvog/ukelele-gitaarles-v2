@@ -1,0 +1,16 @@
+fragment ServicePageHero on ServicePageHero {
+  title
+  text {
+    html
+  }
+  kvpItems {
+    __typename
+    id
+    icon
+    text
+  }
+  button {
+    slug
+    label
+  }
+}

@@ -1,89 +1,98 @@
-import Head from 'next/head'
-import { PropsWithChildren, useEffect } from 'react'
-import { Footer } from '..'
+import React from 'react';
+import {
+  AboutMeFullFragment,
+  AboutMeSummaryFragment,
+  ContactFormFragment,
+  ContentBlockFragment,
+  CostsCalculatorFragment,
+  ExploreTrialLessonFragment,
+  FooterFragment,
+  HeroMainFragment,
+  HeroServiceChoiceFragment,
+  LayoutQuery,
+  QuoteFragment,
+  RepairMaintenanceFormFragment,
+  RowHeaderNavigationFragment,
+  ServicesContentFragment,
+  SignUpFormFragment,
+  TestimonialFragment,
+  UspFragment,
+} from '../../gql/graphql';
+import { AboutMeFull } from '../about-me-full/about-me-full';
+import { AboutMeSummary } from '../about-me-summary/about-me-summary';
+import { ContentBlock } from '../content-block/content-block';
+import { CostsCalculator } from '../costs-calculator/costs-calculator';
+import { ExploreTrialLesson } from '../explore-trial-lesson/explore-trial-lesson';
+import { Footer } from '../footer/footer';
+import { ContactForm } from '../forms/contact-form/contact-form';
+import { RepairMaintenanceForm } from '../forms/repair-maintenance-form/repair-maintenance-form';
+import { SignUpForm } from '../forms/sign-up-form/sign-up-form';
+import { HeroMain } from '../hero-main/hero-main';
+import { HeroServiceChoice } from '../hero-service-choice/hero-service-choice';
+import { Quote } from '../quote/quote';
+import { RowHeaderNavigation } from '../row-header-navigation/row-header-navigation';
+import { Services } from '../services/services';
+import { Testimonials } from '../testimonials/testimonials';
+import { Usp } from '../usp/usp';
 
-type LayoutProps = PropsWithChildren<{
-  title?: string
-  useReCaptcha?: boolean
-  description?: string
-  canonical?: string
-  robots?: string[]
-}>
+type UnifiedComponentProps =
+  | QuoteFragment
+  | HeroMainFragment
+  | ExploreTrialLessonFragment
+  | UspFragment
+  | AboutMeSummaryFragment
+  | TestimonialFragment
+  | FooterFragment
+  | RowHeaderNavigationFragment
+  | AboutMeFullFragment
+  | ServicesContentFragment
+  | HeroServiceChoiceFragment
+  | ContentBlockFragment
+  | RepairMaintenanceFormFragment
+  | CostsCalculatorFragment
+  | SignUpFormFragment
+  | ContactFormFragment;
 
-const LayoutComponent: React.FC<LayoutProps> = ({
-  children,
-  title = 'Ukelele-Gitaarles',
-  description,
-  useReCaptcha = false,
-  canonical = '',
-  robots = ['follow', 'index'],
-}) => {
-  const descr =
-    description ||
-    'Bert Geldhof geeft gitaarles, ukelele les en pianoles aan huis in Alphen, Leiden en omstreken. Daarnaast  repareert en onderhoudt hij snaarinstrumenten.'
+const availableComponents: Record<
+  UnifiedComponentProps['__typename'],
+  React.FC
+> = {
+  Quote: Quote,
+  HeroMain: HeroMain,
+  ExploreTrialLesson: ExploreTrialLesson,
+  Usp: Usp,
+  AboutMeSummary: AboutMeSummary,
+  Testimonial: Testimonials,
+  Footer: Footer,
+  RowHeaderNavigation: RowHeaderNavigation,
+  AboutMeFull: AboutMeFull,
+  HeroServiceChoice: HeroServiceChoice,
+  ServicesContent: Services,
+  ContentBlock: ContentBlock,
+  RepairMaintenanceForm: RepairMaintenanceForm,
+  CostsCalculator: CostsCalculator,
+  SignUpForm: SignUpForm,
+  ContactForm: ContactForm,
+};
 
-  const preventDefault = (e) => e.preventDefault()
+type LayoutProps = Pick<LayoutQuery['page'], 'layout'>;
 
-  const disableScroll = function () {
-    window.addEventListener('scroll', preventDefault, { passive: false })
-    window.addEventListener('wheel', preventDefault, { passive: false })
-    window.addEventListener('touchmove', preventDefault, { passive: false })
-  }
-
-  const enableScroll = function () {
-    window.removeEventListener('scroll', preventDefault)
-    window.removeEventListener('wheel', preventDefault)
-    window.removeEventListener('touchmove', preventDefault)
-  }
-
-  const onMobileMenuToggled = (e: any) => (e.detail.open ? disableScroll() : enableScroll())
-
-  useEffect(() => {
-    window.addEventListener('mobile-menu-toggled', onMobileMenuToggled, false)
-
-    return () => window.removeEventListener('mobile-menu-toggled', onMobileMenuToggled, true)
-  }, [])
-
+export const Layout: React.FC<LayoutProps> = (props) => {
   return (
     <>
-      <Head>
-        <meta charSet="utf-8" />
-        <title>{title} - Ukelele-Gitaarles</title>
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="format-detection" content="telephone=no,date=no" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="icon" type="image/png" href="/favicon.png" />
-        <meta name="description" content={descr} />
+      {props.layout?.map((componentProps: UnifiedComponentProps) => {
+        const componentType = componentProps.__typename;
+        const Component = availableComponents?.[componentType];
+        const key = `${componentType}-${componentProps?.id}`;
 
-        <meta name="robots" content={robots.join(',')} />
-        <link rel="canonical" href={`https://ukelele-gitaarles.nl${canonical}`} />
+        if (!Component) {
+          console.warn(`Could not render component: ${componentType}`);
 
-        <meta property="og:locale" content="nl_NL" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={`${title} - Ukelele-Gitaarles`} />
-        <meta property="og:description" content={descr} />
-        <meta property="og:url" content={`https://ukelele-gitaarles.nl${canonical}`} />
-        <meta property="og:site_name" content="Bert Geldhof - Ukelele-Gitaarles" />
+          return <React.Fragment key={key}>{componentType}</React.Fragment>;
+        }
 
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:description" content={descr} />
-        <meta name="twitter:title" content={`${title} - Ukelele-Gitaarles`} />
-
-        {useReCaptcha && (
-          <script
-            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY}`}
-            data-size="invisible"
-          ></script>
-        )}
-      </Head>
-
-      <h1 className="hidden">{title} - Ukelele-Gitaarles</h1>
-
-      {children}
-
-      <Footer />
+        return <Component key={key} {...componentProps} />;
+      })}
     </>
-  )
-}
-
-export const Layout = LayoutComponent
+  );
+};

@@ -1,34 +1,27 @@
-import classNames from 'classnames'
-import React from 'react'
-import { UspItem } from '..'
-import styles from './usp.module.scss'
-import iconMetronome from '../../../public/images/icon/icon_metronome.svg'
-import iconHome from '../../../public/images/icon/icon_home.svg'
-import iconKnowledge from '../../../public/images/icon/icon_knowledge.svg'
+import classNames from 'classnames';
+import React from 'react';
+import { UspFragment, UspItemFragment } from '../../gql/graphql';
+import { UspItem } from '../usp-item/usp-item';
+import styles from './usp.module.scss';
 
-const UspComponent: React.FC = () => {
+type UspProps = UspFragment;
+
+export const Usp: React.FC<UspProps> = ({ items, compact }) => {
   return (
-    <section className={classNames(styles.usp, 'container')}>
-      <h2>
-        Je hoeft er de deur niet voor uit, want ik bied de mogelijkheid om gitaar-, ukelele- of
-        pianoles bij jou thuis te geven.
-      </h2>
-      <div className={styles.usp_items}>
-        <UspItem icon={iconMetronome}>
-          Je favoriete muziek leren spelen in je eigen tempo. De gebruikte lesmethode is geschikt
-          voor zowel jongeren als ouderen, die graag de gitaar, ukelele of piano willen bespelen
-        </UspItem>
-        <UspItem icon={iconHome}>
-          Mogelijkheid tot lessen thuis, je hoeft er de deur niet voor uit. Met de lessen wordt
-          rekening gehouden met wat je wilt leren en welke liedjes jij graag zou willen leren spelen
-        </UspItem>
-        <UspItem icon={iconKnowledge}>
-          Het is niet noodzakelijk om al voorkennis te hebben van muziek(notenschrift). Leren spelen
-          met tablatuur is daarnaast ook mogelijk
-        </UspItem>
-      </div>
-    </section>
-  )
-}
-
-export const Usp = UspComponent
+    <div className="main-container body">
+      <section
+        className={classNames(
+          styles.usp,
+          'container',
+          compact ? styles.compact : ''
+        )}
+      >
+        <div className={styles.usp_items}>
+          {(items as UspItemFragment[])?.map((item) => (
+            <UspItem key={`${item.__typename}-${item.id}`} {...item} />
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+};

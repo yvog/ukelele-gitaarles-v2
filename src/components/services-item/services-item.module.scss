@@ -1,5 +1,4 @@
 @import '../../styles/variables';
-@import '../../styles/typography/classes';
 @import '../../styles/util/fluid';
 
 .services_item {
@@ -40,7 +39,6 @@
     color: #fff;
     text-align: center;
     transition: color 0.15s ease;
-    @extend .h6;
   }
 
   &:hover,

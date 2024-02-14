@@ -1,0 +1,36 @@
+@import '../../styles/variables';
+@import '../../styles/util/fluid';
+
+.about_me_usps {
+  display: flex;
+  gap: $spacingSM;
+}
+
+.image {
+  width: fluid(150, 400) !important;
+  height: fluid(150, 400) !important;
+  object-fit: cover;
+  border-radius: 100% !important;
+  box-shadow: $defaultBoxShadow;
+}
+
+@media (max-width: $mobile) {
+  .image {
+    margin: $spacingXS auto $spacingXS auto !important;
+  }
+
+  .content {
+    h2 {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: $smallMobile) {
+  .about_me_usps {
+    display: block;
+    & > article:not(:last-of-type) {
+      margin-bottom: $spacingXS;
+    }
+  }
+}

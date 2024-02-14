@@ -37,3 +37,6 @@ env.php
 # imagemin
 /imagemin
 
+# graphql
+/src/gql
+

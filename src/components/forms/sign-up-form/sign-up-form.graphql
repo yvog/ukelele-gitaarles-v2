@@ -1,0 +1,4 @@
+fragment SignUpForm on SignUpForm {
+  __typename
+  id
+}

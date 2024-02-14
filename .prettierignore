@@ -1,5 +1,8 @@
 .next/*
 node_modules/*
 out/*
-.vs/*
+.vscode/*
 build/*
+conf/*
+public/*
+src/gql/*

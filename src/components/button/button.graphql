@@ -1,0 +1,4 @@
+fragment Button on Button {
+  slug
+  label
+}

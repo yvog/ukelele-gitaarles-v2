@@ -1,15 +1,14 @@
-import { PropsWithChildren } from 'react'
-import styles from './usp-item.module.scss'
+import { UspItemFragment } from '../../gql/graphql';
+import { icons } from '../icons/icons';
+import styles from './usp-item.module.scss';
 
-type UspItemProps = PropsWithChildren<{
-  icon: string
-}>
+type UspItemProps = UspItemFragment;
 
-const UspItemComponent: React.FC<UspItemProps> = ({ icon, children }) => {
+export const UspItem: React.FC<UspItemProps> = ({ icon, text }) => {
   return (
     <div className={styles.usp_item}>
       <object
-        data={icon}
+        data={icons[icon]}
         type="image/svg+xml"
         className={styles.icon}
         aria-hidden="true"
@@ -17,9 +16,7 @@ const UspItemComponent: React.FC<UspItemProps> = ({ icon, children }) => {
       >
         usp icon
       </object>
-      <p>{children}</p>
+      <p>{text}</p>
     </div>
-  )
-}
-
-export const UspItem = UspItemComponent
+  );
+};

@@ -1,0 +1,30 @@
+query Layout($slug: String!) {
+  page(where: { slug: $slug }) {
+    id
+    slug
+    title
+    robots
+    pageDescription {
+      description
+    }
+    useReCaptcha
+    layout {
+      ...HeroMain
+      ...Quote
+      ...ExploreTrialLesson
+      ...Usp
+      ...AboutMeSummary
+      ...Testimonial
+      ...Footer
+      ...RowHeaderNavigation
+      ...AboutMeFull
+      ...ServicesContent
+      ...HeroServiceChoice
+      ...ContentBlock
+      ...RepairMaintenanceForm
+      ...CostsCalculator
+      ...SignUpForm
+      ...ContactForm
+    }
+  }
+}

@@ -88,12 +88,13 @@
         max-width: unset !important;
         align-items: flex-start;
         z-index: 999;
-        padding: 100px;
+        padding: 136px;
         margin: unset;
         color: #fff;
 
         ul {
           padding-left: 0;
+
           li {
             a {
               display: block;
@@ -102,6 +103,7 @@
               font-family: $titleFont;
               color: #fff !important;
               font-size: 18px;
+              margin-left: 0;
 
               &:after {
                 background: #fff;

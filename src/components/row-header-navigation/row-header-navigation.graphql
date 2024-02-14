@@ -1,0 +1,9 @@
+fragment RowHeaderNavigation on RowHeaderNavigation {
+  __typename
+  id
+  mainNavigation {
+    items {
+      ...NavigationItem
+    }
+  }
+}

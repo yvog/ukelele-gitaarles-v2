@@ -1,29 +1,30 @@
-import ReactMarkdown from 'react-markdown'
-import { schemaRequiresTrueValue } from './schemaRequiresTrueValue'
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
+import { schemaRequiresTrueValue } from './schemaRequiresTrueValue';
 
-function CheckboxWidget(props) {
-  const {
-    schema,
-    id,
-    value,
-    disabled,
-    readonly,
-    label,
-    autofocus = false,
-    onBlur,
-    onFocus,
-    onChange,
-    DescriptionField,
-  } = props
-
+export const CheckboxWidget: React.FC<any> = ({
+  schema,
+  id,
+  value,
+  disabled,
+  readonly,
+  label,
+  autofocus = false,
+  onBlur,
+  onFocus,
+  onChange,
+  DescriptionField,
+}) => {
   // Because an unchecked checkbox will cause html5 validation to fail, only add
   // the "required" attribute if the field value must be "true", due to the
   // "const" or "enum" keywords
-  const required = schemaRequiresTrueValue(schema)
+  const required = schemaRequiresTrueValue(schema);
 
   return (
     <div className={`checkbox ${disabled || readonly ? 'disabled' : ''}`}>
-      {schema.description && <DescriptionField description={schema.description} />}
+      {schema.description && (
+        <DescriptionField description={schema.description} />
+      )}
       <label>
         <input
           type="checkbox"
@@ -41,7 +42,5 @@ function CheckboxWidget(props) {
         </ReactMarkdown>
       </label>
     </div>
-  )
-}
-
-export default CheckboxWidget
+  );
+};

@@ -1,9 +1,9 @@
-import { verifyRecaptchaToken } from '../../server/utils'
-import { VercelRequest, VercelResponse } from '@vercel/node'
+import { verifyRecaptchaToken } from '../../server/utils';
+import { VercelRequest, VercelResponse } from '@vercel/node';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
-  const postalCode = req.body.postalCode
-  const token = req.body.token
+  const postalCode = req.body.postalCode;
+  const token = req.body.token;
 
   await verifyRecaptchaToken(token).then(async (recaptchaRes) => {
     if (
@@ -15,7 +15,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       res.send({
         error: true,
         reason: 'invalid request',
-      })
+      });
     }
 
     await fetch(
@@ -36,6 +36,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           error: true,
           ...data,
         })
-      )
-  })
+      );
+  });
 }

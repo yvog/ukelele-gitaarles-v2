@@ -1,0 +1,11 @@
+fragment AboutMeFull on AboutMeFull {
+  __typename
+  id
+  name
+  aboutMeText: text {
+    html
+  }
+  photo {
+    url
+  }
+}

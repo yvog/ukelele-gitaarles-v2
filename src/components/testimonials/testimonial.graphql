@@ -1,0 +1,11 @@
+fragment Testimonial on Testimonial {
+  __typename
+  id
+  testimonialsTitle: title
+  testimonials: items {
+    ...TestimonialItem
+  }
+  testimonialsButton: button {
+    ...Button
+  }
+}

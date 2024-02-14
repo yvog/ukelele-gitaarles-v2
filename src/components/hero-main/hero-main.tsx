@@ -1,28 +1,48 @@
-import Head from 'next/head'
-import React from 'react'
-import { Button, HeaderNavigation, HeroServices, HeroWrapper } from '..'
-import styles from './hero-main.module.scss'
+import React from 'react';
+import { Button, HeaderNavigation, HeroServices, HeroWrapper } from '..';
+import {
+  ButtonFragment,
+  HeroMainFragment,
+  HeroMainServicesItemFragment,
+  NavigationItemFragment,
+} from '../../gql/graphql';
+import styles from './hero-main.module.scss';
 
-const HeroMainComponent: React.FC = () => {
+type HeroMainProps = HeroMainFragment;
+
+export const HeroMain: React.FC<HeroMainProps> = ({
+  heroMainServices,
+  mainNavigation,
+  button,
+  description,
+  title,
+}) => {
+  const { slug, label } = button as ButtonFragment;
+
   return (
     <>
       <HeroWrapper classes={[styles.hero_main]}>
         <div className="main-container header header-main-container">
-          <HeaderNavigation />
+          <HeaderNavigation
+            items={mainNavigation.items as NavigationItemFragment[]}
+          />
 
           <section id={styles.hero_info}>
-            <h2 className={styles.new_typography}>Bert Geldhof</h2>
-            <p>
-              Met veel plezier geef ik persoonlijke ukelele-, gitaar- en pianolessen aan huis in
-              Alphen aan den Rijn, Leiden en omstreken.
-            </p>
-            <Button href="/diensten">Ontdek mijn diensten</Button>
+            <h2 className={styles.new_typography}>{title}</h2>
+            <p>{description}</p>
+            {button && <Button href={slug}>{label}</Button>}
           </section>
         </div>
 
         <picture>
-          <source media="(min-width:1200px)" srcSet="/images/background/hero_1600x900.webp" />
-          <source media="(min-width:0)" srcSet="/images/background/hero_768x432.webp" />
+          <source
+            media="(min-width:1200px)"
+            srcSet="/images/background/hero_1600x900.webp"
+          />
+          <source
+            media="(min-width:0)"
+            srcSet="/images/background/hero_768x432.webp"
+          />
           <img
             src="/images/background/hero_1600x900.webp"
             alt="alt"
@@ -35,10 +55,10 @@ const HeroMainComponent: React.FC = () => {
       </HeroWrapper>
 
       <div className="main-container">
-        <HeroServices />
+        <HeroServices
+          services={heroMainServices as HeroMainServicesItemFragment[]}
+        />
       </div>
     </>
-  )
-}
-
-export const HeroMain = HeroMainComponent
+  );
+};

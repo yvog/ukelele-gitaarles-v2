@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+
+.quote {
+  max-width: $mainInnerContainerMaxWidth;
+  margin: 0 auto;
+
+  h2 {
+    margin-bottom: $spacingMD;
+  }
+}

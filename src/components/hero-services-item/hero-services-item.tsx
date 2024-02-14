@@ -1,13 +1,13 @@
-import { PropsWithChildren } from 'react'
-import styles from './hero-services-item.module.scss'
+import styles from './hero-services-item.module.scss';
 
-type HeroServicesItemProps = PropsWithChildren<{
-  icon: string
-  title: string
-  href: string
-}>
+type HeroServicesItemProps = {
+  icon: string;
+  title: string;
+  href: string;
+  children: React.ReactNode;
+};
 
-export const HeroServicesItemComponent: React.FC<HeroServicesItemProps> = ({
+export const HeroServicesItem: React.FC<HeroServicesItemProps> = ({
   icon,
   title,
   href,
@@ -32,7 +32,5 @@ export const HeroServicesItemComponent: React.FC<HeroServicesItemProps> = ({
         <p>{children}</p>
       </div>
     </div>
-  )
-}
-
-export const HeroServicesItem = HeroServicesItemComponent
+  );
+};

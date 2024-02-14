@@ -1,0 +1,7 @@
+fragment RepairMaintenanceForm on RepairMaintenanceForm {
+  __typename
+  id
+  contentBlock {
+    ...ContentBlock
+  }
+}

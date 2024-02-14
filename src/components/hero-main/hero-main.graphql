@@ -1,0 +1,17 @@
+fragment HeroMain on HeroMain {
+  __typename
+  id
+  title
+  description
+  heroMainServices {
+    ...HeroMainServicesItem
+  }
+  mainNavigation {
+    items {
+      ...NavigationItem
+    }
+  }
+  button {
+    ...Button
+  }
+}

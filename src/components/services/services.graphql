@@ -1,0 +1,9 @@
+fragment ServicesContent on ServicesContent {
+  __typename
+  id
+  servicesTitle: title
+  servicesText: text
+  servicesItems: items {
+    ...ServicesContentItem
+  }
+}

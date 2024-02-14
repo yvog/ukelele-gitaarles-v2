@@ -1,0 +1,5 @@
+fragment TestimonialItem on TestimonialItem {
+  id
+  name
+  text
+}

@@ -1,0 +1,4 @@
+fragment ContactForm on ContactForm {
+  __typename
+  id
+}

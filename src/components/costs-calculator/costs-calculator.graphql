@@ -1,0 +1,5 @@
+fragment CostsCalculator on CostsCalculator {
+  __typename
+  id
+  priceTable
+}

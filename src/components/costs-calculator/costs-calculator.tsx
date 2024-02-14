@@ -1,87 +1,100 @@
-import classNames from 'classnames'
-import { useState } from 'react'
-import SyncLoader from 'react-spinners/SyncLoader'
-import { Button } from '..'
-import styles from './costs-calculator.module.scss'
-import priceTable from './prices.json'
-import iconChevronDown from '../../../public/images/icon/icon_chevron_down.svg'
+import { useState } from 'react';
+import SyncLoader from 'react-spinners/SyncLoader';
+import { Button } from '..';
+import iconChevronDown from '../../../public/images/icon/icon_chevron_down.svg';
+import { CostsCalculatorFragment } from '../../gql/graphql';
+import styles from './costs-calculator.module.scss';
 
 type LocationData = {
-  lat: string
-  lng: string
-}
+  lat: string;
+  lng: string;
+};
 
-const CostsCalculatorComponent: React.FC = () => {
-  const VALID_POSTALCODE_REGEX = /(^\d{4})(\w{2}|[ ]\w{2})$/
-  const MAX_KM_RANGE = 40
-  const LOADING_DELAY = 1000
+type CostsCalculatorProps = CostsCalculatorFragment;
 
-  const [postalCode, setPostalCode] = useState<string>('')
-  const [lessonTime, setLessonTime] = useState<string>('30')
-  const [persons, setPersons] = useState<string>('1')
+export const CostsCalculator: React.FC<CostsCalculatorProps> = ({
+  priceTable,
+}) => {
+  const VALID_POSTALCODE_REGEX = /(^\d{4})(\w{2}|[ ]\w{2})$/;
+  const MAX_KM_RANGE = 40;
+  const LOADING_DELAY = 1000;
 
-  const [error, setError] = useState<string>('')
-  const [price, setPrice] = useState<number>(null)
-  const [loading, setLoading] = useState<boolean>(false)
+  const [postalCode, setPostalCode] = useState<string>('');
+  const [lessonTime, setLessonTime] = useState<string>('30');
+  const [persons, setPersons] = useState<string>('1');
+
+  const [error, setError] = useState<string>('');
+  const [price, setPrice] = useState<number>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const onCalculationStarted = (e: any) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    setError('')
-    setPrice(0)
+    setError('');
+    setPrice(0);
 
     if (postalCode.trim() === '') {
-      showError('Vul je postcode in', true)
+      showError('Vul je postcode in', true);
 
-      return
+      return;
     }
 
-    setLoading(true)
+    setLoading(true);
 
     if (!VALID_POSTALCODE_REGEX.test(postalCode)) {
-      showError('De ingevulde postcode is ongeldig')
+      showError('De ingevulde postcode is ongeldig');
 
-      return
+      return;
     }
 
-    convertPostalCodeToLatLng(postalCode.replace(' ', ''), (location: LocationData) => {
-      calculateDistance(location)
-    })
-  }
+    convertPostalCodeToLatLng(
+      postalCode.replace(' ', ''),
+      (location: LocationData) => {
+        calculateDistance(location);
+      }
+    );
+  };
 
   const onDistanceCalculated = (distance: number): boolean => {
-    let price = 0
-    let between: string[]
-    let kilometers: string
-    let kilometerDistance: number = Math.round(distance / 1000)
+    let price = 0;
+    let between: string[];
+    let kilometers: string;
+    let kilometerDistance: number = Math.round(distance / 1000);
 
     if (kilometerDistance > MAX_KM_RANGE) {
-      showError('Lessen aan huis gelden tot ' + MAX_KM_RANGE + ' kilometer vanaf mijn adres')
+      showError(
+        'Lessen aan huis gelden tot ' +
+          MAX_KM_RANGE +
+          ' kilometer vanaf mijn adres'
+      );
 
-      return false
+      return false;
     }
 
     for (kilometers in priceTable) {
-      between = kilometers.split('-')
+      between = kilometers.split('-');
 
-      if (kilometerDistance >= Number(between[0]) && kilometerDistance <= Number(between[1])) {
-        price = priceTable[kilometers][lessonTime][persons].price
+      if (
+        kilometerDistance >= Number(between[0]) &&
+        kilometerDistance <= Number(between[1])
+      ) {
+        price = priceTable[kilometers][lessonTime][persons].price;
 
-        break
+        break;
       }
     }
 
     if (!price) {
-      showError('Leskosten konden niet worden berekend')
+      showError('Leskosten konden niet worden berekend');
 
-      return false
+      return false;
     }
 
-    setPrice(price)
-    setLoading(false)
+    setPrice(price);
+    setLoading(false);
 
-    return true
-  }
+    return true;
+  };
 
   const convertPostalCodeToLatLng = (
     postalCode: string,
@@ -94,16 +107,16 @@ const CostsCalculatorComponent: React.FC = () => {
       },
       (json: any) => {
         if (json.error) {
-          console.error(json)
-          showError('Ingevulde postcode is mogelijk onjuist')
+          console.error(json);
+          showError('Ingevulde postcode is mogelijk onjuist');
 
-          return
+          return;
         }
-        onConverted(json.results[0].geometry.location)
+        onConverted(json.results[0].geometry.location);
       },
       'postalcodetolatlng'
-    )
-  }
+    );
+  };
 
   const calculateDistance = (location: LocationData): void => {
     postData(
@@ -113,23 +126,23 @@ const CostsCalculatorComponent: React.FC = () => {
       },
       (json: any) => {
         if (json.error) {
-          showError('Afstand kon niet worden berekend')
+          showError('Afstand kon niet worden berekend');
 
-          return
+          return;
         }
 
         try {
-          const distance = json.rows[0].elements[0].distance.value
+          const distance = json.rows[0].elements[0].distance.value;
 
-          onDistanceCalculated(distance)
+          onDistanceCalculated(distance);
         } catch (e) {
-          console.error(e)
-          showError('Afstand kon niet worden berekend')
+          console.error(e);
+          showError('Afstand kon niet worden berekend');
         }
       },
       'calculatedistance'
-    )
-  }
+    );
+  };
 
   const postData = (
     url: string,
@@ -137,12 +150,12 @@ const CostsCalculatorComponent: React.FC = () => {
     onSuccess: (json: { [key: string]: any }) => void,
     recaptchaAction: string
   ): void => {
-    const googleRecaptcha = (window as any).grecaptcha
+    const googleRecaptcha = (window as any).grecaptcha;
 
     if (!googleRecaptcha) {
-      showError('ReCaptcha kon niet worden geladen. Herlaad de pagina.')
+      showError('Google ReCaptcha kon niet worden geladen. Herlaad de pagina.');
 
-      return
+      return;
     }
 
     googleRecaptcha.ready(() => {
@@ -165,130 +178,145 @@ const CostsCalculatorComponent: React.FC = () => {
             .then((stream: any) => stream.json())
             .then(onSuccess)
             .catch((e: any) => {
-              console.error(e)
-              showError('Er ging iets mis')
-            })
-        })
-    })
-  }
+              console.error(e);
+              showError('Er ging iets mis');
+            });
+        });
+    });
+  };
 
   const showError = (message: string, force: boolean = false): void => {
     if (force) {
-      setError(message)
+      setError(message);
     } else {
       setTimeout(() => {
-        setLoading(false)
-        setError(message)
-      }, LOADING_DELAY)
+        setLoading(false);
+        setError(message);
+      }, LOADING_DELAY);
     }
-  }
+  };
 
   const onCalculateAgain = (e: any) => {
-    e.preventDefault()
-    setPrice(0)
-    setError('')
-  }
+    e.preventDefault();
+    setPrice(0);
+    setError('');
+  };
 
   return (
-    <div className={styles.costs_calculator}>
-      {!!price && (
-        <>
-          <div className={classNames(styles.message_box, styles.price)}>
-            Jouw leskosten worden €{price} per les
-          </div>
-          <Button
-            filled
-            href="#"
-            onClickHandler={(e) => {
-              onCalculateAgain(e)
-            }}
-          >
-            Opnieuw berekenen
-          </Button>
-        </>
-      )}
-
-      {!price && (
-        <>
-          <h3>Leskosten berekenen</h3>
-
-          <div>
-            <label>Je postcode</label>
-            <input
-              type="text"
-              value={postalCode}
-              onChange={(e) => {
-                setPostalCode(e.target.value)
-              }}
-              id="user_postalcode"
-              name="userpostalcode"
-              placeholder="1234 AB"
-            />
-          </div>
-
-          <div>
-            <label>Gewenste lestijd</label>
-            <select
-              id="user_time"
-              value={lessonTime}
-              onChange={(e) => {
-                setLessonTime(e.target.value)
-              }}
-            >
-              <option value="30">30 minuten</option>
-              <option value="45">45 minuten</option>
-              <option value="60">60 minuten</option>
-            </select>
-            <object data={iconChevronDown} width="18" height="18" aria-hidden="true" tabIndex={-1}>
-              chevron down
-            </object>
-          </div>
-
-          <div>
-            <label>
-              Hoeveel personen krijgen <br /> tegelijkertijd les?
-            </label>
-            <select
-              id="user_persons"
-              value={persons}
-              onChange={(e) => {
-                setPersons(e.target.value)
-              }}
-            >
-              <option value="1">Één persoon</option>
-              <option value="2">Twee personen</option>
-              <option value="3">Drie personen</option>
-            </select>
-
-            <object data={iconChevronDown} width="18" height="18" aria-hidden="true" tabIndex={-1}>
-              chevron down
-            </object>
-          </div>
-
-          <div>
+    <section className="main-container body">
+      <div className={styles.costs_calculator}>
+        {!!price && (
+          <>
+            <div className={styles.price}>
+              Jouw leskosten worden €{price} per les
+            </div>
             <Button
-              disabled={loading}
               filled
               href="#"
               onClickHandler={(e) => {
-                onCalculationStarted(e)
+                onCalculateAgain(e);
               }}
             >
-              Bereken leskosten
+              Opnieuw berekenen
             </Button>
+          </>
+        )}
 
-            {loading && (
-              <div className={styles.spinner}>
-                <SyncLoader size={16} color={'#1193f5'} loading={loading} />
-              </div>
-            )}
-          </div>
-        </>
-      )}
+        {!price && (
+          <>
+            <h3>Leskosten berekenen</h3>
 
-      {error && <div className={styles.errors}>{error}</div>}
-    </div>
-  )
-}
+            <div>
+              <label>Je postcode</label>
+              <input
+                title="Postcode"
+                type="text"
+                value={postalCode}
+                onChange={(e) => {
+                  setPostalCode(e.target.value);
+                }}
+                id="user_postalcode"
+                name="userpostalcode"
+                placeholder="1234 AB"
+              />
+            </div>
 
-export const CostsCalculator = CostsCalculatorComponent
+            <div>
+              <label>Gewenste lestijd</label>
+              <select
+                title="Gewenste lestijd"
+                id="user_time"
+                value={lessonTime}
+                onChange={(e) => {
+                  setLessonTime(e.target.value);
+                }}
+              >
+                <option value="30">30 minuten</option>
+                <option value="45">45 minuten</option>
+                <option value="60">60 minuten</option>
+              </select>
+              <object
+                data={iconChevronDown}
+                width="18"
+                height="18"
+                aria-hidden="true"
+                tabIndex={-1}
+              >
+                chevron down
+              </object>
+            </div>
+
+            <div>
+              <label>
+                Hoeveel personen krijgen <br /> tegelijkertijd les?
+              </label>
+              <select
+                title="Hoeveel personen"
+                id="user_persons"
+                value={persons}
+                onChange={(e) => {
+                  setPersons(e.target.value);
+                }}
+              >
+                <option value="1">Één persoon</option>
+                <option value="2">Twee personen</option>
+                <option value="3">Drie personen</option>
+              </select>
+
+              <object
+                data={iconChevronDown}
+                width="18"
+                height="18"
+                aria-hidden="true"
+                tabIndex={-1}
+              >
+                chevron down
+              </object>
+            </div>
+
+            <div>
+              <Button
+                disabled={loading}
+                filled
+                href="#"
+                onClickHandler={(e) => {
+                  onCalculationStarted(e);
+                }}
+              >
+                Bereken leskosten
+              </Button>
+
+              {loading && (
+                <div className={styles.spinner}>
+                  <SyncLoader size={16} color="#1193f5" loading={loading} />
+                </div>
+              )}
+            </div>
+          </>
+        )}
+
+        {error && <div className={styles.errors}>{error}</div>}
+      </div>
+    </section>
+  );
+};

@@ -1,0 +1,5 @@
+fragment UspItem on UspItem {
+  id
+  icon
+  text
+}

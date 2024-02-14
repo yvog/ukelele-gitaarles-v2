@@ -1,0 +1,5 @@
+fragment Quote on Quote {
+  __typename
+  id
+  quote: text
+}

@@ -1,0 +1,10 @@
+fragment ServicesContentItem on ServicesContentItem {
+  __typename
+  id
+  firstTitle
+  secondTitle
+  url
+  background {
+    url
+  }
+}

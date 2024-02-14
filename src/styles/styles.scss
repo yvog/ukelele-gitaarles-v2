@@ -55,23 +55,6 @@ body {
   }
 }
 
-.blue-link {
-  color: #333;
-  text-decoration: underline;
-
-  &:link,
-  &:visited,
-  &:active {
-    color: #222;
-    text-decoration: underline;
-  }
-
-  &:hover {
-    text-decoration: none;
-    color: #222;
-  }
-}
-
 a {
   text-decoration: none;
 
@@ -145,10 +128,6 @@ a {
   }
 }
 
-.max-width-content {
-  width: 75%;
-}
-
 .main-container {
   margin: 0 auto;
   max-width: $mainContainerMaxWidth;
@@ -172,12 +151,6 @@ a {
   min-height: inherit;
   display: flex;
   flex-wrap: wrap;
-}
-
-@media (max-width: $smallDesktop) {
-  .max-width-content {
-    width: unset;
-  }
 }
 
 @media (max-width: $mobile) {

@@ -1,6 +1,5 @@
 @import '../../styles/variables';
 @import '../../styles/nav';
-@import '../../styles/typography/classes';
 
 .footer {
   color: #fff;
@@ -16,7 +15,6 @@
     }
 
     h3 {
-      @extend .h6;
       margin-bottom: $spacingXS;
     }
 

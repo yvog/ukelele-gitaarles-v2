@@ -1,0 +1,6 @@
+fragment NavigationItem on NavigationItem {
+  __typename
+  id
+  url
+  label
+}

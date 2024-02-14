@@ -1,0 +1,14 @@
+fragment AboutMeSummary on AboutMeSummary {
+  __typename
+  id
+  photo {
+    url
+  }
+  name
+  aboutMe: text {
+    html
+  }
+  button {
+    ...Button
+  }
+}

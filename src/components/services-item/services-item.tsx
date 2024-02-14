@@ -1,14 +1,11 @@
-import styles from './services-item.module.scss'
+import { ServicesContentItemFragment } from '../../gql/graphql';
+import { transformHygraphImage } from '../../util/util';
+import styles from './services-item.module.scss';
 
-type ServicesItemComponentProps = {
-  src: string
-  firstTitle: string
-  secondTitle: string
-  url: string
-}
+type ServicesItemProps = ServicesContentItemFragment;
 
-const ServicesItemComponent: React.FC<ServicesItemComponentProps> = ({
-  src,
+export const ServicesItem: React.FC<ServicesItemProps> = ({
+  background,
   firstTitle,
   secondTitle,
   url,
@@ -16,7 +13,14 @@ const ServicesItemComponent: React.FC<ServicesItemComponentProps> = ({
   return (
     <div className={styles.item_container}>
       <a href={url} className={styles.services_item}>
-        <img src={src} width="300" height="200" alt={src} loading="eager" />
+        <img
+          src={transformHygraphImage(background.url, 300, 200)}
+          width="300"
+          height="200"
+          alt={`${firstTitle} & ${secondTitle}`}
+          loading="eager"
+        />
+
         <h3>
           {firstTitle}
           <span className={styles.divider}></span>
@@ -24,7 +28,5 @@ const ServicesItemComponent: React.FC<ServicesItemComponentProps> = ({
         </h3>
       </a>
     </div>
-  )
-}
-
-export const ServicesItem = ServicesItemComponent
+  );
+};

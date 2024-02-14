@@ -1,9 +1,14 @@
 // based on: https://css-tricks.com/simplified-fluid-typography/
 @function fluid($min, $max) {
-  $scale: (($max - $min) / ($mainContainerMaxWidthInt - $mainContainerMinWidthInt));
+  $scale: (
+    ($max - $min) / ($mainContainerMaxWidthInt - $mainContainerMinWidthInt)
+  );
   $base: round($min - ($scale * $mainContainerMinWidthInt));
 
   @return calc(
-    max(#{$min}px, min(calc(#{$base}px + #{max(round($scale * 100), 0.1)}vw), #{$max}px))
+    max(
+      #{$min}px,
+      min(calc(#{$base}px + #{max(round($scale * 100), 0.1)}vw), #{$max}px)
+    )
   );
 }

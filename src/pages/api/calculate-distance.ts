@@ -1,8 +1,8 @@
-import { verifyRecaptchaToken } from '../../server/utils'
+import { verifyRecaptchaToken } from '../../server/utils';
 
 export default async function handler(req, res) {
-  const latlng = req.body.latlng
-  const token = req.body.token
+  const latlng = req.body.latlng;
+  const token = req.body.token;
 
   await verifyRecaptchaToken(token).then(async (recaptchaRes) => {
     if (
@@ -14,7 +14,7 @@ export default async function handler(req, res) {
       res.send({
         error: true,
         reason: 'invalid request',
-      })
+      });
     }
 
     await fetch(
@@ -35,6 +35,6 @@ export default async function handler(req, res) {
           error: true,
           ...data,
         })
-      )
-  })
+      );
+  });
 }

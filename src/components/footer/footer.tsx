@@ -1,17 +1,40 @@
-import { default as classNames } from 'classnames'
-import iconFacebook from '../../../public/images/icon/icon_facebook.svg'
-import iconEmail from '../../../public/images/icon/icon_email.svg'
-import iconTelephone from '../../../public/images/icon/icon_telephone.svg'
-import styles from './footer.module.scss'
+import { default as classNames } from 'classnames';
+import iconEmail from '../../../public/images/icon/icon_email.svg';
+import iconFacebook from '../../../public/images/icon/icon_facebook.svg';
+import iconTelephone from '../../../public/images/icon/icon_telephone.svg';
+import { FooterFragment, NavigationItemFragment } from '../../gql/graphql';
+import styles from './footer.module.scss';
 
-const FooterComponent: React.FC = () => {
+type FooterProps = FooterFragment;
+
+export const Footer: React.FC<FooterProps> = ({
+  contactTitle,
+  contactUrl,
+  facebookUrl,
+  kvk,
+  navigation,
+  navigationTitle,
+  telephoneNumber,
+  companyDetailsTitle,
+  companyName,
+  copyright,
+}) => {
   return (
     <footer className={classNames(styles.footer, 'container')}>
       <div className={styles.footer_inner}>
         <picture>
-          <source media="(min-width:1200px)" srcSet="/images/background/blue_background.webp" />
-          <source media="(min-width:992px)" srcSet="/images/background/blue_background.webp" />
-          <source media="(min-width:0)" srcSet="/images/background/blue_background.webp" />
+          <source
+            media="(min-width:1200px)"
+            srcSet="/images/background/blue_background.webp"
+          />
+          <source
+            media="(min-width:992px)"
+            srcSet="/images/background/blue_background.webp"
+          />
+          <source
+            media="(min-width:0)"
+            srcSet="/images/background/blue_background.webp"
+          />
           <img
             src="/images/background/blue_background.webp"
             loading="lazy"
@@ -25,48 +48,47 @@ const FooterComponent: React.FC = () => {
         <div className="main-container">
           <div className={styles.inner_container}>
             <div className={styles.footer_nav}>
-              <h3>Snel navigeren</h3>
-              <nav className={styles.line_hover_nav} aria-label="Main navigation">
+              <h3>{navigationTitle}</h3>
+              <nav
+                className={styles.line_hover_nav}
+                aria-label={navigationTitle}
+              >
                 <ul>
-                  <li>
-                    <a href="/">Home</a>
-                  </li>
-                  <li>
-                    <a href="/leskosten">Leskosten</a>
-                  </li>
-                  <li>
-                    <a href="/aanmelden">Aanmelden</a>
-                  </li>
-                  <li>
-                    <a href="/contact">Contact</a>
-                  </li>
-                  <li>
-                    <a href="/privacy-verklaring">Privacy verklaring</a>
-                  </li>
-                  <li>
-                    <a href="/algemene-voorwaarden">Algemene voorwaarden</a>
-                  </li>
+                  {(navigation as NavigationItemFragment[])?.map((item) => (
+                    <li key={`${item.__typename}-${item.id}`}>
+                      <a href={item.url}>{item.label}</a>
+                    </li>
+                  ))}
                 </ul>
               </nav>
             </div>
             <div className={styles.footer_contact}>
-              <h3>Contact</h3>
+              <h3>{contactTitle}</h3>
 
               <div className={styles.footer_contact_icons}>
-                <a href="tel:0638462008" aria-label="telephone number">
+                <a
+                  href={`tel:${telephoneNumber}`}
+                  aria-label="telephone number"
+                >
                   <object data={iconTelephone} aria-hidden="true" tabIndex={-1}>
                     telephone
                   </object>
                 </a>
-                <a href="/contact" aria-label="email address">
-                  <object data={iconEmail} aria-hidden="true" tabIndex={-1}>
-                    email
+                <a href={contactUrl} aria-label="contact url">
+                  <object
+                    data={iconEmail}
+                    aria-hidden="true"
+                    aria-label="contact icon"
+                    tabIndex={-1}
+                  >
+                    contact
                   </object>
                 </a>
                 <a
-                  href="https://www.facebook.com/ukelelegitaarles/"
+                  href={facebookUrl}
                   target="_blank"
-                  aria-label="facebook link"
+                  rel="noreferrer"
+                  aria-label="facebook url"
                 >
                   <object data={iconFacebook} aria-hidden="true" tabIndex={-1}>
                     facebook
@@ -75,25 +97,18 @@ const FooterComponent: React.FC = () => {
               </div>
             </div>
             <div className={styles.footer_companydetails}>
-              <h3>Bedrijfsgegevens</h3>
-              <span>Gitaar- en Ukelele lessen aan huis!</span>
-              <span> Koudekerk aan den Rijn, Zuid-Holland </span>
-              <span>KvK: 76892387</span>
+              <h3>{companyDetailsTitle}</h3>
+              <span>{companyName}</span>
+              <span>KvK: {kvk}</span>
             </div>
           </div>
-
           <div className={styles.disclaimer}>
             <div>
-              &copy; Copyright {new Date().getFullYear()} Ukelele-Gitaarles, alle rechten
-              voorbehouden. Deze website is gerealiseerd door{' '}
-              <a href="https://github.com/yvog">Yvo Geldhof</a> en{' '}
-              <a href="https://verageldhof.nl">Vera Geldhof.</a>
+              &copy; {new Date().getFullYear()} {copyright}
             </div>
           </div>
         </div>
       </div>
     </footer>
-  )
-}
-
-export const Footer = FooterComponent
+  );
+};

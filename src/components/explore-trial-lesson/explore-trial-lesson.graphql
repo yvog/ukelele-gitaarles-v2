@@ -1,0 +1,9 @@
+fragment ExploreTrialLesson on ExploreTrialLesson {
+  __typename
+  id
+  title
+  description
+  button {
+    ...Button
+  }
+}

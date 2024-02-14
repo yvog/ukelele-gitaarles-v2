@@ -6,13 +6,22 @@
     display: flex;
   }
 
-  .image {
+  .asset {
     margin-left: $spacingSM;
     border-radius: 16px;
   }
 
-  .no_image {
+  .no_asset {
     max-width: 80%;
+  }
+
+  a {
+    @extend .link;
+  }
+
+  p {
+    margin-top: $spacingXXS;
+    margin-bottom: $spacingXS;
   }
 }
 
@@ -42,7 +51,7 @@
       }
     }
 
-    .image {
+    .asset {
       display: block;
       margin: $spacingSM auto $spacingSM auto;
       text-align: center;

@@ -1,0 +1,15 @@
+fragment ContentBlock on ContentBlock {
+  __typename
+  id
+  contentBlockTitle: title
+  text {
+    html
+  }
+  icon
+  image {
+    url
+  }
+  swapOnMobile
+  assetWidth
+  assetHeight
+}
