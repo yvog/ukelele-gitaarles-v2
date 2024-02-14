@@ -17,36 +17,36 @@ import { Button } from '../button/button';
 import { TestimonialItem } from '../testimonial-item/testimonial-item';
 import styles from './testimonials.module.scss';
 
-type TestimonialsProps = TestimonialFragment & {
-  testimonialsButton: ButtonFragment;
-};
+type TestimonialsProps = TestimonialFragment;
 
 export const Testimonials: React.FC<TestimonialsProps> = ({
   testimonialsTitle,
   testimonials,
-  testimonialsButton: { slug, label },
+  testimonialsButton,
 }) => {
+  const { slug, label } = testimonialsButton as ButtonFragment;
   const defaultSlidesPerView = 3;
   const [slidesPerView, setSlidesPerView] = useState<number>();
 
-  const updateSlidesPerView = () =>
-    setSlidesPerView(
-      window.innerWidth <= 1100
-        ? window.innerWidth < 768
-          ? 1
-          : 2
-        : defaultSlidesPerView
-    );
-
   useEffect(() => {
     if (typeof window == 'undefined') return;
+
+    const updateSlidesPerView = () => {
+      setSlidesPerView(
+        window.innerWidth <= 1100
+          ? window.innerWidth < 768
+            ? 1
+            : 2
+          : defaultSlidesPerView
+      );
+    };
 
     updateSlidesPerView();
 
     window.addEventListener('resize', updateSlidesPerView);
 
     return () => window.removeEventListener('resize', updateSlidesPerView);
-  }, [testimonials]);
+  }, []);
 
   return (
     <section className={styles.testimonials}>
@@ -86,32 +86,34 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
             </>
           </button>
           <div className={styles.swiper_container}>
-            <Swiper
-              modules={[Navigation, Virtual, Keyboard]}
-              autoHeight
-              keyboard={{
-                enabled: true,
-                onlyInViewport: true,
-              }}
-              resizeObserver
-              spaceBetween={50}
-              slidesPerView={slidesPerView}
-              navigation={{
-                prevEl: '#swiper-prev',
-                nextEl: '#swiper-next',
-              }}
-              virtual
-              direction="horizontal"
-              watchSlidesProgress
-            >
-              {(testimonials as TestimonialItemFragment[])?.map(
-                (item, index) => (
-                  <SwiperSlide key={item.name} virtualIndex={index}>
-                    <TestimonialItem {...item} />
-                  </SwiperSlide>
-                )
-              )}
-            </Swiper>
+            {!!slidesPerView && (
+              <Swiper
+                modules={[Navigation, Virtual, Keyboard]}
+                autoHeight
+                keyboard={{
+                  enabled: true,
+                  onlyInViewport: true,
+                }}
+                resizeObserver
+                spaceBetween={50}
+                slidesPerView={slidesPerView}
+                navigation={{
+                  prevEl: '#swiper-prev',
+                  nextEl: '#swiper-next',
+                }}
+                virtual
+                direction="horizontal"
+                watchSlidesProgress
+              >
+                {(testimonials as TestimonialItemFragment[])?.map(
+                  (item, index) => (
+                    <SwiperSlide key={item.name} virtualIndex={index}>
+                      <TestimonialItem {...item} />
+                    </SwiperSlide>
+                  )
+                )}
+              </Swiper>
+            )}
           </div>
           <button
             id="swiper-next"
