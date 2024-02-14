@@ -7,12 +7,12 @@
     "dev": "next dev",
     "codegen": "graphql-codegen --require dotenv/config --config codegen.ts",
     "build": "npm run codegen && next build && npm run gen:sitemap",
-    "start": "next start",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,json,scss,css}\" ",
     "cleanup": "rimraf node_modules",
     "gen:sitemap": "next-sitemap --config sitemap.config.js",
     "prod:cleanup": "rm -rf package-lock.json ./public/sitemap.js",
-    "prod:start": "npx pm2 start npx --name \"ukelele-gitaarles\" -- 'next start -p 8080'",
+    "prod:server": "next start ./ -p 8080",
+    "prod:start": "npx pm2 start npm --name ukelele-gitaarles -- run prod:server",
     "prod:stop": "npx pm2 stop ukelele-gitaarles"
   },
   "repository": {

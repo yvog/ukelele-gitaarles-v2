@@ -8,11 +8,11 @@ New company website for ([Ukelele-Gitaarles](https://ukelele-gitaarles.nl))
 cd stack/apps/ukelele-gitaarles-v2
 sudo su
 git pull origin master
-sudo npm run prod:stop
+npm run prod:stop
 rm -rf node_modules .next
-sudo npm install
-sudo npm run build
-sudo npm run prod:start
+npm install
+npm run build
+npm run prod:start
 ```
 
 ## Credits
