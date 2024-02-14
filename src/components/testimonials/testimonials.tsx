@@ -49,7 +49,9 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
 
     window.addEventListener('resize', updateSlidesPerView);
 
-    return () => window.removeEventListener('resize', updateSlidesPerView);
+    return () => {
+      window.removeEventListener('resize', updateSlidesPerView);
+    };
   }, []);
 
   return (

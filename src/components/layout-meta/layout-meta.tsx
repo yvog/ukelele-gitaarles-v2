@@ -39,12 +39,13 @@ export const LayoutMeta: React.FC<LayoutMetaProps> = ({
 
     window.addEventListener('mobile-menu-toggled', onMobileMenuToggled, false);
 
-    return () =>
+    return () => {
       window.removeEventListener(
         'mobile-menu-toggled',
         onMobileMenuToggled,
         true
       );
+    };
   }, []);
 
   return (
