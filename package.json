@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "codegen": "graphql-codegen --require dotenv/config --config codegen.ts",
-    "build": "next build && npm run codegen && npm run gen:sitemap",
+    "build": "npm run codegen && next build && npm run gen:sitemap",
     "start": "next start",
     "export": "next export",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,json,scss,css}\" ",
