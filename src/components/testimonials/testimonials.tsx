@@ -1,9 +1,6 @@
 import classnames from 'classnames';
 import { useEffect, useState } from 'react';
-import { Keyboard, Navigation, Virtual } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/virtual';
+import { Keyboard, Navigation, Virtual } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import iconQuote from '../../../public/images/background/quote.svg';
 import iconChevronLeft from '../../../public/images/icon/icon_chevron_left.svg';
@@ -13,8 +10,14 @@ import {
   TestimonialFragment,
   TestimonialItemFragment,
 } from '../../gql/graphql';
+import { isBrowser } from '../../util/util';
 import { Button } from '../button/button';
 import { TestimonialItem } from '../testimonial-item/testimonial-item';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/virtual';
+
 import styles from './testimonials.module.scss';
 
 type TestimonialsProps = TestimonialFragment;
@@ -25,18 +28,19 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
   testimonialsButton,
 }) => {
   const { slug, label } = testimonialsButton as ButtonFragment;
-  const defaultSlidesPerView = 3;
-  const [slidesPerView, setSlidesPerView] = useState<number>();
+  const defaultSlidesPerView = 3.25;
+  const [slidesPerView, setSlidesPerView] =
+    useState<number>(defaultSlidesPerView);
 
   useEffect(() => {
-    if (typeof window == 'undefined') return;
+    if (!isBrowser) return;
 
     const updateSlidesPerView = () => {
       setSlidesPerView(
         window.innerWidth <= 1100
           ? window.innerWidth < 768
-            ? 1
-            : 2
+            ? 1.25
+            : 2.25
           : defaultSlidesPerView
       );
     };
@@ -86,34 +90,30 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
             </>
           </button>
           <div className={styles.swiper_container}>
-            {!!slidesPerView && (
-              <Swiper
-                modules={[Navigation, Virtual, Keyboard]}
-                autoHeight
-                keyboard={{
-                  enabled: true,
-                  onlyInViewport: true,
-                }}
-                resizeObserver
-                spaceBetween={50}
-                slidesPerView={slidesPerView}
-                navigation={{
-                  prevEl: '#swiper-prev',
-                  nextEl: '#swiper-next',
-                }}
-                virtual
-                direction="horizontal"
-                watchSlidesProgress
-              >
-                {(testimonials as TestimonialItemFragment[])?.map(
-                  (item, index) => (
-                    <SwiperSlide key={item.name} virtualIndex={index}>
-                      <TestimonialItem {...item} />
-                    </SwiperSlide>
-                  )
-                )}
-              </Swiper>
-            )}
+            <Swiper
+              modules={[Navigation, Virtual, Keyboard]}
+              keyboard={{
+                enabled: true,
+                onlyInViewport: true,
+              }}
+              resizeObserver
+              autoHeight
+              spaceBetween={40}
+              slidesPerView={slidesPerView}
+              navigation={{
+                prevEl: '#swiper-prev',
+                nextEl: '#swiper-next',
+              }}
+              direction="horizontal"
+            >
+              {(testimonials as TestimonialItemFragment[])?.map(
+                (item, index) => (
+                  <SwiperSlide key={item.name} virtualIndex={index}>
+                    <TestimonialItem {...item} />
+                  </SwiperSlide>
+                )
+              )}
+            </Swiper>
           </div>
           <button
             id="swiper-next"

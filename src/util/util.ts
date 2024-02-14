@@ -1,3 +1,5 @@
+export const isBrowser = typeof window != 'undefined';
+
 export const transformHygraphImage = (
   src: string,
   width: number,
