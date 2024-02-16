@@ -6,3 +6,4 @@ build/*
 conf/*
 public/*
 src/gql/*
+.svg
