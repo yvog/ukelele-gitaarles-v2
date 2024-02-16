@@ -2,12 +2,15 @@
 @import '../../styles/typography/classes';
 @import '../../styles/util/fluid';
 
+$servicesItemSize: fluid(184, 224);
+
 .services_item {
   display: block;
-  width: fluid(200, 300);
-  height: fluid(150, 200);
+  width: $servicesItemSize;
+  height: $servicesItemSize;
+  border-radius: 100%;
   background: #000;
-  transition: background 0.25s ease;
+  transition: background 0.3s ease;
   box-shadow: $defaultBoxShadow;
   display: flex;
   align-items: center;
@@ -17,11 +20,11 @@
 
   img {
     position: absolute;
-    z-index: 1;
     opacity: 0.75;
-    transition: opacity 0.25s ease;
-    width: fluid(200, 300);
-    height: fluid(150, 200);
+    transition: opacity 0.3s ease;
+    width: $servicesItemSize;
+    height: $servicesItemSize;
+    z-index: 1;
   }
 
   .divider {
@@ -37,10 +40,10 @@
   h3 {
     @extend .h4;
     position: relative;
-    z-index: 3;
     color: #fff;
     text-align: center;
     transition: color 0.15s ease;
+    z-index: 3;
   }
 
   &:hover,
@@ -48,7 +51,7 @@
     background: #fff;
 
     img {
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
     .divider {

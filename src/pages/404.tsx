@@ -1,32 +1,37 @@
-import { HeaderNavigation, LayoutMeta } from '../components';
-import { Button } from '../components/button/button';
+import { GetStaticProps } from 'next';
+import { graphQLClient } from '../client';
+import { Layout, LayoutMeta } from '../components';
+import { ErrorPageLayoutDocument, ErrorPageLayoutQuery } from '../gql/graphql';
 
-export default function NotFound() {
+type ErrorPageProps = ErrorPageLayoutQuery;
+
+export default function NotFound(props: ErrorPageProps) {
+  const { title, pageDescription, errorPageLayout } = props?.errorPage;
+
   return (
     <>
       <LayoutMeta
-        title="Pagina niet gevonden"
-        description="De opgevraagde pagina kon helaas niet worden gevonden."
+        title={title}
+        description={pageDescription?.description}
         robots={['noindex', 'nofollow']}
       />
-
-      <div className="main-container header">
-        <HeaderNavigation variant="black" />
-      </div>
-
-      <main>
-        <div className="main-container body">
-          <div>
-            <div>
-              <h2>Pagina niet gevonden</h2>
-              <p>De opgevraagde pagina kon helaas niet worden gevonden.</p>
-              <Button filled href="/">
-                Terug naar home
-              </Button>
-            </div>
-          </div>
-        </div>
-      </main>
+      <Layout layout={errorPageLayout} />
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps<ErrorPageProps> = async () => {
+  const layoutData: ErrorPageLayoutQuery = await graphQLClient.request(
+    ErrorPageLayoutDocument,
+    {
+      slug: '/error-page/404',
+    }
+  );
+
+  return {
+    props: {
+      ...(layoutData ?? {}),
+    },
+    revalidate: 60 * 60 * 24, // every day
+  };
+};

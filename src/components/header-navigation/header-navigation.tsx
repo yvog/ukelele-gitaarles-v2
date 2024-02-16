@@ -19,8 +19,7 @@ export const HeaderNavigation: React.FC<HeaderNavigationProps> = ({
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const isBlack = variant === 'black';
 
-  const { query } = useRouter();
-  const pathname = query?.url ? `/${(query.url as string[]).join('/')}` : '/';
+  const { asPath } = useRouter();
 
   const onMenuOpen = () => {
     const open = !menuOpen;
@@ -69,8 +68,8 @@ export const HeaderNavigation: React.FC<HeaderNavigationProps> = ({
           <ul className={styles.nav_inner}>
             {items.map((item) => {
               const isActiveLink =
-                (pathname.startsWith(item.url) && item.url != '/') ||
-                (pathname === '/' && pathname.startsWith(item.url));
+                (asPath.startsWith(item.url) && item.url != '/') ||
+                (asPath === '/' && asPath.startsWith(item.url));
 
               return (
                 <li key={`menuItem-${item.label}`}>

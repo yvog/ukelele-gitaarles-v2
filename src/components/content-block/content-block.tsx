@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { ContentBlockFragment } from '../../gql/graphql';
 import { transformHygraphImage } from '../../util/util';
+import { Button } from '../button/button';
 import { icons } from '../icons/icons';
 import styles from './content-block.module.scss';
 
@@ -14,6 +15,7 @@ export const ContentBlock: React.FC<ContentBlockProps> = ({
   contentBlockTitle,
   icon,
   image,
+  button,
   swapOnMobile,
   text,
   assetWidth,
@@ -31,14 +33,19 @@ export const ContentBlock: React.FC<ContentBlockProps> = ({
           [styles.swapOnMobile]: swapOnMobile,
         })}
       >
-        {text && (
-          <div
-            className={classNames(styles.content_block_row_content, {
-              [styles.no_asset]: !image && !icon,
-            })}
-            dangerouslySetInnerHTML={{ __html: text?.html }}
-          />
-        )}
+        <div
+          className={classNames(styles.content_block_row_content, {
+            [styles.no_asset]: !image && !icon,
+          })}
+        >
+          {text && <div dangerouslySetInnerHTML={{ __html: text?.html }} />}
+          {button && (
+            <Button filled={button?.filled} href={button?.slug}>
+              {button?.label}
+            </Button>
+          )}
+        </div>
+
         <div className={styles.asset}>
           {image && (
             <img

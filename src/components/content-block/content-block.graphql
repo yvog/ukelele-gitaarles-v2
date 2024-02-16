@@ -5,6 +5,11 @@ fragment ContentBlock on ContentBlock {
   text {
     html
   }
+  button {
+    slug
+    label
+    filled
+  }
   icon
   image {
     url

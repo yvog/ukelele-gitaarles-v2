@@ -1,12 +1,18 @@
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import { graphQLClient } from '../client';
 import { Layout, LayoutMeta } from '../components';
-import { LayoutDocument, LayoutQuery } from '../gql/graphql';
+import {
+  LayoutDocument,
+  LayoutQuery,
+  PagesDocument,
+  PagesQuery,
+} from '../gql/graphql';
 
 type PageProps = LayoutQuery;
 
 export default function Index(props: PageProps) {
-  const { title, slug, pageDescription, robots, useReCaptcha } = props?.page;
+  const { title, slug, pageDescription, robots, useReCaptcha, layout } =
+    props?.page;
 
   return (
     <>
@@ -17,17 +23,24 @@ export default function Index(props: PageProps) {
         robots={robots?.split(',')}
         useReCaptcha={useReCaptcha}
       />
-      <Layout layout={props.page.layout} />
+      <Layout layout={layout} />
     </>
   );
 }
 
-export const getServerSideProps: GetServerSideProps<PageProps> = async (
-  context
-) => {
-  const pageUrl = context.query?.url
-    ? (context.query?.url as string[]).join('/')
-    : undefined;
+export async function getStaticPaths() {
+  const pageData: PagesQuery = await graphQLClient.request(PagesDocument);
+
+  return {
+    paths: (pageData?.pages ?? []).map((page) => page.slug),
+    fallback: false,
+  };
+}
+
+export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
+  const params = context.params?.url;
+  const pageUrl = params ? (params as string[]).join('/') : undefined;
+
   const layoutData: LayoutQuery = await graphQLClient.request(LayoutDocument, {
     slug: pageUrl ? `/${pageUrl}` : '/',
   });
@@ -40,7 +53,8 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async (
 
   return {
     props: {
-      ...layoutData,
+      ...(layoutData ?? {}),
     },
+    revalidate: 60 * 60 * 24, // every day
   };
 };
