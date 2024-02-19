@@ -92,6 +92,11 @@
 
     a {
       display: block;
+      width: max-content;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -126,9 +131,9 @@
       padding-top: $spacingXS;
       margin-top: -10px;
       display: block;
-      text-align: center;
 
       a {
+        margin: 0 auto;
         padding: 10px;
       }
     }
