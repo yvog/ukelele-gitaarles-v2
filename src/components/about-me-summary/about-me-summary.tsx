@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import Link from 'next/link';
 import { AboutMeSummaryFragment, ButtonFragment } from '../../gql/graphql';
 import { transformHygraphImage } from '../../util/util';
 import styles from './about-me-summary.module.scss';
@@ -27,9 +28,9 @@ export const AboutMeSummary: React.FC<AboutMeSummaryProps> = ({
           />
           <div>
             <div dangerouslySetInnerHTML={{ __html: html }} />
-            <a href={slug} className="text">
-              {label}
-            </a>
+            <Link href={slug} passHref>
+              <a className="text">{label}</a>
+            </Link>
           </div>
         </div>
       </section>

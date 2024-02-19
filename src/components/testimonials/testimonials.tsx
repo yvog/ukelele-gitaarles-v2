@@ -28,7 +28,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
   testimonialsButton,
 }) => {
   const { slug, label } = testimonialsButton as ButtonFragment;
-  const defaultSlidesPerView = 3.25;
+  const defaultSlidesPerView = 3;
   const [slidesPerView, setSlidesPerView] =
     useState<number>(defaultSlidesPerView);
 
@@ -39,8 +39,8 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
       setSlidesPerView(
         window.innerWidth <= 1100
           ? window.innerWidth < 768
-            ? 1.25
-            : 2.25
+            ? 1
+            : 2
           : defaultSlidesPerView
       );
     };

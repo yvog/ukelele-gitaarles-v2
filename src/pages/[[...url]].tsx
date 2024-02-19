@@ -29,7 +29,9 @@ export default function Index(props: PageProps) {
 }
 
 export async function getStaticPaths() {
-  const pageData: PagesQuery = await graphQLClient.request(PagesDocument);
+  const pageData: PagesQuery = await graphQLClient.request(PagesDocument, {
+    first: 100,
+  });
 
   return {
     paths: (pageData?.pages ?? []).map((page) => page.slug),

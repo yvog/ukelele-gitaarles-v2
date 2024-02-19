@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './hero-services-item.module.scss';
 
 type HeroServicesItemProps = {
@@ -26,9 +27,11 @@ export const HeroServicesItem: React.FC<HeroServicesItemProps> = ({
         service icon
       </object>
       <div>
-        <a href={href} className={styles.hero_services_item_link}>
-          <h3>{title}</h3>
-        </a>
+        <Link href={href} passHref>
+          <a className={styles.hero_services_item_link}>
+            <h3>{title}</h3>
+          </a>
+        </Link>
         <p>{children}</p>
       </div>
     </div>

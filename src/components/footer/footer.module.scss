@@ -40,7 +40,7 @@
 
     .footer_contact {
       text-align: center;
-      padding-bottom: $spacingSM;
+      padding-bottom: $spacingXS;
 
       .footer_contact_icons {
         display: flex;
@@ -74,16 +74,25 @@
 
       span {
         display: block;
-        margin-top: 16px;
+        margin-top: $spacingXS;
       }
     }
   }
 
   .disclaimer {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 4px;
     padding: $spacingXS 0 0 0;
+    opacity: 0.6;
+  }
+
+  .mobile_nav_items {
+    display: none;
+
+    a {
+      display: block;
+    }
   }
 }
 
@@ -107,14 +116,21 @@
         }
 
         .footer_companydetails {
-          padding-top: $spacingSM;
-          padding-bottom: $spacingSM;
+          padding-top: $spacingXS;
+          padding-bottom: $spacingXS;
         }
       }
     }
 
-    .disclaimer {
+    .mobile_nav_items {
+      padding-top: $spacingXS;
+      margin-top: -10px;
+      display: block;
       text-align: center;
+
+      a {
+        padding: 10px;
+      }
     }
   }
 }

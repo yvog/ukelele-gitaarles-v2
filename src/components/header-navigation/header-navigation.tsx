@@ -37,17 +37,18 @@ export const HeaderNavigation: React.FC<HeaderNavigationProps> = ({
 
   return (
     <header className={classNames(styles.header, { [styles.black]: isBlack })}>
-      <a href="/">
-        <img
-          className={styles.logo}
-          src={`/images/logo/ukelele_gitaarles_logo_${variant}.svg`}
-          alt="Ukelele-Gitaarles logo"
-          width="280"
-          height="100"
-          loading="eager"
-        />
-      </a>
-
+      <Link href="/" passHref>
+        <a aria-label="terug naar home">
+          <img
+            className={styles.logo}
+            src={`/images/logo/ukelele_gitaarles_logo_${variant}.svg`}
+            alt="Ukelele-Gitaarles logo"
+            width="280"
+            height="100"
+            loading="eager"
+          />
+        </a>
+      </Link>
       <Head>
         <link
           rel="preload"

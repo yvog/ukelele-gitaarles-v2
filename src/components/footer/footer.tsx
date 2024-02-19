@@ -1,4 +1,5 @@
 import { default as classNames } from 'classnames';
+import Link from 'next/link';
 import iconEmail from '../../../public/images/icon/icon_email.svg';
 import iconFacebook from '../../../public/images/icon/icon_facebook.svg';
 import iconTelephone from '../../../public/images/icon/icon_telephone.svg';
@@ -17,6 +18,7 @@ export const Footer: React.FC<FooterProps> = ({
   telephoneNumber,
   companyDetailsTitle,
   companyName,
+  mobileNavigation,
   copyright,
 }) => {
   return (
@@ -54,11 +56,15 @@ export const Footer: React.FC<FooterProps> = ({
                 aria-label={navigationTitle}
               >
                 <ul>
-                  {(navigation as NavigationItemFragment[])?.map((item) => (
-                    <li key={`${item.__typename}-${item.id}`}>
-                      <a href={item.url}>{item.label}</a>
-                    </li>
-                  ))}
+                  {(navigation as NavigationItemFragment[])?.map(
+                    ({ __typename, id, url, label }) => (
+                      <li key={`${__typename}-${id}`}>
+                        <Link href={url} passHref>
+                          <a>{label}</a>
+                        </Link>
+                      </li>
+                    )
+                  )}
                 </ul>
               </nav>
             </div>
@@ -66,29 +72,28 @@ export const Footer: React.FC<FooterProps> = ({
               <h3>{contactTitle}</h3>
 
               <div className={styles.footer_contact_icons}>
-                <a
-                  href={`tel:${telephoneNumber}`}
-                  aria-label="telephone number"
-                >
+                <a href={`tel:${telephoneNumber}`} aria-label="bellen">
                   <object data={iconTelephone} aria-hidden="true" tabIndex={-1}>
                     telephone
                   </object>
                 </a>
-                <a href={contactUrl} aria-label="contact url">
-                  <object
-                    data={iconEmail}
-                    aria-hidden="true"
-                    aria-label="contact icon"
-                    tabIndex={-1}
-                  >
-                    contact
-                  </object>
-                </a>
+                <Link href={contactUrl} passHref>
+                  <a aria-label="contact link">
+                    <object
+                      data={iconEmail}
+                      aria-hidden="true"
+                      aria-label="contact icon"
+                      tabIndex={-1}
+                    >
+                      contact
+                    </object>
+                  </a>
+                </Link>
                 <a
                   href={facebookUrl}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="facebook url"
+                  aria-label="facebook link"
                 >
                   <object data={iconFacebook} aria-hidden="true" tabIndex={-1}>
                     facebook
@@ -101,6 +106,15 @@ export const Footer: React.FC<FooterProps> = ({
               <span>{companyName}</span>
               <span>KvK: {kvk}</span>
             </div>
+          </div>
+          <div className={styles.mobile_nav_items}>
+            {(mobileNavigation as NavigationItemFragment[])?.map(
+              ({ __typename, id, url, label }) => (
+                <Link key={`${__typename}-${id}`} href={url} passHref>
+                  <a>{label}</a>
+                </Link>
+              )
+            )}
           </div>
           <div className={styles.disclaimer}>
             <div>

@@ -12,5 +12,8 @@ fragment Footer on Footer {
   companyDetailsTitle
   companyName
   kvk
+  mobileNavigation {
+    ...NavigationItem
+  }
   copyright
 }
