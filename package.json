@@ -13,7 +13,7 @@
     "prod:cleanup": "rm -rf package-lock.json ./public/sitemap.js",
     "prod:server": "next start ./ -p 8080",
     "prod:start": "npx pm2 start npm --name ukelele-gitaarles -- run prod:server",
-    "prod:stop": "npx pm2 stop ukelele-gitaarles"
+    "prod:stop": "npx pm2 stop ukelele-gitaarles && npx pm2 delete ukelele-gitaarles"
   },
   "repository": {
     "type": "git",
