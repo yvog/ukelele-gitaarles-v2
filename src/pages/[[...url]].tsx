@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 import { graphQLClient } from '../client';
 import { Layout, LayoutMeta } from '../components';
+import { REVALIDATE_PAGE_AFTER_SECONDS } from '../consts';
 import {
   LayoutDocument,
   LayoutQuery,
@@ -35,7 +36,7 @@ export async function getStaticPaths() {
 
   return {
     paths: (pageData?.pages ?? []).map((page) => page.slug),
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 
@@ -57,6 +58,6 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
     props: {
       ...(layoutData ?? {}),
     },
-    revalidate: 60 * 60 * 24, // every day
+    revalidate: REVALIDATE_PAGE_AFTER_SECONDS,
   };
 };

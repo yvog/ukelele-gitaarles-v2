@@ -19,7 +19,7 @@ export const SignUpForm: React.FC<SignUpFormProps> = () => {
       lessonType: {
         type: 'string',
         title: 'Welk instrument wil je leren bespelen?',
-        enum: ['Ukelele', 'Gitaar', 'Piano', 'Keyboard'],
+        enum: ['Ukelele', 'Gitaar', 'Bas', 'Piano', 'Keyboard'],
       },
       experience: {
         type: 'boolean',
@@ -56,7 +56,8 @@ export const SignUpForm: React.FC<SignUpFormProps> = () => {
       },
       hire: {
         type: 'boolean',
-        title: 'Ik wil een instrument huren (optioneel)',
+        title:
+          'Ik wil een instrument huren (optioneel, basgitaar uitgezonderd)',
         default: false,
       },
       testLesson: {

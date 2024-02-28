@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 import { graphQLClient } from '../client';
 import { Layout, LayoutMeta } from '../components';
+import { REVALIDATE_PAGE_AFTER_SECONDS } from '../consts';
 import { ErrorPageLayoutDocument, ErrorPageLayoutQuery } from '../gql/graphql';
 
 type ErrorPageProps = ErrorPageLayoutQuery;
@@ -32,6 +33,6 @@ export const getStaticProps: GetStaticProps<ErrorPageProps> = async () => {
     props: {
       ...(layoutData ?? {}),
     },
-    revalidate: 60 * 60 * 24, // every day
+    revalidate: REVALIDATE_PAGE_AFTER_SECONDS,
   };
 };
