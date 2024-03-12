@@ -1,13 +1,15 @@
 import { GetStaticProps } from 'next';
-import { graphQLClient } from '../client';
-import { Layout, LayoutMeta } from '../components';
+import { graphQLClient, graphQLClientPreview } from '../client';
+import { Layout, LayoutMeta, PreviewBanner } from '../components';
 import { REVALIDATE_PAGE_AFTER_SECONDS } from '../consts';
-import { ErrorPageLayoutDocument, ErrorPageLayoutQuery } from '../gql/graphql';
+import { LayoutDocument, LayoutQuery } from '../gql/graphql';
 
-type ErrorPageProps = ErrorPageLayoutQuery;
+type ErrorPageProps = LayoutQuery & {
+  preview?: boolean;
+};
 
 export default function NotFound(props: ErrorPageProps) {
-  const { title, pageDescription, errorPageLayout } = props?.errorPage;
+  const { title, pageDescription, layout } = props?.page;
 
   return (
     <>
@@ -16,22 +18,27 @@ export default function NotFound(props: ErrorPageProps) {
         description={pageDescription?.description}
         robots={['noindex', 'nofollow']}
       />
-      <Layout layout={errorPageLayout} />
+      {props.preview && <PreviewBanner />}
+      <Layout layout={layout} />
     </>
   );
 }
 
-export const getStaticProps: GetStaticProps<ErrorPageProps> = async () => {
-  const layoutData: ErrorPageLayoutQuery = await graphQLClient.request(
-    ErrorPageLayoutDocument,
-    {
-      slug: '/error-page/404',
-    }
-  );
+export const getStaticProps: GetStaticProps<ErrorPageProps> = async (
+  context
+) => {
+  const isPreviewMode = !!context?.preview;
+  let client = isPreviewMode ? graphQLClientPreview : graphQLClient;
+
+  const layoutData: LayoutQuery = await client.request(LayoutDocument, {
+    slug: '/404',
+    stage: isPreviewMode ? 'DRAFT' : 'PUBLISHED',
+  });
 
   return {
     props: {
       ...(layoutData ?? {}),
+      preview: !!context?.preview,
     },
     revalidate: REVALIDATE_PAGE_AFTER_SECONDS,
   };

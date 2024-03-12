@@ -6,11 +6,9 @@
   "scripts": {
     "dev": "next dev",
     "codegen": "graphql-codegen --require dotenv/config --config codegen.ts",
-    "build": "npm run codegen && next build && npm run gen:sitemap",
+    "build": "npm run codegen && next build",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,json,scss,css}\" ",
-    "cleanup": "rimraf node_modules",
-    "gen:sitemap": "next-sitemap --config sitemap.config.js",
-    "prod:cleanup": "rm -rf package-lock.json ./public/sitemap.js",
+    "prod:cleanup": "rm -rf node_modules .next",
     "prod:server": "next start ./ -p 8080",
     "prod:start": "npx pm2 start npm --name ukelele-gitaarles -- run prod:server",
     "prod:stop": "npx pm2 stop ukelele-gitaarles && npx pm2 delete ukelele-gitaarles"
@@ -48,7 +46,7 @@
     "eslint-config-prettier": "^8.4.0",
     "imagemin": "^7.0.1",
     "imagemin-webp": "^6.0.0",
-    "next-sitemap": "^1.5.18",
+    "next-sitemap": "^3.1.55",
     "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

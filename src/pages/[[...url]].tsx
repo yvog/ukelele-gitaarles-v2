@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import { graphQLClient, graphQLClientPreview } from '../client';
 import { Layout, LayoutMeta, PreviewBanner } from '../components';
-import { REVALIDATE_PAGE_AFTER_SECONDS } from '../consts';
+import { MAX_PAGES, REVALIDATE_PAGE_AFTER_SECONDS } from '../consts';
 import {
   LayoutDocument,
   LayoutQuery,
@@ -34,7 +34,7 @@ export default function Index(props: PageProps) {
 
 export async function getStaticPaths() {
   const pageData: PagesQuery = await graphQLClient.request(PagesDocument, {
-    first: 100,
+    first: MAX_PAGES,
   });
 
   return {

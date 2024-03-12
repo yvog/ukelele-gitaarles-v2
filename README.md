@@ -9,7 +9,7 @@ cd stack/apps/ukelele-gitaarles-v2
 sudo su
 git pull origin master
 npm run prod:stop
-rm -rf node_modules .next
+npm run prod:cleanup
 npm install
 npm run build
 npm run prod:start
