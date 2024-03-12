@@ -1,7 +1,6 @@
 import { sendMail, verifyRecaptchaToken } from '../../server/utils';
-import { VercelRequest, VercelResponse } from '@vercel/node';
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req, res) {
   const formData = req.body.formData;
   const token = req.body.token;
 

@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next';
-import { graphQLClient } from '../client';
-import { Layout, LayoutMeta } from '../components';
+import { graphQLClient, graphQLClientPreview } from '../client';
+import { Layout, LayoutMeta, PreviewBanner } from '../components';
 import { REVALIDATE_PAGE_AFTER_SECONDS } from '../consts';
 import {
   LayoutDocument,
@@ -9,7 +9,9 @@ import {
   PagesQuery,
 } from '../gql/graphql';
 
-type PageProps = LayoutQuery;
+type PageProps = LayoutQuery & {
+  preview?: boolean;
+};
 
 export default function Index(props: PageProps) {
   const { title, slug, pageDescription, robots, useReCaptcha, layout } =
@@ -24,6 +26,7 @@ export default function Index(props: PageProps) {
         robots={robots?.split(',')}
         useReCaptcha={useReCaptcha}
       />
+      {props.preview && <PreviewBanner />}
       <Layout layout={layout} />
     </>
   );
@@ -43,9 +46,12 @@ export async function getStaticPaths() {
 export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
   const params = context.params?.url;
   const pageUrl = params ? (params as string[]).join('/') : undefined;
+  const isPreviewMode = !!context?.preview;
+  let client = isPreviewMode ? graphQLClientPreview : graphQLClient;
 
-  const layoutData: LayoutQuery = await graphQLClient.request(LayoutDocument, {
+  const layoutData: LayoutQuery = await client.request(LayoutDocument, {
     slug: pageUrl ? `/${pageUrl}` : '/',
+    stage: isPreviewMode ? 'DRAFT' : 'PUBLISHED',
   });
 
   if (!layoutData?.page) {
@@ -57,6 +63,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
   return {
     props: {
       ...(layoutData ?? {}),
+      preview: !!context?.preview,
     },
     revalidate: REVALIDATE_PAGE_AFTER_SECONDS,
   };

@@ -1,0 +1,24 @@
+@import '../../styles/variables';
+@import '../../styles/typography/classes';
+
+.preview_banner {
+  position: sticky;
+  top: 0;
+  padding: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 9999;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba($mainBgColor, 0.85);
+    border-bottom: 2px solid rgba($ukeGitBlue, 0.5);
+
+    z-index: -1;
+  }
+}

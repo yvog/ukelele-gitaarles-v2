@@ -1,5 +1,5 @@
-query Layout($slug: String!) {
-  page(where: { slug: $slug }) {
+query Layout($slug: String!, $stage: Stage!) {
+  page(where: { slug: $slug }, stage: $stage) {
     id
     slug
     title

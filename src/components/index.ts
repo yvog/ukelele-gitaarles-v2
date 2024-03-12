@@ -16,6 +16,7 @@ export { HeroServices } from './hero-services/hero-services';
 export { HeroWrapper } from './hero-wrapper/hero-wrapper';
 export { LayoutMeta } from './layout-meta/layout-meta';
 export { Layout } from './layout/layout';
+export { PreviewBanner } from './preview-banner/preview-banner';
 export { Quote } from './quote/quote';
 export { RowHeaderNavigation } from './row-header-navigation/row-header-navigation';
 export { ServicePageHero } from './service-page-hero/service-page-hero';

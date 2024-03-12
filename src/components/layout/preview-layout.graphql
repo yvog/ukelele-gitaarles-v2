@@ -1,0 +1,5 @@
+query PreviewLayout($slug: String!) {
+  page(where: { slug: $slug }, stage: DRAFT) {
+    slug
+  }
+}
