@@ -1,5 +1,8 @@
-import { graphQLClientPreview } from '../../client';
-import { PreviewLayoutDocument, PreviewLayoutQuery } from '../../gql/graphql';
+import { graphQLClientPreview } from '../../../client';
+import {
+  PreviewLayoutDocument,
+  PreviewLayoutQuery,
+} from '../../../gql/graphql';
 
 const defaultError = (res) => {
   return res.status(401).json({ message: 'Invalid request' });
@@ -23,8 +26,7 @@ export default async function handler(req, res) {
     }
 
     res.setPreviewData({});
-    res.writeHead(307, { Location: layoutData.page.slug });
-    res.end();
+    res.redirect(layoutData.page.slug, 307);
   } catch (e) {
     console.error(e);
 

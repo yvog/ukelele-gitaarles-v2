@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import { graphQLClient, graphQLClientPreview } from '../client';
+import { graphQLClient } from '../client';
 import { Layout, LayoutMeta, PreviewBanner } from '../components';
 import { REVALIDATE_PAGE_AFTER_SECONDS } from '../consts';
 import { LayoutDocument, LayoutQuery } from '../gql/graphql';
@@ -24,21 +24,16 @@ export default function NotFound(props: ErrorPageProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps<ErrorPageProps> = async (
-  context
-) => {
-  const isPreviewMode = !!context?.preview;
-  let client = isPreviewMode ? graphQLClientPreview : graphQLClient;
-
-  const layoutData: LayoutQuery = await client.request(LayoutDocument, {
+export const getStaticProps: GetStaticProps<ErrorPageProps> = async () => {
+  const layoutData: LayoutQuery = await graphQLClient.request(LayoutDocument, {
     slug: '/404',
-    stage: isPreviewMode ? 'DRAFT' : 'PUBLISHED',
+    stage: 'PUBLISHED',
   });
 
   return {
     props: {
       ...(layoutData ?? {}),
-      preview: !!context?.preview,
+      preview: false,
     },
     revalidate: REVALIDATE_PAGE_AFTER_SECONDS,
   };

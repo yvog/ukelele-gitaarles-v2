@@ -8,7 +8,7 @@ export const PreviewBanner: React.FC<PreviewBannerProps> = () => {
   return (
     <div className={styles.preview_banner}>
       <span>Je bekijkt de huidige pagina in preview modus.</span>
-      <Link href="/api/exit-preview" passHref>
+      <Link href="/api/preview/clear" passHref>
         <a className="link">Sluit preview</a>
       </Link>
     </div>
