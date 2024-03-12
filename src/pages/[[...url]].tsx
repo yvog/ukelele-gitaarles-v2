@@ -38,7 +38,12 @@ export async function getStaticPaths() {
   });
 
   return {
-    paths: (pageData?.pages ?? []).map((page) => page.slug),
+    paths: (pageData?.pages ?? [])
+      .filter(({ robots }) => {
+        const pageRobots = robots?.split(',');
+        return !pageRobots || !pageRobots.includes('noindex');
+      })
+      .map((page) => page.slug),
     fallback: 'blocking',
   };
 }
