@@ -307,7 +307,7 @@ export const CostsCalculator: React.FC<CostsCalculatorProps> = ({
               </Button>
 
               {loading && (
-                <div className={styles.spinner}>
+                <div className="spinner">
                   <SyncLoader size={16} color="#1193f5" loading={loading} />
                 </div>
               )}

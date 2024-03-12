@@ -78,19 +78,6 @@
     }
   }
 
-  .spinner {
-    position: absolute;
-    top: 54px;
-    left: 0;
-    right: 0;
-    width: 80px;
-    height: 80px;
-    margin: 0 auto;
-    -webkit-user-select: none;
-    user-select: none;
-    z-index: 3;
-  }
-
   .price {
     @extend .h5;
 
