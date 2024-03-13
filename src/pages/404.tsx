@@ -9,7 +9,7 @@ type ErrorPageProps = LayoutQuery & {
 };
 
 export default function NotFound(props: ErrorPageProps) {
-  const { title, pageDescription, layout } = props?.page;
+  const { title, pageDescription, layout } = props?.page ?? {};
 
   return (
     <>

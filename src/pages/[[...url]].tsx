@@ -1,6 +1,4 @@
 import { GetStaticProps } from 'next';
-import { useRouter } from 'next/router';
-import SyncLoader from 'react-spinners/SyncLoader';
 import { graphQLClient, graphQLClientPreview } from '../client';
 import { Layout, LayoutMeta, PreviewBanner } from '../components';
 import { MAX_PAGES, REVALIDATE_PAGE_AFTER_SECONDS } from '../consts';
@@ -16,18 +14,8 @@ type PageProps = LayoutQuery & {
 };
 
 export default function Index(props: PageProps) {
-  const router = useRouter();
-
-  if (router?.isFallback) {
-    return (
-      <div className="spinner">
-        <SyncLoader size={16} color="#1193f5" loading />
-      </div>
-    );
-  }
-
   const { title, slug, pageDescription, robots, useReCaptcha, layout } =
-    props?.page;
+    props?.page ?? {};
 
   return (
     <>
