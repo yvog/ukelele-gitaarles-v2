@@ -1,3 +1,5 @@
+import { NextApiRequest } from 'next';
+
 const sgMail = require('@sendgrid/mail');
 
 export function verifyRecaptchaToken(token: string) {
@@ -11,9 +13,21 @@ export function verifyRecaptchaToken(token: string) {
     .then((res) => res);
 }
 
-export async function sendMail(subject: string, text: string) {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+export function isInvalidFormSubmission(
+  req: NextApiRequest,
+  method: string,
+  recaptchaRes: any,
+  action: string
+): boolean {
+  return (
+    req.method !== method ||
+    !recaptchaRes ||
+    !recaptchaRes.success ||
+    recaptchaRes.action !== action
+  );
+}
 
+export async function sendMail(subject: string, text: string) {
   const from = `${'ukelele-gitaarles.nl'} <${process.env.FROM_EMAIL}>`;
   const mail = {
     to: process.env.ADMIN_EMAIL,
@@ -23,12 +37,7 @@ export async function sendMail(subject: string, text: string) {
     replyTo: from,
   };
 
-  await sgMail
-    .send(mail)
-    .then(() => {
-      console.log('mail sent');
-    })
-    .catch((error: any) => {
-      console.error(error);
-    });
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+  return sgMail.send(mail);
 }

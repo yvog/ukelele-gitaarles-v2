@@ -10,7 +10,7 @@ import {
   TestimonialFragment,
   TestimonialItemFragment,
 } from '../../gql/graphql';
-import { isBrowser } from '../../util/util';
+import { isBrowser } from '../../util/client';
 import { Button } from '../button/button';
 import { TestimonialItem } from '../testimonial-item/testimonial-item';
 

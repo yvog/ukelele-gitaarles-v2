@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useEffect } from 'react';
-import { isBrowser } from '../../util/util';
+import { isBrowser } from '../../util/client';
 
 type LayoutMetaProps = {
   title?: string;

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ServicesContentItemFragment } from '../../gql/graphql';
-import { transformHygraphImage } from '../../util/util';
+import { transformHygraphImage } from '../../util/client';
 import styles from './services-item.module.scss';
 
 type ServicesItemProps = ServicesContentItemFragment;

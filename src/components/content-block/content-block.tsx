@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { ContentBlockFragment } from '../../gql/graphql';
-import { transformHygraphImage } from '../../util/util';
+import { transformHygraphImage } from '../../util/client';
 import { Button } from '../button/button';
 import { icons } from '../icons/icons';
 import styles from './content-block.module.scss';

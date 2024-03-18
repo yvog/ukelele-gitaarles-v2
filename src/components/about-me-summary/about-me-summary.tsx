@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import Link from 'next/link';
 import { AboutMeSummaryFragment, ButtonFragment } from '../../gql/graphql';
-import { transformHygraphImage } from '../../util/util';
+import { transformHygraphImage } from '../../util/client';
 import styles from './about-me-summary.module.scss';
 
 type AboutMeSummaryProps = AboutMeSummaryFragment;
