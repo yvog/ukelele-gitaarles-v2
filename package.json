@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Ukelele-Gitaarles official website v2.0",
   "private": true,
+  "engines": {
+    "node": ">=18 <19"
+  },
   "scripts": {
     "dev": "next dev",
     "codegen": "graphql-codegen --require dotenv/config --config codegen.ts",
@@ -44,8 +47,6 @@
     "eslint": "8.9.0",
     "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "^8.4.0",
-    "imagemin": "^7.0.1",
-    "imagemin-webp": "^6.0.0",
     "next-sitemap": "^3.1.55",
     "prettier": "^2.5.1",
     "react": "^17.0.2",
