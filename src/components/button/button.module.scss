@@ -42,6 +42,23 @@
         text-decoration: none;
       }
     }
+
+    &.outlineAlt {
+      color: $ukeGitBlue;
+      border-color: $ukeGitBlue;
+
+      &:hover,
+      &:focus {
+        background: $ukeGitBlue;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      &:active {
+        background: #fff;
+        color: $ukeGitBlue;
+      }
+    }
   }
 
   &.filled {
@@ -51,5 +68,12 @@
 
   &.disabled {
     opacity: 0.25;
+  }
+}
+
+@media (max-width: $smallMobile) {
+  .button {
+    max-width: 100%;
+    min-width: unset;
   }
 }

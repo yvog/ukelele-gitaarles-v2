@@ -1,6 +1,7 @@
 export { AboutMeSummary } from './about-me-summary/about-me-summary';
 export { Button } from './button/button';
 export { ContentBlock } from './content-block/content-block';
+export { CookieBanner } from './cookie-banner/cookie-banner';
 export { CostsCalculator } from './costs-calculator/costs-calculator';
 export { CustomForm } from './custom-form/custom-form';
 export { ExploreTrialLesson } from './explore-trial-lesson/explore-trial-lesson';
@@ -8,6 +9,7 @@ export { Footer } from './footer/footer';
 export { ContactForm } from './forms/contact-form/contact-form';
 export { RepairMaintenanceForm } from './forms/repair-maintenance-form/repair-maintenance-form';
 export { SignUpForm } from './forms/sign-up-form/sign-up-form';
+export { GA4 } from './ga4/ga4';
 export { HeaderNavigation } from './header-navigation/header-navigation';
 export { HeroMain } from './hero-main/hero-main';
 export { HeroServiceChoice } from './hero-service-choice/hero-service-choice';

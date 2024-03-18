@@ -28,6 +28,7 @@
     "@graphql-codegen/cli": "^5.0.2",
     "@graphql-codegen/client-preset": "^4.2.2",
     "@sendgrid/mail": "^7.4.2",
+    "@use-cookie-consent/react": "^0.3.7",
     "@vercel/node": "^1.12.1",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",

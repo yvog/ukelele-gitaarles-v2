@@ -1,0 +1,45 @@
+@import '../../styles/variables';
+@import '../../styles/typography/classes';
+
+.cookie_banner {
+  width: 80%;
+  max-width: 800px;
+  border-radius: $borderRadiusMD;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: $spacingXS;
+  margin: $spacingMD auto;
+  z-index: 99999;
+
+  & .cookie_banner_buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacingXXS;
+    margin-top: $spacingSM;
+  }
+}
+
+.cookie_banner_backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99998;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: $mobile) {
+  .cookie_banner {
+    max-height: 500px;
+    margin: $spacingSM auto;
+    overflow: auto;
+    padding: $spacingSM;
+
+    & .cookie_banner_buttons {
+      justify-content: flex-end;
+    }
+  }
+}

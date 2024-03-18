@@ -80,6 +80,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
 
         <div className={styles.swiper_outer_container}>
           <button
+            type="button"
             id="swiper-prev"
             name="Navigeer terug"
             aria-label="Navigeer terug"
@@ -118,6 +119,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
             </Swiper>
           </div>
           <button
+            type="button"
             id="swiper-next"
             aria-label="Navigeer verder"
             name="Navigeer verder"

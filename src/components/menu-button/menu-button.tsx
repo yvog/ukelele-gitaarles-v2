@@ -15,6 +15,7 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
 }) => {
   return (
     <button
+      type="button"
       onClick={onMenuOpen}
       className={styles.menu_button}
       aria-label="Toggle menu"

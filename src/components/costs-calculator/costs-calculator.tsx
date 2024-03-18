@@ -212,8 +212,7 @@ export const CostsCalculator: React.FC<CostsCalculatorProps> = ({
             </div>
             <Button
               filled
-              href="#"
-              onClickHandler={(e) => {
+              onClick={(e) => {
                 onCalculateAgain(e);
               }}
             >
@@ -296,12 +295,11 @@ export const CostsCalculator: React.FC<CostsCalculatorProps> = ({
 
             <div>
               <Button
-                disabled={loading}
-                filled
-                href="#"
-                onClickHandler={(e) => {
+                onClick={(e) => {
                   onCalculationStarted(e);
                 }}
+                disabled={loading}
+                filled
               >
                 Bereken leskosten
               </Button>
