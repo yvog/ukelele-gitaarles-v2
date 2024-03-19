@@ -59,9 +59,7 @@ export const Footer: React.FC<FooterProps> = ({
                   {(navigation as NavigationItemFragment[])?.map(
                     ({ __typename, id, url, label }) => (
                       <li key={`${__typename}-${id}`}>
-                        <Link href={url} passHref>
-                          <a>{label}</a>
-                        </Link>
+                        <Link href={url}>{label}</Link>
                       </li>
                     )
                   )}
@@ -77,7 +75,7 @@ export const Footer: React.FC<FooterProps> = ({
                     telephone
                   </object>
                 </a>
-                <Link href={contactUrl} passHref>
+                <Link href={contactUrl}>
                   <a aria-label="contact link">
                     <object
                       data={iconEmail}
@@ -110,8 +108,8 @@ export const Footer: React.FC<FooterProps> = ({
           <div className={styles.mobile_nav_items}>
             {(mobileNavigation as NavigationItemFragment[])?.map(
               ({ __typename, id, url, label }) => (
-                <Link key={`${__typename}-${id}`} href={url} passHref>
-                  <a>{label}</a>
+                <Link key={`${__typename}-${id}`} href={url}>
+                  {label}
                 </Link>
               )
             )}

@@ -13,7 +13,7 @@ export const ServicesItem: React.FC<ServicesItemProps> = ({
 }) => {
   return (
     <div className={styles.item_container}>
-      <Link href={url} passHref>
+      <Link href={url}>
         <a className={styles.services_item}>
           <img
             src={transformHygraphImage(background.url, 300, 200)}

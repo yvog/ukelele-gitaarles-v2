@@ -37,7 +37,7 @@ export const HeaderNavigation: React.FC<HeaderNavigationProps> = ({
 
   return (
     <header className={classNames(styles.header, { [styles.black]: isBlack })}>
-      <Link href="/" passHref>
+      <Link href="/">
         <a aria-label="terug naar home">
           <img
             className={styles.logo}

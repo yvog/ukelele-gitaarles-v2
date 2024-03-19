@@ -28,7 +28,7 @@ export const AboutMeSummary: React.FC<AboutMeSummaryProps> = ({
           />
           <div>
             <div dangerouslySetInnerHTML={{ __html: html }} />
-            <Link href={slug} passHref>
+            <Link href={slug}>
               <a className="text">{label}</a>
             </Link>
           </div>

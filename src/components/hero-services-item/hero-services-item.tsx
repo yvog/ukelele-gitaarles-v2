@@ -27,7 +27,7 @@ export const HeroServicesItem: React.FC<HeroServicesItemProps> = ({
         service icon
       </object>
       <div>
-        <Link href={href} passHref>
+        <Link href={href}>
           <a className={styles.hero_services_item_link}>
             <h3>{title}</h3>
           </a>
