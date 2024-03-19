@@ -28,3 +28,4 @@ export { TestimonialItem } from './testimonial-item/testimonial-item';
 export { Testimonials } from './testimonials/testimonials';
 export { UspItem } from './usp-item/usp-item';
 export { Usp } from './usp/usp';
+export { Page } from './page/page';

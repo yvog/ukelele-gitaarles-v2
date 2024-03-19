@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 import { graphQLClient, graphQLClientPreview } from '../client';
-import { Layout, LayoutMeta, PreviewBanner } from '../components';
+import { Page } from '../components';
+import { PreviewPageProps } from '../components/page/page';
 import { MAX_PAGES, REVALIDATE_PAGE_AFTER_SECONDS } from '../consts';
 import {
   LayoutDocument,
@@ -9,26 +10,18 @@ import {
   PagesQuery,
 } from '../gql/graphql';
 
-type PageProps = LayoutQuery & {
-  preview?: boolean;
-};
+type PageProps = LayoutQuery & PreviewPageProps;
 
 export default function Index(props: PageProps) {
-  const { title, slug, pageDescription, robots, useReCaptcha, layout } =
-    props?.page ?? {};
+  const { page, preview } = props;
 
   return (
-    <>
-      <LayoutMeta
-        title={title}
-        canonical={slug}
-        description={pageDescription?.description}
-        robots={robots?.split(',')}
-        useReCaptcha={useReCaptcha}
-      />
-      {props.preview && <PreviewBanner />}
-      <Layout layout={layout} />
-    </>
+    <Page
+      {...page}
+      description={page?.pageDescription?.description}
+      robots={page?.robots?.split(',')}
+      preview={preview}
+    />
   );
 }
 

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 import { isBrowser } from '../../util/client';
 
-type LayoutMetaProps = {
+export type LayoutMetaProps = {
   title?: string;
   useReCaptcha?: boolean;
   description?: string;

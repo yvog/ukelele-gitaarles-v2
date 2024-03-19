@@ -1,10 +1,10 @@
 import classnames from 'classnames';
 import React from 'react';
-import { ServicesItem } from '..';
 import {
   ServicesContentFragment,
   ServicesContentItemFragment,
 } from '../../gql/graphql';
+import { ServicesItem } from '../services-item/services-item';
 import styles from './services.module.scss';
 
 type ServicesProps = ServicesContentFragment;

@@ -75,7 +75,7 @@ const availableComponents: Record<
   ContactForm: ContactForm,
 };
 
-type LayoutProps = Pick<LayoutQuery['page'], 'layout'>;
+export type LayoutProps = Pick<LayoutQuery['page'], 'layout'>;
 
 export const Layout: React.FC<LayoutProps> = (props) => {
   return (

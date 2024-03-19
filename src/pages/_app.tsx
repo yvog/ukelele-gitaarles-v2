@@ -1,6 +1,7 @@
 import { CookieConsentProvider } from '@use-cookie-consent/react';
 import { AppProps } from 'next/app';
-import { CookieBanner, GA4 } from '../components';
+import { GA4 } from '../components';
+import { COOKIE_CONSENT_VALID_DAYS } from '../consts';
 import { useScrollTopReset } from '../hooks/useScrollTopReset';
 import '../styles/main.scss';
 
@@ -11,11 +12,10 @@ function App({ Component, pageProps }: AppProps) {
     <CookieConsentProvider
       useCookieConsentHooksOptions={{
         consentCookieAttributes: {
-          expires: 30, // days
+          expires: COOKIE_CONSENT_VALID_DAYS,
         },
       }}
     >
-      {/* <CookieBanner /> */}
       <GA4 />
       <Component {...pageProps} />
     </CookieConsentProvider>

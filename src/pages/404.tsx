@@ -1,26 +1,22 @@
 import { GetStaticProps } from 'next';
 import { graphQLClient } from '../client';
-import { Layout, LayoutMeta, PreviewBanner } from '../components';
+import { Page } from '../components';
+import { PreviewPageProps } from '../components/page/page';
 import { REVALIDATE_PAGE_AFTER_SECONDS } from '../consts';
 import { LayoutDocument, LayoutQuery } from '../gql/graphql';
 
-type ErrorPageProps = LayoutQuery & {
-  preview?: boolean;
-};
+type ErrorPageProps = LayoutQuery & PreviewPageProps;
 
 export default function NotFound(props: ErrorPageProps) {
-  const { title, pageDescription, layout } = props?.page ?? {};
+  const { page, preview } = props;
 
   return (
-    <>
-      <LayoutMeta
-        title={title}
-        description={pageDescription?.description}
-        robots={['noindex', 'nofollow']}
-      />
-      {props.preview && <PreviewBanner />}
-      <Layout layout={layout} />
-    </>
+    <Page
+      {...page}
+      description={page?.pageDescription?.description}
+      robots={['noindex', 'nofollow']}
+      preview={preview}
+    />
   );
 }
 
