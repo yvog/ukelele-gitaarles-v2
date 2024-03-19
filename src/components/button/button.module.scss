@@ -73,7 +73,7 @@
 
 @media (max-width: $smallMobile) {
   .button {
-    max-width: 100%;
+    max-width: max-content;
     min-width: unset;
   }
 }
