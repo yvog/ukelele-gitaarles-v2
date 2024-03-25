@@ -16,7 +16,7 @@ export { HeroServiceChoice } from './hero-service-choice/hero-service-choice';
 export { HeroServicesItem } from './hero-services-item/hero-services-item';
 export { HeroServices } from './hero-services/hero-services';
 export { HeroWrapper } from './hero-wrapper/hero-wrapper';
-export { LayoutMeta } from './layout-meta/layout-meta';
+export { PageMeta as LayoutMeta } from './layout-meta/layout-meta';
 export { Layout } from './layout/layout';
 export { PreviewBanner } from './preview-banner/preview-banner';
 export { Quote } from './quote/quote';

@@ -12,6 +12,22 @@ type HeaderNavigationProps = {
   variant?: 'white' | 'white_full' | 'black';
 };
 
+const preventDefault = (e: any) => {
+  e.preventDefault();
+};
+
+export const disableScroll = function () {
+  window.addEventListener('scroll', preventDefault, { passive: false });
+  window.addEventListener('wheel', preventDefault, { passive: false });
+  window.addEventListener('touchmove', preventDefault, { passive: false });
+};
+
+export const enableScroll = function () {
+  window.removeEventListener('scroll', preventDefault);
+  window.removeEventListener('wheel', preventDefault);
+  window.removeEventListener('touchmove', preventDefault);
+};
+
 export const HeaderNavigation: React.FC<HeaderNavigationProps> = ({
   variant = 'white',
   items,
@@ -24,15 +40,13 @@ export const HeaderNavigation: React.FC<HeaderNavigationProps> = ({
   const onMenuOpen = () => {
     const open = !menuOpen;
 
+    if (open) {
+      disableScroll();
+    } else {
+      enableScroll();
+    }
+
     setMenuOpen(open);
-
-    const event = new CustomEvent('mobile-menu-toggled', {
-      detail: {
-        open,
-      },
-    });
-
-    window.dispatchEvent(event);
   };
 
   return (

@@ -1,8 +1,6 @@
 import Head from 'next/head';
-import { useEffect } from 'react';
-import { isBrowser } from '../../util/client';
 
-export type LayoutMetaProps = {
+export type PageMetaProps = {
   title?: string;
   useReCaptcha?: boolean;
   description?: string;
@@ -10,47 +8,13 @@ export type LayoutMetaProps = {
   robots?: string[];
 };
 
-const preventDefault = (e: any) => {
-  e.preventDefault();
-};
-
-export const disableScroll = function () {
-  window.addEventListener('scroll', preventDefault, { passive: false });
-  window.addEventListener('wheel', preventDefault, { passive: false });
-  window.addEventListener('touchmove', preventDefault, { passive: false });
-};
-
-export const enableScroll = function () {
-  window.removeEventListener('scroll', preventDefault);
-  window.removeEventListener('wheel', preventDefault);
-  window.removeEventListener('touchmove', preventDefault);
-};
-
-export const LayoutMeta: React.FC<LayoutMetaProps> = ({
+export const PageMeta: React.FC<PageMetaProps> = ({
   title,
   description,
   useReCaptcha = false,
   canonical = '',
   robots = ['follow', 'index'],
 }) => {
-  useEffect(() => {
-    if (!isBrowser) return;
-
-    const onMobileMenuToggled = (e: any) => {
-      e.detail.open ? disableScroll() : enableScroll();
-    };
-
-    window.addEventListener('mobile-menu-toggled', onMobileMenuToggled, false);
-
-    return () => {
-      window.removeEventListener(
-        'mobile-menu-toggled',
-        onMobileMenuToggled,
-        true
-      );
-    };
-  }, []);
-
   return (
     <>
       <Head>

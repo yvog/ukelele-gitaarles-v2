@@ -1,7 +1,5 @@
-import { useCookieConsentContext } from '@use-cookie-consent/react';
-import { CookieBanner } from '../cookie-banner/cookie-banner';
 import { GA4 } from '../ga4/ga4';
-import { LayoutMeta, LayoutMetaProps } from '../layout-meta/layout-meta';
+import { PageMeta, PageMetaProps } from '../layout-meta/layout-meta';
 import { Layout, LayoutProps } from '../layout/layout';
 import { PreviewBanner } from '../preview-banner/preview-banner';
 
@@ -9,17 +7,17 @@ export type PreviewPageProps = {
   preview?: boolean;
 };
 
-type PageProps = PreviewPageProps & LayoutMetaProps & LayoutProps;
+type PageProps = PreviewPageProps & PageMetaProps & LayoutProps;
 
 export const Page: React.FC<PageProps> = (props) => {
-  const { consent } = useCookieConsentContext();
-  const cookiePreferencesUnknown = typeof consent.thirdParty == 'undefined';
+  // const { consent } = useCookieConsentContext();
+  // const cookiePreferencesUnknown = typeof consent.thirdParty == 'undefined';
 
   return (
     <>
-      <LayoutMeta {...props} />
+      <PageMeta {...props} />
       {props.preview && <PreviewBanner />}
-      {cookiePreferencesUnknown && <CookieBanner />}
+      {/* {cookiePreferencesUnknown && <CookieBanner />} */}
       <GA4 />
       <Layout {...props} />
     </>
