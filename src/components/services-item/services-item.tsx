@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { ServicesContentItemFragment } from '../../gql/graphql';
 import { transformHygraphImage } from '../../util/client';
@@ -15,12 +16,12 @@ export const ServicesItem: React.FC<ServicesItemProps> = ({
     <div className={styles.item_container}>
       <Link href={url}>
         <a className={styles.services_item}>
-          <img
+          <Image
             src={transformHygraphImage(background.url, 300, 200)}
-            width="300"
-            height="200"
             alt={`${firstTitle} & ${secondTitle}`}
-            loading="eager"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
           />
 
           <h3>

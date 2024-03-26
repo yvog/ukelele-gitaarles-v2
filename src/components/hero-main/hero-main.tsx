@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import { Button, HeaderNavigation, HeroServices, HeroWrapper } from '..';
 import {
@@ -34,24 +35,18 @@ export const HeroMain: React.FC<HeroMainProps> = ({
           </section>
         </div>
 
-        <picture>
-          <source
-            media="(min-width:1200px)"
-            srcSet="/images/background/hero_1600x900.webp"
-          />
-          <source
-            media="(min-width:0)"
-            srcSet="/images/background/hero_768x432.webp"
-          />
-          <img
+        <div className={styles.hero_background_image_container}>
+          <Image
             src="/images/background/hero_1600x900.webp"
             alt="alt"
-            loading="eager"
             className="hero_background_image darken"
-            width={1366}
-            height={768}
+            layout="fill"
+            objectFit="cover"
+            loading="eager"
+            priority
+            quality={100}
           />
-        </picture>
+        </div>
       </HeroWrapper>
 
       <div className="main-container">

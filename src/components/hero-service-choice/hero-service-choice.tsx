@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Image from 'next/image';
 import React from 'react';
 import {
   HeroServiceChoiceFragment,
@@ -18,23 +18,18 @@ export const HeroServiceChoice: React.FC<HeroServiceChoiceProps> = ({
 }) => {
   return (
     <HeroWrapper classes={[styles.hero_service_choice]}>
-      <Head>
-        <link
-          rel="preload"
-          as="image"
-          href="/images/background/blue_background.webp"
-        ></link>
-      </Head>
-
-      <img
-        src="/images/background/blue_background.webp"
-        alt="alt"
-        loading="eager"
-        className="hero_background_image"
-        width={800}
-        height={543}
-      />
-
+      <div className={styles.hero_background_image_container}>
+        <Image
+          src="/images/background/blue_background.webp"
+          alt="background"
+          loading="eager"
+          priority
+          className="hero_background_image"
+          layout="fill"
+          objectFit="fill"
+          quality={100}
+        />
+      </div>
       <div className="main-container header">
         <HeaderNavigation
           items={items as NavigationItemFragment[]}

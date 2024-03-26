@@ -11,6 +11,12 @@
     margin: 0 auto;
   }
 
+  .hero_background_image_container {
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
   #hero_info {
     max-width: 57%;
     padding-top: 64px;

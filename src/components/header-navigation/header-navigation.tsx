@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
@@ -52,24 +52,19 @@ export const HeaderNavigation: React.FC<HeaderNavigationProps> = ({
   return (
     <header className={classNames(styles.header, { [styles.black]: isBlack })}>
       <Link href="/">
-        <a aria-label="terug naar home">
-          <img
+        <a aria-label="Terug naar home" className={styles.logo_link}>
+          <Image
             className={styles.logo}
             src={`/images/logo/ukelele_gitaarles_logo_${variant}.svg`}
+            width={280}
+            height={100}
             alt="Ukelele-Gitaarles logo"
-            width="280"
-            height="100"
             loading="eager"
+            priority
+            quality={100}
           />
         </a>
       </Link>
-      <Head>
-        <link
-          rel="preload"
-          as="image"
-          href={`/images/logo/ukelele_gitaarles_logo_${variant}.svg`}
-        ></link>
-      </Head>
 
       {items && (
         <nav
@@ -78,7 +73,7 @@ export const HeaderNavigation: React.FC<HeaderNavigationProps> = ({
             [styles.line_hover_nav]: !isBlack,
             [styles.show]: menuOpen,
           })}
-          aria-label="Header navigation"
+          aria-label="Hoofdnavigatie"
         >
           <ul className={styles.nav_inner}>
             {items.map((item) => {

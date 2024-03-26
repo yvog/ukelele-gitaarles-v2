@@ -1,4 +1,5 @@
 import { default as classNames } from 'classnames';
+import Image from 'next/image';
 import Link from 'next/link';
 import iconEmail from '../../../public/images/icon/icon_email.svg';
 import iconFacebook from '../../../public/images/icon/icon_facebook.svg';
@@ -24,28 +25,15 @@ export const Footer: React.FC<FooterProps> = ({
   return (
     <footer className={classNames(styles.footer, 'container')}>
       <div className={styles.footer_inner}>
-        <picture>
-          <source
-            media="(min-width:1200px)"
-            srcSet="/images/background/blue_background.webp"
-          />
-          <source
-            media="(min-width:992px)"
-            srcSet="/images/background/blue_background.webp"
-          />
-          <source
-            media="(min-width:0)"
-            srcSet="/images/background/blue_background.webp"
-          />
-          <img
-            src="/images/background/blue_background.webp"
-            loading="lazy"
-            alt="blue background"
-            className={classNames('section_background')}
-            width={1920}
-            height={445}
-          />
-        </picture>
+        <Image
+          src="/images/background/blue_background.webp"
+          alt="background"
+          loading="lazy"
+          layout="fill"
+          objectFit="fill"
+          className="section_background"
+          quality={100}
+        />
 
         <div className="main-container">
           <div className={styles.inner_container}>

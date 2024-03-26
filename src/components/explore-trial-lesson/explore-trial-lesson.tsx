@@ -1,4 +1,5 @@
 import classnames from 'classnames';
+import Image from 'next/image';
 import { Button } from '..';
 import { ButtonFragment, ExploreTrialLessonFragment } from '../../gql/graphql';
 import styles from './explore-trial-lesson.module.scss';
@@ -20,12 +21,13 @@ export const ExploreTrialLesson: React.FC<ExploreTrialLessonProps> = (
           {button && <Button href={slug}>{label}</Button>}
         </div>
 
-        <img
+        <Image
           src="/images/background/blue_background.webp"
-          alt="blue background"
+          alt="background"
+          layout="fill"
+          objectFit="fill"
           loading="lazy"
-          width={446}
-          height={300}
+          quality={100}
           className={classnames(
             'section_background',
             styles.explore_signup_background
@@ -33,24 +35,17 @@ export const ExploreTrialLesson: React.FC<ExploreTrialLessonProps> = (
         />
       </div>
 
-      <picture>
-        <source
-          media="(min-width:1200px)"
-          srcSet="/images/background/explore_signup_background_1600x450.webp"
-        />
-        <source
-          media="(min-width:0)"
-          srcSet="/images/background/explore_signup_background_1024x576.webp"
-        />
-        <img
+      <div className={classnames(styles.backdrop_image)}>
+        <Image
           src="/images/background/explore_signup_background_1600x450.webp"
-          alt="explore signup background"
+          alt="background"
           loading="lazy"
-          className={classnames('section_background', styles.backdrop_image)}
-          width={1600}
-          height={450}
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          className="section_background"
         />
-      </picture>
+      </div>
     </section>
   );
 };

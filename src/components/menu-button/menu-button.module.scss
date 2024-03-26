@@ -18,14 +18,17 @@
   &:hover,
   &:active,
   &:focus {
-    background: #ddd;
+    background: #eee;
     cursor: pointer;
   }
 
-  img {
+  object {
     width: 18px;
     height: 18px;
     padding-top: 2px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
   }
 }
 

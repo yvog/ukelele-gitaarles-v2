@@ -2,6 +2,8 @@
 @import '../../styles/nav';
 @import '../../styles/typography/classes';
 
+$logoCorrectionPx: -12px;
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -30,8 +32,10 @@
     }
   }
 
-  .logo {
-    width: max-content;
+  .logo_link {
+    & > span {
+      transform: translateX($logoCorrectionPx);
+    }
   }
 
   &.black {
@@ -53,6 +57,12 @@
   .header {
     display: block;
     text-align: center;
+
+    .logo_link {
+      & > span {
+        transform: translateX(0);
+      }
+    }
 
     .nav {
       padding-top: 0;
@@ -80,6 +90,12 @@
   .header {
     text-align: left;
 
+    .logo_link {
+      & > span {
+        transform: translateX($logoCorrectionPx);
+      }
+    }
+
     nav {
       transition: opacity 0.25s ease;
       display: flex;
@@ -95,7 +111,7 @@
       color: #fff;
       -webkit-backdrop-filter: blur(4px);
       backdrop-filter: blur(4px);
-      background: rgba(#1193f5, 0.75);
+      background: rgba($ukeGitBlue, 0.75);
       z-index: 999;
 
       .nav_inner {

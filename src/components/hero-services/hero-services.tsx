@@ -1,4 +1,5 @@
-import { default as classNames, default as classnames } from 'classnames';
+import { default as classNames } from 'classnames';
+import Image from 'next/image';
 import React from 'react';
 import { HeroMainServicesItemFragment } from '../../gql/graphql';
 import { HeroServicesItem } from '../hero-services-item/hero-services-item';
@@ -12,15 +13,18 @@ type HeroServicesProps = {
 export const HeroServices: React.FC<HeroServicesProps> = ({ services }) => {
   return (
     <section className={classNames(styles.hero_services, 'container')}>
-      <h2 className="hidden">Hero services</h2>
-      <img
+      <h2 className="hidden">Diensten</h2>
+
+      <Image
         src="/images/background/blue_background.webp"
-        alt="blue background"
-        loading="lazy"
-        width={446}
-        height={300}
-        className={classnames('hero_background_image')}
+        alt="background"
+        layout="fill"
+        objectFit="fill"
+        priority
+        className="hero_background_image"
+        quality={100}
       />
+
       <div className={styles.hero_services_items}>
         {services?.map(({ __typename, id, icon, title, slug, description }) => (
           <HeroServicesItem

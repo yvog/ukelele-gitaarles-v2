@@ -3,4 +3,10 @@
 .hero_service_choice {
   min-height: unset;
   padding-bottom: $spacingXS;
+
+  .hero_background_image_container {
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
 }

@@ -14,13 +14,15 @@
     gap: $spacingXS;
     align-items: center;
 
-    img {
-      border-radius: 100%;
-      object-fit: cover;
-      box-shadow: $defaultBoxShadow;
-      width: fluid(176, 240);
-      height: fluid(176, 240);
+    .image {
       margin-right: $spacingXS;
+
+      & > span {
+        border-radius: 100%;
+        box-shadow: $defaultBoxShadow;
+        width: fluid(176, 240) !important;
+        height: fluid(176, 240) !important;
+      }
     }
 
     p {

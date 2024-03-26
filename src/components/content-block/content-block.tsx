@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import Image from 'next/image';
 import { ContentBlockFragment } from '../../gql/graphql';
 import { transformHygraphImage } from '../../util/client';
 import { Button } from '../button/button';
@@ -9,6 +10,7 @@ type ContentBlockProps = Partial<
   Omit<ContentBlockFragment, '__typename' | 'id'>
 > & {
   assetClassName?: string;
+  assetPriority?: boolean;
 };
 
 export const ContentBlock: React.FC<ContentBlockProps> = ({
@@ -21,6 +23,7 @@ export const ContentBlock: React.FC<ContentBlockProps> = ({
   assetWidth,
   assetHeight,
   assetClassName,
+  assetPriority = false,
 }) => {
   return (
     <section
@@ -48,14 +51,18 @@ export const ContentBlock: React.FC<ContentBlockProps> = ({
 
         <div className={styles.asset}>
           {image && (
-            <img
-              src={transformHygraphImage(image?.url, assetWidth, assetHeight)}
-              alt={contentBlockTitle}
-              width={assetWidth}
-              height={assetHeight}
-              loading="eager"
-              className={assetClassName}
-            />
+            <div className={assetClassName}>
+              <Image
+                src={transformHygraphImage(image?.url, assetWidth, assetHeight)}
+                alt={contentBlockTitle}
+                width={assetWidth}
+                height={assetHeight}
+                priority={assetPriority}
+                layout="fixed"
+                objectFit="cover"
+                quality={100}
+              />
+            </div>
           )}
 
           {icon && (

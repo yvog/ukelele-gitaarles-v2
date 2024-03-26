@@ -17,6 +17,7 @@ export const AboutMeFull: React.FC<AboutMeFullProps> = ({
         assetWidth={550}
         assetHeight={413}
         assetClassName={styles.image}
+        assetPriority={true}
         swapOnMobile
         text={aboutMeText}
       />

@@ -18,6 +18,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/virtual';
 
+import Image from 'next/image';
+
 import styles from './testimonials.module.scss';
 
 type TestimonialsProps = TestimonialFragment;
@@ -56,18 +58,20 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
 
   return (
     <section className={styles.testimonials}>
-      <img
+      <Image
         src="/images/background/blue_background.webp"
-        alt="blue background"
+        alt="background"
         loading="lazy"
-        width={446}
-        height={300}
         className="section_background"
+        quality={100}
+        layout="fill"
+        objectFit="fill"
       />
+
       <object
         data={iconQuote}
-        width="64"
-        height="64"
+        width={64}
+        height={64}
         className={styles.quote}
         aria-hidden="true"
         tabIndex={-1}

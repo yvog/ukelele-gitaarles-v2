@@ -20,14 +20,15 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
       className={styles.menu_button}
       aria-label="Toggle menu"
     >
-      <img
-        src={open ? iconOpened : iconClosed}
-        width="18"
-        height="18"
-        alt="menu icon"
-        loading="eager"
+      <object
+        data={open ? iconOpened : iconClosed}
+        width={18}
+        height={18}
         aria-hidden="true"
-      />
+        tabIndex={-1}
+      >
+        icon
+      </object>
     </button>
   );
 };

@@ -7,11 +7,12 @@
 }
 
 .image {
-  width: fluid(150, 400) !important;
-  height: fluid(150, 400) !important;
-  object-fit: cover;
-  border-radius: 100% !important;
-  box-shadow: $defaultBoxShadow;
+  & > span {
+    width: fluid(150, 400) !important;
+    height: fluid(150, 400) !important;
+    border-radius: 100% !important;
+    box-shadow: $defaultBoxShadow;
+  }
 }
 
 @media (max-width: $mobile) {
