@@ -13,6 +13,13 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
   iconClosed,
   iconOpened,
 }) => {
+  const iconProps: JSX.IntrinsicElements['object'] = {
+    width: 18,
+    height: 18,
+    'aria-hidden': true,
+    tabIndex: -1,
+  };
+
   return (
     <button
       type="button"
@@ -20,15 +27,15 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
       className={styles.menu_button}
       aria-label="Toggle menu"
     >
-      <object
-        data={open ? iconOpened : iconClosed}
-        width={18}
-        height={18}
-        aria-hidden="true"
-        tabIndex={-1}
-      >
-        icon
-      </object>
+      {open ? (
+        <object data={iconOpened} {...iconProps}>
+          icon close
+        </object>
+      ) : (
+        <object data={iconClosed} {...iconProps}>
+          icon open
+        </object>
+      )}
     </button>
   );
 };
