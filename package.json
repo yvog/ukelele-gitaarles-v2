@@ -11,6 +11,7 @@
     "codegen": "graphql-codegen --require dotenv/config --config codegen.ts",
     "build": "npm run codegen && next build",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,json,scss,css}\" ",
+    "lint:scss": "npx stylelint \"**/*.scss\"",
     "prod:cleanup": "rm -rf node_modules .next",
     "prod:server": "next start ./ -p 8080",
     "prod:start": "npx pm2 start npm --name ukelele-gitaarles -- run prod:server",
@@ -56,6 +57,8 @@
     "react-spinners": "^0.13.8",
     "sass": "^1.26.11",
     "sharp": "^0.27.2",
+    "stylelint": "^16.3.1",
+    "stylelint-config-standard-scss": "^13.1.0",
     "typescript": "^4.3.2"
   },
   "prettier": {
