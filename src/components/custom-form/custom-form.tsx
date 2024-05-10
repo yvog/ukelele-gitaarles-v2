@@ -60,44 +60,50 @@ export const CustomForm: React.FC<CustomFormProps> = ({
     setError(false);
     setSubmitting(true);
 
-    const googleRecaptcha = (window as any).grecaptcha;
+    const _grecaptcha = (window as any).grecaptcha;
 
-    if (!googleRecaptcha) {
+    if (!_grecaptcha) {
       setSubmitting(false);
       setError(true);
 
       return;
     }
 
-    googleRecaptcha.ready(() => {
-      googleRecaptcha
-        .execute(process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY, {
-          action: recaptchaAction,
-        })
-        .then((token: string) => {
-          fetch(httpAction, {
-            method: method,
-            headers: {
-              Accept: 'application/json',
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              ...formData,
-              token,
-            }),
-          })
-            .then((res) => res.json())
-            .then((res) => {
-              setSubmitting(false);
+    _grecaptcha.ready(async () => {
+      try {
+        const token = await _grecaptcha.execute(
+          process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY,
+          {
+            action: recaptchaAction,
+          }
+        );
 
-              if (res?.success) {
-                setSuccess(true);
-                setError(false);
-              } else {
-                setError(true);
-              }
-            });
+        const res = await fetch(httpAction, {
+          method: method,
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            ...formData,
+            token,
+          }),
         });
+
+        setSubmitting(false);
+
+        if (res.status == 200) {
+          setSuccess(true);
+        } else {
+          setError(true);
+        }
+      } catch (e) {
+        console.error('error', e);
+
+        setSuccess(false);
+        setSubmitting(false);
+        setError(true);
+      }
     });
   };
 

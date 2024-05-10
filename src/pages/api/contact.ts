@@ -13,48 +13,32 @@ export default async function handler(
     const formData = req.body.formData;
     const token = req.body.token;
 
-    await verifyRecaptchaToken(token).then(async (recaptchaRes) => {
-      if (isInvalidFormSubmission(req, 'POST', recaptchaRes, 'submitcontact')) {
-        res.send({
-          success: false,
-          reason: 'invalid request',
-        });
-      }
+    const recaptchaRes = await verifyRecaptchaToken(token);
 
-      await sendMail(
-        'Opmerking/vraag via ukelele-gitaarles.nl',
-        `
+    if (isInvalidFormSubmission(req, 'POST', recaptchaRes, 'submitcontact')) {
+      console.error('Invalid form submission');
+      res.status(400).end();
+    }
+
+    await sendMail(
+      'Opmerking/vraag via ukelele-gitaarles.nl',
+      `
         Opmerking/vraag via ukelele-gitaarles.nl
-  
+
         Naam: ${formData.forName ?? ''} ${formData.surName ?? ''}
         E-mailadres: ${formData.email ?? ''}
         AVG toestemming: ${formData.gdprConsent ? 'Ja' : 'Nee'}
         Opmerking/vraag:
-  
-        ${formData.comments ?? ''}
-        
-      `
-      )
-        .then(() => {
-          res.send({
-            success: true,
-          });
-        })
-        .catch((e) => {
-          console.error('error', e);
 
-          res.send({
-            success: false,
-            reason: 'email failed',
-          });
-        });
-    });
+        ${formData.comments ?? ''}
+
+      `
+    );
+
+    res.status(200).end();
   } catch (e) {
     console.error('error', e);
 
-    res.send({
-      success: false,
-      reason: 'request failed',
-    });
+    res.status(500).end();
   }
 }

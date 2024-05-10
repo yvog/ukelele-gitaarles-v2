@@ -13,24 +13,23 @@ export default async function handler(
     const formData = req.body.formData;
     const token = req.body.token;
 
-    await verifyRecaptchaToken(token).then(async (recaptchaRes) => {
-      if (
-        isInvalidFormSubmission(
-          req,
-          'POST',
-          recaptchaRes,
-          'submitrequestmaintenance'
-        )
-      ) {
-        res.send({
-          success: false,
-          reason: 'invalid request',
-        });
-      }
+    const recaptchaRes = await verifyRecaptchaToken(token);
 
-      await sendMail(
-        'Aanvraag reparatie/onderhoud via ukelele-gitaarles.nl',
-        `
+    if (
+      isInvalidFormSubmission(
+        req,
+        'POST',
+        recaptchaRes,
+        'submitrequestmaintenance'
+      )
+    ) {
+      console.error('Invalid form submission');
+      res.status(400).end();
+    }
+
+    await sendMail(
+      'Aanvraag reparatie/onderhoud via ukelele-gitaarles.nl',
+      `
         Aanvraag reparatie/onderhoud via ukelele-gitaarles.nl
   
         Instrument: ${formData.instrument ?? ''}
@@ -42,27 +41,12 @@ export default async function handler(
         ${formData.comments ?? ''}
   
       `
-      )
-        .then(() => {
-          res.send({
-            success: true,
-          });
-        })
-        .catch((e) => {
-          console.error('error', e);
+    );
 
-          res.send({
-            success: false,
-            reason: 'email failed',
-          });
-        });
-    });
+    res.status(200).end();
   } catch (e) {
     console.error('error', e);
 
-    res.send({
-      success: false,
-      reason: 'request failed',
-    });
+    res.status(500).end();
   }
 }
