@@ -8,6 +8,8 @@ export default async function handler(
 
   res.clearPreviewData({});
 
+  console.log('INFO:', process.env.NEXT_PUBLIC_BASE_URL, referer);
+
   if (referer && referer.includes(process.env.NEXT_PUBLIC_BASE_URL)) {
     const previousPathname = referer.split(
       process.env.NEXT_PUBLIC_BASE_URL
