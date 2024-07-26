@@ -155,7 +155,7 @@ $logoCorrectionPx: -12px;
             @for $i from 1 through 6 {
               &:nth-of-type(#{$i}) {
                 a {
-                  transition: opacity 0.5s (0.15s * $i) ease;
+                  transition: opacity 0.5s (0.05s * $i) ease;
                 }
               }
             }
