@@ -139,6 +139,28 @@
 
       .control-label {
         padding-bottom: 8px;
+
+        span.required {
+          color: $error;
+        }
+      }
+
+      &.has-error {
+        input,
+        textarea {
+          border: 1px solid $error;
+
+          &:focus {
+            outline: none;
+            border: 1px solid $ukeGitBlue;
+          }
+
+          &:hover {
+            &:not(:focus) {
+              border: 1px solid #555;
+            }
+          }
+        }
       }
     }
 

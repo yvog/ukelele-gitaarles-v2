@@ -25,6 +25,8 @@ $servicesItemSize: fluid(184, 224);
     width: $servicesItemSize;
     height: $servicesItemSize;
     z-index: 1;
+    pointer-events: none;
+    user-select: none;
   }
 
   .divider {

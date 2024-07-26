@@ -19,11 +19,7 @@
     bottom: 0;
     margin: auto 0;
     max-height: fluid(200, 300);
-
-    & > span {
-      max-height: fluid(200, 300);
-      z-index: -2;
-    }
+    z-index: -2;
   }
 
   .explore_signup_inner {
