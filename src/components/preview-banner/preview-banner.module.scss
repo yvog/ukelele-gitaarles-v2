@@ -5,7 +5,14 @@
   position: sticky;
   top: 0;
   padding: $spacingXXS;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacingXXS;
   z-index: 9999;
+
+  p {
+    margin: 0;
+  }
 
   &:before {
     content: '';
