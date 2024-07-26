@@ -1,19 +1,9 @@
 export default async function handler(req, res) {
-  const referer = req.headers['referer'];
-
-  res.clearPreviewData({});
-
-  if (referer && referer.includes(process.env.NEXT_PUBLIC_BASE_URL)) {
-    const previousPathname = referer.split(
-      process.env.NEXT_PUBLIC_BASE_URL
-    )?.[1];
-
-    if (previousPathname) {
-      res.redirect(previousPathname, 307);
-
-      return;
-    }
+  try {
+    res.clearPreviewData({});
+    res.status(200).end();
+  } catch (e) {
+    console.error('error', e);
+    res.status(500).end();
   }
-
-  res.redirect('/', 307);
 }

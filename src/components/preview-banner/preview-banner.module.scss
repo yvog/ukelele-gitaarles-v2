@@ -6,6 +6,8 @@
   top: 0;
   padding: $spacingXXS;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: $spacingXXS;
   z-index: 9999;
