@@ -1,14 +1,7 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function handler(req, res) {
   const referer = req.headers['referer'];
 
   res.clearPreviewData({});
-
-  console.log('INFO:', process.env.NEXT_PUBLIC_BASE_URL, referer);
 
   if (referer && referer.includes(process.env.NEXT_PUBLIC_BASE_URL)) {
     const previousPathname = referer.split(
@@ -16,11 +9,11 @@ export default async function handler(
     )?.[1];
 
     if (previousPathname) {
-      res.redirect(previousPathname);
+      res.redirect(previousPathname, 307);
 
       return;
     }
   }
 
-  res.redirect('/');
+  res.redirect('/', 307);
 }
