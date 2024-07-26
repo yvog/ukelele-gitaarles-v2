@@ -1,3 +1,6 @@
-export const REVALIDATE_PAGE_AFTER_SECONDS = 60 * 60 * 24; // every day
+const oneHourInSeconds = 60 * 60;
+
+export const REVALIDATE_PAGE_AFTER_SECONDS = oneHourInSeconds;
+export const REVALIDATE_SITEMAP_AFTER_SECONDS = oneHourInSeconds;
+
 export const MAX_PAGES = 100;
-// export const COOKIE_CONSENT_VALID_DAYS = 30;

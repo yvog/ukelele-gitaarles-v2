@@ -2,7 +2,7 @@
 import { GetServerSideProps } from 'next';
 import { ISitemapField, getServerSideSitemap } from 'next-sitemap';
 import { graphQLClient } from '../../client';
-import { MAX_PAGES } from '../../consts';
+import { MAX_PAGES, REVALIDATE_SITEMAP_AFTER_SECONDS } from '../../consts';
 import { PagesDocument, PagesQuery } from '../../gql/graphql';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -28,10 +28,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       priority: 0.7,
     })) as ISitemapField[];
 
-  // invalidate cache after 24 hours
   context.res.setHeader(
     'Cache-Control',
-    'public, s-maxage=86400, stale-while-revalidate'
+    `public, s-maxage=${REVALIDATE_SITEMAP_AFTER_SECONDS}, stale-while-revalidate`
   );
 
   return getServerSideSitemap(context as unknown as any, fields);
