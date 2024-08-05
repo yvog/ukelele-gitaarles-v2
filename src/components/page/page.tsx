@@ -1,5 +1,5 @@
 import { GA4 } from '../ga4/ga4';
-import { PageMeta, PageMetaProps } from '../layout-meta/layout-meta';
+import { LayoutMeta, LayoutMetaProps } from '../layout-meta/layout-meta';
 import { Layout, LayoutProps } from '../layout/layout';
 import { PreviewBanner } from '../preview-banner/preview-banner';
 
@@ -7,7 +7,7 @@ export type PreviewPageProps = {
   preview?: boolean;
 };
 
-type PageProps = PreviewPageProps & PageMetaProps & LayoutProps;
+type PageProps = PreviewPageProps & LayoutMetaProps & LayoutProps;
 
 export const Page: React.FC<PageProps> = (props) => {
   // const { consent } = useCookieConsentContext();
@@ -15,7 +15,7 @@ export const Page: React.FC<PageProps> = (props) => {
 
   return (
     <>
-      <PageMeta {...props} />
+      <LayoutMeta {...props} />
       {props.preview && <PreviewBanner />}
       {/* {cookiePreferencesUnknown && <CookieBanner />} */}
       <GA4 />

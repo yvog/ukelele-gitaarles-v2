@@ -1,18 +1,16 @@
 import Head from 'next/head';
 
-export type PageMetaProps = {
+export type LayoutMetaProps = {
   title?: string;
   useReCaptcha?: boolean;
   description?: string;
-  canonical?: string;
   robots?: string[];
 };
 
-export const PageMeta: React.FC<PageMetaProps> = ({
+export const LayoutMeta: React.FC<LayoutMetaProps> = ({
   title,
   description,
   useReCaptcha = false,
-  canonical = '',
   robots = ['follow', 'index'],
 }) => {
   return (
@@ -27,19 +25,11 @@ export const PageMeta: React.FC<PageMetaProps> = ({
         <meta name="description" content={description} />
 
         <meta name="robots" content={robots.join(',')} />
-        <link
-          rel="canonical"
-          href={`https://ukelele-gitaarles.nl${canonical}`}
-        />
 
         <meta property="og:locale" content="nl_NL" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={`${title} - Ukelele-Gitaarles`} />
         <meta property="og:description" content={description} />
-        <meta
-          property="og:url"
-          content={`https://ukelele-gitaarles.nl${canonical}`}
-        />
         <meta
           property="og:site_name"
           content="Bert Geldhof - Ukelele-Gitaarles"
